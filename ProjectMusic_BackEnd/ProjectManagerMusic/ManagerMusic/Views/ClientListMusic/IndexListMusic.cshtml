@@ -1,0 +1,282 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Song_ListPage");
+    Layout = "~/Views/Shared/Page_Client/ListMusic.cshtml";
+}
+
+<div class="az-content az-content-dashboard">
+    <div class="container">
+        <div class="az-content-body">
+            <div class="az-dashboard-one-title">
+                <div>
+                    <h2 class="az-dashboard-title"><i class="fas fa-list"></i> @languade.Getkey("List_music")</h2>
+                </div>
+                <div class="az-content-header-right">
+
+                    <div class="media">
+                        <div class="media-body">
+                            <input type="text" class="form-control" id="TxtSeach" onchange="SeachMuiscClien()" placeholder="@languade.Getkey("SeachMusic") ..." style="border-radius: 10px;" />
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                    <div class="media">
+                        <div class="media-body">
+                            <select class="form-control" style="border-radius: 10px;" id="SelectSeason">
+                            </select>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                    <div class="media">
+                        <div class="media-body">
+                            <select class="form-control" style="border-radius: 10px; display: none;" id="SelectSaint">
+                            </select>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                    <div class="media">
+                        <div class="media-body">
+                            <label>@languade.Getkey("Yesterday_song")</label>
+                            <h6 style="text-align:center;" id="TotalMusicYesterday"></h6>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="media">
+
+                        <div class="media-body">
+                            <label>@languade.Getkey("reset")</label>
+                            <h6 id="btn_Reload" style="text-align:center;"><i class="fas fa-power-off"></i></h6>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </div>
+            </div><!-- az-dashboard-one-title -->
+        </div><!-- row -->
+    </div><!-- row -->
+
+    <div class="container">
+        <div class="row" style="width: 100%;">
+            <div class="col-md-12">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <p style="margin: 5px 5px; color: black; font-weight: 600;"><i class="fas fa-search"></i> @languade.Getkey("TotalMusic") <b style="color: red;" id="TotalMuiscL"></b></p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <p style="text-align: right;">
+                            <select class="form-control" style="margin: 5px 5px; border-radius: 5px;" id="SelectViewer">
+                                <option selected value="0">@languade.Getkey("Default_mode")</option>
+                                <option value="1">@languade.Getkey("ViewAZ")</option>
+                                <option value="2">@languade.Getkey("ViewZA")</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center; font-size: 15px; color: red;" id="TxtTitleSeach"></p>
+    <div class="container">
+            <div class="col-md-12">
+                <div class="row" id="BodyMuisc">
+
+                </div>
+            </div>
+    </div>
+    <p style="text-align: center; margin-top: 10px;">@languade.Getkey("page") : <b id="TotalItem" style="color:red;"></b>/<b id="ItemInPage" style="color:black;"></b></p>
+    <!-- Pagination -->
+    <div class="container">
+        <div class="row" style="clear: both; margin: 0px 1px;">
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </div>
+
+</div>
+<!-- </div>az-content-body -->
+<!-- </div>az-content-body -->
+<!--</div> az-content -->
+
+<div class="az-footer ht-40">
+    <div class="container ht-100p pd-t-0-f">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+    </div><!-- container -->
+</div><!-- az-footer -->
+<!--modal rating-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modalViewRating">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-list"></i> @languade.Getkey("Star_RatingList")</h5>
+                <button type="button" class="btn-close" id="colse_Rating">X</button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group" id="BodyViewRating">
+                    <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                        <p style="color: black;">
+                            @languade.Getkey("Evaluate"): <i class="fas fa-star"></i>---- ( <b Totla_1Star></b> @languade.Getkey("Evaluate") )
+                        </p>
+                        <div id="Body_1Start">
+                        </div>
+                    </li>
+
+                    <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                        <p style="color: red;">
+                            @languade.Getkey("Evaluate"): <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            ---- ( <b Totla_2Star></b> @languade.Getkey("Evaluate") )
+                        </p>
+                        <div id="Body_2Start">
+                        </div>
+                    </li>
+
+                    <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                        <p style="color: #00a6ff;">
+                            @languade.Getkey("Evaluate"): <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            ---- ( <b Totla_3Star></b> @languade.Getkey("Evaluate") )
+                        </p>
+                        <div id="Body_3Start">
+                        </div>
+                    </li>
+
+                    <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                        <p style="color: green;">
+                            @languade.Getkey("Evaluate"): <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            ---- ( <b Totla_4Star></b> @languade.Getkey("Evaluate") )
+                        </p>
+                        <div id="Body_4Start">
+                        </div>
+                    </li>
+
+                    <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                        <p style="color: orange;">
+                            @languade.Getkey("Evaluate"): <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            ---- ( <b Totla_5Star></b> @languade.Getkey("Evaluate") )
+                        </p>
+                        <div id="Body_5Start">
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--rating-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_Rating">
+    <div class="modal-dialog" style="max-width: 70%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-star"></i> @languade.Getkey("Star_rating")</h5>
+                <button type="button" class="btn-close" id="close_Rating">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <section class='rating-widget'>
+                            <!-- Rating Stars Box -->
+                            <div class='rating-stars text-center'>
+                                <ul id='stars'>
+                                    <li class='star' title='Poor' data-value='1'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Fair' data-value='2'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Good' data-value='3'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Excellent' data-value='4'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='WOW!!!' data-value='5'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class='success-box'>
+                                <div class='clearfix'></div>
+                                <div class='text-message'></div>
+                                <div class='clearfix'></div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="col-md-6">
+                        <button id="btn_RatingM" style="border-radius: 5px;" type="button" class="btn btn-primary">@languade.Getkey("Evaluate")</button>
+                    </div>
+                </div>
+                <div class="row" style="height: 450px; overflow: scroll;">
+                    <div class="col-md-12">
+                        <hr />
+                        <ul class="list-group list-group-flush" id="Bodyrating">
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--qr code-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_QRCode">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-qrcode"></i> @languade.Getkey("QRcode_song")</h5>
+                <button type="button" class="btn-close" id="colse_QRcode">X</button>
+            </div>
+            <div class="modal-body" id="BodyShowImgQR">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("NotFindSong")" id="NotFindSong"/>
+<input type="hidden" value="@languade.Getkey("WasFind")" id="WasFind"/>
+<input type="hidden" value="@languade.Getkey("the_song")" id="the_song"/>
+<input type="hidden" value="@languade.Getkey("IdMusic")" id="IdMusic"/>
+<input type="hidden" value="@languade.Getkey("namesong")" id="namesong"/>
+<input type="hidden" value="@languade.Getkey("Music_composer")" id="Music_composer"/>
+<input type="hidden" value="@languade.Getkey("Seasons")" id="Seasons"/>
+<input type="hidden" value="@languade.Getkey("Name_Saint")" id="Name_Saint"/>
+<input type="hidden" value="@languade.Getkey("datecreate")" id="datecreate"/>
+<input type="hidden" value="@languade.Getkey("Youliked")" id="Youliked"/>
+<input type="hidden" value="@languade.Getkey("GetQR_code")" id="GetQR_code"/>
+<input type="hidden" value="@languade.Getkey("See_rating")" id="See_rating"/>
+<input type="hidden" value="@languade.Getkey("ViewDetailSong")" id="ViewDetailSong"/>
+<input type="hidden" value="@languade.Getkey("Likes")" id="Likes"/>
+<input type="hidden" value="@languade.Getkey("Downloads")" id="Downloads"/>
+<input type="hidden" value="@languade.Getkey("Starrating")" id="Starrating"/>
+<input type="hidden" value="@languade.Getkey("Log_function")" id="Log_function"/>
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/>
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success"/>
+<input type="hidden" value="@languade.Getkey("usercode_valid")" id="usercode_valid"/>
+<input type="hidden" value="@languade.Getkey("alreadylike_song")" id="alreadylike_song"/>
+<input type="hidden" value="@languade.Getkey("Likesong_success")" id="Likesong_success"/>
+<input type="hidden" value="@languade.Getkey("least1stat_moststars")" id="least1stat_moststars"/>
+<input type="hidden" value="@languade.Getkey("first_review")" id="first_review"/>
+<input type="hidden" value="@languade.Getkey("canrate_anymore")" id="canrate_anymore"/>
+<input type="hidden" value="@languade.Getkey("Successful_rating")" id="Successful_rating"/>
+<input type="hidden" value="@languade.Getkey("Yourated_this")" id="Yourated_this"/>
+<input type="hidden" value="@languade.Getkey("stars")" id="stars"/>
+<input type="hidden" value="@languade.Getkey("improveourselves")" id="improveourselves"/>
+<input type="hidden" value="@languade.Getkey("Choose_the_Season_You_Need")" id="Choose_the_Season_You_Need"/>
+<input type="hidden" value="@languade.Getkey("Select_saint")" id="Select_saint"/>

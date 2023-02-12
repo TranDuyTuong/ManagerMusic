@@ -1,0 +1,174 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("UserR_Details");
+    Layout = "~/Views/Shared/Manager_User/Page_DetailRequestUser.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a asp-action="Page_User" asp-controller="User" style="color: #97a3b9;">@languade.Getkey("Manager_User")</a></span>
+        <span><a asp-action="Page_ManagerRequestUser" asp-controller="ManagerRequestUser" style="color: #97a3b9;">@languade.Getkey("Ma_userrequests")</a></span>
+        <span> @languade.Getkey("UserR_Details"): <b id="TitleNameUser"></b></span>
+    </div>
+
+    <h2 class="az-content-title"><i class="fas fa-list-alt"></i> @languade.Getkey("UserR_Details") - <b id="StatsuRequest"></b></h2>
+
+    <div class="row">
+        <div class="col-md-12" id="BodyDetailData">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="hidden" id="IdRequestUsers" />
+                    <input type="hidden" id="IdUsers" />
+                    <div class="mb-3">
+                        <label class="form-label">Tên Người Yêu Cầu</label>
+                        <input type="text" class="form-control" id="TxtNameUser">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Gmail Yêu Cầu</label>
+                        <input type="text" class="form-control" id="TxtGmails">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ngày Yêu Cầu</label>
+                        <input type="text" class="form-control" id="TxtDateSentse">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Tiêu Đề Yêu Cầu</label>
+                        <input type="text" class="form-control" id="TxtTitleRequest">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Hướng Sử Lý</label>
+                        <select class="form-control" id="Selectsolution">
+                        </select>
+                        <input class="form-control" type="text" id="TxtNameTypeSent" disabled style="display: none;" />
+                        <input type="hidden" id="TxtIdTypeSent" />
+                        <span style="color: red; font-size: 15px;" id="ErrorData"></span>
+                    </div>
+
+                    <div class="mb-3" id="DateHandled" style="display: none;">
+                        <label class="form-label">Ngày Nhận Xử Lý Yêu Cầu</label>
+                        <input class="form-control" type="text" id="TxtDateHandled" disabled />
+                    </div>
+
+                    <div class="mb-3" id="DateSuccess" style="display: none;">
+                        <label class="form-label">Ngày Xử Lý Yêu Cầu Thành Công</label>
+                        <input class="form-control" type="text" id="TxtDateSuccess" disabled />
+                    </div>
+
+                </div>
+            </div>
+            <p style="text-align: center; font-family: initial; font-size: 20px">Nội Dung Yêu Cầu</p>
+            <p style="font-size: 20px; font-family: initial; text-align: justify;" id="TxtContentRequest"></p>
+            <p style="text-align: right; margin: 10px 10px;">
+                <button id="btn_AcceptRequest" style="border-radius: 10px;" type="button"
+                        class="btn btn-primary">
+                    <i class="fas fa-check"></i> Chấp Nhận Yêu Cầu
+                </button>
+                <button id="btn_RemoveRequest" style="border-radius: 10px;" type="button"
+                        class="btn btn-warning">
+                    <i class="fas fa-trash"></i> Hủy Yêu Cầu
+                </button>
+                <button id="btn_HandledRequest" style="border-radius: 10px;" type="button"
+                        class="btn btn-success">
+                    <i class="fas fa-location-arrow"></i> Xử Lý Yêu Cầu
+                </button>
+                <span style="color:green; font-size:15px; font-family: initial; text-align: center" id="TxtSuccessRequest"></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+                Thiết Kế Vào Năm
+                2022
+            </span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Do <a href="#"
+                      target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com
+            </span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!--check infomation-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_CancelRequest">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bạn có chắc chắn muốn hủy yêu cầu này không ?</h5>
+                <button type="button" class="btn-close" id="btn_closeCancel">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="btn_Agrren" style="border-radius: 10px;" type="button" class="btn btn-success">Đồng Ý </button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="btn_Cancel" style="border-radius: 10px;" type="button" class="btn btn-danger">Hủy Bỏ</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Sent Gmail-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_SentGmailRequest">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Gửi Gmail Để Trả Lời Yêu Cầu Người Dùng</h5>
+                <button type="button" class="btn-close" id="btn_close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Viết Nội Dung</label>
+                    <textarea id="TxtContentSent" style="height: 200px; border-radius: 10px;" class="form-control" placeholder="Viết Nội Dung Vào Đây ..."></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">File Hình Ảnh Nếu Có</label>
+                    <input style="border-radius: 10px;" multiple class="form-control" type="file" id="FileValue"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="BtnSentGmailRequest" class="btn btn-primary" style="border-radius: 10px;"><i class="far fa-paper-plane"></i> Trả Lời</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal load -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingSignUp">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@ViewBag.IdRequest" id="IdRequest" />

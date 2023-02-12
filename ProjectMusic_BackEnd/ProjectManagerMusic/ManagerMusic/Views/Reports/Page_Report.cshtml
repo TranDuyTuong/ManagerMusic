@@ -1,0 +1,71 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Report_Management");
+    Layout = "~/Views/Shared/Manger_Report/ManagerReport.cshtml";
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span>@languade.Getkey("Admin_Information")</span>
+        <span>@languade.Getkey("File_management")</span>
+        <span>@languade.Getkey("Report_Management")</span>
+    </div>
+
+    <h2 class="az-content-title"><i class="fas fa-tasks-alt"></i> @languade.Getkey("Report_Management")</h2>
+    <div class="row">
+        <div class="col-md-5" style="margin: 10px 10px; background-color: #ff0000a8; width: 100%; height: 250px; border-radius: 20px;">
+            <label class="form-label"
+                   style="color: black; font-size: 20px; font-family: initial; font-weight: 600; text-align: center;">
+                @languade.Getkey("StatisticalreportSong_file")
+            </label>
+            <p class="hover_File" style="text-align: center; font-size: 100px; margin-top: 20px;">
+                <a asp-action="Page_FileReport" asp-controller="Reports" style="color: black;">
+                    <i class="fas fa-file"></i>
+                </a>
+            </p>
+        </div>
+        <div class="col-md-5" style="margin: 10px 10px; background-color: #008000a1; width: 100%; height: 250px; border-radius: 20px;">
+            <label class="form-label" style="color: black; font-size: 20px; font-family: initial; font-weight: 600; text-align: center;">
+                @languade.Getkey("StatisticalreportEmployee")
+            </label>
+            <p class="hover_Staff" style="text-align: center; font-size: 100px; margin-top: 20px;">
+                <a href="#" style="color: black;">
+                    <i class="fas fa-user-cog"></i>
+                </a>
+            </p>
+        </div>
+        <div class="col-md-5" style="margin: 10px 10px; background-color: #00f1ff82; width: 100%; height: 250px; border-radius: 20px;">
+            <label class="form-label" style="color: black; font-size: 20px; font-family: initial; font-weight: 600; text-align: center;">
+                @languade.Getkey("StatisticalreportUser")
+            </label>
+            <p class="hover_User" style="text-align: center; font-size: 100px; margin-top: 20px;">
+                <a href="#" style="color: black;">
+                    <i class="fas fa-users"></i>
+                </a>
+            </p>
+        </div>
+        <div class="col-md-5" style="margin: 10px 10px; background-color: #2a00ff82; width: 100%; height: 250px; border-radius: 20px;">
+            <label class="form-label" style="color: black; font-size: 20px; font-family: initial; font-weight: 600; text-align: center;">
+                @languade.Getkey("Statisticalchart")
+            </label>
+            <p class="hover_User" style="text-align: center; font-size: 100px; margin-top: 20px;">
+                <a asp-controller="Reports" asp-action="Page_FileChartReport" style="color: black;">
+                    <i class="fas fa-chart-bar"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+                @languade.Getkey("Design_In_2022")
+            </span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Do <a href="#"
+                      target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com
+            </span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->

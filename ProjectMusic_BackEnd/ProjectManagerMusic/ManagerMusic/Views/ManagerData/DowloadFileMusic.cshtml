@@ -1,0 +1,171 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Managerfile_dowload");
+    Layout = "~/Views/Shared/Manager_Data/Page_ManagerFileDowload.cshtml";
+}
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+    <div class="container">
+        <partial name="~/Views/SidebarMenu/Index.cshtml" />
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+            <div class="az-content-breadcrumb">
+                <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+                <span>@languade.Getkey("Admin_Information")</span>
+                <span><a asp-action="IndexFile" asp-controller="ManagerData" style="color: #97a3b9;">@languade.Getkey("File_management")</a></span>
+                <span>@languade.Getkey("Managerfile_dowload")</span>
+            </div>
+
+
+            <h2 class="az-content-title">@languade.Getkey("Managerfile_dowload")</h2>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <input onkeyup="AutoSeachData()" id="TxtSeachData" style="width: 170%; border-radius: 5px;" type="text" class="form-control" placeholder="@languade.Getkey("Enternamesong_search")">
+                        </div>
+                    </div>
+
+                    <p style="text-align:right;">
+                        <a asp-action="DowloadFileMusic" asp-controller="ManagerData" style="border: none;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("reset")" class="btn btn-outline-secondary"><i class="fas fa-spinner"></i></a>
+                        <a id="Btn_DeleteDowLoadMusic" style="border: none;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("RemoveAll")" class="btn btn-outline-secondary"><i class="fas fa-trash"></i></a>
+                        <a style="border: none;" class="btn btn-outline-secondary">@languade.Getkey("NumberWas_Dowload"): <b style="color: red; font-weight: 600;" id="TotalDowload"></b></a>
+                    </p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <input type="checkbox" id="selectall" />
+                                </th>
+                                <th scope="col">@languade.Getkey("No")</th>
+                                <th scope="col">@languade.Getkey("IdMusic")</th>
+                                <th scope="col">@languade.Getkey("namesong")</th>
+                                <th scope="col">@languade.Getkey("Downloader_Name")</th>
+                                <th scope="col">@languade.Getkey("DateDowload")</th>
+                                <th scope="col">@languade.Getkey("Employee_User")</th>
+                                <th scope="col">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="body_Data">
+                        </tbody>
+                    </table>
+                    <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+                    <!-- Pagination -->
+                    <div class="row" style="clear: both;">
+                        <div id="pagination" class="pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="az-footer mg-t-auto">
+                <div class="container">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+                </div><!-- container -->
+            </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+    </div><!-- container -->
+</div><!-- az-content -->
+<!-- Modal loading create Music -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalShowDetailDowloadMusic">
+    <div class="modal-dialog" style="max-width: 80%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-book-open"></i> @languade.Getkey("Dowload_Song")</h5>
+                <button type="button" class="btn-close" id="CloseDowloadDetailMusic">X</button>
+            </div>
+            <div class="modal-body" style="overflow: scroll; height: 600px;">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("Download_Id")</label>
+                            <input type="text" class="form-control" id="TxtId">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("IdMusic")</label>
+                            <input type="text" class="form-control" id="TxtNoMusic">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("namesong")</label>
+                            <input type="text" class="form-control" id="TxtNameMusic">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("Authour_Name")</label>
+                            <input type="text" class="form-control" id="TxtAuthor">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("Downloader_Name")</label>
+                            <input type="text" class="form-control" id="TxtNameUser">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("Employee_User")</label>
+                            <input type="text" class="form-control" id="TxtStaff_User" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("DateDowload")</label>
+                            <input type="text" class="form-control" id="TxtDateDowload">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("TimeDowload")</label>
+                            <input type="text" class="form-control" id="TxtTimeDowload">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <p style="text-align:center; font-weight: 600; font-size: 15px;">@languade.Getkey("the_song")</p>
+                        <div id="AvataImageMusic">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<input type="hidden" value="@languade.Getkey("Staff")" id="Staff" />
+<input type="hidden" value="@languade.Getkey("User")" id="User" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+<input type="hidden" value="@languade.Getkey("TickRow_DeleteMusicDowload")" id="TickRow_DeleteMusicDowload" />
+<input type="hidden" value="@languade.Getkey("Null_ListDowloadMusic")" id="Null_ListDowloadMusic" />
+<input type="hidden" value="@languade.Getkey("Notfind_ListDowloadMusic")" id="Notfind_ListDowloadMusic" />
+<input type="hidden" value="@languade.Getkey("Delete_ListMusicDowloadSuccess")" id="Delete_ListMusicDowloadSuccess" />
+<input type="hidden" value="@languade.Getkey("DeleteDowload_musicError")" id="DeleteDowload_musicError"/>
+<input type="hidden" value="@languade.Getkey("HistoryDowloadMusic_Success")" id="HistoryDowloadMusic_Success"/>
+<input type="hidden" value="@languade.Getkey("ViewDetail")" id="ViewDetail"/>
+<input type="hidden" value="@languade.Getkey("Remove_downloads")" id="Remove_downloads"/>

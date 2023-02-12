@@ -1,0 +1,71 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Processmanage");
+    Layout = "~/Views/Shared/Manager_User/Page_ManagerProgressRequest.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a asp-action="Page_User" asp-controller="User" style="color: #97a3b9;">@languade.Getkey("Manager_User")</a></span>
+        <span><a asp-action="Page_ManagerRequestUser" asp-controller="ManagerRequestUser" style="color: #97a3b9;">Quản Lý Yêu Cầu Người Dùng</a></span>
+        <span>@languade.Getkey("Processmanage")</span>
+    </div>
+
+    <h2 class="az-content-title">@languade.Getkey("Processmanage")</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align:right;">
+                <a href="#" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="@languade.Getkey("Exportcomposite_file")"><i class="fas fa-file-excel"></i></a>
+
+                <a id="ResetProgress" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="@languade.Getkey("reset")"><i class="fas fa-spinner"></i></a>
+                <a href="#">@languade.Getkey("total_requirements"): <b id="TotalProgress"></b></a>
+            </p>
+
+            <p style="color: blue; font-size: 15px; font-weight: 600;">
+                <i class="fas fa-hand-point-right"></i> @languade.Getkey("Not_resolved") (<b style="color:red;" id="TotalNotresolved"></b>)
+                <a href="#" style="border: none;" class="btn btn-outline-primary" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="Xuất Excel yêu cầu chưa giải quyết"><i class="fas fa-file-excel"></i></a>
+            </p>
+            <div id="Notresolved" style="height: 300px; overflow: scroll; width: 100%; border: 1px solid; border-radius: 5px; margin: 5px 10px;">
+
+            </div>
+
+            <p style="color: orange; font-size: 15px; font-weight: 600;">
+                <i class="fas fa-hand-point-right"></i> @languade.Getkey("Solving") (<b style="color:red;" id="TotalSolving"></b>)
+                <a href="#" style="border: none;" class="btn btn-outline-warning" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="Xuất Excel yêu cầu đang giải quyết"><i class="fas fa-file-excel"></i></a>
+            </p>
+            <div id="Solving" style="height: 300px; overflow: scroll; width: 100%; border: 1px solid; border-radius: 5px; margin: 5px 10px;">
+            </div>
+            <p style="color: green; font-size: 15px; font-weight: 600;">
+                <i class="fas fa-hand-point-right"></i> @languade.Getkey("Solved") (<b style="color:red;" id="TotalSolved"></b>)
+                <a href="#" style="border: none;" class="btn btn-outline-success" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="Xuất Excel yêu cầu đã hoàn thành"><i class="fas fa-file-excel"></i></a>
+            </p>
+            <div id="Solved" style="height: 300px; overflow: scroll; width: 100%; border: 1px solid; border-radius: 5px; margin: 5px 10px;">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Do <a href="#"
+                      target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com
+            </span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<input type="hidden" value="@languade.Getkey("code")" id="code" />
+<input type="hidden" value="@languade.Getkey("Request_Date")" id="Request_Date"/>
+<input type="hidden" value="@languade.Getkey("Processing_Date")" id="Processing_Date"/>
+<input type="hidden" value="@languade.Getkey("Finish_Date")" id="Finish_Date"/>

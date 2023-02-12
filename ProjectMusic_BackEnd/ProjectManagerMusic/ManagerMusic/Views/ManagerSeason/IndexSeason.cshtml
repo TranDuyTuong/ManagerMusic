@@ -1,0 +1,134 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("File_Season");
+    Layout = "~/Views/Shared/Manager_Data/ManagerSeason.cshtml";
+}
+
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+    <div class="container">
+        <partial name="~/Views/SidebarMenu/Index.cshtml" />
+
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+            <div class="az-content-breadcrumb">
+                <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+                <span>@languade.Getkey("Admin_Information")</span>
+                <span>@languade.Getkey("File_Season")</span>
+            </div>
+            <partial name="~/Views/ManagerData/MenuManagerFile.cshtml" />
+
+            <h2 class="az-content-title">@languade.Getkey("File_Season")</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <p style="text-align:right;">
+
+                        <a asp-controller="ManagerSeason" asp-action="IndexSeason" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("reset")"><i class="fas fa-spinner"></i></a>
+
+                        <a style="border-radius: 10px;" class="btn btn-outline-secondary">@languade.Getkey("Total_Seasson"): <b id="Total_Season" style="font-weight: 600;"></b></a>
+
+                    </p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">@languade.Getkey("No") <i class="fas fa-sort" id="Sort_Id"></i></th>
+                                <th scope="col">@languade.Getkey("Seasons") <i class="fas fa-sort" id="Sort_Name"></i></th>
+                                <th scope="col">@languade.Getkey("datecreate")</th>
+                                <th scope="col">@languade.Getkey("time")</th>
+                                <th scope="col">@languade.Getkey("Status")</th>
+                                <th scope="col">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyData">
+                        </tbody>
+                    </table>
+                    <p style="text-align:right;">@languade.Getkey("page") : <b id="TotalItem" style="color:red;"></b>/<b id="ItemInPage" style="color:black;"></b></p>
+                    <!-- Pagination -->
+                    <div class="row" style="clear: both;">
+                        <div id="pagination" class="pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="az-footer mg-t-auto">
+                <div class="container">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> duytuong0503@gmail.com</span>
+                </div><!-- container -->
+            </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+    </div><!-- container -->
+</div><!-- az-content -->
+<!-- choose option activer funtion file -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowChangeStatus">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-toolbox"></i> @languade.Getkey("Statussettings_season")</h5>
+                <button type="button" class="btn-close" id="btn_close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <select class="form-control" id="SelectStatus" style="border-radius: 10px;">
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_changestatusSeason" style="border-radius: 5px;" type="button" class="btn btn-primary"><i class="fas fa-check-circle"></i> @languade.Getkey("Change")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal show list music buy season-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowListMusicBuySeason">
+    <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("ThisSeason_List")</h5>
+                <button type="button" class="btn-close" id="btn_closemodalList">X</button>
+            </div>
+            <div class="modal-body">
+                <p id="titleNotification" style="text-align:right; font-family:initial; font-weight:600"></p>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">@languade.Getkey("No") <i class="fas fa-sort" id="sort_idList"></i></th>
+                            <th scope="col">@languade.Getkey("namesong") <i class="fas fa-sort" id="sort_name"></i></th>
+                            <th scope="col">@languade.Getkey("datecreate") <i class="fas fa-sort" id="sort_datcreate"></i></th>
+                            <th scope="col">@languade.Getkey("Seasons")</th>
+                            <th scope="col">@languade.Getkey("Status") <i class="fas fa-sort" id="sort_status"></i></th>
+                            <th scope="col">@languade.Getkey("Options")</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyDetail" style="overflow: scroll;">
+                    </tbody>
+                </table>
+                <p style="text-align:right;">@languade.Getkey("page") : <b id="TotalItem_List" style="color:red;"></b>/<b id="ItemInPage_List" style="color:black;"></b></p>
+                <!-- Pagination -->
+                <div class="row" style="clear: both;">
+                    <div id="paginationViewList" class="pagination" style="margin-left: 10px;"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+<input type="hidden" value="@languade.Getkey("IdSeason_Null")" id="IdSeason_Null" />
+<input type="hidden" value="@languade.Getkey("NotFindIdSeason")" id="NotFindIdSeason" />
+<input type="hidden" value="@languade.Getkey("ChangeStatus_SeasonSuccess")" id="ChangeStatus_SeasonSuccess" />
+<input type="hidden" value="@languade.Getkey("NotfindID_Status")" id="NotfindID_Status" />
+<input type="hidden" value="@languade.Getkey("Update_Funtion")" id="Update_Funtion" />
+<input type="hidden" value="@languade.Getkey("NotfindMusic")" id="NotfindMusic"/>
+<input type="hidden" value="@languade.Getkey("TotalMusic")" id="TotalMusic"/>
+<input type="hidden" value="@languade.Getkey("ViewDetailSong")" id="ViewDetailSong"/>
+<input type="hidden" value="@languade.Getkey("Choose_Status")" id="Choose_Status"/>
+<input type="hidden" value="@languade.Getkey("Change_Status")" id="Change_Status"/>
+<input type="hidden" value="@languade.Getkey("Viewlist_files")" id="Viewlist_files"/>
+

@@ -1,0 +1,131 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+
+<div class="az-header">
+    <div class="container">
+        <div class="az-header-left">
+            <a asp-action="Index" asp-controller="Home" class="az-logo"><span></span> @languade.Getkey("Manager_Music")</a>
+            <a asp-action="Index" asp-controller="Home" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+            <div class="az-header-menu-header">
+                <a asp-action="Index" asp-controller="Home" class="az-logo"><span></span> @languade.Getkey("Manager_Music")</a>
+                <a href="" class="close">&times;</a>
+            </div><!-- az-header-menu-header -->
+            <ul class="nav">
+                <li class="nav-item active show">
+                    <a asp-action="Index" asp-controller="Home" class="nav-link">@languade.Getkey("Home_page")</a>
+                </li>
+                <li class="nav-item" id="ShowAndHide">
+                    <a href="" class="nav-link with-sub">@languade.Getkey("System_page")</a>
+                    <nav class="az-menu-sub">
+                        <a asp-action="Login" asp-controller="Account" class="nav-link">@languade.Getkey("Login_page")</a>
+                        <a asp-action="IndexRegiter" asp-controller="Account" class="nav-link">@languade.Getkey("Regiter_page")</a>
+                    </nav>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="IndexListMusic" asp-controller="ClientListMusic" class="nav-link">@languade.Getkey("List_music")</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="PageBuildSoftware" asp-controller="BuildSoftware" class="nav-link">@languade.Getkey("build")</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link with-sub">@languade.Getkey("Language")</a>
+                    <nav class="az-menu-sub">
+                        <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en" class="nav-link">@languade.Getkey("Language_en")</a>
+                        <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="vi" class="nav-link">@languade.Getkey("Language_vi")</a>
+                    </nav>
+                </li>
+            </ul>
+        </div><!-- az-header-menu -->
+        <div class="az-header-right">
+
+            <div class="dropdown az-header-notification" id="modaldatashow">
+                <a class="position-relative" style="margin-right: 20px;">
+                    <i class="typcn typcn-bell"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px; color: white;  z-index: 10; margin: -5px -10px;"></span>
+                </a>
+                <div class="dropdown-menu" style="width: 450px;">
+                    <div class="az-dropdown-header mg-b-20 d-sm-none">
+                        <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+                    </div>
+                    <h6 class="az-notification-title" style="text-align: center;">@languade.Getkey("Notifications")</h6>
+                    <p class="az-notification-text"><b style="color: red;" id="NumberMessage"></b> @languade.Getkey("unread_message")</p>
+                    <div class="az-notification-list" style="overflow: auto; height: 400px;" id="ShowListNotification"></div><!-- az-notification-list -->
+                    <div class="dropdown-footer"><a asp-action="PageNotificationUer" asp-controller="Notification">@languade.Getkey("View_AllNotifications")</a></div>
+                </div><!-- dropdown-menu -->
+            </div><!-- az-header-notification -->
+            <div class="dropdown az-profile-menu" id="modaldatashow">
+                <a href="" class="az-img-user" id="AvataUserAdmin">
+                    <i class="fas fa-user" style="font-size: 24px; margin: 2px 1px; color: #3b3939;"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="az-dropdown-header d-sm-none">
+                        <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+                    </div>
+
+                    <!-- info admin -->
+                    <div class="az-header-profile">
+                        <div class="az-img-user" id="ImageBig">                             
+                             
+                        </div><!-- az-img-user -->
+                        <h6 id="TxtName" style="text-align:center;"></h6>
+                        <span id="TxtRole"></span>
+                    </div><!-- az-header-profile -->
+
+                    <button type="button" id="btn_ShowInfoAdmin" class="dropdown-item"><i class="typcn typcn-user-outline"></i> @languade.Getkey("My_information")</button>
+                    <a class="dropdown-item" disabled><i class="typcn typcn-edit"></i> @languade.Getkey("Edit_infomation")</a>
+                    <a id="IndexFile_Heard" asp-action="IndexFile" asp-controller="ManagerData" class="dropdown-item"><i class="fas fa-cog"></i> @languade.Getkey("System_Management")</a>
+                    <a id="LogOut" asp-action="LogOut" asp-controller="Account" class="dropdown-item"><i class="typcn typcn-power-outline"></i> @languade.Getkey("Logout")</a>
+
+                </div><!-- dropdown-menu -->
+            </div>
+        </div><!-- az-header-right -->
+    </div><!-- container -->
+</div><!-- az-header -->
+<!-- Modal Show Infomation Admin -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowInfomationAdmin">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Login_Information")</h5>
+                <button type="button" class="btn-close" id="btn_CloseModalInfoAdmin">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("FirstandLast_Name")</label>
+                    <input type="text" class="form-control" disabled id="TxtNames">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" disabled id="TxtGmail">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Birthday")</label>
+                    <input type="text" class="form-control" disabled id="TxtBirthday">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Role_App")</label>
+                    <input type="text" class="form-control" disabled id="TxtRoleName">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("RegiterDate")</label>
+                    <input type="text" class="form-control" disabled id="TxtDateRegiter">
+                </div>
+            </div>
+            <div class="modal-footer">
+                @*<a href="#" class="btn btn-primary" disabled><i class="fas fa-edit"></i> Chỉnh Sửa Thông Tin</a>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@languade.Getkey("User")" id="v_uer" />
+<input type="hidden" value="@languade.Getkey("Staff")" id="v_staff" />
+<input type="hidden" value="@languade.Getkey("Admin")" id="v_admin" />
+<input type="hidden" value="@languade.Getkey("read_Error")" id="read_Error"/>
+<input type="hidden" value="@languade.Getkey("read_Success")" id="read_Success"/>
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/>
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success"/>
+<input type="hidden" value="@languade.Getkey("not_seen")" id="not_seen"/>
+<input type="hidden" value="@languade.Getkey("watched")" id="watched"/>

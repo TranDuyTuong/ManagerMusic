@@ -1,0 +1,481 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("User_Details");
+    Layout = "~/Views/Shared/Manager_User/Page_ManagerDetailUser.cshtml";
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a asp-action="Page_User" asp-controller="User" style="color: #97a3b9;">@languade.Getkey("Manager_User")</a></span>
+        <span>@languade.Getkey("User_Details"): <b id="TxtIdNameUser"></b></span>
+    </div>
+
+    <h2 class="az-content-title"><i class="fas fa-users"></i> @languade.Getkey("User_Details")</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align:right;">
+                <a id="btn-ShowModalTimeWork" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Detailed_hours")">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <a id="btn-ShowModalLockAccount" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Lock_accounts")">
+                    <i class="fas fa-user-lock"></i>
+                </a>
+                <a id="btn-ShowModalAnLockAccount" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Unlock_accounts")">
+                    <i class="fas fa-lock-open"></i>
+                </a>
+                <a id="btn-ShowModalRemoveUser" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Delete_user")"><i class="fas fa-trash"></i></a>
+                <a onclick="ResetPageDetail()" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="Làm Mới"><i class="fas fa-spinner"></i></a>
+            </p>
+            <p style="text-align: center; font-size:20px;"><i class="fas fa-address-card"></i> @languade.Getkey("User_information")</p>
+            <div class="row">
+                <div class="col-md-6" style="border-radius: 5px; border: 2px solid;">
+                    <p style="text-align: center; font-size:15px; color: black;">@languade.Getkey("Personal_information")</p>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("Username")</label>
+                        <input type="text" class="form-control" id="TxtNameUser" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("Date_birth")</label>
+                        <input type="text" class="form-control" id="TxtBirthdays" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("CurrentAge")</label>
+                        <input type="text" class="form-control" id="TxtAge" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Gmail</label>
+                        <input type="text" class="form-control" id="TxtEmail" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("Gender")</label>
+                        <input type="text" class="form-control" id="TxtGender" disabled>
+                    </div>
+
+                </div>
+                <div class="col-md-6" style="border-radius: 5px; border: 2px solid;">
+                    <p style="text-align: center; font-size:15px; color: black;">@languade.Getkey("Accountinfo")</p>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("RegiterDate")</label>
+                        <input type="text" class="form-control" id="TxtRegiterDate" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("AccountLevel")</label>
+                        <input type="text" class="form-control" id="TxtLever" disabled
+                               style="color: Red; font-weight: 600;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("StatusAccount")</label>
+                        <input type="text" class="form-control" id="TxtStatus" disabled
+                               style="color: green; font-weight: 600;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("LastEdit")</label>
+                        <input type="text" class="form-control" id="TxtUpdateInfo" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("TotalAcc_Time")</label>
+                        <input type="text" class="form-control" id="TxtTimeOnline" disabled
+                               style="color: Black; font-weight: 600;">
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <br />
+                    <p style="font-size:15px; color: black;"><i class="fas fa-comment"></i> @languade.Getkey("Song_Comments")</p>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">@languade.Getkey("No")</th>
+                                <th scope="col">@languade.Getkey("namesong")</th>
+                                <th scope="col">@languade.Getkey("CommentDay")</th>
+                                <th scope="col">@languade.Getkey("Content")</th>
+                                <th scope="col">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="BodyComment">
+                        </tbody>
+                    </table>
+                    <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemPageComment" style="color:red;"></b>/<b id="TotalItemComment" style="color:black;"></b></p>
+                    <!-- Pagination -->
+                    <div class="row" style="clear: both;">
+                        <div id="paginationComment" class="pagination"></div>
+                    </div>
+                    <hr />
+                    <br />
+                    <p style="font-size:15px; color: black;"><i class="fas fa-star"></i> @languade.Getkey("Starrating")</p>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">@languade.Getkey("No")</th>
+                                <th scope="col">@languade.Getkey("namesong")</th>
+                                <th scope="col">@languade.Getkey("RatingDate")</th>
+                                <th scope="col">@languade.Getkey("Total_stars")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="BodyRating">
+                        </tbody>
+                    </table>
+                    <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemPageRating" style="color:red;"></b>/<b id="TotalItemRating" style="color:black;"></b></p>
+                    <!-- Pagination -->
+                    <div class="row" style="clear: both;">
+                        <div id="paginationRating" class="pagination"></div>
+                    </div>
+                    <hr />
+                    <br />
+                    <p style="font-size:15px; color: black;"><i class="fas fa-download"></i> @languade.Getkey("Downloads")</p>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">@languade.Getkey("No")</th>
+                                <th scope="col">@languade.Getkey("namesong")</th>
+                                <th scope="col">@languade.Getkey("DateDowload")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="BodyDowload">
+                        </tbody>
+                    </table>
+                    <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemPageDowload" style="color:red;"></b>/<b id="TotalItemDowload" style="color:black;"></b></p>
+                    <!-- Pagination -->
+                    <div class="row" style="clear: both;">
+                        <div id="paginationDowload" class="pagination"></div>
+                    </div>
+                    <hr />
+                    <br />
+                    <p style="font-size:15px; color: black;"><i class="fab fa-wpforms"></i> Các Yêu Cầu Của Người Dùng</p>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">@languade.Getkey("No")</th>
+                                <th scope="col">Tiêu Đề</th>
+                                <th scope="col">Ngày Yêu Cầu</th>
+                                <th scope="col">Ngày Xử Lý</th>
+                                <th scope="col">Ngày Hoàn Thành</th>
+                                <th scope="col">Trạng Thái Giải Quyết</th>
+                                <th scope="col">Lựa Chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>
+                                    <button id="btn_Request" type="button" class="btn btn-outline-secondary"
+                                            data-bs-toggle="tooltip" data-bs-placement="right" title="Xem Toàn Bộ Nội Dung"
+                                            style="border: none;">
+                                        <i class="fas fa-folder-open"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Do <a href="#"
+                      target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com
+            </span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!--modal View Answer-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_ShowAnswer">
+    <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content" style="height: 600px;">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-list"></i> Danh Sách Câu Trả Lời Cho Bình Luận Này</h5>
+                <button type="button" class="btn-close" id="btn_CloseAnswer">X</button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Tên Người Trả Lời</th>
+                            <th scope="col">Ngày Trả Lời</th>
+                            <th scope="col">Nội Dung</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal View Detail Request-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_ShowRequest">
+    <div class="modal-dialog" style="max-width: 50%;">
+        <div class="modal-content" style="height: 600px;">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-clipboard-list"></i> Phiếu chi tiết yêu cầu</h5>
+                <button type="button" class="btn-close" id="btn_CloseRequest">X</button>
+            </div>
+            <div class="modal-body" style="overflow: scroll;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="text-align: center; color: black; font-weight: 600; font-size: 20px;">
+                            Yêu Cầu Về Phần Mềm Hệ
+                            Thống
+                        </p>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: black; font-weight: 600;">Tên Người Yêu Cầu</label>
+                                    <input type="text" class="form-control" value="Trần Duy Tường" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: black; font-weight: 600;">Ngày Yêu Cầu</label>
+                                    <input type="text" class="form-control" value="10/03/2022" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="form-label" style="color: black; font-weight: 600;">Nội Dung Yêu Cầu</label>
+                        <p style="font-family: inherit; text-align: justify;">
+                            Feeback nhiều quá, team mình tiếp tục nhận làm tiểu luận, bài tập lớn, báo cáo tốt nghiệp, luận văn của
+                            các ngành sau đây
+                            Giáo Dục: Quản lý giáo dục, Giáo dục Mầm non, Giáo dục Tiểu học, Giáo dục Đặc biệt, Sư phạm Ngữ văn,
+                            Giáo dục Thể chất, Giáo dục Chính trị, Giáo dục Quốc phòng - An ninh,...
+                            - Chính trị - Xã hội - Văn học: Triết học, Chủ nghĩa xã hội khoa học, Tôn giáo học, Lịch sử, Ngôn ngữ
+                            học, Xã hội học, Văn học, Công tác xã hội,...
+                            - Kinh tế học: Kinh tế, Kinh tế chính trị, Kinh tế đầu tư, Kinh tế phát triển, Kinh tế quốc tế, Thống kê
+                            kinh tế,...
+                            - Khoa học chính trị: Chính trị học, Xây dựng Đảng và chính quyền nhà nước
+                            - Tâm lý học: Tâm lý học, Tâm lý học giáo dục
+                            - Kinh doanh: Quản trị kinh doanh, Marketing, Kinh doanh quốc tế, Kinh doanh thương mại
+                            - Tài chính: Tài chính ngân hàng, Tài chính, Bảo Hiểm, Tài chính công, Tài chính doanh nghiệp, Tài chính
+                            quốc tế,...
+                            - Kế toán – Kiểm toán: Kế toán, Kiểm toán
+                            - Quản trị – Quản lý: Khoa học quản lý, Quản lý công, Quản trị nhân lực, Hệ thống thông tin quản lý,
+                            Quản trị văn phòng, Quan hệ lao động, Quản lý dự án, Quản lý kinh tế, Quản lý nhà nước, Quản lý tài
+                            nguyên và môi trường, Quản lý tài nguyên rừng,...
+                            - Luật: Luật hiến pháp và luật hành chính, Luật dân sự và tố tụng dân sự, Luật hình sự và tố tụng hình
+                            sự, Luật kinh tế, Luật quốc tế,...
+                            - Du lịch: Du lịch, Quản trị du lịch lữ hành, Quản trị nhà hàng và dịch vụ ăn uống, Quản trị khách sạn,
+                            Quản trị dịch vụ du lịch và lữ hành,...
+                            - Văn Hoá: Văn hóa học, Quản lý văn hoá
+                            - Y tế: Quản lý bệnh viện, Tổ chức và quản lý y tế, Y đa khoa, Điều dưỡng, Y học dự phòng, Y tế công
+                            cộng, Dược học, Y học cổ truyền, Y học Đông Y
+                            - Kinh tế nông nghiệp: Kinh tế nông nghiệp, Kinh doanh nông nghiệp, Hợp tác xã
+                            - Quản lý đất đai, Xuất nhập khẩu, Logistic, Kinh tế đối ngoại, Chính sách công, Bảo hộ lao động, Quan
+                            hệ quốc tế, Việt Nam học, Kinh tế công nghiệp, Quan hệ công chúng, Đông Nam Á học, Quốc tế học, Lưu trữ
+                            học, Quản lý thông tin, Thông tin - thư viện
+                            Ngoài ra nhận luận văn thạc sỹ, báo cáo tốt nghiệp, chỉnh sửa slide, word nhé
+                        </p>
+                        <hr />
+                        <span style="color: green; text-align: center; font-weight: 600;">Đã xử lý yêu cầu này thành công</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button style="border-radius: 10px;" type="button" class="btn btn-primary">
+                    <i class="fas fa-file-word"></i>
+                    Xuất File Word
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal view time Activer-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_ShowTimeWorkuser">
+    <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content" style="height: 650px;">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-signal"></i> @languade.Getkey("Uptimestati")</h5>
+                <button type="button" class="btn-close" id="btn_CloseWorkTime">X</button>
+            </div>
+            <div class="modal-body">
+                <p style="text-align: right;">Tổng Số: <b id="TotalLogin"></b></p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">@languade.Getkey("No")</th>
+                            <th scope="col">@languade.Getkey("LoginDate")</th>
+                            <th scope="col">@languade.Getkey("LoginTime")</th>
+                            <th scope="col">@languade.Getkey("ExitTime")</th>
+                            <th scope="col">@languade.Getkey("TotalHours")</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="Body_TimeWorking">
+                    </tbody>
+                </table>
+                <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+                <!-- Pagination -->
+                <div class="row" style="clear: both;">
+                    <div id="pagination" class="pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Show option lock account user-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_LockAccountUser">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bạn có chắc chắn muốn khóa tài khoản này <i class="fas fa-question"></i></h5>
+                <button type="button" class="btn-close" id="btn_CloseOptionLock">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="btn_AgrrenLock" style="border-radius: 10px;" type="button" class="btn btn-danger">
+                                Đồng
+                                Ý
+                            </button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="btn_CancelLock" style="border-radius: 10px;" type="button" class="btn btn-success">
+                                Hủy
+                                Bỏ
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Show option lock account user-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_AnLockAccountUser">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bạn có chắc chắn muốn mở khóa tài khoản này <i class="fas fa-question"></i></h5>
+                <button type="button" class="btn-close" id="btn_CloseOptionAnLock">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="btn_AgrrenAnLock" style="border-radius: 10px;" type="button" class="btn btn-danger">
+                                Đồng
+                                Ý
+                            </button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="btn_CancelAnLock" style="border-radius: 10px;" type="button" class="btn btn-success">
+                                Hủy
+                                Bỏ
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Show option remove user-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_RemoveUser">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bạn có chắc chắn muốn xóa người dùng này <i class="fas fa-question"></i></h5>
+                <button type="button" class="btn-close" id="btn_CloseOptionRemove">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="btn_AgrrenRemove" style="border-radius: 10px;" type="button" class="btn btn-danger">
+                                Đồng
+                                Ý
+                            </button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="btn_CancelRemove" style="border-radius: 10px;" type="button" class="btn btn-success">
+                                Hủy
+                                Bỏ
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal load -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingSignUp">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@ViewBag.IdUser" id="IdUser" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+

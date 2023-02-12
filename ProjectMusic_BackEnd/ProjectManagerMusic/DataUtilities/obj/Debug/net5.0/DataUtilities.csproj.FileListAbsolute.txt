@@ -1,0 +1,12 @@
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\bin\Debug\net5.0\DataUtilities.deps.json
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\bin\Debug\net5.0\DataUtilities.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\bin\Debug\net5.0\ref\DataUtilities.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\bin\Debug\net5.0\DataUtilities.pdb
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\obj\Debug\net5.0\DataUtilities.csproj.AssemblyReference.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\obj\Debug\net5.0\DataUtilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\obj\Debug\net5.0\DataUtilities.AssemblyInfoInputs.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\obj\Debug\net5.0\DataUtilities.AssemblyInfo.cs
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\obj\Debug\net5.0\DataUtilities.csproj.CoreCompileInputs.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\obj\Debug\net5.0\DataUtilities.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\obj\Debug\net5.0\ref\DataUtilities.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataUtilities\obj\Debug\net5.0\DataUtilities.pdb

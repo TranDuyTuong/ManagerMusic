@@ -1,0 +1,159 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Edit_staff");
+    Layout = "~/Views/Shared/Manager_Staff/Page_EditStaff.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a asp-action="Page_Staff" asp-controller="User" style="color: #97a3b9;">@languade.Getkey("ManagerSatff")</a></span>
+        <span>@languade.Getkey("Edit_staff")</span>
+        <span>@languade.Getkey("NameStaff"): <b id="FullName"></b> - @languade.Getkey("IdStaff"): <b id="CodeStaff"></b></span>
+    </div>
+
+    <h2 class="az-content-title">@languade.Getkey("Edit_staff")</h2>
+
+    <div class="row" id="ViewRowUpdate">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Marital")
+                    <span style="color:green;" id="checkOkMarriageStaff"></span>
+                </label>
+                <select class="form-control" id="Txt_SelectMarriage">
+                </select>
+                <span style="color:red; font-family: initial;" id="ValidateMarriageStaff"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Employee_Address")
+                    <span style="color:green;" id="checkOkAddressStaff"></span>
+                </label>
+                <input type="text" class="form-control" id="TxtAddresss" onkeyup="ValidateTxtAddresss()">
+                <span style="color:red; font-family: initial;" id="ValidateAddressStaff"></span>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Gmail_staff")
+                    <span style="color:green;" id="checkOkGmailStaff"></span>
+                </label>
+                <input type="email" class="form-control" id="TxtGmailStaff" onkeyup="ValidateTxtGmailStaff()">
+                <span style="color:red; font-family: initial;" id="ValidateGmailStaff"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("PhoneStaff")
+                    <span style="color:green;" id="checkOkPhoneNumberStaff"></span>
+                </label>
+                <input type="number" class="form-control" id="TxtPhoneNumber" onkeyup="ValidatePhoneNumberStaff()">
+                <span style="color:red; font-family: initial;" id="ValidatePhoneNumberStaff"></span>
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <button type="button" style="margin: 25px 30px; border-radius: 10px;" class="btn btn-az-primary" id="btn_ViewImg">@languade.Getkey("Image_preview")</button>
+                </div>
+                <div class="col-md-6">
+                    <p class="form-label" style="text-align: center;">
+                        @languade.Getkey("Avatar")
+                    </p>
+                    <div id="ImageAvata">
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("ChooseNew_Avatar")</label>
+                        <input type="file" class="form-control" id="Input_Img">
+                    </div>
+                </div>
+
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <p style="text-align: right; margin: 20px 0px;">
+                        <button id="btn_EditStaff" style="border-radius: 5px;" type="submit" class="btn btn-outline-primary"><i class="fas fa-user-edit"></i> @languade.Getkey("Update_Satff")</button>
+                        <a href="@Url.Action("Page_Staff","User")" style="border-radius: 5px;" class="btn btn-outline-danger"><i class="fas fa-user-times"></i> @languade.Getkey("Cancel_Edit")</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- modal load -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingSignUp">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Full screen modal -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_V_Image">
+    <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Image_preview")</h5>
+            </div>
+            <div class="modal-body" style="height: 550px; overflow: scroll">
+                <div id="Viewbefore">
+                    <img id="img_NewAvata" class="img-thumbnail">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn_closeImage" style="border-radius: 10px;" class="btn btn-danger" data-bs-dismiss="modal">@languade.Getkey("Close")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@ViewBag.IdUser" id="Id_User" />
+<input type="hidden" value="@languade.Getkey("NotNull_Data")" id="NotNull_Data"/>
+<input type="hidden" value="@languade.Getkey("BackEmployee_List")" id="BackEmployee_List"/>
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/>
+<input type="hidden" value="@languade.Getkey("IDemployee_couldnotfound")" id="IDemployee_couldnotfound"/>
+<input type="hidden" value="@languade.Getkey("EmptyCode_Employee")" id="EmptyCode_Employee"/>
+<input type="hidden" value="@languade.Getkey("NotChooseNew_Avata")" id="NotChooseNew_Avata"/>
+<input type="hidden" value="@languade.Getkey("ImageNot_Format")" id="ImageNot_Format"/>
+<input type="hidden" value="@languade.Getkey("IdEmployeeAndIdStaff_notnull")" id="IdEmployeeAndIdStaff_notnull"/>
+<input type="hidden" value="@languade.Getkey("Staffnot_found")" id="Staffnot_found"/>
+<input type="hidden" value="@languade.Getkey("ReviewNew_Updates")" id="ReviewNew_Updates"/>
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success"/>
+<input type="hidden" value="@languade.Getkey("Editemployee_successfully")" id="Editemployee_successfully"/>

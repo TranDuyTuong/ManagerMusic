@@ -1,0 +1,218 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Manager_User");
+    Layout = "~/Views/Shared/Manager_User/ManagerUser.cshtml";
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span>@languade.Getkey("Manager_User")</span>
+    </div>
+
+    <h2 class="az-content-title">@languade.Getkey("Manager_User")</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row g-3 align-items-center" id="SeachMusic-Admin">
+                <div class="col-auto" style="background: #0000000d; border-radius: 5px;">
+                    <input style="width: 300px; border-radius: 5px;" type="text" onchange="eventSeachUser()" id="TxtInputUser" placeholder="Nhập tên khách hàng, tuổi khách hàng, ...">
+                    <a id="btn-closeSeachMusic" style="border: none; color: red; float: right;" tdata-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Close_Seach")">X</a>
+                </div>
+                <hr />
+            </div>
+
+            <p style="text-align:right;">
+
+                <a id="btn_ModalBirthday" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Sinh Nhật Người Dùng">
+                    <i class="fas fa-birthday-cake"></i>
+                    <span style="color: red; font-weight:600;" id="BirthdayToday">(1)</span>
+                </a>
+
+                <a id="btn-ShowModalCraeteMusic" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Lấy Lại Mật Khẩu Người Dùng"><i class="fas fa-key"></i></a>
+
+                <a id="btn-ShowFormSeachMusic" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tìm Kiếm Người Dùng"><i class="fas fa-search"></i></a>
+
+                <a asp-action="Page_ManagerRequestUser" asp-controller="ManagerRequestUser" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Yêu Cầu Người Dùng" id="RequestUsers"></a>
+
+                <a asp-action="Page_User" asp-controller="User" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Làm Mới"><i class="fas fa-sync-alt"></i></a>
+
+                <a style="border: none;" class="btn btn-outline-secondary">@languade.Getkey("Total_User") <b id="TxtTotalUser"></b></a>
+
+            </p>
+            <p id="TileNotification"></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("No") <i class="fa fa-fw fa-sort"></i></th>
+                        <th scope="col">Họ Tên Người Dùng</th>
+                        <th scope="col">Ngày Sinh</th>
+                        <th scope="col">Ngày Tạo</th>
+                        <th scope="col">@languade.Getkey("Status")</th>
+                        <th scope="col">Tuổi</th>
+                        <th scope="col">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="Body_Data">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="pagination" class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!--list modal users birthday-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalBirthdayUser">
+    <div class="modal-dialog" style="max-width: 50%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-birthday-cake"></i> Danh Sách Người Dùng Sinh Nhật Hôm Nay</h5>
+                <button type="button" class="btn-close" id="btn_CloseBirthday">X</button>
+            </div>
+            <div class="modal-body">
+                <p style="text-align: right">Tổng Số: <b id="TotalBirthday"></b></p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">@languade.Getkey("No")</th>
+                            <th scope="col">Họ Tên Người Dùng</th>
+                            <th scope="col">Ngày Sinh</th>
+                            <th scope="col">Tuổi</th>
+                            <th scope="col">@languade.Getkey("Options")</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Body_DataBirthday">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_HistorySent" type="button" class="btn btn-primary" style="border-radius:10px;"><i class="far fa-list"></i> Danh Sách Đã Gửi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--list modal users birthday-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalSentMessageBirthday">
+    <div class="modal-dialog" style="max-width: 85%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-birthday-cake"></i> Danh Sách Người Dùng Đã Được Gửi Lời Chúc Mừng</h5>
+                <button type="button" class="btn-close" id="btn_CloseSentMessage">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="col-auto">
+                            <input id="TxtSeachName" onchange="seachNameUser()" type="text" style="border-radius: 10px;" class="form-control" placeholder="Vui lòng nhập tên khác hàng ..." />
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: right">Tổng Số: <b id="TotalSentBirthday"></b></p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">@languade.Getkey("No") <i class="fas fa-sort" id="SortNo"></i></th>
+                            <th scope="col">Họ Tên</th>
+                            <th scope="col">Ngày Sinh</th>
+                            <th scope="col">Tiêu Đề</th>
+                            <th scope="col">Nội Dung</th>
+                            <th scope="col">Ngày Gửi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Body_SentDataBirthday">
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align:center;">@languade.Getkey("page") : <b id="ItemInPageSent" style="color:red;"></b>/<b id="TotalItemSent" style="color:black;"></b></p>
+            <div class="modal-footer">
+                <!-- Pagination -->
+                <div class="row" style="clear: both;">
+                    <div id="paginationSent" class="pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--list modal users birthday-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalSentBirthdayUser">
+    <div class="modal-dialog" style="max-width: 30%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-mail-bulk"></i> Gửi Lời Chúc Mừng Sinh Nhật</h5>
+                <button type="button" class="btn-close" id="btn_CloseSentBirthday">X</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" class="form-control" id="TxtIdUser" />
+                <div class="mb-3">
+                    <label class="form-label">Tiêu Đề Gửi</label>
+                    <input type="text" class="form-control" id="TxtTitle" placeholder="Nhập tiêu đề ..." />
+                    <span id="ErorrTitle" style="color: red; font-size: 12px;"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nội Dung Gửi</label>
+                    <textarea type="text" class="form-control" id="TxtContent" placeholder="Nhập nội dung ..."></textarea>
+                    <span id="ErorrContent" style="color: red; font-size: 12px;"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Hình Chúc Mừng</label>
+                    <input type="file" class="form-control" id="TxtFile" />
+                    <span id="ErorrFile" style="color: red; font-size: 12px;"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Gửi Tới Gmail</label>
+                    <input type="text" class="form-control" disabled id="TxtGmails" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Họ Tên Người Nhận</label>
+                    <input type="text" class="form-control" disabled id="TxtNameUser" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="Btn_SentMessageBirthday" type="button" class="btn btn-primary" style="border-radius:10px;"><i class="fas fa-paper-plane"></i> Gửi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal loading create saint -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />

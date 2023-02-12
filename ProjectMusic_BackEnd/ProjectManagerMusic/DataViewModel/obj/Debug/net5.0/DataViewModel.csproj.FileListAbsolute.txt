@@ -1,0 +1,12 @@
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\bin\Debug\net5.0\DataViewModel.deps.json
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\bin\Debug\net5.0\DataViewModel.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\bin\Debug\net5.0\ref\DataViewModel.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\bin\Debug\net5.0\DataViewModel.pdb
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\obj\Debug\net5.0\DataViewModel.csproj.AssemblyReference.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\obj\Debug\net5.0\DataViewModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\obj\Debug\net5.0\DataViewModel.AssemblyInfoInputs.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\obj\Debug\net5.0\DataViewModel.AssemblyInfo.cs
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\obj\Debug\net5.0\DataViewModel.csproj.CoreCompileInputs.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\obj\Debug\net5.0\DataViewModel.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\obj\Debug\net5.0\ref\DataViewModel.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataViewModel\obj\Debug\net5.0\DataViewModel.pdb

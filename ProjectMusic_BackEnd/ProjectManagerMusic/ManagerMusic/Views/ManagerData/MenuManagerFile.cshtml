@@ -1,0 +1,25 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-9">
+        <!--menu file-->
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" style="color: #006fb5; font-weight: 800;"><i class="fas fa-qrcode"></i> @languade.Getkey("Create_QR")</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="GetAllMusicDelete" asp-controller="ManagerData" class="nav-link with-sub" style="color: #006fb5; font-weight: 800;"><i class="fas fa-trash"></i> @languade.Getkey("Post_Deleted")</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="IndexNewMusic" asp-controller="ManagerData"  class="nav-link" style="color: #006fb5; font-weight: 800;"><i class="fas fa-list"></i> @languade.Getkey("10_Newly_Created_Files")</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link with-sub" style="color: #006fb5; font-weight: 800;"><i class="fas fa-music"></i> @languade.Getkey("Music_composer")</a>
+                </li>
+            </ul>
+        </div><!-- az-header-menu -->
+    </div>
+</div>

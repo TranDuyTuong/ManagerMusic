@@ -1,0 +1,200 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Admin_Information");
+    Layout = "~/Views/Shared/Admin/Admin_Infomation.cshtml";
+}
+
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+    <div class="container">
+        <partial name="~/Views/SidebarMenu/Index.cshtml" />
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+            <div class="az-content-breadcrumb">
+                <span>@languade.Getkey("Home_page")</span>
+                <span>@languade.Getkey("Admin_Information")</span>
+                <span>@languade.Getkey("Edit_infomation")</span>
+            </div>
+            <h2 class="az-content-title">@languade.Getkey("Edit_Personal")</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/faces/face2.jpg" class="rounded-circle" alt="..." style="width: 250px; height: auto;">
+                    <hr>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="text-align:center;"><b>Cấp Độ:</b> Vàng</li>
+                        <li class="list-group-item" style="text-align:center;"><b>Chức Vụ:</b> Quản Lý Hệ Thống</li>
+                        <li class="list-group-item" style="text-align:center;"><b>Ngày Hoạt Động:</b> 20/11/2022</li>
+                        <li class="list-group-item" style="text-align:center;"><b>Tuổi:</b> 22</li>
+                        <li class="list-group-item" style="text-align:center;">
+                            <button type="button" class="btn btn-outline-primary" id="btn-UpdateImageAdmin" style="border-radius: 10px;">Đổi Hình Đại Diện</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <span style="color:green;" id="checkOkNameAdmin"></span> Họ & Tên
+                            <a style="color: blue; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Chỉnh Sửa Họ Và Tên" id="Edit_NameAdmin"><i class="fas fa-edit"></i></a>
+
+                            <a style="color: red; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Xác Nhận Chỉnh Sửa Họ Và Tên" id="Save_NameAdmin"><i class="fas fa-save"></i></a>
+
+                            <a style="color: black; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Hủy Chỉnh Sửa Họ Và Tên" id="Remove_NameAdmin"><i class="fas fa-trash-alt"></i></a>
+
+                        </label>
+                        <input type="text" class="form-control" value="Trần Duy Tường" disabled id="Txt_EditNameAdmin" onkeyup="checkvalueNameAdmin()">
+                        <span style="color:red; font-family: initial;" id="ValidaNameAdmin"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Ngày Tháng Năm Sinh
+                            <a style="color: blue; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Chỉnh Sửa Ngày Tháng Năm Sinh" id="Edit_BirthdayAdmin"><i class="fas fa-edit"></i></a>
+
+                            <a style="color: red; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Xác Nhận Chỉnh Sửa Ngày Tháng Năm Sinh" id="Save_BirthdayAdmin"><i class="fas fa-save"></i></a>
+
+                            <a style="color: black; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Hủy Chỉnh Sửa Ngày Tháng Năm Sinh" id="Remove_BirthdayAdmin"><i class="fas fa-trash-alt"></i></a>
+
+                        </label>
+                        <input type="text" class="form-control" value="05/03/2000" disabled id="Txt_EditBirthdayAdmin">
+                        <span style="color:red; font-family: initial;" id="ValidaBirthdayAdmin"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <span style="color:green;" id="checkOkEmailAdmin"></span> Email
+                            <a style="color: blue; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Chỉnh Sửa Email" id="Edit_EmailAdmin"><i class="fas fa-edit"></i></a>
+
+                            <a style="color: red; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Xác Nhận Chỉnh Sửa Email" id="Save_EmailAdmin"><i class="fas fa-save"></i></a>
+
+                            <a style="color: black; margin-left: 5px; font-size: 20px;" data-bs-toggle="tooltip" data-bs-placement="right" title="Hủy Chỉnh Sửa Email" id="Remove_EmailAdmin"><i class="fas fa-trash-alt"></i></a>
+
+                        </label>
+                        <input type="email" class="form-control" value="duytuong0503@gmail.com" disabled id="Txt_EmailAdmin" onkeyup="checkvalueEmailAdmin()">
+                        <span style="color:red; font-family: initial;" id="ValidaEmailAdmin"></span>
+                    </div>
+
+                    <button class="btn btn-primary" style="float: right; border-radius: 10px;" id="btn_ConfimUpdateAdmin">
+                        <i class="fas fa-check"></i> Xác Nhận Thay Đổi
+                    </button>
+                    <button class="btn btn-warning" style="border-radius: 10px;" id="btn_SentRequetUser">
+                        <i class="fas fa-mail-bulk"></i> Gửi Yêu Cầu
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="az-footer mg-t-auto">
+                <div class="container">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+                </div><!-- container -->
+            </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+    </div><!-- container -->
+</div><!-- az-content -->
+<!-- Modal Update Image Admin -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowUpdateImage">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chỉnh Sửa Hình Ảnh</h5>
+                <button type="button" class="btn-close" id="btn-closeUpdateImgAdmin">X</button>
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <p style="text-align:center;">
+                        <img id="img_NewAvata" class="rounded-circle" alt="..." style="width: 300px; height: auto;">
+                        <label for="formFile" class="form-label">Chọn Hình Đại Diện Mới</label>
+                    </p>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btn-UpdateImgAdminModal"><i class="fas fa-edit"></i> Chỉnh Sửa</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal loading Update Image Admin -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingSignUp">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal Show lever up website -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowLeverAccount">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-user-tag"></i> Quy Định Cấp Của Tài Khoảng</h5>
+                <button type="button" class="btn-close" id="btn-closeLeverAccount">X</button>
+            </div>
+            <div class="modal-body">
+                <h5>Cấp Độ Vàng:</h5>
+                <p>- Đây là cấp độ lớn nhất của hệ thống, với cấp độ này thì được phép dùng tất cả chức năng có trong hệ thống, quản lý toàn bộ các cấp độ khác nhỏ hơn, quản trị toàn bộ dữ liệu thông tin của hệ thống.</p>
+                <hr />
+                <h5>Cấp Độ Bạc:</h5>
+                <p>- Đây là cấp độ ở mức trung bình không nhỏ cũng không lớn, đa số các tài khoản ở cấp độ này sẻ là các cộng tác viên được cấp độ vàng phân quyền cho, vì vậy với cấp độ bạc bạn sẻ bị hạn chế một vài chức năng của hệ thống mà bạn không được phép dùng.</p>
+                <hr />
+                <h5>Cấp Độ Đồng:</h5>
+                <p>- Đây là cấp độ thấp nhất các tài khoản ở cấp độ này chỉ được phép dùng từ 1 đến 2 chức năng của hệ thống, đa số ở cấp độ này sẻ là người dùng là chủ yếu họ chỉ được thao tác các chức năng mà được cấp phép.</p>
+            </div>
+            <div class="modal-footer">
+                <span style="font-family: initial; color: #0000008c; font-weight: 800;">Đây là quy định nâng cấp chung do nhà thiết kế đề ra.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_RequestUser">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Gửi yêu cầu hay góp ý của bạn</h5>
+                <button type="button" class="btn-close" id="close_Request">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">Tiêu Đề </label>
+                            <input type="text" class="form-control" placeholder="Nhập tiêu đề ...">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nội Dung</label>
+                            <textarea class="form-control">
+
+              </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-paper-plane"></i> Gửi Yêu Cầu</button>
+            </div>
+        </div>
+    </div>
+</div>
+

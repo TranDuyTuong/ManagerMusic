@@ -1,0 +1,2250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="10_Newly_Created_Files" xml:space="preserve">
+    <value>10 File Mới Tạo</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Tài Khoản</value>
+  </data>
+  <data name="Account Holder" xml:space="preserve">
+    <value>Chủ Tài Khoản</value>
+  </data>
+  <data name="Accountinfo" xml:space="preserve">
+    <value>Thông Tin Tài Khoản</value>
+  </data>
+  <data name="AccountLevel" xml:space="preserve">
+    <value>Cấp Độ Tài Khoản</value>
+  </data>
+  <data name="account_haslocked" xml:space="preserve">
+    <value>Tài khoản của bạn đã bị khóa, vui lòng liên hệ với Admin để xử lý</value>
+  </data>
+  <data name="Activer_Success" xml:space="preserve">
+    <value>Kích hoạt danh sách bài hát hoạt động thành công</value>
+  </data>
+  <data name="Active_account" xml:space="preserve">
+    <value>Kích Hoạt Tài Khoản</value>
+  </data>
+  <data name="AddFileMusic" xml:space="preserve">
+    <value>Thêm File Bài Hát</value>
+  </data>
+  <data name="AddSong_ContentImage" xml:space="preserve">
+    <value>Thêm Hình Ảnh Nội Dung Bài Hát</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Quản Lý</value>
+  </data>
+  <data name="Admin_Information" xml:space="preserve">
+    <value>Thông Tin Admin</value>
+  </data>
+  <data name="Admin_Request" xml:space="preserve">
+    <value>Người YC</value>
+  </data>
+  <data name="Advancedsearch" xml:space="preserve">
+    <value>Tìm Kiếm Nâng Cao</value>
+  </data>
+  <data name="Advent" xml:space="preserve">
+    <value>Mùa Vọng</value>
+  </data>
+  <data name="agree" xml:space="preserve">
+    <value>Đồng ý </value>
+  </data>
+  <data name="Agree_Lock" xml:space="preserve">
+    <value>Đồng Ý Khóa</value>
+  </data>
+  <data name="Agree_Unlock" xml:space="preserve">
+    <value>Đồng Ý Mở Khóa</value>
+  </data>
+  <data name="All_Notification" xml:space="preserve">
+    <value>Tất Cả Các Thông Báo Của Bạn. </value>
+  </data>
+  <data name="alreadylike_song" xml:space="preserve">
+    <value>Bạn đã thích bài hát này rồi</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Trả Lời</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Áp Dụng</value>
+  </data>
+  <data name="Appreviews" xml:space="preserve">
+    <value>Đánh Giá Ứng Dụng</value>
+  </data>
+  <data name="Aredelete_selectedcomments" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa các nhận xét đã chọn không ?</value>
+  </data>
+  <data name="Areyoublock_account" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn khóa tài khoảng này không ?</value>
+  </data>
+  <data name="Areyousurecancel_hireemployee" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn hủy thuê nhân viên này không?</value>
+  </data>
+  <data name="AreYouSure_CancelTask" xml:space="preserve">
+    <value>Bạn Có Chắc Chắn Muốn Hủy Nhiệm Vụ Này !</value>
+  </data>
+  <data name="AreYouSurnlock_Account" xml:space="preserve">
+    <value>Bạn Có Chắc Chắn Muốn Mở Khóa Tài Khoản Nhân Viên Này không ?</value>
+  </data>
+  <data name="Assignsuccessful_tasks" xml:space="preserve">
+    <value>Bổ nhiệm nhân viên vào nhiệm vụ thành công</value>
+  </data>
+  <data name="Assigntasks_others" xml:space="preserve">
+    <value>Phân nhiệm vụ cho người khác</value>
+  </data>
+  <data name="Assign_roles" xml:space="preserve">
+    <value>Phân Vai Trò</value>
+  </data>
+  <data name="Assign_Task" xml:space="preserve">
+    <value>Phân Nhiệm vụ cho người này</value>
+  </data>
+  <data name="Attachedtask_File" xml:space="preserve">
+    <value>File Nhiệm Vụ Kèm Theo</value>
+  </data>
+  <data name="Attached_info" xml:space="preserve">
+    <value>Thông tin kèm theo</value>
+  </data>
+  <data name="AuthorizeThis_Employee" xml:space="preserve">
+    <value>Phân Quyền Cho Nhân Viên Này</value>
+  </data>
+  <data name="Authour_Name" xml:space="preserve">
+    <value>Tên Tác Giả</value>
+  </data>
+  <data name="Avatar" xml:space="preserve">
+    <value>Hình Đại Diện</value>
+  </data>
+  <data name="BackEmployee_List" xml:space="preserve">
+    <value>Trở Lại Danh Sách Nhân Viên</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Ngân Hàng</value>
+  </data>
+  <data name="Bank_number" xml:space="preserve">
+    <value>Số Tài Khoản Ngân Hàng</value>
+  </data>
+  <data name="Before" xml:space="preserve">
+    <value>trước</value>
+  </data>
+  <data name="Birthday" xml:space="preserve">
+    <value>Ngày Tháng Sinh</value>
+  </data>
+  <data name="BirthdayOf" xml:space="preserve">
+    <value>Hôm nay là sinh nhật của</value>
+  </data>
+  <data name="build" xml:space="preserve">
+    <value>Xây Dựng</value>
+  </data>
+  <data name="Building_Apps" xml:space="preserve">
+    <value>Xây Dựng Ứng Dụng</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="CancelCreate_Employee" xml:space="preserve">
+    <value>Hủy Tạo Mới Nhân Viên</value>
+  </data>
+  <data name="Canceledit_author" xml:space="preserve">
+    <value>Hủy chỉnh sửa tên tác giả</value>
+  </data>
+  <data name="Canceledit_title" xml:space="preserve">
+    <value>Hủy chỉnh sửa tên bài hát</value>
+  </data>
+  <data name="Cancellation_EmployeeHire" xml:space="preserve">
+    <value>Hủy Thuê Nhân Viên</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Đã hủy</value>
+  </data>
+  <data name="Cancel_Edit" xml:space="preserve">
+    <value>Hủy Chỉnh Sửa</value>
+  </data>
+  <data name="Cancel_lock" xml:space="preserve">
+    <value>Hủy khóa</value>
+  </data>
+  <data name="Cancel_task" xml:space="preserve">
+    <value>Hủy nhận nhiệm vụ</value>
+  </data>
+  <data name="Cancel_Unlock" xml:space="preserve">
+    <value>Hủy Mở Khóa</value>
+  </data>
+  <data name="Cannotsend_10files" xml:space="preserve">
+    <value>File gửi vào không được quá 10 file</value>
+  </data>
+  <data name="canrate_anymore" xml:space="preserve">
+    <value>Bạn đã đánh giá rồi không đánh giá được nữa</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Thay Đổi</value>
+  </data>
+  <data name="ChangeEmployee_Password" xml:space="preserve">
+    <value>Thay Đổi Mật Khẩu Nhân Viên</value>
+  </data>
+  <data name="Changepassword_failed" xml:space="preserve">
+    <value>Thay đổi mật khẩu thất bại vui lòng kiểm tra lại</value>
+  </data>
+  <data name="Changepassword_successfully" xml:space="preserve">
+    <value>Thay đổi mật khẩu thành công bạn có thể đăng nhập lại</value>
+  </data>
+  <data name="Changesongstatus_error" xml:space="preserve">
+    <value>Thay đổi trạng thái bài hát thất bại</value>
+  </data>
+  <data name="Changesongstatus_successfully" xml:space="preserve">
+    <value>Thay đổi trạng thái bài hát thành công</value>
+  </data>
+  <data name="Changesong_status" xml:space="preserve">
+    <value>Thay đổi trạng thái bài hát</value>
+  </data>
+  <data name="ChangeStatus_SeasonSuccess" xml:space="preserve">
+    <value>Thay đổi trạng thái thành công</value>
+  </data>
+  <data name="Change_Status" xml:space="preserve">
+    <value>Đổi Trạng Thái</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Trò chuyện</value>
+  </data>
+  <data name="Chatperson_info" xml:space="preserve">
+    <value>Thông tin người trò chuyện</value>
+  </data>
+  <data name="Chat_List" xml:space="preserve">
+    <value>Danh Sách Trò Chuyện</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Kiểm Tra</value>
+  </data>
+  <data name="ChooseAddress" xml:space="preserve">
+    <value>Chọn Địa Chỉ</value>
+  </data>
+  <data name="Chooseanother_saints" xml:space="preserve">
+    <value>Chọn lại lễ ngoại lịch khác</value>
+  </data>
+  <data name="ChooseCity" xml:space="preserve">
+    <value>Chọn Tỉnh/Tp</value>
+  </data>
+  <data name="ChooseDistrict" xml:space="preserve">
+    <value>Chọn Quận/Huyện</value>
+  </data>
+  <data name="ChooseGender" xml:space="preserve">
+    <value>Chọn Giới Tính</value>
+  </data>
+  <data name="ChooseMotnh" xml:space="preserve">
+    <value>Chọn Tháng</value>
+  </data>
+  <data name="ChooseNew_Avatar" xml:space="preserve">
+    <value>Chọn Hình Đại Diện Mới</value>
+  </data>
+  <data name="Choosenew_expirationdate" xml:space="preserve">
+    <value>Chọn Ngày Hết Hạn Mới</value>
+  </data>
+  <data name="Choosenew_expirationtime" xml:space="preserve">
+    <value>Chọn Thời Gian Hết Hạn Mới</value>
+  </data>
+  <data name="ChooseStatusMusic" xml:space="preserve">
+    <value>Chọn trạng thái bài hát</value>
+  </data>
+  <data name="ChooseYear" xml:space="preserve">
+    <value>Chọn Năm</value>
+  </data>
+  <data name="Choose_anotherseason" xml:space="preserve">
+    <value>Chọn lại mùa khác</value>
+  </data>
+  <data name="Choose_avalue" xml:space="preserve">
+    <value>Vui lòng chọn một giá trị!</value>
+  </data>
+  <data name="Choose_Role" xml:space="preserve">
+    <value>Vui Lòng Chọn Vai Trò</value>
+  </data>
+  <data name="Choose_Status" xml:space="preserve">
+    <value>Lựa Chọn Trạng Thái</value>
+  </data>
+  <data name="Choose_the_Season_You_Need" xml:space="preserve">
+    <value>Chọn Mùa Bạn Cần</value>
+  </data>
+  <data name="choosingdownload_All" xml:space="preserve">
+    <value>Bạn đang chọn chế độ tải tất cả bài hát về</value>
+  </data>
+  <data name="choosingdownload_Author" xml:space="preserve">
+    <value>Bạn đang chọn chế độ tải theo tác giả</value>
+  </data>
+  <data name="choosingdownload_date" xml:space="preserve">
+    <value>Bạn đang chọn chế độ tải bài hát theo ngày</value>
+  </data>
+  <data name="choosingdownload_saints" xml:space="preserve">
+    <value>Bạn đang chọn tải xuống tất cả các bài hát theo ngày lễ</value>
+  </data>
+  <data name="choosingdownload_seasonal" xml:space="preserve">
+    <value>Bạn đang chọn tải các bài hát theo mùa</value>
+  </data>
+  <data name="Christmas_season" xml:space="preserve">
+    <value>Mùa Giáng Sinh</value>
+  </data>
+  <data name="Cleartask_successfully" xml:space="preserve">
+    <value>Xóa bỏ nhiệm vụ thành công</value>
+  </data>
+  <data name="Clear_task" xml:space="preserve">
+    <value>Xóa nhiệm vụ</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="Close_Seach" xml:space="preserve">
+    <value>Đóng Tìm Kiếm</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>Mã số</value>
+  </data>
+  <data name="Code_Saint" xml:space="preserve">
+    <value>Mã Ngày Lễ</value>
+  </data>
+  <data name="CommentDay" xml:space="preserve">
+    <value>Ngày Bình Luận</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Lượt Bình Luận</value>
+  </data>
+  <data name="Comment_content" xml:space="preserve">
+    <value>Nội dung bình luận</value>
+  </data>
+  <data name="Complete_Task" xml:space="preserve">
+    <value>Đã Hoàn Thành Nhiệm Vụ</value>
+  </data>
+  <data name="ConfirmEdit_Info" xml:space="preserve">
+    <value>Xác Nhận Chỉnh Sửa Thông Tin</value>
+  </data>
+  <data name="Confirmemployee_password" xml:space="preserve">
+    <value>Xác Nhận Mật Khẩu Nhân Viên</value>
+  </data>
+  <data name="Confirmnewsong_creation" xml:space="preserve">
+    <value>Xác nhận tạo mới bài hát</value>
+  </data>
+  <data name="Confirm_information" xml:space="preserve">
+    <value>Xác Nhận Thông Tin</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Liên Hệ</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Nội Dung</value>
+  </data>
+  <data name="Contentsong_file" xml:space="preserve">
+    <value>Nội dung file bài hát</value>
+  </data>
+  <data name="Contenttask_empty" xml:space="preserve">
+    <value>Nội dung nhiệm vụ không bỏ trống</value>
+  </data>
+  <data name="Content_Notification" xml:space="preserve">
+    <value>Nội Dung Báo Cáo</value>
+  </data>
+  <data name="content_request" xml:space="preserve">
+    <value>Vui lòng nhập nội dung của yêu cầu !</value>
+  </data>
+  <data name="contributeyour_comments" xml:space="preserve">
+    <value>Bạn có thể đóng góp ý kiến của mình qua hộp thư ở đây, để lại thông tin để chúng tôi có thể phản hồi tốt hơn</value>
+  </data>
+  <data name="Contributing_Content" xml:space="preserve">
+    <value>Nội Dung Đóng Góp</value>
+  </data>
+  <data name="Country_Name" xml:space="preserve">
+    <value>Tên Quốc Gia</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Tạo Mới</value>
+  </data>
+  <data name="CreateMusic_Fail" xml:space="preserve">
+    <value>Tạo mới bài hát thất bại</value>
+  </data>
+  <data name="CreateMusic_Success" xml:space="preserve">
+    <value>Tạo mới bài hát thành công</value>
+  </data>
+  <data name="createNewMusic" xml:space="preserve">
+    <value>Thêm Mới Bài Hát</value>
+  </data>
+  <data name="Createnew_employee" xml:space="preserve">
+    <value>Tạo Mới Nhân Viên</value>
+  </data>
+  <data name="CreateNew_Saint" xml:space="preserve">
+    <value>Thêm Mới Ngày Lễ</value>
+  </data>
+  <data name="Create_QR" xml:space="preserve">
+    <value>Tạo QR</value>
+  </data>
+  <data name="Create_SaintSuccess" xml:space="preserve">
+    <value>Thêm Mới Ngày Lễ Thành Công</value>
+  </data>
+  <data name="Create_Staff" xml:space="preserve">
+    <value>Thêm Mới Nhân Viên</value>
+  </data>
+  <data name="CurrentAge" xml:space="preserve">
+    <value>Tuổi Hiện Tại</value>
+  </data>
+  <data name="Currentrole_found" xml:space="preserve">
+    <value>Không tìm thấy mã vai trò hiện tại</value>
+  </data>
+  <data name="Current_Outings" xml:space="preserve">
+    <value>Ngoại Lịch Hiện Tại</value>
+  </data>
+  <data name="Current_Role" xml:space="preserve">
+    <value>Vai trò Hiện Tại</value>
+  </data>
+  <data name="Current_Season" xml:space="preserve">
+    <value>Mùa Hiện Tại</value>
+  </data>
+  <data name="current_Year" xml:space="preserve">
+    <value>NĂM HIỆN TẠI ĐANG CHỌN</value>
+  </data>
+  <data name="datafo_year" xml:space="preserve">
+    <value>Không tìm thấy dữ liệu của năm bạn cần.</value>
+  </data>
+  <data name="Data_Administration" xml:space="preserve">
+    <value>Quản Trị Dữ Liệu</value>
+  </data>
+  <data name="data_under" xml:space="preserve">
+    <value>Số liệu nằm ở dưới phần ngày tháng năm ví dụ</value>
+  </data>
+  <data name="datecreate" xml:space="preserve">
+    <value>Ngày Tạo</value>
+  </data>
+  <data name="DateCreate_Song" xml:space="preserve">
+    <value>Ngày Tạo Bài Hát</value>
+  </data>
+  <data name="DateDowload" xml:space="preserve">
+    <value>Ngày Tải</value>
+  </data>
+  <data name="Date_birth" xml:space="preserve">
+    <value>Ngày Tháng Năm Sinh</value>
+  </data>
+  <data name="Deactivate_account" xml:space="preserve">
+    <value>Hủy Kích Hoạt Tài Khoản</value>
+  </data>
+  <data name="Deadline_task" xml:space="preserve">
+    <value>Hạn Nhiệm Vụ</value>
+  </data>
+  <data name="Default_mode" xml:space="preserve">
+    <value>Chế độ mặc định ...</value>
+  </data>
+  <data name="DeleteDowload_musicError" xml:space="preserve">
+    <value>Xóa bài hát đã tải về thất bại !</value>
+  </data>
+  <data name="Deleted_song" xml:space="preserve">
+    <value>Bài hát đã xóa</value>
+  </data>
+  <data name="DeleteErorr" xml:space="preserve">
+    <value>Xóa Thất Bại</value>
+  </data>
+  <data name="DeleteMiptiMusic" xml:space="preserve">
+    <value>Vui lòng tích chọn một bài hát để tiến hành xóa !</value>
+  </data>
+  <data name="DeleteSuccess" xml:space="preserve">
+    <value>Xóa Thành Công</value>
+  </data>
+  <data name="deletethissong" xml:space="preserve">
+    <value>Bạn chắc chắn muốn xóa bài hát này ?</value>
+  </data>
+  <data name="Delete_allcomments" xml:space="preserve">
+    <value>Xóa tất cả các bình luận</value>
+  </data>
+  <data name="Delete_Date" xml:space="preserve">
+    <value>Ngày Xóa</value>
+  </data>
+  <data name="Delete_ListMusicDowloadSuccess" xml:space="preserve">
+    <value>Xóa danh sách bài hát tải về thành công</value>
+  </data>
+  <data name="Delete_Notification" xml:space="preserve">
+    <value>Vui lòng tích chọn thông báo bạn muốn xóa !</value>
+  </data>
+  <data name="Delete_user" xml:space="preserve">
+    <value>Xóa người dùng</value>
+  </data>
+  <data name="Demand" xml:space="preserve">
+    <value>Manager Music hệ thống quản lý toàn diện.</value>
+  </data>
+  <data name="Design_In_2022" xml:space="preserve">
+    <value>Thiết Kế Vào Năm 2022</value>
+  </data>
+  <data name="Detailed_hours" xml:space="preserve">
+    <value>Giờ hoạt động chi tiết</value>
+  </data>
+  <data name="DetailList_SongDL" xml:space="preserve">
+    <value>Danh Sách Chi Tiết Bài Hát Tải Về</value>
+  </data>
+  <data name="DetailSong" xml:space="preserve">
+    <value>Chi Tiết Bài Hát</value>
+  </data>
+  <data name="Detail_Task" xml:space="preserve">
+    <value>Chi Tiết Nhiệm Vụ</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>Quận/Huyện</value>
+  </data>
+  <data name="Dividetaskssuccessful_employees" xml:space="preserve">
+    <value>Phân chia nhiệm vụ cho nhân viên thành công</value>
+  </data>
+  <data name="DoNotHave_Account" xml:space="preserve">
+    <value>Không Có Tài Khoản?</value>
+  </data>
+  <data name="Dowload" xml:space="preserve">
+    <value>Tải Về</value>
+  </data>
+  <data name="DowloadMusic_Success" xml:space="preserve">
+    <value>Tải bài hát thành công</value>
+  </data>
+  <data name="Dowload_Song" xml:space="preserve">
+    <value>Tải Bài Hát</value>
+  </data>
+  <data name="DownloadedSong_List" xml:space="preserve">
+    <value>Danh Sách Bài Hát Đã Tải Về</value>
+  </data>
+  <data name="Downloader_Name" xml:space="preserve">
+    <value>Tên Người Tải</value>
+  </data>
+  <data name="DownloadFile_Successfully" xml:space="preserve">
+    <value>Tải File Thành Công</value>
+  </data>
+  <data name="Downloadfull_saints" xml:space="preserve">
+    <value>Tải toàn bộ danh sách theo ngày lễ</value>
+  </data>
+  <data name="Downloadplaylists_date" xml:space="preserve">
+    <value>Tải danh sách bài hát theo ngày</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>Lượt tải</value>
+  </data>
+  <data name="Downloadseasonal_list" xml:space="preserve">
+    <value>Tải toàn bộ danh sách theo mùa</value>
+  </data>
+  <data name="Downloadsongs_author" xml:space="preserve">
+    <value>Tải bài hát theo tác giả</value>
+  </data>
+  <data name="Download_fulllist" xml:space="preserve">
+    <value>Tải toàn bộ danh sách bài hát</value>
+  </data>
+  <data name="Download_Id" xml:space="preserve">
+    <value>Mã Tải</value>
+  </data>
+  <data name="Easter_season" xml:space="preserve">
+    <value>Mùa Phục Sinh</value>
+  </data>
+  <data name="Editauthor" xml:space="preserve">
+    <value>Chỉnh sửa tên tác giả</value>
+  </data>
+  <data name="Editemployee_successfully" xml:space="preserve">
+    <value>Chỉnh sửa nhân viên thành công</value>
+  </data>
+  <data name="Editor" xml:space="preserve">
+    <value>Người sửa</value>
+  </data>
+  <data name="Editsong_title" xml:space="preserve">
+    <value>Chỉnh sửa tên bài hát</value>
+  </data>
+  <data name="EditThis_Song" xml:space="preserve">
+    <value>Chỉnh Sửa Bài Hát Này</value>
+  </data>
+  <data name="Edit_File" xml:space="preserve">
+    <value>Vui lòng chọn file cần sửa</value>
+  </data>
+  <data name="Edit_files" xml:space="preserve">
+    <value>Sửa lại file</value>
+  </data>
+  <data name="Edit_infomation" xml:space="preserve">
+    <value>Chỉnh Sửa Thông Tin</value>
+  </data>
+  <data name="Edit_Personal" xml:space="preserve">
+    <value>Chỉnh Sửa Thông Tin Cá Nhân</value>
+  </data>
+  <data name="Edit_staff" xml:space="preserve">
+    <value>Chỉnh sửa nhân viên</value>
+  </data>
+  <data name="EmailNot_Exist" xml:space="preserve">
+    <value>Email không tồn tại, thử email khác !</value>
+  </data>
+  <data name="emailrequested_found" xml:space="preserve">
+    <value>Email bạn yêu cầu không tìm thấy, vui lòng kiểm tra lại</value>
+  </data>
+  <data name="Emailsyntax_incorrect" xml:space="preserve">
+    <value>Email không đúng cú pháp, vui lòng kiểm tra lại !</value>
+  </data>
+  <data name="Email_already_exists" xml:space="preserve">
+    <value>Email đã tồn tại, vui lòng thử Email khác !</value>
+  </data>
+  <data name="employeecanceled_successfully" xml:space="preserve">
+    <value>Đã hủy thuê nhân viên này thành công</value>
+  </data>
+  <data name="Employeechart_year" xml:space="preserve">
+    <value>Biểu đồ thống kê nhân viên trong năm</value>
+  </data>
+  <data name="EmployeeCode_Invalid" xml:space="preserve">
+    <value>Mã Nhân Viên Bạn Truyền Vào Không Hợp Lệ</value>
+  </data>
+  <data name="EmployeeHiring_Status" xml:space="preserve">
+    <value>Trạng Thái Thuê Nhân Viên</value>
+  </data>
+  <data name="Employeeid_empty" xml:space="preserve">
+    <value>Mã nhân viên trống</value>
+  </data>
+  <data name="EmployeeList_Table" xml:space="preserve">
+    <value>Bảng Danh Sách Nhân Viên</value>
+  </data>
+  <data name="Employeeout_ofwork" xml:space="preserve">
+    <value>Nhân viên đã nghỉ làm</value>
+  </data>
+  <data name="EmployeePersonal_Information" xml:space="preserve">
+    <value>Thông Tin Cá Nhân Của Nhân Viên</value>
+  </data>
+  <data name="EmployeeReport_Chart" xml:space="preserve">
+    <value>Biểu Đồ Báo Cáo Nhân Viên</value>
+  </data>
+  <data name="EmployeesRequired_Tasks" xml:space="preserve">
+    <value>Nhân Viên Được Yêu Cầu Làm Nhiệm Vụ</value>
+  </data>
+  <data name="Employee_Address" xml:space="preserve">
+    <value>Địa Chỉ Nhân Viên</value>
+  </data>
+  <data name="Employee_Authorization" xml:space="preserve">
+    <value>Phân Quyền Nhân Viên</value>
+  </data>
+  <data name="Employee_birthday" xml:space="preserve">
+    <value>Sinh nhật nhân viên</value>
+  </data>
+  <data name="Employee_Chart" xml:space="preserve">
+    <value>Biểu Đồ Nhân Viên</value>
+  </data>
+  <data name="Employee_Details" xml:space="preserve">
+    <value>Thông Tin Chi Tiết Nhân Viên</value>
+  </data>
+  <data name="Employee_information" xml:space="preserve">
+    <value>Thông Tin Cá Nhân Của Nhân Viên</value>
+  </data>
+  <data name="Employee_level" xml:space="preserve">
+    <value>Cấp Độ Nhân Viên</value>
+  </data>
+  <data name="Employee_Management" xml:space="preserve">
+    <value>Quản Trị Nhân Viên</value>
+  </data>
+  <data name="Employee_Name" xml:space="preserve">
+    <value>Họ Tên Nhân Viên</value>
+  </data>
+  <data name="Employee_Search" xml:space="preserve">
+    <value>Tìm Kiếm nhân viên</value>
+  </data>
+  <data name="Employee_User" xml:space="preserve">
+    <value>Nhân Viên / Người Dùng</value>
+  </data>
+  <data name="EmptyCode_Employee" xml:space="preserve">
+    <value>Mã của nhân viên truyền vào không được trống!</value>
+  </data>
+  <data name="End_Date" xml:space="preserve">
+    <value>Kết Thúc Vào Ngày</value>
+  </data>
+  <data name="England" xml:space="preserve">
+    <value>Nước Anh</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Tiếng Anh</value>
+  </data>
+  <data name="entercomment_text" xml:space="preserve">
+    <value>Vui lòng nhập nội dung bình luận</value>
+  </data>
+  <data name="EnterFullName" xml:space="preserve">
+    <value>Nhập Vào Họ Và Tên ...</value>
+  </data>
+  <data name="EnterGmail_Regiter" xml:space="preserve">
+    <value>Nhập gmail đăng ký ...</value>
+  </data>
+  <data name="EnterNameAuthor" xml:space="preserve">
+    <value>Vui lòng nhập tên tác giả...</value>
+  </data>
+  <data name="EnterNameMusicSeason" xml:space="preserve">
+    <value>Nhập tên bài hát, theo mùa,...</value>
+  </data>
+  <data name="EnterNameOrIdSatff" xml:space="preserve">
+    <value>Nhập tên nhân viên, mã nhân viên,...</value>
+  </data>
+  <data name="EnterNameSong" xml:space="preserve">
+    <value>Vui lòng nhập tên bài hát...</value>
+  </data>
+  <data name="Enternamesong_search" xml:space="preserve">
+    <value>Nhập tên bài hát cần tìm...</value>
+  </data>
+  <data name="Entername_author" xml:space="preserve">
+    <value>Nhập tên tác giả bạn cần tìm</value>
+  </data>
+  <data name="EnterName_Saint" xml:space="preserve">
+    <value>Nhập tên ngày lễ ...</value>
+  </data>
+  <data name="Enternew_password" xml:space="preserve">
+    <value>Nhập lại mật khẩu mới ...</value>
+  </data>
+  <data name="EnterNumber_WasDoaload" xml:space="preserve">
+    <value>Nhập số lượng bài đã tải về...</value>
+  </data>
+  <data name="Enterreason_task" xml:space="preserve">
+    <value>Nhập lý do bạn không nhận nhiệm vụ ...</value>
+  </data>
+  <data name="enterregistered_email" xml:space="preserve">
+    <value>Vui lòng nhập Email đăng ký !</value>
+  </data>
+  <data name="EnterSender_Name" xml:space="preserve">
+    <value>Nhập tên người gửi ...</value>
+  </data>
+  <data name="Entersongid_reviewer" xml:space="preserve">
+    <value>Nhập id bài hát, tên người đánh giá ...</value>
+  </data>
+  <data name="EnterTitle" xml:space="preserve">
+    <value>Nhập tiêu đề ...</value>
+  </data>
+  <data name="enter_content" xml:space="preserve">
+    <value>Vui lòng nhập vào nội dung</value>
+  </data>
+  <data name="enter_contribution" xml:space="preserve">
+    <value>Vui lòng nhập nột dung đóng góp !</value>
+  </data>
+  <data name="Enter_employeegmail" xml:space="preserve">
+    <value>Nhập vào gmail nhân viên ...</value>
+  </data>
+  <data name="Enter_Gmail" xml:space="preserve">
+    <value>Nhập vào gmail ...</value>
+  </data>
+  <data name="Enter_message" xml:space="preserve">
+    <value>Nhập vào tin nhắn ...</value>
+  </data>
+  <data name="Enter_NameSaint" xml:space="preserve">
+    <value>Nhập vào tên ngày lễ ...</value>
+  </data>
+  <data name="Enter_Password" xml:space="preserve">
+    <value>Nhập vào mật khẩu ...</value>
+  </data>
+  <data name="Error404" xml:space="preserve">
+    <value>Lỗi 404</value>
+  </data>
+  <data name="errorimage_file" xml:space="preserve">
+    <value>Vui lòng chọn file hình ảnh lỗi chụp lại !</value>
+  </data>
+  <data name="errormusic_recovery" xml:space="preserve">
+    <value>Khôi phục nhạc lỗi</value>
+  </data>
+  <data name="Evaluate" xml:space="preserve">
+    <value>Đánh giá</value>
+  </data>
+  <data name="example" xml:space="preserve">
+    <value>+ ví dụ: XinVang_18-5-2022</value>
+  </data>
+  <data name="ExitTime" xml:space="preserve">
+    <value>Thời Gian Thoát</value>
+  </data>
+  <data name="Expirationdate_time" xml:space="preserve">
+    <value>Ngày/Giờ Hết Hạn</value>
+  </data>
+  <data name="Expiration_date" xml:space="preserve">
+    <value>Ngày Hết Hạn</value>
+  </data>
+  <data name="Expiration_Time" xml:space="preserve">
+    <value>Giờ Hết Hạn</value>
+  </data>
+  <data name="EXPIRED" xml:space="preserve">
+    <value>ĐÃ HẾT HẠN</value>
+  </data>
+  <data name="Exportcomposite_file" xml:space="preserve">
+    <value>Xuất tập tin tổng hợp</value>
+  </data>
+  <data name="Export_File" xml:space="preserve">
+    <value>Xuất File</value>
+  </data>
+  <data name="Failedaccepttask_successfully" xml:space="preserve">
+    <value>Không nhận nhiệm vụ này thành công</value>
+  </data>
+  <data name="familiar" xml:space="preserve">
+    <value>Thân Thiết</value>
+  </data>
+  <data name="Filecurrently_use" xml:space="preserve">
+    <value>Tệp hiện đang được sử dụng</value>
+  </data>
+  <data name="FileDownload_Manager" xml:space="preserve">
+    <value>Quản lý tải xuống tệp</value>
+  </data>
+  <data name="Filename" xml:space="preserve">
+    <value>Tên File</value>
+  </data>
+  <data name="Filetype" xml:space="preserve">
+    <value>Loại File</value>
+  </data>
+  <data name="File_Activation" xml:space="preserve">
+    <value>Kích Hoạt File</value>
+  </data>
+  <data name="File_Content" xml:space="preserve">
+    <value>File Nội Dung</value>
+  </data>
+  <data name="File_Contents" xml:space="preserve">
+    <value>Nội Dung Của File</value>
+  </data>
+  <data name="File_currently" xml:space="preserve">
+    <value>File hiện tại đang dùng</value>
+  </data>
+  <data name="File_Deactivation" xml:space="preserve">
+    <value>Hủy Kích Hoạt File</value>
+  </data>
+  <data name="File_List" xml:space="preserve">
+    <value>Danh Sách File</value>
+  </data>
+  <data name="File_management" xml:space="preserve">
+    <value>Quản Lý File</value>
+  </data>
+  <data name="File_mismatch" xml:space="preserve">
+    <value>Mã File truyền vào không phù hợp</value>
+  </data>
+  <data name="File_Season" xml:space="preserve">
+    <value>Quản Lý Mùa Quanh Năm</value>
+  </data>
+  <data name="File_section" xml:space="preserve">
+    <value>Phần File</value>
+  </data>
+  <data name="FilterDate_List" xml:space="preserve">
+    <value>Lọc Danh Sách Ngày</value>
+  </data>
+  <data name="Filtered_List" xml:space="preserve">
+    <value>Danh Sách Đã Lọc</value>
+  </data>
+  <data name="Filtermessages_Date" xml:space="preserve">
+    <value>Lọc tin nhắn theo ngày tháng năm</value>
+  </data>
+  <data name="FilterSongs_Saint" xml:space="preserve">
+    <value>Lọc Bài Hát Theo Ngày Lễ</value>
+  </data>
+  <data name="FilterSongs_Season" xml:space="preserve">
+    <value>Lọc Bài Hát Theo Mùa</value>
+  </data>
+  <data name="Filter_by" xml:space="preserve">
+    <value>Lọc theo</value>
+  </data>
+  <data name="Filter_data" xml:space="preserve">
+    <value>Lọc Dữ Liệu</value>
+  </data>
+  <data name="Filter_status" xml:space="preserve">
+    <value>Lọc theo trạng thái</value>
+  </data>
+  <data name="Findtasks_date" xml:space="preserve">
+    <value>Tìm nhiệm vụ theo ngày</value>
+  </data>
+  <data name="Finish_Date" xml:space="preserve">
+    <value>Ngày Hoàn Thành</value>
+  </data>
+  <data name="FirstandLast_Name" xml:space="preserve">
+    <value>Họ &amp; Tên</value>
+  </data>
+  <data name="first_comment" xml:space="preserve">
+    <value>Hãy trở thành người đầu tiên bình luận</value>
+  </data>
+  <data name="first_review" xml:space="preserve">
+    <value>Bạn đang là người đánh giá đầu tiên</value>
+  </data>
+  <data name="Forgot_Password" xml:space="preserve">
+    <value>Quên Mật Khẩu?</value>
+  </data>
+  <data name="For_example" xml:space="preserve">
+    <value>Ví Dụ</value>
+  </data>
+  <data name="FullName_Comment" xml:space="preserve">
+    <value>Họ Tên Người Viết</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Giới Tính</value>
+  </data>
+  <data name="Generalinformation_section" xml:space="preserve">
+    <value>Phần Thông Tin Chung</value>
+  </data>
+  <data name="General_chart" xml:space="preserve">
+    <value>Biểu Đồ Chung</value>
+  </data>
+  <data name="General_information" xml:space="preserve">
+    <value>Thông Tin Chung</value>
+  </data>
+  <data name="General_Report" xml:space="preserve">
+    <value>Báo Cáo Chung</value>
+  </data>
+  <data name="General_Statistics" xml:space="preserve">
+    <value>Thống Kê Chung</value>
+  </data>
+  <data name="gentleman" xml:space="preserve">
+    <value>Nam</value>
+  </data>
+  <data name="GetQR_code" xml:space="preserve">
+    <value>Lấy mã QR code</value>
+  </data>
+  <data name="gmailinfo_found" xml:space="preserve">
+    <value>Đã tìm thấy thông tin gmail</value>
+  </data>
+  <data name="GmailRegiter_Account" xml:space="preserve">
+    <value>Gmail Đăng Ký Tài Khoản</value>
+  </data>
+  <data name="Gmailrequested_found" xml:space="preserve">
+    <value>Không tìm thấy Gmail bạn yêu cầu</value>
+  </data>
+  <data name="Gmail_staff" xml:space="preserve">
+    <value>Gmail Nhân Viên</value>
+  </data>
+  <data name="goal_bringing" xml:space="preserve">
+    <value>Với mục tiêu muốn đưa thánh ca Việt Nam ra khắp nơi, đến với mọi người không phân biệt. Với ý muốn như thế nên chúng tôi đã tạo ra nhằm đáp ứng nhu cầu và trải nghiệm phần mềm của người dùng, xin chân thành cảm ơn. Chúng tôi luôn luôn muốn lắng nghe mọi đóng góp của bạn để xây dựng ứng dụng ngày càng tiện ích hơn trong tương lại.</value>
+  </data>
+  <data name="Have" xml:space="preserve">
+    <value>Đang có</value>
+  </data>
+  <data name="Havendone_yet" xml:space="preserve">
+    <value>Chưa làm gì</value>
+  </data>
+  <data name="head" xml:space="preserve">
+    <value>Đầu</value>
+  </data>
+  <data name="HistoryDowloadMusic_Success" xml:space="preserve">
+    <value>Xóa lịch sử tải bài hát thành công</value>
+  </data>
+  <data name="Holiday_Management" xml:space="preserve">
+    <value>Quản Lý Ngày Lễ</value>
+  </data>
+  <data name="Home_page" xml:space="preserve">
+    <value>Trang Chủ</value>
+  </data>
+  <data name="Hours_ofRoles" xml:space="preserve">
+    <value>Giờ Phân Quyền</value>
+  </data>
+  <data name="IdEmployeeAndIdStaff_notnull" xml:space="preserve">
+    <value>Id người dùng hoặc Id nhân viên không được bỏ trống</value>
+  </data>
+  <data name="IDemployee_couldnotfound" xml:space="preserve">
+    <value>Không tìm thấy Id của nhân viên này</value>
+  </data>
+  <data name="IdMmusicNull" xml:space="preserve">
+    <value>Mã bài hát không được bỏ trống</value>
+  </data>
+  <data name="IdMusic" xml:space="preserve">
+    <value>Mã Bài Hát</value>
+  </data>
+  <data name="IDsaintOrIDstatus_Null" xml:space="preserve">
+    <value>Mã ngày lễ hoặc mã trạng thái bị trống, vui lòng kiểm tra lại !</value>
+  </data>
+  <data name="IdSeason_Null" xml:space="preserve">
+    <value>Mã Mùa Truyền Vào Bị Trống !</value>
+  </data>
+  <data name="IdStaff" xml:space="preserve">
+    <value>Mã Nhân Viên</value>
+  </data>
+  <data name="ImageError" xml:space="preserve">
+    <value>Hình Ảnh Lỗi</value>
+  </data>
+  <data name="ImageNot_Format" xml:space="preserve">
+    <value>Hình ảnh bạn đã nhập không đúng định dạng!</value>
+  </data>
+  <data name="ImageNot_Null" xml:space="preserve">
+    <value>Hình ảnh bài hát không bỏ trống !</value>
+  </data>
+  <data name="ImageSatff" xml:space="preserve">
+    <value>Hình Nhân Viên</value>
+  </data>
+  <data name="ImageStaff" xml:space="preserve">
+    <value>Hình Ảnh</value>
+  </data>
+  <data name="Image_preview" xml:space="preserve">
+    <value>Xem trước hình</value>
+  </data>
+  <data name="Implementation_progress" xml:space="preserve">
+    <value>Tiến Độ Thực Hiện</value>
+  </data>
+  <data name="improveourselves" xml:space="preserve">
+    <value>Chúng tôi sẽ cải thiện chính mình. Bạn đánh giá điều này</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Tăng</value>
+  </data>
+  <data name="indicateday_year" xml:space="preserve">
+    <value>chỉ ra ngày tháng năm</value>
+  </data>
+  <data name="Indicatenumberemployee_day" xml:space="preserve">
+    <value>Cho biết số lượng nhân viên đã nhập vào ngày hôm đó</value>
+  </data>
+  <data name="Indicatesnumberusers_day" xml:space="preserve">
+    <value>Cho biết số lượng người dùng đã nhập cho ngày hôm đó</value>
+  </data>
+  <data name="Indicates_number" xml:space="preserve">
+    <value>Cho biết số lượng bài hát được nhập cho ngày đó</value>
+  </data>
+  <data name="inputFile" xml:space="preserve">
+    <value>+ file đưa vào phải là dạng file PDF .pdf</value>
+  </data>
+  <data name="Introduc_Music" xml:space="preserve">
+    <value>Giới Thiệu Chung Về Manager Music</value>
+  </data>
+  <data name="keyword_search" xml:space="preserve">
+    <value>Vui lòng nhập từ khóa cần tìm</value>
+  </data>
+  <data name="Ladies" xml:space="preserve">
+    <value>Nữ</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Ngôn Ngữ</value>
+  </data>
+  <data name="Language_en" xml:space="preserve">
+    <value>Tiếng Anh</value>
+  </data>
+  <data name="Language_Name" xml:space="preserve">
+    <value>Tên Ngôn Ngữ</value>
+  </data>
+  <data name="Language_vi" xml:space="preserve">
+    <value>Tiếng Việt</value>
+  </data>
+  <data name="last" xml:space="preserve">
+    <value>cuối</value>
+  </data>
+  <data name="LastEdit" xml:space="preserve">
+    <value>Lần Chỉnh Sửa Cuối Cùng</value>
+  </data>
+  <data name="least1stat_moststars" xml:space="preserve">
+    <value>Vui lòng ít nhất 1 sao nhiều nhất 5 sao</value>
+  </data>
+  <data name="Lent" xml:space="preserve">
+    <value>Mùa Chay</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>Lượt Thích</value>
+  </data>
+  <data name="Likes" xml:space="preserve">
+    <value>Lượt thích</value>
+  </data>
+  <data name="Likesong_success" xml:space="preserve">
+    <value>Thích bài hát thành công</value>
+  </data>
+  <data name="Listimages_message" xml:space="preserve">
+    <value>Danh sách các hình ảnh trong tin nhắn</value>
+  </data>
+  <data name="ListMusic_Null" xml:space="preserve">
+    <value>Danh sách bài hát bị trống không thể sử lý được !</value>
+  </data>
+  <data name="ListSatffLocked_Account" xml:space="preserve">
+    <value>Danh sách tài khoản nhân viên đang bị khóa</value>
+  </data>
+  <data name="Listsongs_year" xml:space="preserve">
+    <value>Biểu đồ thống kê bài hát trong năm</value>
+  </data>
+  <data name="List_music" xml:space="preserve">
+    <value>Danh Sách Bài Hát</value>
+  </data>
+  <data name="Lockedemployee_successfully" xml:space="preserve">
+    <value>Khóa tài khoản nhân viên thành công</value>
+  </data>
+  <data name="LockingEmployee_Accounts" xml:space="preserve">
+    <value>Khóa Tài Khoản Nhân Viên</value>
+  </data>
+  <data name="Lock_accounts" xml:space="preserve">
+    <value>Khóa tài khoản người dùng</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Đăng Nhập</value>
+  </data>
+  <data name="LoginDate" xml:space="preserve">
+    <value>Ngày Đăng Nhập</value>
+  </data>
+  <data name="LoginFacebook" xml:space="preserve">
+    <value>Đăng Nhập FaceBook</value>
+  </data>
+  <data name="LoginFail" xml:space="preserve">
+    <value>Đăng nhập thất bại, vui lòng thử lại !</value>
+  </data>
+  <data name="LoginGoogle" xml:space="preserve">
+    <value>Đăng Nhập Google</value>
+  </data>
+  <data name="LoginTime" xml:space="preserve">
+    <value>Thời Gian Đăng Nhập</value>
+  </data>
+  <data name="Login_Information" xml:space="preserve">
+    <value>Thông Tin Người Đăng Nhập</value>
+  </data>
+  <data name="Login_Music" xml:space="preserve">
+    <value>Đăng Nhập Manager Music</value>
+  </data>
+  <data name="Login_page" xml:space="preserve">
+    <value>Đăng Nhập</value>
+  </data>
+  <data name="Login_To_Experience" xml:space="preserve">
+    <value>Đăng Nhập Để Trải Nghiệm</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="Log_function" xml:space="preserve">
+    <value>Đăng nhập để dùng chức năng này</value>
+  </data>
+  <data name="Managerfile_dowload" xml:space="preserve">
+    <value>Quản lý file đã tải</value>
+  </data>
+  <data name="ManagerSatff" xml:space="preserve">
+    <value>Quản Lý Nhân Viên</value>
+  </data>
+  <data name="Manager_Muiscsinging" xml:space="preserve">
+    <value>Phần mềm quản lý baif hát Manager Muisc được tạo ra với mục đích giúp cho tất cả mọi người có niềm đam mê với các bản nhạc thánh ca, có thể tìm kiếm các bài hát mà mình yêu thích. Hệ thống hỗ trợ tất cả các bài hát thánh ca,
+được bố trí theo từng mùa trong năm phụng vụ của Hội Thánh Công Giáo, không phân biệt bạn là người công giáo hay ngoài công giáo, chỉ cần có niềm đam mê với thánh ca công giáo đề có thể trải nghiệm ứng dụng.</value>
+  </data>
+  <data name="Manager_Music" xml:space="preserve">
+    <value>Quản Lý Bài Hát</value>
+  </data>
+  <data name="Manager_User" xml:space="preserve">
+    <value>Quản Lý Người Dùng</value>
+  </data>
+  <data name="Marital" xml:space="preserve">
+    <value>Tình Trạng Hôn Nhân</value>
+  </data>
+  <data name="Marriage" xml:space="preserve">
+    <value>Hôn Nhân</value>
+  </data>
+  <data name="Maximun_length" xml:space="preserve">
+    <value>Tối đa 10 ký tự !</value>
+  </data>
+  <data name="Ma_userrequests" xml:space="preserve">
+    <value>Quản lý yêu cầu người dùng</value>
+  </data>
+  <data name="Members_group" xml:space="preserve">
+    <value>thành viên trong nhóm</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Tin Nhắn</value>
+  </data>
+  <data name="Message_time" xml:space="preserve">
+    <value>Ngày giờ nhắn</value>
+  </data>
+  <data name="Mission_Contents" xml:space="preserve">
+    <value>Phần Nội Dung Nhiệm Vụ</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Tháng</value>
+  </data>
+  <data name="Moretasks_employees" xml:space="preserve">
+    <value>Thêm nhiệm vụ cho nhân viên</value>
+  </data>
+  <data name="MostDownloadedSong_Month" xml:space="preserve">
+    <value>Bài Hát Được Tải Về Nhiều Nhất Trong Tháng</value>
+  </data>
+  <data name="Music_composer" xml:space="preserve">
+    <value>Tác Giả</value>
+  </data>
+  <data name="My_information" xml:space="preserve">
+    <value>Thông Tin Của Tôi</value>
+  </data>
+  <data name="My_staff" xml:space="preserve">
+    <value>Nhân Viên Của Tôi</value>
+  </data>
+  <data name="My_Users" xml:space="preserve">
+    <value>Người Dùng Của Tôi</value>
+  </data>
+  <data name="NameFile_Song" xml:space="preserve">
+    <value>Tên File Bài Hát</value>
+  </data>
+  <data name="NameSaint_NotNull" xml:space="preserve">
+    <value>Tên ngày lễ không bỏ trống</value>
+  </data>
+  <data name="namesong" xml:space="preserve">
+    <value>Tên Bài Hát</value>
+  </data>
+  <data name="NameStaff" xml:space="preserve">
+    <value>Tên Nhân Viên</value>
+  </data>
+  <data name="Name_Saint" xml:space="preserve">
+    <value>Tên Ngày Lễ</value>
+  </data>
+  <data name="National_flag" xml:space="preserve">
+    <value>Cờ Quốc Gia</value>
+  </data>
+  <data name="NewSong_Name" xml:space="preserve">
+    <value>Tên Bài Hát Mới</value>
+  </data>
+  <data name="New_Author" xml:space="preserve">
+    <value>Tác Giả Mới</value>
+  </data>
+  <data name="New_Content" xml:space="preserve">
+    <value>Nội Dung Mới</value>
+  </data>
+  <data name="new_password" xml:space="preserve">
+    <value>Nhập vào mật khẩu mới</value>
+  </data>
+  <data name="New_song" xml:space="preserve">
+    <value>Bài Hát Mới</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>tiếp</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>STT</value>
+  </data>
+  <data name="Nofitication_Success" xml:space="preserve">
+    <value>Thông Báo Thành Công</value>
+  </data>
+  <data name="NoFound_District" xml:space="preserve">
+    <value>Không tìm thấy Quận/Huyện thuộc Tỉnh/Tp này.</value>
+  </data>
+  <data name="Noimages_Id" xml:space="preserve">
+    <value>Không tìm thấy hình ảnh nào cho Id này</value>
+  </data>
+  <data name="Nomessages_employee" xml:space="preserve">
+    <value>Không có tin nhắn nào của nhân viên này !</value>
+  </data>
+  <data name="Notaskfound_employee" xml:space="preserve">
+    <value>Không tìm thấy nhiệm vụ thuộc nhân viên này</value>
+  </data>
+  <data name="Notaskwith_codefound" xml:space="preserve">
+    <value>Không tìm thấy nhiệm vụ có mã này</value>
+  </data>
+  <data name="NotChooseNew_Avata" xml:space="preserve">
+    <value>Bạn chưa chọn hình đại diện mới</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Lưu Ý:</value>
+  </data>
+  <data name="NoteFormat_file" xml:space="preserve">
+    <value>Lưu ý: bạn nên đặt tên file theo đúng định dạng</value>
+  </data>
+  <data name="NoteFormat_Image" xml:space="preserve">
+    <value>Lưu ý: bạn nên đặt tên hình theo đúng định dạng</value>
+  </data>
+  <data name="NotFindIdSeason" xml:space="preserve">
+    <value>Không tìm thấy mùa thuộc mã này !</value>
+  </data>
+  <data name="NotFindIdUser_Create" xml:space="preserve">
+    <value>Không tìm thấy id của bạn để khởi tạo, vui lòng kiểm tra lại !</value>
+  </data>
+  <data name="NotfindID_Status" xml:space="preserve">
+    <value>Không tìm thấy mã trạng thái bạn cần thay đổi !</value>
+  </data>
+  <data name="NotFindInfothis_Music" xml:space="preserve">
+    <value>Không Tìm Thấy Thông Tin Của Bài Hát Này</value>
+  </data>
+  <data name="NotFindListMusic_Anactiver" xml:space="preserve">
+    <value>Không tìm thấy bài hát nào ngưng hoạt động, từ danh sách truyền vào !</value>
+  </data>
+  <data name="NotfindMusic" xml:space="preserve">
+    <value>Không có bài hát nào, vui lòng kiểm tra lại !</value>
+  </data>
+  <data name="NotFindSong" xml:space="preserve">
+    <value>Không tìm thấy bài hát</value>
+  </data>
+  <data name="NotFindStaff" xml:space="preserve">
+    <value>Không Tìm Thấy Nhân Viên Nào.</value>
+  </data>
+  <data name="NotFind_Deletmusic" xml:space="preserve">
+    <value>Không tìm thấy bài hát nào bị xóa !</value>
+  </data>
+  <data name="NotFind_IdSaint" xml:space="preserve">
+    <value>Không tìm thấy ngày lễ có mã này !</value>
+  </data>
+  <data name="NotFind_IDstatus" xml:space="preserve">
+    <value>Không tìm thấy mã trạng thái !</value>
+  </data>
+  <data name="NotFind_Info" xml:space="preserve">
+    <value>Không tìm thấy thông tin tài khoản của bạn</value>
+  </data>
+  <data name="Notfind_ListDowloadMusic" xml:space="preserve">
+    <value>Không tìm thấy danh sách bài hát tải về !</value>
+  </data>
+  <data name="NotFind_StatusMusic" xml:space="preserve">
+    <value>Không tìm thấy trạng thái bài hát !</value>
+  </data>
+  <data name="notHave_Role" xml:space="preserve">
+    <value>Bạn không có quyền thực hiện chức năng này</value>
+  </data>
+  <data name="NotificationContent" xml:space="preserve">
+    <value>Nội Dung Thông Báo</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Bảng Thông Báo</value>
+  </data>
+  <data name="Notification_Error" xml:space="preserve">
+    <value>Thông Báo Lỗi</value>
+  </data>
+  <data name="Notifiction" xml:space="preserve">
+    <value>thông báo</value>
+  </data>
+  <data name="NotNull_Data" xml:space="preserve">
+    <value>Không được bỏ trống !</value>
+  </data>
+  <data name="NotSendMore_5File" xml:space="preserve">
+    <value>Bạn không gửi quá 5 file, để tối ưu tốc độ</value>
+  </data>
+  <data name="not_received" xml:space="preserve">
+    <value>Chưa nhận</value>
+  </data>
+  <data name="Not_resolved" xml:space="preserve">
+    <value>Chưa Giải Quyết</value>
+  </data>
+  <data name="not_seen" xml:space="preserve">
+    <value>Chưa xem</value>
+  </data>
+  <data name="Null_ListDowloadMusic" xml:space="preserve">
+    <value>Danh sách xóa bài hát đã tải truyền vào bị trống !</value>
+  </data>
+  <data name="NumberQRcore_generations" xml:space="preserve">
+    <value>Số Lần Tạo QR Core</value>
+  </data>
+  <data name="NumberWas_Dowload" xml:space="preserve">
+    <value>Số Lượng Bài Đã Tải</value>
+  </data>
+  <data name="OldSong_Name" xml:space="preserve">
+    <value>Tên Bài Hát Cũ</value>
+  </data>
+  <data name="Old_Author" xml:space="preserve">
+    <value>Tác Giả Cũ</value>
+  </data>
+  <data name="Old_Content" xml:space="preserve">
+    <value>Nội Dung Cũ</value>
+  </data>
+  <data name="Onesong_threesutras." xml:space="preserve">
+    <value>Một lời ca bằng ba lời kinh.</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Lựa Chọn</value>
+  </data>
+  <data name="Outside_of_the_calendar" xml:space="preserve">
+    <value>Ngoại Lịch</value>
+  </data>
+  <data name="page" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="passed_match" xml:space="preserve">
+    <value>Id truyền vào không phù hợp</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mật Khẩu</value>
+  </data>
+  <data name="Password_characterandnumber" xml:space="preserve">
+    <value>Mật khẩu phải chứa ít nhất 1 ký tự đặt biệt và 1 số</value>
+  </data>
+  <data name="Password_incorrect" xml:space="preserve">
+    <value>Mật khẩu không khớp!</value>
+  </data>
+  <data name="Password_uppercase" xml:space="preserve">
+    <value>Mật khẩu phải chứa 1 ký tự hoa</value>
+  </data>
+  <data name="People_notice" xml:space="preserve">
+    <value>Người Thông Báo</value>
+  </data>
+  <data name="Percent_Support" xml:space="preserve">
+    <value>Phần Trăm Hỗ Trợ</value>
+  </data>
+  <data name="Performers" xml:space="preserve">
+    <value>Người TH</value>
+  </data>
+  <data name="Personal" xml:space="preserve">
+    <value>Cá Nhân</value>
+  </data>
+  <data name="Personal_information" xml:space="preserve">
+    <value>Thông Tin Cá Nhân</value>
+  </data>
+  <data name="PersonAssigning_Roles" xml:space="preserve">
+    <value>Người Phân Vai Trò</value>
+  </data>
+  <data name="Petros_Tuong" xml:space="preserve">
+    <value>Petros Trần Duy Tường</value>
+  </data>
+  <data name="PhoneStaff" xml:space="preserve">
+    <value>Số Điện Thoại Nhân Viên</value>
+  </data>
+  <data name="PlaeseEnterNameMusic" xml:space="preserve">
+    <value>Vui lòng nhập tên bài hát</value>
+  </data>
+  <data name="Plan_Name" xml:space="preserve">
+    <value>Tên Nhiệm Vụ</value>
+  </data>
+  <data name="pleased_announce" xml:space="preserve">
+    <value>Xin Trân Trọng Thông Báo.</value>
+  </data>
+  <data name="Pleaseenter_accepttask" xml:space="preserve">
+    <value>Vui lòng nhập nội dung không nhận nhiệm vụ</value>
+  </data>
+  <data name="PleaseEnter_Address" xml:space="preserve">
+    <value>Vui lòng nhập địa chỉ ...</value>
+  </data>
+  <data name="PleaseEnter_PhoneNumber" xml:space="preserve">
+    <value>Vui lòng nhập số điện thoại ...</value>
+  </data>
+  <data name="Post_Deleted" xml:space="preserve">
+    <value>Bài Đã Xóa</value>
+  </data>
+  <data name="Processing_Date" xml:space="preserve">
+    <value>Ngày Xử Lý</value>
+  </data>
+  <data name="Processmanage" xml:space="preserve">
+    <value>Quản lý quy trình</value>
+  </data>
+  <data name="Province_City" xml:space="preserve">
+    <value>Tỉnh/Tp</value>
+  </data>
+  <data name="QRcode_song" xml:space="preserve">
+    <value>Mã QR code của bài hát</value>
+  </data>
+  <data name="RatingDate" xml:space="preserve">
+    <value>Ngày Đánh Giá Sao</value>
+  </data>
+  <data name="ReadFile" xml:space="preserve">
+    <value>Xem Trước Bài Hát</value>
+  </data>
+  <data name="read_Error" xml:space="preserve">
+    <value>Đọc thư thất bại.</value>
+  </data>
+  <data name="read_Success" xml:space="preserve">
+    <value>Đọc thư thành công.</value>
+  </data>
+  <data name="Received" xml:space="preserve">
+    <value>Đã nhận</value>
+  </data>
+  <data name="recoverdeletedA_successfully" xml:space="preserve">
+    <value>khôi phục bài hát đã xóa
+thành công</value>
+  </data>
+  <data name="recoverdeleted_successfully" xml:space="preserve">
+    <value>khôi phục danh sách bài hát đã xóa
+thành công</value>
+  </data>
+  <data name="RegiterAccount" xml:space="preserve">
+    <value>Tạo Mới Tài Khoảng</value>
+  </data>
+  <data name="RegiterAccount_Title" xml:space="preserve">
+    <value>Đăng ký tài khoản để có trải nghiệm tốt hơn</value>
+  </data>
+  <data name="RegiterDate" xml:space="preserve">
+    <value>Ngày Đăng Ký</value>
+  </data>
+  <data name="RegiterError" xml:space="preserve">
+    <value>Đăng ký thất bại, bạn vui lòng kiểm tra lại !</value>
+  </data>
+  <data name="RegiterSuccess" xml:space="preserve">
+    <value>Đăng ký Email thành công, bạn có thể đăng nhâp.</value>
+  </data>
+  <data name="Regiter_page" xml:space="preserve">
+    <value>Đăng Ký</value>
+  </data>
+  <data name="Related_Comment" xml:space="preserve">
+    <value>Xem Các Bình Luận Liên Quan</value>
+  </data>
+  <data name="RemoveAll" xml:space="preserve">
+    <value>Xóa tất cả</value>
+  </data>
+  <data name="RemoveError" xml:space="preserve">
+    <value>Xóa thông báo thất bại !</value>
+  </data>
+  <data name="RemoveSuccess" xml:space="preserve">
+    <value>Xóa thông báo thành công</value>
+  </data>
+  <data name="RemovethisNotificaiton" xml:space="preserve">
+    <value>Xóa thông báo này</value>
+  </data>
+  <data name="Remove_downloads" xml:space="preserve">
+    <value>Xóa lượt tải của bài hát</value>
+  </data>
+  <data name="Remove_Song" xml:space="preserve">
+    <value>Xóa Bài Hát</value>
+  </data>
+  <data name="Renewaldate_EndDate" xml:space="preserve">
+    <value>Ngày gia hạn không được nhỏ hơn ngày hiện tại</value>
+  </data>
+  <data name="Renew_task" xml:space="preserve">
+    <value>Gia hạn lại nhiệm vụ</value>
+  </data>
+  <data name="Reply_content" xml:space="preserve">
+    <value>Nội dung trả lời</value>
+  </data>
+  <data name="ReportSong_File" xml:space="preserve">
+    <value>Báo Cáo File Bài Hát</value>
+  </data>
+  <data name="reports_employees" xml:space="preserve">
+    <value>Thống Kê báo cáo nhân viên</value>
+  </data>
+  <data name="Report_Management" xml:space="preserve">
+    <value>Quản Lý Báo Cáo</value>
+  </data>
+  <data name="Requested_ask" xml:space="preserve">
+    <value>Nhiệm Vụ Được Yêu Cầu</value>
+  </data>
+  <data name="requestsent_successfully" xml:space="preserve">
+    <value>Gửi yêu cầu thành công, chúng tôi sẻ sớm phản hồi qua Email mà bạn đã gửi</value>
+  </data>
+  <data name="Request_Date" xml:space="preserve">
+    <value>Ngày Yêu Cầu</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Làm mới</value>
+  </data>
+  <data name="Respondent_name" xml:space="preserve">
+    <value>Tên người trả lời</value>
+  </data>
+  <data name="result" xml:space="preserve">
+    <value>kết quả</value>
+  </data>
+  <data name="Retrieveemployee_password" xml:space="preserve">
+    <value>Lấy lại mật khẩu nhân viên</value>
+  </data>
+  <data name="Reviewer_name" xml:space="preserve">
+    <value>Tên người đánh giá</value>
+  </data>
+  <data name="ReviewNew_Updates" xml:space="preserve">
+    <value>Xem Lại Thông Tin Mới Cập Nhật</value>
+  </data>
+  <data name="RoleAndImageStaff" xml:space="preserve">
+    <value>Quyền Và Hình Ảnh Nhân Viên</value>
+  </data>
+  <data name="RoleAssignment_Day" xml:space="preserve">
+    <value>Ngày Phân Vai Trò</value>
+  </data>
+  <data name="Rolecode_found" xml:space="preserve">
+    <value>Không tìm thấy mã vai trò</value>
+  </data>
+  <data name="Roles_ImagesEmployees" xml:space="preserve">
+    <value>Vai Trò Và Hình Ảnh Nhân Viên</value>
+  </data>
+  <data name="Roleupdate_successful" xml:space="preserve">
+    <value>Cập nhật vai trò thành công</value>
+  </data>
+  <data name="Role_App" xml:space="preserve">
+    <value>Quyền Ứng Dụng</value>
+  </data>
+  <data name="Role_Selection" xml:space="preserve">
+    <value>Lựa Chọn Vai Trò</value>
+  </data>
+  <data name="SaintStatus_Change" xml:space="preserve">
+    <value>Thay Đổi Trạng Thái Ngày Lễ</value>
+  </data>
+  <data name="Saveauthor" xml:space="preserve">
+    <value>Lưu tên tác giả</value>
+  </data>
+  <data name="Savesong_title" xml:space="preserve">
+    <value>Lưu tên bài hát</value>
+  </data>
+  <data name="Save_saint" xml:space="preserve">
+    <value>Lưu lại lễ ngoại lịch này</value>
+  </data>
+  <data name="Save_season" xml:space="preserve">
+    <value>Lưu lại mùa này</value>
+  </data>
+  <data name="Seach" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="SeachMusic" xml:space="preserve">
+    <value>Tìm kiếm bài hát</value>
+  </data>
+  <data name="Seach_Music" xml:space="preserve">
+    <value>Nhập tên bài hát, mùa, mã bài hát, ...</value>
+  </data>
+  <data name="SearchEmployeeCode" xml:space="preserve">
+    <value>Tìm Kiếm Mã Nhân Viên Hoặc Tên Nhân Viên</value>
+  </data>
+  <data name="Seasonal_selection" xml:space="preserve">
+    <value>Lựa chọn theo mùa</value>
+  </data>
+  <data name="Seasons" xml:space="preserve">
+    <value>Thuộc Mùa</value>
+  </data>
+  <data name="Seasons_Year_round" xml:space="preserve">
+    <value>Mùa Thường Niên</value>
+  </data>
+  <data name="Seenumber_logins" xml:space="preserve">
+    <value>Xem số lần đăng nhập</value>
+  </data>
+  <data name="Seepicture_message" xml:space="preserve">
+    <value>Xem hình ảnh trong tin nhắn</value>
+  </data>
+  <data name="see_more" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="See_rating" xml:space="preserve">
+    <value>Xem đánh giá sao</value>
+  </data>
+  <data name="SelectDate_filter" xml:space="preserve">
+    <value>Chọn Ngày Muốn Lọc</value>
+  </data>
+  <data name="Selectemployee_role" xml:space="preserve">
+    <value>Chọn vai trò nhân viên</value>
+  </data>
+  <data name="selectfilesend" xml:space="preserve">
+    <value>Vui lòng chọn tệp để gửi</value>
+  </data>
+  <data name="Selectfile_send" xml:space="preserve">
+    <value>Chọn file cần gửi</value>
+  </data>
+  <data name="Selectimagefile_send" xml:space="preserve">
+    <value>Chọn hình hoặc file cần gửi</value>
+  </data>
+  <data name="selectline_back" xml:space="preserve">
+    <value>Vui lòng chọn một dòng để lấy lại</value>
+  </data>
+  <data name="Selectrole_New" xml:space="preserve">
+    <value>Chọn vai trò Mới</value>
+  </data>
+  <data name="selectstatus_filter" xml:space="preserve">
+    <value>Chọn trạng thái để lọc</value>
+  </data>
+  <data name="Selectstatus_youwantchange" xml:space="preserve">
+    <value>Chọn trạng thái bạn muốn đổi</value>
+  </data>
+  <data name="SelectTask_Status" xml:space="preserve">
+    <value>Lựa Chọn Trạng Thái Nhiệm Vụ</value>
+  </data>
+  <data name="SelectUpdate_File" xml:space="preserve">
+    <value>Chọn File Cập Nhật</value>
+  </data>
+  <data name="Select_condition" xml:space="preserve">
+    <value>Lựa Chọn Điều Kiện Mà Bạn Muốn Tìm Kiếm</value>
+  </data>
+  <data name="select_date" xml:space="preserve">
+    <value>Vui lòng chọn ngày</value>
+  </data>
+  <data name="Select_Dates" xml:space="preserve">
+    <value>Chọn Ngày</value>
+  </data>
+  <data name="select_field" xml:space="preserve">
+    <value>vui lòng chọn một trường để tiến hành kích hoạt tài khoản!</value>
+  </data>
+  <data name="Select_saint" xml:space="preserve">
+    <value>Chọn Ngày Lễ</value>
+  </data>
+  <data name="select_status" xml:space="preserve">
+    <value>Vui lòng chọn một trạng thái</value>
+  </data>
+  <data name="Select_Time" xml:space="preserve">
+    <value>Vui lòng chọn giờ</value>
+  </data>
+  <data name="select_timeperiod" xml:space="preserve">
+    <value>Vui lòng chọn khoảng thời gian</value>
+  </data>
+  <data name="Send Contributions" xml:space="preserve">
+    <value>Gửi Đóng Góp</value>
+  </data>
+  <data name="Sender" xml:space="preserve">
+    <value>Người gửi:</value>
+  </data>
+  <data name="Sender_FirstLast_Name" xml:space="preserve">
+    <value>Họ Và Tên Người Gửi</value>
+  </data>
+  <data name="SendFileIf_Yes" xml:space="preserve">
+    <value>Gửi File Nếu Có</value>
+  </data>
+  <data name="send_congratulations" xml:space="preserve">
+    <value>nhân viên hãy gửi đến họ lời chúc mừng</value>
+  </data>
+  <data name="sent" xml:space="preserve">
+    <value>Gửi</value>
+  </data>
+  <data name="SentError" xml:space="preserve">
+    <value>Gửi Lỗi</value>
+  </data>
+  <data name="SentMessage_Error" xml:space="preserve">
+    <value>Không thể gửi tin nhắn, đã xảy ra lỗi</value>
+  </data>
+  <data name="SentNotification_Error" xml:space="preserve">
+    <value>Gửi Báo Cáo Lỗi</value>
+  </data>
+  <data name="Sent_File" xml:space="preserve">
+    <value>Gửi File</value>
+  </data>
+  <data name="SettingFileStatus" xml:space="preserve">
+    <value>Cài đặt trạng thái cho File</value>
+  </data>
+  <data name="SharingTasks_Employees" xml:space="preserve">
+    <value>Chia Nhiệm Vụ Cho Nhân Viên</value>
+  </data>
+  <data name="Show_Password" xml:space="preserve">
+    <value>Hiện mật khẩu</value>
+  </data>
+  <data name="Sign_Up" xml:space="preserve">
+    <value>Đăng Ký Manager Music</value>
+  </data>
+  <data name="Since" xml:space="preserve">
+    <value>Bắt Đầu Từ Ngày</value>
+  </data>
+  <data name="Singing_praying" xml:space="preserve">
+    <value>Hát, là cầu nguyện hai lần</value>
+  </data>
+  <data name="Slogan" xml:space="preserve">
+    <value>Hệ thống quản lý các file bài hát của công giáo</value>
+  </data>
+  <data name="Software_Introduction" xml:space="preserve">
+    <value>Giới Thiệu Phần Mềm</value>
+  </data>
+  <data name="Solved" xml:space="preserve">
+    <value>Đã Giải Quyết</value>
+  </data>
+  <data name="Solving" xml:space="preserve">
+    <value>Đang Giải Quyết</value>
+  </data>
+  <data name="songAlready_exists" xml:space="preserve">
+    <value>Bài hát đã tồn tại</value>
+  </data>
+  <data name="songcode_empty" xml:space="preserve">
+    <value>Mã bài hát truyền vào bị trống !</value>
+  </data>
+  <data name="Songdownload_failed" xml:space="preserve">
+    <value>Tải bài hát thất bại, vui lòng kiểm tra lại !</value>
+  </data>
+  <data name="songname_currentdatemonthyear" xml:space="preserve">
+    <value>+ tên bài hát_ngày tháng năm hiện tại</value>
+  </data>
+  <data name="SongReport_Chart" xml:space="preserve">
+    <value>Biểu Đồ Báo Cáo Bài Hát</value>
+  </data>
+  <data name="Song_Chart" xml:space="preserve">
+    <value>Biểu Đồ Bài Hát</value>
+  </data>
+  <data name="Song_Comments" xml:space="preserve">
+    <value>Bình Luận Bài Hát</value>
+  </data>
+  <data name="Song_ListPage" xml:space="preserve">
+    <value>Trang Danh Sách Bài Hát</value>
+  </data>
+  <data name="Song_rate" xml:space="preserve">
+    <value>Đánh Giá Sao Bài Hát</value>
+  </data>
+  <data name="special holidays" xml:space="preserve">
+    <value>Chọn Lễ Ngoại Lịch</value>
+  </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Nhân Viên</value>
+  </data>
+  <data name="Staffnot_found" xml:space="preserve">
+    <value>Không tìm thấy nhân viên</value>
+  </data>
+  <data name="Staff_Activation" xml:space="preserve">
+    <value>Kích hoạt tài khoản nhân viên</value>
+  </data>
+  <data name="staff_chat" xml:space="preserve">
+    <value>Trò Chuyện Nhân Viên</value>
+  </data>
+  <data name="Staff_information" xml:space="preserve">
+    <value>Thông Tin Nhân Viên</value>
+  </data>
+  <data name="Starrating" xml:space="preserve">
+    <value>Đánh giá sao</value>
+  </data>
+  <data name="stars" xml:space="preserve">
+    <value>sao</value>
+  </data>
+  <data name="Startdate_dateend" xml:space="preserve">
+    <value>Ngày bắt đầu đến ngày kết thúc</value>
+  </data>
+  <data name="Star_rating" xml:space="preserve">
+    <value>Đánh giá sao</value>
+  </data>
+  <data name="Star_RatingList" xml:space="preserve">
+    <value>Danh Sách Sao Đánh Giá</value>
+  </data>
+  <data name="Star_Review" xml:space="preserve">
+    <value>Đánh Giá 5 Sao</value>
+  </data>
+  <data name="Statisticalchart" xml:space="preserve">
+    <value>Thống Kê Biểu Đồ</value>
+  </data>
+  <data name="Statisticalchart_songmonth" xml:space="preserve">
+    <value>Biểu đồ thống kê bài hát mới nhất theo tháng</value>
+  </data>
+  <data name="StatisticalreportEmployee" xml:space="preserve">
+    <value>Thống Kê Báo Cáo Nhân Viên</value>
+  </data>
+  <data name="StatisticalreportSong_file" xml:space="preserve">
+    <value>Báo Cáo Thống Kê Tệp Bài Hát</value>
+  </data>
+  <data name="StatisticalreportUser" xml:space="preserve">
+    <value>Thống kê Báo Cáo Người Dùng</value>
+  </data>
+  <data name="Statistics_Report" xml:space="preserve">
+    <value>Thống Kê Báo Cáo</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Trạng Thái</value>
+  </data>
+  <data name="StatusAccount" xml:space="preserve">
+    <value>Trạng Thái Tài Khoản</value>
+  </data>
+  <data name="Statussettings_accounts" xml:space="preserve">
+    <value>Cài đặt trạng thái cho tài khoản</value>
+  </data>
+  <data name="Statussettings_season" xml:space="preserve">
+    <value>Cài đặt trạng thái cho mùa</value>
+  </data>
+  <data name="Study" xml:space="preserve">
+    <value>Chúng tôi đã nghiêm cứu, sau thời gian nghiêm cứu về tất cả nhu cầu của khách hàng. Nhằm đáp ứng được như cầu đó chúng tôi đã nghiêm cứu và phát triển một hệ thống giúp cho bạn có thể quản lý các file bài hát công giáo tốt nhất.</value>
+  </data>
+  <data name="Submit_failed" xml:space="preserve">
+    <value>Gửi đánh giá xây dựng thất bại vui lòng kiểm tra lại</value>
+  </data>
+  <data name="Submit_Plan" xml:space="preserve">
+    <value>Gửi Nhiệm Vụ</value>
+  </data>
+  <data name="Successfultask_received" xml:space="preserve">
+    <value>Nhận nhiệm vụ thành công</value>
+  </data>
+  <data name="Successful_rating" xml:space="preserve">
+    <value>Đánh giá sao thành công</value>
+  </data>
+  <data name="Supported_Languages" xml:space="preserve">
+    <value>Ngôn Ngữ Được Hỗ Trợ</value>
+  </data>
+  <data name="Support_expenses" xml:space="preserve">
+    <value>Hỗ Trợ Chi Phí Cho Hệ Thống Hoạt Động</value>
+  </data>
+  <data name="systemonly_accepts" xml:space="preserve">
+    <value>Hệ thống chỉ nhận các file (PDF, WORD, EXCEL)</value>
+  </data>
+  <data name="SystemRequest" xml:space="preserve">
+    <value>Hệ thống yêu cầu nhận vào là file word .doc</value>
+  </data>
+  <data name="System_Introduction" xml:space="preserve">
+    <value>Giới Thiệu Hệ Thống</value>
+  </data>
+  <data name="System_Management" xml:space="preserve">
+    <value>Quản Lý Hệ Thống</value>
+  </data>
+  <data name="System_page" xml:space="preserve">
+    <value>Hệ Thống</value>
+  </data>
+  <data name="Sytstem_File" xml:space="preserve">
+    <value>Hệ thống không nhận được file</value>
+  </data>
+  <data name="Takeback_song" xml:space="preserve">
+    <value>Lấy lại bài hát</value>
+  </data>
+  <data name="Taking_mission" xml:space="preserve">
+    <value>Nhận nhiệm vụ</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Mục Tiêu</value>
+  </data>
+  <data name="Task" xml:space="preserve">
+    <value>Nhiệm Vụ</value>
+  </data>
+  <data name="TaskAcceptance_Status" xml:space="preserve">
+    <value>Trạng Thái Nhận Nhiệm Vụ</value>
+  </data>
+  <data name="TaskFile_List" xml:space="preserve">
+    <value>Danh Sách File Nhiệm Vụ</value>
+  </data>
+  <data name="TaskManager_denied" xml:space="preserve">
+    <value>Trình quản lý tác vụ bị từ chối</value>
+  </data>
+  <data name="Tasktitle_empty" xml:space="preserve">
+    <value>Tiêu đề nhiệm vụ không bỏ trống</value>
+  </data>
+  <data name="TaskUpdate" xml:space="preserve">
+    <value>Cập Nhật Lại Nhiệm Vụ</value>
+  </data>
+  <data name="task_assigned" xml:space="preserve">
+    <value>Nhiệm vụ này đã hết hạn không thể bổ nhiệm</value>
+  </data>
+  <data name="Task_Code" xml:space="preserve">
+    <value>Mã Nhiệm Vụ</value>
+  </data>
+  <data name="Task_Creator" xml:space="preserve">
+    <value>Người Tạo Nhiệm Vụ</value>
+  </data>
+  <data name="Task_Manager" xml:space="preserve">
+    <value>Quản Lý Nhiệm Vụ</value>
+  </data>
+  <data name="Thankvery_much" xml:space="preserve">
+    <value>Xin chào các bạn, như các bạn đã biết đây là phần mềm miễn phí mà chúng tôi đã tạo ra, để giúp các bạn có thêm nguồn tài liệu muốn tìm thấy tài liệu các bài hát Công Giáo, dành cho các bạn cho dù có là Công Giáo hay không Công Giáo, vì vậy để duy trì hoạt động của website trên trình duyệt tìm kiếm của google thì xin mọi người tùy tấm lòng mình, góp để có một khoảng chi phí duy trì hoạt động. Xin chân thành cảm ơn các bạn. (Development Duy Tường)</value>
+  </data>
+  <data name="Theresponses_reviewcomment" xml:space="preserve">
+    <value>Các câu trả lời của nhận xét đánh giá này</value>
+  </data>
+  <data name="Thetask_expired" xml:space="preserve">
+    <value>Đã hết hạn làm nhiệm vụ</value>
+  </data>
+  <data name="Thetask_expiredyet" xml:space="preserve">
+    <value>Chưa hết hạn làm nhiệm vụ</value>
+  </data>
+  <data name="the_song" xml:space="preserve">
+    <value>Bài Hát</value>
+  </data>
+  <data name="ThisHoliday_SongList" xml:space="preserve">
+    <value>Danh Sách Bài Hát Thuộc Ngày Lễ Này</value>
+  </data>
+  <data name="ThisSeason_List" xml:space="preserve">
+    <value>Danh Sách Bài Hát Thuộc Mùa Này</value>
+  </data>
+  <data name="TickRow_DeleteMusicDowload" xml:space="preserve">
+    <value>Vui lòng tích chọn vào các hàng bạn muốn xóa !</value>
+  </data>
+  <data name="ticksong_changestatus" xml:space="preserve">
+    <value>Hãy đánh dấu vào một bài hát để thay đổi trạng thái !</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Thời Gian</value>
+  </data>
+  <data name="TimeCreate_Song" xml:space="preserve">
+    <value>Giờ Tạo Bài Hát</value>
+  </data>
+  <data name="TimeDowload" xml:space="preserve">
+    <value>Giờ Tải</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Tiêu Đề</value>
+  </data>
+  <data name="Title_Notification" xml:space="preserve">
+    <value>Tiêu Đề Báo Cáo</value>
+  </data>
+  <data name="title_request" xml:space="preserve">
+    <value>Vui lòng nhập tiêu đề của yêu cầu !</value>
+  </data>
+  <data name="today" xml:space="preserve">
+    <value>Hôm Nay</value>
+  </data>
+  <data name="tomorrow" xml:space="preserve">
+    <value>Ngày Mai</value>
+  </data>
+  <data name="TotalAcc_Time" xml:space="preserve">
+    <value>Tổng Thời Gian Tài Khoản Hoạt Động</value>
+  </data>
+  <data name="TotalDownloads" xml:space="preserve">
+    <value>Lượt Đã Tải Về</value>
+  </data>
+  <data name="TotalHours" xml:space="preserve">
+    <value>Tổng Giờ Hoạt Động</value>
+  </data>
+  <data name="TotalMusic" xml:space="preserve">
+    <value>Tổng Số Bài Hát Là: </value>
+  </data>
+  <data name="TotalNewSongMonth" xml:space="preserve">
+    <value>Tổng Số Bài Hát Mới Của Tháng Này</value>
+  </data>
+  <data name="Totalnumber_song" xml:space="preserve">
+    <value>Tổng số lược thích bài hát</value>
+  </data>
+  <data name="TotalNumber_Uploads" xml:space="preserve">
+    <value>Lượt Đã Tải Lên</value>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Tổng Số</value>
+  </data>
+  <data name="TotalSongLastMonth" xml:space="preserve">
+    <value>Tổng Số Bài Hát Của Tháng Trước</value>
+  </data>
+  <data name="TotalSongs_App" xml:space="preserve">
+    <value>Tổng Số Bài Hát Của Ứng Dụng</value>
+  </data>
+  <data name="TotalStaff" xml:space="preserve">
+    <value>Tổng số nhân viên:</value>
+  </data>
+  <data name="Totaltask_canceled" xml:space="preserve">
+    <value>Tổng nhiệm vụ đã hủy</value>
+  </data>
+  <data name="Totaltask_received" xml:space="preserve">
+    <value>Tổng Nhiệm Vụ Đang Nhận</value>
+  </data>
+  <data name="Total_Com" xml:space="preserve">
+    <value>Tổng Bình Luận</value>
+  </data>
+  <data name="total_requirements" xml:space="preserve">
+    <value>Tổng số yêu cầu</value>
+  </data>
+  <data name="Total_Seasson" xml:space="preserve">
+    <value>Tổng Số Mùa</value>
+  </data>
+  <data name="Total_Song" xml:space="preserve">
+    <value>Tổng Bài Hát</value>
+  </data>
+  <data name="Total_stars" xml:space="preserve">
+    <value>Tổng Sao</value>
+  </data>
+  <data name="Total_Task" xml:space="preserve">
+    <value>Tổng Nhiệm Vụ</value>
+  </data>
+  <data name="Total_Update" xml:space="preserve">
+    <value>Tổng số lần cập nhật</value>
+  </data>
+  <data name="Total_User" xml:space="preserve">
+    <value>Tổng Số Người Dùng</value>
+  </data>
+  <data name="turn" xml:space="preserve">
+    <value>Lượt</value>
+  </data>
+  <data name="Unable_download" xml:space="preserve">
+    <value>Không thể tải file về được vui lòng kiểm tra lại</value>
+  </data>
+  <data name="UnlockEmployee_Account" xml:space="preserve">
+    <value>Mở Khóa Tài Khoản Nhân Viên</value>
+  </data>
+  <data name="Unlockemployee_successfully" xml:space="preserve">
+    <value>Mở khóa tài khoản nhân viên thành công</value>
+  </data>
+  <data name="Unlock_accounts" xml:space="preserve">
+    <value>Mở khóa tài khoản người dùng</value>
+  </data>
+  <data name="unread_message" xml:space="preserve">
+    <value>tin chưa được đọc</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Cập Nhật</value>
+  </data>
+  <data name="UpdateDate_Time" xml:space="preserve">
+    <value>Cập Nhật Lại Ngày Và Giờ</value>
+  </data>
+  <data name="UpdateDate_TimeSucc" xml:space="preserve">
+    <value>Cập nhật ngày và thời gian thành công</value>
+  </data>
+  <data name="UpdateFile_Muisc" xml:space="preserve">
+    <value>Chỉnh Sửa File Bài Hát</value>
+  </data>
+  <data name="UpdateImage_Muisc" xml:space="preserve">
+    <value>Chỉnh Hình File Bài Hát</value>
+  </data>
+  <data name="UpdateMusic_Erorr" xml:space="preserve">
+    <value>Chỉnh sửa bài hát thất bại</value>
+  </data>
+  <data name="UpdateMusic_Success" xml:space="preserve">
+    <value>Chỉnh sửa bài hát thành công</value>
+  </data>
+  <data name="UpdateSaint_Success" xml:space="preserve">
+    <value>Cập nhật ngày lễ thành công</value>
+  </data>
+  <data name="Updatetask_successfully" xml:space="preserve">
+    <value>Cập nhật nhiệm vụ thành công</value>
+  </data>
+  <data name="Update_File" xml:space="preserve">
+    <value>Cập Nhật Lại File</value>
+  </data>
+  <data name="Update_Funtion" xml:space="preserve">
+    <value>Chức năng này tàm thời đang chờ cập nhật, vui lòng thử lại sau !</value>
+  </data>
+  <data name="Update_history" xml:space="preserve">
+    <value>Lịch Sử Cập Nhật</value>
+  </data>
+  <data name="Update_Saint" xml:space="preserve">
+    <value>Cập Nhật Ngày Lễ</value>
+  </data>
+  <data name="Update_Satff" xml:space="preserve">
+    <value>Chỉnh Sửa</value>
+  </data>
+  <data name="Update_Song" xml:space="preserve">
+    <value>Chỉnh Sửa Bài Hát</value>
+  </data>
+  <data name="Uptimestati" xml:space="preserve">
+    <value>Thống Kê Khoản Thời Gian Hoạt Động</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Người Dùng</value>
+  </data>
+  <data name="Userchart_year" xml:space="preserve">
+    <value>Biểu đồ thống kê người dùng trong năm</value>
+  </data>
+  <data name="usercode_valid" xml:space="preserve">
+    <value>Mã người dùng của bạn không hợp lệ</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Tên Người Dùng</value>
+  </data>
+  <data name="UserReport_Chart" xml:space="preserve">
+    <value>Biểu Đồ Báo Cáo Người Dùng</value>
+  </data>
+  <data name="UserR_Details" xml:space="preserve">
+    <value>Chi Tiết Yêu Cầu Người Dùng</value>
+  </data>
+  <data name="User_Administration" xml:space="preserve">
+    <value>Quản Trị Người Dùng</value>
+  </data>
+  <data name="User_Charts" xml:space="preserve">
+    <value>Biểu Đồ Người Dùng</value>
+  </data>
+  <data name="User_Details" xml:space="preserve">
+    <value>Chi Tiết Người Dùng</value>
+  </data>
+  <data name="User_information" xml:space="preserve">
+    <value>Thông Tin Người Dùng</value>
+  </data>
+  <data name="User_Notice" xml:space="preserve">
+    <value>Thông báo người dùng</value>
+  </data>
+  <data name="User_report" xml:space="preserve">
+    <value>Thống kê báo cáo người dùng</value>
+  </data>
+  <data name="Vietnam" xml:space="preserve">
+    <value>Nước Việt Nam</value>
+  </data>
+  <data name="Vietnamese" xml:space="preserve">
+    <value>Tiếng Việt</value>
+  </data>
+  <data name="ViewAZ" xml:space="preserve">
+    <value>Xem từ A - Z</value>
+  </data>
+  <data name="ViewDetail" xml:space="preserve">
+    <value>Xem Chi Tiết</value>
+  </data>
+  <data name="ViewDetailSong" xml:space="preserve">
+    <value>Xem chi tiết bài hát</value>
+  </data>
+  <data name="Viewlist_files" xml:space="preserve">
+    <value>Xem danh sách các file</value>
+  </data>
+  <data name="ViewZA" xml:space="preserve">
+    <value>Xem từ Z - A</value>
+  </data>
+  <data name="View_AllNotifications" xml:space="preserve">
+    <value>Xem Tất Cả Thông Báo</value>
+  </data>
+  <data name="View_intro" xml:space="preserve">
+    <value>Xem giới thiệu</value>
+  </data>
+  <data name="View_List" xml:space="preserve">
+    <value>Xem Danh Sách</value>
+  </data>
+  <data name="View_task" xml:space="preserve">
+    <value>Xem nhiệm vụ</value>
+  </data>
+  <data name="View_Upgrade_Levels" xml:space="preserve">
+    <value>Xem Cấp Độ Nâng Cấp</value>
+  </data>
+  <data name="Visited_Website" xml:space="preserve">
+    <value>Số Lượng Người Dùng Đã Ghé Thăm Website</value>
+  </data>
+  <data name="WasDowload" xml:space="preserve">
+    <value>Đã Tải</value>
+  </data>
+  <data name="WasFind" xml:space="preserve">
+    <value>Đã tìm thấy :</value>
+  </data>
+  <data name="watched" xml:space="preserve">
+    <value>Đã xem</value>
+  </data>
+  <data name="Wellcome" xml:space="preserve">
+    <value>Xin Chào</value>
+  </data>
+  <data name="working_day" xml:space="preserve">
+    <value>Ngày Làm Việc</value>
+  </data>
+  <data name="Work_Progress" xml:space="preserve">
+    <value>Tiến Độ CV</value>
+  </data>
+  <data name="Year-round_Season_Management" xml:space="preserve">
+    <value>Quản Lý Mùa</value>
+  </data>
+  <data name="yesterday" xml:space="preserve">
+    <value>Hôm Qua</value>
+  </data>
+  <data name="Yesterday_song" xml:space="preserve">
+    <value>BH Hôm Qua</value>
+  </data>
+  <data name="Youliked" xml:space="preserve">
+    <value>Bạn đã thích</value>
+  </data>
+  <data name="Younot_selectedimage" xml:space="preserve">
+    <value>Bạn Chưa Chọn Hình</value>
+  </data>
+  <data name="Yourated_this" xml:space="preserve">
+    <value>Cảm ơn! Bạn đánh giá điều này</value>
+  </data>
+  <data name="you_have" xml:space="preserve">
+    <value>Bạn đang có</value>
+  </data>
+</root>

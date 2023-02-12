@@ -1,0 +1,696 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+
+<div class="az-content-left az-content-left-components">
+    <div class="component-item">
+        <label><i class="fas fa-newspaper"></i> @languade.Getkey("General_information")</label>
+        <nav class="nav flex-column">
+            <a href="Infomation-Admin.html" class="nav-link"><i class="fas fa-arrow-right"></i> @languade.Getkey("Personal")</a>
+            <a id="btn_LeverRole" class="nav-link"><i class="fas fa-arrow-right"></i> @languade.Getkey("View_Upgrade_Levels")</a>
+        </nav>
+
+        <label><i class="fas fa-database"></i> @languade.Getkey("Data_Administration")</label>
+        <nav class="nav flex-column">
+            <a id="IndexFile" asp-action="IndexFile" asp-controller="ManagerData" class="nav-link"><i class="fas fa-arrow-right"></i> @languade.Getkey("File_management")</a>
+            <a id="IndexSeason" asp-action="IndexSeason" asp-controller="ManagerSeason" class="nav-link"><i class="fas fa-arrow-right"></i> @languade.Getkey("Year-round_Season_Management")</a>
+            <a id="IndexSaint" asp-action="IndexSaint" asp-controller="ManagerSaint" class="nav-link"><i class="fas fa-arrow-right"></i> @languade.Getkey("Holiday_Management")</a>
+        </nav>
+
+        <label><i class="fas fa-user"></i> @languade.Getkey("Employee_Management")</label>
+        <nav class="nav flex-column">
+            <a id="Page_Staff" asp-action="Page_Staff" asp-controller="User" class="nav-link"><i class="fas fa-arrow-right"></i> @languade.Getkey("My_staff")</a>
+            <a id="IndexChatStaff" asp-action="IndexChatStaff" asp-controller="User" class="nav-link">
+                <i class="fas fa-arrow-right"></i>
+                @languade.Getkey("Chat")
+                <span class="badge bg-danger" style="color: white; font-size: 11px;" id="TotalChat"></span>
+            </a>
+            <a id="Page_Plans" asp-action="Page_Plans" asp-controller="ManagerPlans" class="nav-link">
+                <i class="fas fa-arrow-right"></i>
+                @languade.Getkey("Task")
+                <span class="badge bg-danger" style="color: white; font-size: 11px;" id="TotalPlan"></span>
+            </a>
+        </nav>
+
+        <label><i class="fas fa-users"></i> @languade.Getkey("User_Administration")</label>
+        <nav class="nav flex-column">
+            <a id="Page_User" asp-action="Page_User" asp-controller="User" class="nav-link"><i class="fas fa-arrow-right"></i> @languade.Getkey("My_Users")</a>
+        </nav>
+
+        <label><i class="fas fa-chart-bar"></i> @languade.Getkey("Statistics_Report")</label>
+        <nav class="nav flex-column">
+            <a id="Page_Report" asp-action="Page_Report" asp-controller="Reports" class="nav-link"><i class="fas fa-arrow-right"></i> @languade.Getkey("General_Report")</a>
+        </nav>
+
+    </div><!-- component-item -->
+
+</div><!-- az-content-left -->
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        LoadDataTotalChat();
+        LoadDataTotalPlans();
+        var menuClass = localStorage.getItem('IdFlaps')
+        switch (menuClass) {
+            case "1":
+                SetActiver_IndexFile();
+                break;
+            case "2":
+                SetActiver_IndexSeason();
+                break;
+            case "3":
+                SetActiver_IndexSaint();
+                break;
+            case "4":
+                SetActiver_PageStaff();
+                break;
+            case "5":
+                SetActiver_IndexChatStaff();
+                break;
+            case "6":
+                SetActiver_PagePlans();
+                break;
+            case "7":
+                SetActiverPageUser();
+                break;
+            case "8":
+                SetActiverPageReport();
+                break;
+            default:
+                localStorage.setItem('IdFlaps', "1");
+                SetActiver_IndexFile();               
+                break;
+        }
+    });
+
+    //load totalchat by id user
+    function LoadDataTotalChat() {
+        $("#TotalChat").empty();
+        $.ajax({
+            url: "/SidebarMenu/LoadTotalChatByIdUser",
+            type: "get",
+            success: function (result) {
+                if (result.totalChat != 0) {
+                    $("#TotalChat").append(result.totalChat);
+                } else {
+                    document.getElementById('TotalChat').style.display = 'none';
+                }
+                return;
+            }
+        })
+    }
+
+    //load totalPlans by id user
+    function LoadDataTotalPlans() {
+        $("#TotalPlan").empty();
+        $.ajax({
+            url: "/SidebarMenu/AmountPlansByIdUser",
+            type: "get",
+            success: function (result) {
+                if (result.totalChat != 0) {
+                    $("#TotalPlan").append(result);
+                } else {
+                    document.getElementById('TotalPlan').style.display = 'none';
+                }
+                return;
+            }
+        })
+    }
+
+    //set activer_____________________-
+    $("#IndexFile").click(function () {
+        SetActiver_IndexFile();
+    });
+    function SetActiver_IndexFile() {
+        var GetClass_IndexFile = document.getElementById('IndexFile');
+        var IdFlap = localStorage.getItem("IdFlaps");
+        switch (IdFlap) {
+            case "1":
+                localStorage.setItem("IdFlaps", "1");
+                GetClass_IndexFile.classList.remove('active');
+                GetClass_IndexFile.classList.add('active');
+                break;
+            case "2":
+                var GetClass = document.getElementById('IndexSeason');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "1");
+                GetClass_IndexFile.classList.remove('active');
+                GetClass_IndexFile.classList.add('active');
+                break;
+            case "3":
+                var GetClass = document.getElementById('IndexSaint');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "1");
+                GetClass_IndexFile.classList.remove('active');
+                GetClass_IndexFile.classList.add('active');
+                break;
+            case "4":
+                var GetClass = document.getElementById('Page_Staff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "1");
+                GetClass_IndexFile.classList.remove('active');
+                GetClass_IndexFile.classList.add('active');
+                break;
+            case "5":
+                var GetClass = document.getElementById('IndexChatStaff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "1");
+                GetClass_IndexFile.classList.remove('active');
+                GetClass_IndexFile.classList.add('active');
+                break;
+            case "6":
+                var GetClass = document.getElementById('Page_Plans');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "1");
+                GetClass_IndexFile.classList.remove('active');
+                GetClass_IndexFile.classList.add('active');
+                break;
+            case "7":
+                var GetClass = document.getElementById('Page_User');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "1");
+                GetClass_IndexFile.classList.remove('active');
+                GetClass_IndexFile.classList.add('active');
+                break;
+            case "8":
+                var GetClass = document.getElementById('Page_Report');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "1");
+                GetClass_IndexFile.classList.remove('active');
+                GetClass_IndexFile.classList.add('active');
+                break;
+        }
+        return;
+    }
+
+    $("#IndexSeason").click(function () {
+        SetActiver_IndexSeason();
+    })
+    function SetActiver_IndexSeason() {
+        var GetClass_IndexSeason = document.getElementById('IndexSeason');
+        var IdFlap = localStorage.getItem("IdFlaps");
+        switch (IdFlap) {
+            case "1":
+                var GetClass = document.getElementById('IndexFile');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "2");
+                GetClass_IndexSeason.classList.remove('active');
+                GetClass_IndexSeason.classList.add('active');
+                break;
+            case "2":
+                localStorage.setItem("IdFlaps", "2");
+                GetClass_IndexSeason.classList.remove('active');
+                GetClass_IndexSeason.classList.add('active');
+                break;
+            case "3":
+                var GetClass = document.getElementById('IndexSaint');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "2");
+                GetClass_IndexSeason.classList.remove('active');
+                GetClass_IndexSeason.classList.add('active');
+                break;
+            case "4":
+                var GetClass = document.getElementById('Page_Staff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "2");
+                GetClass_IndexSeason.classList.remove('active');
+                GetClass_IndexSeason.classList.add('active');
+                break;
+            case "5":
+                var GetClass = document.getElementById('IndexChatStaff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "2");
+                GetClass_IndexSeason.classList.remove('active');
+                GetClass_IndexSeason.classList.add('active');
+                break;
+            case "6":
+                var GetClass = document.getElementById('Page_Plans');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "2");
+                GetClass_IndexSeason.classList.remove('active');
+                GetClass_IndexSeason.classList.add('active');
+                break;
+            case "7":
+                var GetClass = document.getElementById('Page_User');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "2");
+                GetClass_IndexSeason.classList.remove('active');
+                GetClass_IndexSeason.classList.add('active');
+                break;
+            case "8":
+                var GetClass = document.getElementById('Page_Report');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "2");
+                GetClass_IndexSeason.classList.remove('active');
+                GetClass_IndexSeason.classList.add('active');
+                break;
+        }
+        return;
+    }
+
+    $("#IndexSaint").click(function () {
+        SetActiver_IndexSaint();
+    })
+    function SetActiver_IndexSaint() {
+        var GetClass_IndexSaint = document.getElementById('IndexSaint');
+        var IdFlap = localStorage.getItem("IdFlaps");
+        switch (IdFlap) {
+            case "1":
+                var GetClass = document.getElementById('IndexFile');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "3");
+                GetClass_IndexSaint.classList.remove('active');
+                GetClass_IndexSaint.classList.add('active');
+                break;
+            case "2":
+                var GetClass = document.getElementById('IndexSeason');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "3");
+                GetClass_IndexSaint.classList.remove('active');
+                GetClass_IndexSaint.classList.add('active');
+                break;
+            case "3":
+                localStorage.setItem("IdFlaps", "3");
+                GetClass_IndexSaint.classList.remove('active');
+                GetClass_IndexSaint.classList.add('active');
+                break;
+            case "4":
+                var GetClass = document.getElementById('Page_Staff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "3");
+                GetClass_IndexSaint.classList.remove('active');
+                GetClass_IndexSaint.classList.add('active');
+                break;
+            case "5":
+                var GetClass = document.getElementById('IndexChatStaff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "3");
+                GetClass_IndexSaint.classList.remove('active');
+                GetClass_IndexSaint.classList.add('active');
+                break;
+            case "6":
+                var GetClass = document.getElementById('Page_Plans');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "3");
+                GetClass_IndexSaint.classList.remove('active');
+                GetClass_IndexSaint.classList.add('active');
+                break;
+            case "7":
+                var GetClass = document.getElementById('Page_User');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "3");
+                GetClass_IndexSaint.classList.remove('active');
+                GetClass_IndexSaint.classList.add('active');
+                break;
+            case "8":
+                var GetClass = document.getElementById('Page_Report');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "3");
+                GetClass_IndexSaint.classList.remove('active');
+                GetClass_IndexSaint.classList.add('active');
+                break;
+        }
+        return;
+    }
+
+    $("#Page_Staff").click(function () {
+        SetActiver_PageStaff();
+    });
+    function SetActiver_PageStaff() {
+        var GetClass_PageStaff = document.getElementById('Page_Staff');
+        var IdFlap = localStorage.getItem("IdFlaps");
+        switch (IdFlap) {
+            case "1":
+                var GetClass = document.getElementById('IndexFile');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "4");
+                GetClass_PageStaff.classList.remove('active');
+                GetClass_PageStaff.classList.add('active');
+                break;
+            case "2":
+                var GetClass = document.getElementById('IndexSeason');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "4");
+                GetClass_PageStaff.classList.remove('active');
+                GetClass_PageStaff.classList.add('active');
+                break;
+            case "3":
+                var GetClass = document.getElementById('IndexSaint');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "4");
+                GetClass_PageStaff.classList.remove('active');
+                GetClass_PageStaff.classList.add('active');
+                break;
+            case "4":
+                localStorage.setItem("IdFlaps", "4");
+                GetClass_PageStaff.classList.remove('active');
+                GetClass_PageStaff.classList.add('active');
+                break;
+            case "5":
+                var GetClass = document.getElementById('IndexChatStaff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "4");
+                GetClass_PageStaff.classList.remove('active');
+                GetClass_PageStaff.classList.add('active');
+                break;
+            case "6":
+                var GetClass = document.getElementById('Page_Plans');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "4");
+                GetClass_PageStaff.classList.remove('active');
+                GetClass_PageStaff.classList.add('active');
+                break;
+            case "7":
+                var GetClass = document.getElementById('Page_User');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "4");
+                GetClass_PageStaff.classList.remove('active');
+                GetClass_PageStaff.classList.add('active');
+                break;
+            case "8":
+                var GetClass = document.getElementById('Page_Report');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "4");
+                GetClass_PageStaff.classList.remove('active');
+                GetClass_PageStaff.classList.add('active');
+                break;
+        }
+        return;
+    }
+
+    $("#IndexChatStaff").click(function () {
+        SetActiver_IndexChatStaff();
+    });
+    function SetActiver_IndexChatStaff() {
+        var GetClass_IndexChatStaff = document.getElementById('IndexChatStaff');
+        var IdFlap = localStorage.getItem("IdFlaps");
+        switch (IdFlap) {
+            case "1":
+                var GetClass = document.getElementById('IndexFile');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "5");
+                GetClass_IndexChatStaff.classList.remove('active');
+                GetClass_IndexChatStaff.classList.add('active');
+                break;
+            case "2":
+                var GetClass = document.getElementById('IndexSeason');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "5");
+                GetClass_IndexChatStaff.classList.remove('active');
+                GetClass_IndexChatStaff.classList.add('active');
+                break;
+            case "3":
+                var GetClass = document.getElementById('IndexSaint');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "5");
+                GetClass_IndexChatStaff.classList.remove('active');
+                GetClass_IndexChatStaff.classList.add('active');
+                break;
+            case "4":
+                var GetClass = document.getElementById('Page_Staff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "5");
+                GetClass_IndexChatStaff.classList.remove('active');
+                GetClass_IndexChatStaff.classList.add('active');
+                break;
+            case "5":
+                localStorage.setItem("IdFlaps", "5");
+                GetClass_IndexChatStaff.classList.remove('active');
+                GetClass_IndexChatStaff.classList.add('active');
+                break;
+            case "6":
+                var GetClass = document.getElementById('Page_Plans');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "5");
+                GetClass_IndexChatStaff.classList.remove('active');
+                GetClass_IndexChatStaff.classList.add('active');
+                break;
+            case "7":
+                var GetClass = document.getElementById('Page_User');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "5");
+                GetClass_IndexChatStaff.classList.remove('active');
+                GetClass_IndexChatStaff.classList.add('active');
+                break;
+            case "8":
+                var GetClass = document.getElementById('Page_Report');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "5");
+                GetClass_IndexChatStaff.classList.remove('active');
+                GetClass_IndexChatStaff.classList.add('active');
+                break;
+        }
+        return;
+    }
+
+    $("#Page_Plans").click(function () {
+        SetActiver_PagePlans();
+    });
+    function SetActiver_PagePlans() {
+        var GetClass_PagePlans = document.getElementById('Page_Plans');
+        var IdFlap = localStorage.getItem("IdFlaps");
+        switch (IdFlap) {
+            case "1":
+                var GetClass = document.getElementById('IndexFile');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "6");
+                GetClass_PagePlans.classList.remove('active');
+                GetClass_PagePlans.classList.add('active');
+                break;
+            case "2":
+                var GetClass = document.getElementById('IndexSeason');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "6");
+                GetClass_PagePlans.classList.remove('active');
+                GetClass_PagePlans.classList.add('active');
+                break;
+            case "3":
+                var GetClass = document.getElementById('IndexSaint');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "6");
+                GetClass_PagePlans.classList.remove('active');
+                GetClass_PagePlans.classList.add('active');
+                break;
+            case "4":
+                var GetClass = document.getElementById('Page_Staff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "6");
+                GetClass_PagePlans.classList.remove('active');
+                GetClass_PagePlans.classList.add('active');
+                break;
+            case "5":
+                var GetClass = document.getElementById('IndexChatStaff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "6");
+                GetClass_PagePlans.classList.remove('active');
+                GetClass_PagePlans.classList.add('active');
+                break;
+            case "6":
+                localStorage.setItem("IdFlaps", "6");
+                GetClass_PagePlans.classList.remove('active');
+                GetClass_PagePlans.classList.add('active');
+                break;
+            case "7":
+                var GetClass = document.getElementById('Page_User');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "6");
+                GetClass_PagePlans.classList.remove('active');
+                GetClass_PagePlans.classList.add('active');
+                break;
+            case "8":
+                var GetClass = document.getElementById('Page_Report');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "6");
+                GetClass_PagePlans.classList.remove('active');
+                GetClass_PagePlans.classList.add('active');
+                break;
+        }
+        return;
+    }
+
+    $("#Page_User").click(function () {
+        SetActiverPageUser();
+    })
+    function SetActiverPageUser() {
+        var GetClass_PageUser = document.getElementById('Page_User');
+        var IdFlap = localStorage.getItem("IdFlaps");
+        switch (IdFlap) {
+            case "1":
+                var GetClass = document.getElementById('IndexFile');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "7");
+                GetClass_PageUser.classList.remove('active');
+                GetClass_PageUser.classList.add('active');
+                break;
+            case "2":
+                var GetClass = document.getElementById('IndexSeason');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "7");
+                GetClass_PageUser.classList.remove('active');
+                GetClass_PageUser.classList.add('active');
+                break;
+            case "3":
+                var GetClass = document.getElementById('IndexSaint');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "7");
+                GetClass_PageUser.classList.remove('active');
+                GetClass_PageUser.classList.add('active');
+                break;
+            case "4":
+                var GetClass = document.getElementById('Page_Staff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "7");
+                GetClass_PageUser.classList.remove('active');
+                GetClass_PageUser.classList.add('active');
+                break;
+            case "5":
+                var GetClass = document.getElementById('IndexChatStaff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "7");
+                GetClass_PageUser.classList.remove('active');
+                GetClass_PageUser.classList.add('active');
+                break;
+            case "6":
+                var GetClass = document.getElementById('Page_Plans');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "7");
+                GetClass_PageUser.classList.remove('active');
+                GetClass_PageUser.classList.add('active');
+                break;
+            case "7":
+                localStorage.setItem("IdFlaps", "7");
+                GetClass_PageUser.classList.remove('active');
+                GetClass_PageUser.classList.add('active');
+                break;
+            case "8":
+                var GetClass = document.getElementById('Page_Report');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "7");
+                GetClass_PageUser.classList.remove('active');
+                GetClass_PageUser.classList.add('active');
+                break;
+        }
+        return;
+    }
+
+    $("#Page_Report").click(function () {
+        SetActiverPageReport();
+    })
+    function SetActiverPageReport() {
+        var GetClass_PageReport = document.getElementById('Page_Report');
+        var IdFlap = localStorage.getItem("IdFlaps");
+        switch (IdFlap) {
+            case "1":
+                var GetClass = document.getElementById('IndexFile');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "8");
+                GetClass_PageReport.classList.remove('active');
+                GetClass_PageReport.classList.add('active');
+                break;
+            case "2":
+                var GetClass = document.getElementById('IndexSeason');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "8");
+                GetClass_PageReport.classList.remove('active');
+                GetClass_PageReport.classList.add('active');
+                break;
+            case "3":
+                var GetClass = document.getElementById('IndexSaint');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "8");
+                GetClass_PageReport.classList.remove('active');
+                GetClass_PageReport.classList.add('active');
+                break;
+            case "4":
+                var GetClass = document.getElementById('Page_Staff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "8");
+                GetClass_PageReport.classList.remove('active');
+                GetClass_PageReport.classList.add('active');
+                break;
+            case "5":
+                var GetClass = document.getElementById('IndexChatStaff');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "8");
+                GetClass_PageReport.classList.remove('active');
+                GetClass_PageReport.classList.add('active');
+                break;
+            case "6":
+                var GetClass = document.getElementById('Page_Plans');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "8");
+                GetClass_PageReport.classList.remove('active');
+                GetClass_PageReport.classList.add('active');
+                break;
+            case "7":
+                var GetClass = document.getElementById('Page_User');
+                GetClass.classList.remove('active');
+
+                localStorage.setItem("IdFlaps", "8");
+                GetClass_PageReport.classList.remove('active');
+                GetClass_PageReport.classList.add('active');
+                break;
+            case "8":
+                localStorage.setItem("IdFlaps", "8");
+                GetClass_PageReport.classList.remove('active');
+                GetClass_PageReport.classList.add('active');
+                break;
+        }
+        return;
+    }
+
+</script>

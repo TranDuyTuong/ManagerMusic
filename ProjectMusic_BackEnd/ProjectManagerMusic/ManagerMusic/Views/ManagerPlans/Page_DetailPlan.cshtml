@@ -1,0 +1,315 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Detail_Task");
+    Layout = "~/Views/Shared/Manager_Plans/ManagerDetailPlan.cshtml";
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a asp-action="Page_Plans" asp-controller="ManagerPlans" style="color: #97a3b9;">@languade.Getkey("Task_Manager")</a></span>
+        <span>@languade.Getkey("Detail_Task")</span>
+    </div>
+
+    <h2 class="az-content-title" id="TxtNamePlan"></h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align:right;">
+
+                <a id="Btn_EditPlan" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Update_Satff")"><i class="fas fa-edit"></i></a>
+
+                <a id="Btn_EditDateTime" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Renew_task")"><i class="fas fa-calendar-alt"></i></a>
+
+                <a id="Btn_UserPlan" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Assigntasks_others")"><i class="fas fa-user-tag"></i></a>
+
+                <a id="Btn_Reload" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("reset")"><i class="fas fa-sync-alt"></i></a>
+
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("Task_Code")</label>
+                        <input disabled type="text" class="form-control" id="TxtZipCode" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("EmployeesRequired_Tasks")</label>
+                        <input type="text" class="form-control" id="StaffPlan" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("Task_Creator")</label>
+                        <input type="text" class="form-control" id="AdminRequest" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("datecreate")</label>
+                        <input type="text" class="form-control" id="TxtDateCreate" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("Expiration_date")</label>
+                        <input type="text" class="form-control" id="TxtDateTimeUp" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("Expiration_Time")</label>
+                        <input type="text" class="form-control" id="TxtTimeUp" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("Mission_Contents")</label>
+                        <textarea class="form-control" id="TxtContentPlan" style="font-weight: 600; border-radius: 10px;"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("TaskAcceptance_Status")</label>
+                        <input disabled type="text" class="form-control" id="TxtStatusPlan" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("Deadline_task")</label>
+                        <input disabled type="text" class="form-control" id="TxtNameTimeUp" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style=" font-family: initial; color: #0372c6; font-weight: 600;">@languade.Getkey("Implementation_progress")</label>
+                        <input disabled type="text" class="form-control" id="TxtProgressing" style="font-weight: 600; border-radius: 10px;">
+                    </div>
+                    <div class="progress" id="ProgessDataPlan">
+                    </div>
+                    <hr />
+                    <div class="mb-3">
+                        <button id="btnSucessPlan" style="border-radius: 10px; display: none;" type="button" class="btn btn-success">@languade.Getkey("Complete_Task") <i class="fas fa-clipboard-check"></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <p>@languade.Getkey("Attachedtask_File") <i class="fas fa-file"></i></p>
+            <table class="table table-hover">
+                <thead style="text-align: center;">
+                    <tr>
+                        <th scope="col">@languade.Getkey("No") <i class="fa fa-fw fa-sort"></i></th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Filename")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("datecreate")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Filetype")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="Body_Data" style="height: 150px; text-align: center;">
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- Modal loading create saint -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal upload plan by admin-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalShowUpdatePlan">
+    <div class="modal-dialog" style="max-width: 60%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("TaskUpdate")</h5>
+                <button type="button" class="btn-close" id="CloseUpdatePlan">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Task_Code")</label>
+                    <input disabled style="border-radius:10px;" type="text" class="form-control" id="TxtIdPlan_Update" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Title")</label>
+                    <input style="border-radius:10px;" type="text" class="form-control" id="TxtTitlePlan_Update" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Mission_Contents")</label>
+                    <textarea style="border-radius:10px;" type="text" class="form-control" id="TxtContentPlan_Update"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="margin: 10px 10px; font-family: initial; font-weight: 600;">@languade.Getkey("TaskFile_List")</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">@languade.Getkey("No")</th>
+                                    <th scope="col">@languade.Getkey("Filename")</th>
+                                    <th scope="col">@languade.Getkey("Filetype")</th>
+                                    <th scope="col">@languade.Getkey("datecreate")</th>
+                                    <th scope="col">@languade.Getkey("Options")</th>
+                                </tr>
+                            </thead>
+                            <tbody id="TxtBodyUpdate_Plan" style="height: 200px;">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnUpdate_Plan" style="border-radius:10px;" type="button" class="btn btn-primary"><i class="fas fa-edit"></i> @languade.Getkey("Update")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal upload file plan-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalShowUpdateFile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Update_File")</h5>
+                <button type="button" class="btn-close" id="CloseUpdateFile">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("SelectUpdate_File")</label>
+                    <input style="border-radius:10px;" type="file" class="form-control" id="TxtUpdate_File" />
+                </div>
+                <span><b>@languade.Getkey("Note")</b> @languade.Getkey("systemonly_accepts")</span>
+            </div>
+            <div class="modal-footer">
+                <button id="BtnUpdate_File" style="border-radius:10px;" type="button" class="btn btn-primary"><i class="fas fa-edit"></i> @languade.Getkey("Update")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal upload time up plan-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalShowUpdateDateTime">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("UpdateDate_Time")</h5>
+                <button type="button" class="btn-close" id="CloseUpdateDateTime">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label"><i class="fas fa-calendar-plus"></i> @languade.Getkey("Choosenew_expirationdate")</label>
+                    <input style="border-radius:10px;" type="date" class="form-control" id="TxtUpdate_Date" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><i class="fas fa-business-time"></i> @languade.Getkey("Choosenew_expirationtime")</label>
+                    <input style="border-radius:10px;" type="time" class="form-control" id="TxtUpdate_Time" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="BtnUpdate_DateTime" style="border-radius:10px;" type="button" class="btn btn-primary"><i class="fas fa-edit"></i> @languade.Getkey("Update")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal upload time up plan-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalShowRolePlanStaff">
+    <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Assigntasks_others")</h5>
+                <button type="button" class="btn-close" id="CloseRolePlanStaff">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("SearchEmployeeCode")</label>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input style="border-radius:10px;" type="text" class="form-control" id="TxtSeacdCodeOrName" />
+                        </div>
+                        <div class="col-md-3">
+                            <button id="btn_SeachName" type="button" class="btn btn-primary"><i class="fas fa-search"></i> @languade.Getkey("Seach")</button>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <p style="text-align: center; font-family: initial; font-weight: 600;">@languade.Getkey("EmployeeList_Table")</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">@languade.Getkey("No")</th>
+                                    <th scope="col">@languade.Getkey("Employee_Name")</th>
+                                    <th scope="col">@languade.Getkey("Avatar")</th>
+                                    <th scope="col">@languade.Getkey("Current_Role")</th>
+                                    <th scope="col">@languade.Getkey("Totaltask_received")</th>
+                                    <th scope="col">@languade.Getkey("Options")</th>
+                                </tr>
+                            </thead>
+                            <tbody id="BodyUser" style="overflow: scroll">
+                            </tbody>
+                        </table>
+                        <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+                        <!-- Pagination -->
+                        <div class="row" style="clear: both; margin: 0px 30px">
+                            <div id="pagination" class="pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p style="text-align: right;">@languade.Getkey("TotalStaff") <b style="color: red; font-weight: 600" id="TotalStaff"></b></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@ViewBag.IdPlan" id="IdPlan" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("NotFindStaff")" id="NotFindStaff" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+<input type="hidden" value="@languade.Getkey("Notaskwith_codefound")" id="Notaskwith_codefound"/>
+<input type="hidden" value="@languade.Getkey("not_received")" id="not_received"/>
+<input type="hidden" value="@languade.Getkey("Received")" id="Received"/>
+<input type="hidden" value="@languade.Getkey("Cancelled")" id="Cancelled"/>
+<input type="hidden" value="@languade.Getkey("Thetask_expired")" id="Thetask_expired"/>
+<input type="hidden" value="@languade.Getkey("Thetask_expiredyet")" id="Thetask_expiredyet"/>
+<input type="hidden" value="@languade.Getkey("Havendone_yet")" id="Havendone_yet"/>
+<input type="hidden" value="@languade.Getkey("Dowload")" id="Dowload"/>
+<input type="hidden" value="@languade.Getkey("Edit_files")" id="Edit_files"/>
+<input type="hidden" value="@languade.Getkey("Tasktitle_empty")" id="Tasktitle_empty"/>
+<input type="hidden" value="@languade.Getkey("Contenttask_empty")" id="Contenttask_empty"/>
+<input type="hidden" value="@languade.Getkey("Updatetask_successfully")" id="Updatetask_successfully"/>
+<input type="hidden" value="@languade.Getkey("notHave_Role")" id="notHave_Role"/>
+<input type="hidden" value="@languade.Getkey("File_mismatch")" id="File_mismatch"/>
+<input type="hidden" value="@languade.Getkey("Edit_File")" id="Edit_File"/>
+<input type="hidden" value="@languade.Getkey("Sytstem_File")" id="Sytstem_File"/>
+<input type="hidden" value="@languade.Getkey("Select_Dates")" id="Select_Dates"/>
+<input type="hidden" value="@languade.Getkey("Select_Time")" id="Select_Time"/>
+<input type="hidden" value="@languade.Getkey("NotFind_Info")" id="NotFind_Info"/>
+<input type="hidden" value="@languade.Getkey("Renewaldate_EndDate")" id="Renewaldate_EndDate"/>
+<input type="hidden" value="@languade.Getkey("UpdateDate_TimeSucc")" id="UpdateDate_TimeSucc"/>
+<input type="hidden" value="@languade.Getkey("Assign_Task")" id="Assign_Task"/>
+<input type="hidden" value="@languade.Getkey("task_assigned")" id="task_assigned"/>
+<input type="hidden" value="@languade.Getkey("Assignsuccessful_tasks")" id="Assignsuccessful_tasks"/>
+<input type="hidden" value="@languade.Getkey("EmployeeCode_Invalid")" id="EmployeeCode_Invalid"/>
+<input type="hidden" value="@languade.Getkey("Complete_Task")" id="Complete_Task"/>
+<input type="hidden" value="@languade.Getkey("DownloadFile_Successfully")" id="DownloadFile_Successfully"/>
+<input type="hidden" value="@languade.Getkey("Unable_download")" id="Unable_download"/>
+

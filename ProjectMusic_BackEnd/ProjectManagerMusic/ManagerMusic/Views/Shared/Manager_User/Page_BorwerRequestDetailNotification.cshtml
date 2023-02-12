@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" type="image/png" href="~/img/logo.png">
+    <!-- vendor css -->
+    <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="~/lib/typicons.font/typicons.css" rel="stylesheet">
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="~/css/azia.css">
+
+</head>
+<body>
+
+    <div class="az-header">
+        <div class="container">
+            <div class="az-header-left">
+                <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+                <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+            </div><!-- az-header-left -->
+            <div class="az-header-menu">
+                <div class="az-header-menu-header">
+                    <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+                    <a href="" class="close">&times;</a>
+                </div><!-- az-header-menu-header -->
+                <ul class="nav">
+                    <li class="nav-item active show">
+                        <a href="index.html" class="nav-link">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Hệ Thống</a>
+                        <nav class="az-menu-sub">
+                            <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                            <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+                        </nav>
+                    </li>
+                    <li class="nav-item">
+                        <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Theo mùa</a>
+                        <div class="az-menu-sub">
+                            <div class="container">
+                                <div>
+                                    <nav class="nav">
+                                        <a href="elem-buttons.html" class="nav-link">Mùa Thường Niên</a>
+                                        <a href="elem-dropdown.html" class="nav-link">Mùa Chay</a>
+                                        <a href="table-basic.html" class="nav-link">Mùa Vọng</a>
+                                        <a href="elem-icons.html" class="nav-link">Mùa Giáng Sinh</a>
+                                        <a href="table-basic.html" class="nav-link">Mùa Phục Sinh</a>
+                                        <a href="table-basic.html" class="nav-link">Ngoại Lịch</a>
+                                    </nav>
+                                </div>
+                            </div><!-- container -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+                        <nav class="az-menu-sub">
+                            <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                            <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+                        </nav>
+                    </li>
+                </ul>
+            </div><!-- az-header-menu -->
+        </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+        <div class="container">
+            <div class="az-content-left az-content-left-components">
+                <div class="component-item">
+                    <label><i class="fas fa-newspaper"></i> Thông Tin Chung</label>
+                    <nav class="nav flex-column">
+                        <a href="Infomation-Admin.html" class="nav-link"><i class="fas fa-arrow-right"></i> Cá Nhân</a>
+                        <a id="btn_LeverRole" class="nav-link"><i class="fas fa-arrow-right"></i> Xem Cấp Độ Nâng Cấp</a>
+                    </nav>
+
+                    <label><i class="fas fa-database"></i> Quản Trị Dữ Liệu</label>
+                    <nav class="nav flex-column">
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý File</a>
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Mùa Quanh Năm</a>
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Ngày Lễ</a>
+                    </nav>
+
+                    <label><i class="fas fa-user"></i> Quản Trị Nhân Viên</label>
+                    <nav class="nav flex-column">
+                        <a href="chart-chartjs.html" class="nav-link"><i class="fas fa-arrow-right"></i> Nhân Viên Của Tôi</a>
+                    </nav>
+
+                    <label><i class="fas fa-users"></i> Quản Trị Người Dùng</label>
+                    <nav class="nav flex-column">
+                        <a href="table-basic.html" class="nav-link active"><i class="fas fa-arrow-right"></i> Người Dùng Của Tôi</a>
+                    </nav>
+
+                    <label><i class="fas fa-chart-bar"></i> Thống Kê Báo Cáo</label>
+                    <nav class="nav flex-column">
+                        <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Báo Cáo Chung</a>
+                    </nav>
+
+                </div><!-- component-item -->
+
+            </div><!-- az-content-left -->
+            <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+                <div class="az-content-breadcrumb">
+                    <span><a href="#" style="color: #97a3b9;">Trang Chủ</a></span>
+                    <span><a href="#" style="color: #97a3b9;">Thông Tin Admin</a></span>
+                    <span><a href="#" style="color: #97a3b9;">Quản Lý Người Dùng</a></span>
+                    <span><a href="#" style="color: #97a3b9;">Bảo Mật Người Dùng</a></span>
+                    <span>Chi Tiết Yêu Cầu: ND - Trần Duy Tường</span>
+                </div>
+
+                <h2 class="az-content-title"><i class="fas fa-list-alt"></i> Chi Tiết Yêu Cầu - Đang Sử Lý</h2>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Tên Người Yêu Cầu</label>
+                                    <input type="text" class="form-control" value="Trần Duy Tường">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Gmail Yêu Cầu</label>
+                                    <input type="text" class="form-control" value="duytuong0503@gmail.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Ngày Yêu Cầu</label>
+                                    <input type="text" class="form-control" value="12/06/2022">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Trạng Thái</label>
+                                    <input type="text" class="form-control" value="Đang giải quyết">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Tiêu Đề Yêu Cầu</label>
+                                    <input type="text" class="form-control" value="Lấy lại mật khẩu giúp tôi">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nội Dung Yêu Cầu</label>
+                                    <textarea class="form-control">
+                          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          aaaaaaaaaaaaaaa
+                        </textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Hướng Sử Lý</label>
+                                    <textarea class="form-control">
+                         gửi gmail yêu cầu nhập lại mật khẩu mới
+                        </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="text-align: center; font-family: initial; font-size: 20px"><i class="fas fa-image"></i> Hình Ảnh Chứng Minh</p>
+                        <img src="../img/eight.jpg" style="width:auto;">
+                        <p style="text-align: right; margin: 10px 10px;">
+                            <button id="btn_BcRequestPassword" style="border-radius: 10px;" type="button" class="btn btn-primary"><i class="fas fa-key"></i> Cấp Lại Mật Khẩu</button>
+                            <button id="btn_BcRequestAnlock" style="border-radius: 10px;" type="button" class="btn btn-warning"><i class="fas fa-lock-open"></i> Mở Khóa Tài Khoản</button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="az-footer mg-t-auto">
+                    <div class="container">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+                    </div><!-- container -->
+                </div><!-- az-footer -->
+            </div><!-- az-content-body -->
+        </div><!-- container -->
+    </div><!-- az-content -->
+    <!--check infomation-->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_SentGmailPassword">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Gửi Gmail Cấp Lại Mật Khẩu</h5>
+                    <button type="button" class="btn-close" id="btn_closeGmail">X</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Tên Người Nhận
+                                    <span style="color:green" id="Ok_User"></span>
+                                </label>
+                                <input type="text" id="TxtUser" class="form-control" placeholder="Tên người Nhận ..." onkeyup="TxtUser()">
+                                <span style="color: red;" id="Error_User"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Nội Dung Gửi
+                                    <span style="color:green" id="Ok_Content"></span>
+                                </label>
+                                <textarea class="form-control" id="TxtContent" placeholder="Nhập nội dung ..." onkeyup="TxtContent()"></textarea>
+                                <span style="color: red;" id="Error_Content"></span>
+                            </div>
+                            <div class="mb-3">
+                                <span style="color: red; font-size:13px; font-family: inherit;">Hệ thống sẻ tự động đính kèm link để cho người dùng cài lại mật khẩu mới</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn_SentGmail" style="border-radius: 10px;" type="button" class="btn btn-primary"><i class="fas fa-mail-bulk"></i> Gửi Gmail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--check anlock password-->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_AnLockPassword">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mở khóa tài khoản người dùng</h5>
+                    <button type="button" class="btn-close" id="btn_closeblock">X</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Tên Người Nhận
+                                    <span style="color:green" id="Ok_Userblock"></span>
+                                </label>
+                                <input type="text" id="TxtUserblock" class="form-control" placeholder="Tên người Nhận ..." onkeyup="TxtUserblock()">
+                                <span style="color: red;" id="Error_Userblock"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Nội Dung Gửi
+                                    <span style="color:green" id="Ok_Contentblock"></span>
+                                </label>
+                                <textarea class="form-control" id="TxtContentblock" placeholder="Nhập nội dung ..." onkeyup="TxtContentblock()"></textarea>
+                                <span style="color: red;" id="Error_Contentblock"></span>
+                            </div>
+                            <div class="mb-3">
+                                <span style="color: red; font-size:13px; font-family: inherit;">Hệ thống sẻ gửi một thông báo gmail cho người dùng thông báo đã mở khóa tài khoản</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn_Anlock" style="border-radius: 10px;" type="button" class="btn btn-primary"><i class="fas fa-key"></i> Mở Khóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal load -->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingSignUp">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background:none; border:none;">
+                <div class="modal-body">
+                    <div class="row" style="margin-top:200px;">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div class="spinner-grow text-primary" role="status">
+                                <span class="visually-hidden"></span>
+                            </div>
+                            <div class="spinner-grow text-secondary" role="status">
+                                <span class="visually-hidden"></span>
+                            </div>
+                            <div class="spinner-grow text-success" role="status">
+                                <span class="visually-hidden"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/ionicons/ionicons.js"></script>
+    <script src="~/js/azia.js"></script>
+    <script src="~/js/Manager_BorwerRequestDetailNotificationUser.js"></script>
+</body>
+</html>

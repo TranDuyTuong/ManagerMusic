@@ -1,0 +1,196 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Deleted_song");
+    Layout = "~/Views/Shared/Manager_Data/ManagerFileDelete.cshtml";
+}
+
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+    <div class="container">
+        <partial name="~/Views/SidebarMenu/Index.cshtml" />
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+            <div class="az-content-breadcrumb">
+                <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+                <span>@languade.Getkey("Admin_Information")</span>
+                <span><a asp-action="IndexFile" asp-controller="ManagerData" style="color: #97a3b9;">@languade.Getkey("File_management")</a></span>
+                <span>@languade.Getkey("Deleted_song")</span>
+            </div>
+
+            <partial name="~/Views/ManagerData/MenuManagerFile.cshtml" />
+
+            <h2 class="az-content-title"> @languade.Getkey("Deleted_song")</h2>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row g-3 align-items-center" id="SeachMusic-Admin">
+                        <div class="col-auto" style="background: #0000000d; border-radius: 5px;">
+                            <input style="width: 300px; border-radius: 5px;" type="text" onchange="eventSeachMusic()" id="TxtInputMusic" placeholder="@languade.Getkey("Seach_Music")">
+                            <a style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tìm Kiếm Nâng Cao"><i class="fas fa-search-plus"></i></a>
+                            <a id="btn-closeSeachMusic" style="border: none; color: red; float: right;" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Close_Seach")">X</a>
+                        </div>
+                        <hr />
+                    </div>
+
+                    <div id="Modal_ShowSelectSumer" style="background: #0000001f; border-radius: 10px; display: block; height: 75px;">
+                        <p style="text-align: right; margin: 10px 10px;">
+                            <a id="btn_closeModalSelect" style="border: none; color: red;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Close_Seach")">X</a>
+                        </p>
+                        <select class="form-control" style="border-radius: 5px;" id="selectSeason">
+                            <option selected value="0"> @languade.Getkey("Choose_the_Season_You_Need")</option>
+                            <option value="1"> @languade.Getkey("Seasons_Year_round")</option>
+                            <option value="2"> @languade.Getkey("Advent")</option>
+                            <option value="3"> @languade.Getkey("Christmas_season")</option>
+                            <option value="4"> @languade.Getkey("Easter_season")</option>
+                            <option value="5"> @languade.Getkey("Lent")</option>
+                            <option value="6"> @languade.Getkey("Outside_of_the_calendar")</option>
+                        </select>
+                    </div>
+
+                    <p style="text-align:right;">
+
+                        <button onclick="recoverDelete()" id="btn_ShowModalSelect" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Lựa chọn theo mùa"><i class="fas fa-list-alt"></i></button>
+
+                        <a id="btn_TakeCheckBox" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Lấy lại tất cả"><i class="fas fa-file-import"></i></a>
+
+                        <a id="btn-ShowFormSeachMusic" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tìm Kiếm"><i class="fas fa-search"></i></a>
+
+                        <a asp-action="GetAllMusicDelete" asp-controller="ManagerData" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tải lại"><i class="fas fa-spinner"></i></a>
+
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p style="color: red; text-align: left;" id="titleNotification"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p style="color: red; text-align: right;" id="TitleFindResult"></p>
+                        </div>
+                    </div>
+                    <p style="color: red;" id="SeachMusic"></p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <input type="checkbox" id="selectall" />
+                                </th>
+                                <th scope="col">@languade.Getkey("No")</th>
+                                <th scope="col">@languade.Getkey("namesong")</th>
+                                <th scope="col">@languade.Getkey("datecreate")</th>
+                                <th scope="col">@languade.Getkey("Seasons")</th>
+                                <th scope="col">@languade.Getkey("Status")</th>
+                                <th scope="col">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="body_Music">
+                        </tbody>
+                    </table>
+                    <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+                    <!-- Pagination -->
+                    <div class="row" style="clear: both;">
+                        <div id="pagination" class="pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="az-footer mg-t-auto">
+                <div class="container">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+                </div><!-- container -->
+            </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+    </div><!-- container -->
+</div><!-- az-content -->
+<!-- choose option activer funtion file -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowChooseActiverFile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-toolbox"></i> @languade.Getkey("SettingFileStatus")</h5>
+                <button type="button" class="btn-close" id="btn_closeactiver">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-secondary" id="btn_Activer">@languade.Getkey("File_Activation")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-secondary" id="btn_Anactiver">@languade.Getkey("File_Deactivation")</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal loading create Music -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal loading create Music -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_TakeMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button style="border-radius:10px;" type="button" class="btn btn-success">Lấy Lại</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button style="border-radius:10px;" type="button" class="btn btn-danger">Hủy Bỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<input type="hidden" value="@languade.Getkey("NotfindMusic")" id="NotfindMusic" />
+<input type="hidden" value="@languade.Getkey("TotalMusic")" id="TotalMusic" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+<input type="hidden" value="@languade.Getkey("Employeeid_empty")" id="Employeeid_empty" />
+<input type="hidden" value="@languade.Getkey("WasFind")" id="WasFind" />
+<input type="hidden" value="@languade.Getkey("result")" id="results" />
+<input type="hidden" value="@languade.Getkey("selectline_back")" id="selectline_back"/>
+<input type="hidden" value="@languade.Getkey("songcode_empty")" id="songcode_empty"/>
+<input type="hidden" value="@languade.Getkey("errormusic_recovery")" id="errormusic_recovery"/>
+<input type="hidden" value="@languade.Getkey("NotFind_Deletmusic")" id="NotFind_Deletmusic"/>
+<input type="hidden" value="@languade.Getkey("recoverdeleted_successfully")" id="recoverdeleted_successfully"/>
+<input type="hidden" value="@languade.Getkey("recoverdeletedA_successfully")" id="recoverdeletedA_successfully"/>
+<input type="hidden" value="@languade.Getkey("ticksong_changestatus")" id="ticksong_changestatus" />
+<input type="hidden" value="@languade.Getkey("ListMusic_Null")" id="ListMusic_Null" />
+<input type="hidden" value="@languade.Getkey("selectstatus_filter")" id="selectstatus_filter" />
+<input type="hidden" value="@languade.Getkey("select_status")" id="select_status" />
+<input type="hidden" value="@languade.Getkey("Takeback_song")" id="Takeback_song"/>
+

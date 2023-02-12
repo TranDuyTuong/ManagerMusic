@@ -1,0 +1,2253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Account Holder" xml:space="preserve">
+    <value>Account Holder</value>
+  </data>
+  <data name="Accountinfo" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="AccountLevel" xml:space="preserve">
+    <value>Account Level</value>
+  </data>
+  <data name="account_haslocked" xml:space="preserve">
+    <value>Your account has been locked, please contact the Admin to handle it</value>
+  </data>
+  <data name="Activer_Success" xml:space="preserve">
+    <value>Playlist activation works successfully</value>
+  </data>
+  <data name="Active_account" xml:space="preserve">
+    <value>Active Account</value>
+  </data>
+  <data name="AddFileMusic" xml:space="preserve">
+    <value>Add File Music</value>
+  </data>
+  <data name="AddSong_ContentImage" xml:space="preserve">
+    <value>Add Song Content Image</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="Admin_Information" xml:space="preserve">
+    <value>Admin Information</value>
+  </data>
+  <data name="Admin_Request" xml:space="preserve">
+    <value>Admin Request</value>
+  </data>
+  <data name="Advancedsearch" xml:space="preserve">
+    <value>Advanced Search</value>
+  </data>
+  <data name="Advent" xml:space="preserve">
+    <value>Advent</value>
+  </data>
+  <data name="agree" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+  <data name="Agree_Lock" xml:space="preserve">
+    <value>Agree to Lock</value>
+  </data>
+  <data name="Agree_Unlock" xml:space="preserve">
+    <value>Agree to Unlock</value>
+  </data>
+  <data name="All_Notification" xml:space="preserve">
+    <value>All Notification Of You</value>
+  </data>
+  <data name="alreadylike_song" xml:space="preserve">
+    <value>You already like this song</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Appreviews" xml:space="preserve">
+    <value>App Reviews</value>
+  </data>
+  <data name="Aredelete_selectedcomments" xml:space="preserve">
+    <value>Are you sure you want to delete the selected comments ?</value>
+  </data>
+  <data name="Areyoublock_account" xml:space="preserve">
+    <value>Are you sure you want to block this account?</value>
+  </data>
+  <data name="Areyousurecancel_hireemployee" xml:space="preserve">
+    <value>Are you sure you want to cancel hire this employee?</value>
+  </data>
+  <data name="AreYouSure_CancelTask" xml:space="preserve">
+    <value>Are You Sure You Want To Cancel This Task !</value>
+  </data>
+  <data name="AreYouSurnlock_Account" xml:space="preserve">
+    <value>Are You Sure You Want To Unlock This Employee Account?</value>
+  </data>
+  <data name="Assignsuccessful_tasks" xml:space="preserve">
+    <value>Assign employees to successful tasks</value>
+  </data>
+  <data name="Assigntasks_others" xml:space="preserve">
+    <value>Assign tasks to others</value>
+  </data>
+  <data name="Assign_roles" xml:space="preserve">
+    <value>Assign roles</value>
+  </data>
+  <data name="Assign_Task" xml:space="preserve">
+    <value>Assign this person a Task</value>
+  </data>
+  <data name="Attachedtask_File" xml:space="preserve">
+    <value>Attached Task File</value>
+  </data>
+  <data name="Attached_info" xml:space="preserve">
+    <value>Attached information</value>
+  </data>
+  <data name="AuthorizeThis_Employee" xml:space="preserve">
+    <value>Authorize This Employee</value>
+  </data>
+  <data name="Authour_Name" xml:space="preserve">
+    <value>Author Name</value>
+  </data>
+  <data name="Avatar" xml:space="preserve">
+    <value>Avatar</value>
+  </data>
+  <data name="BackEmployee_List" xml:space="preserve">
+    <value>Back to Employee List</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="Bank_number" xml:space="preserve">
+    <value>Bank account number</value>
+  </data>
+  <data name="Before" xml:space="preserve">
+    <value>prev</value>
+  </data>
+  <data name="Birthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="BirthdayOf" xml:space="preserve">
+    <value>Today is birthday of</value>
+  </data>
+  <data name="build" xml:space="preserve">
+    <value>build</value>
+  </data>
+  <data name="Building_Apps" xml:space="preserve">
+    <value>Building Apps</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CancelCreate_Employee" xml:space="preserve">
+    <value>Cancel Create New Employee</value>
+  </data>
+  <data name="Canceledit_author" xml:space="preserve">
+    <value>Cancel editing author name</value>
+  </data>
+  <data name="Canceledit_title" xml:space="preserve">
+    <value>Cancel editing song title</value>
+  </data>
+  <data name="Cancellation_EmployeeHire" xml:space="preserve">
+    <value>Cancellation of Employee Hire</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="Cancel_Edit" xml:space="preserve">
+    <value>Cancel Edit</value>
+  </data>
+  <data name="Cancel_lock" xml:space="preserve">
+    <value>Cancel lock</value>
+  </data>
+  <data name="Cancel_task" xml:space="preserve">
+    <value>Cancel the task</value>
+  </data>
+  <data name="Cancel_Unlock" xml:space="preserve">
+    <value>Cancel Unlock</value>
+  </data>
+  <data name="Cannotsend_10files" xml:space="preserve">
+    <value>Cannot send files more than 10 files</value>
+  </data>
+  <data name="canrate_anymore" xml:space="preserve">
+    <value>You have already rated and can't rate anymore</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="ChangeEmployee_Password" xml:space="preserve">
+    <value>Change Employee Password</value>
+  </data>
+  <data name="Changepassword_failed" xml:space="preserve">
+    <value>Change password failed, please check again</value>
+  </data>
+  <data name="Changepassword_successfully" xml:space="preserve">
+    <value>Change password successfully you can login again</value>
+  </data>
+  <data name="Changesongstatus_error" xml:space="preserve">
+    <value>Change song status error</value>
+  </data>
+  <data name="Changesongstatus_successfully" xml:space="preserve">
+    <value>Change song status successfully</value>
+  </data>
+  <data name="Changesong_status" xml:space="preserve">
+    <value>Change song status</value>
+  </data>
+  <data name="ChangeStatus_SeasonSuccess" xml:space="preserve">
+    <value>Change status success</value>
+  </data>
+  <data name="Change_Status" xml:space="preserve">
+    <value>Change Status</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="Chatperson_info" xml:space="preserve">
+    <value>Chat person information</value>
+  </data>
+  <data name="Chat_List" xml:space="preserve">
+    <value>Chat List</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="ChooseAddress" xml:space="preserve">
+    <value>Choose Address</value>
+  </data>
+  <data name="Chooseanother_saints" xml:space="preserve">
+    <value>Choose another saints</value>
+  </data>
+  <data name="ChooseCity" xml:space="preserve">
+    <value>Choose Province/City</value>
+  </data>
+  <data name="ChooseDistrict" xml:space="preserve">
+    <value>Choose District</value>
+  </data>
+  <data name="ChooseGender" xml:space="preserve">
+    <value>Choose Gender</value>
+  </data>
+  <data name="ChooseMotnh" xml:space="preserve">
+    <value>Choose Motnh</value>
+  </data>
+  <data name="ChooseNew_Avatar" xml:space="preserve">
+    <value>Choose New Avatar</value>
+  </data>
+  <data name="Choosenew_expirationdate" xml:space="preserve">
+    <value>Choose a new expiration date</value>
+  </data>
+  <data name="Choosenew_expirationtime" xml:space="preserve">
+    <value>Choose a new expiration time</value>
+  </data>
+  <data name="ChooseStatusMusic" xml:space="preserve">
+    <value>Choose Song Status</value>
+  </data>
+  <data name="ChooseYear" xml:space="preserve">
+    <value>Choose Year</value>
+  </data>
+  <data name="Choose_anotherseason" xml:space="preserve">
+    <value>Choose another season</value>
+  </data>
+  <data name="Choose_avalue" xml:space="preserve">
+    <value>Please choose a value !</value>
+  </data>
+  <data name="Choose_Role" xml:space="preserve">
+    <value>Please Choose Role</value>
+  </data>
+  <data name="Choose_Status" xml:space="preserve">
+    <value>Select Status</value>
+  </data>
+  <data name="Choose_the_Season_You_Need" xml:space="preserve">
+    <value>Choose The Season You Need</value>
+  </data>
+  <data name="choosingdownload_All" xml:space="preserve">
+    <value>You are choosing to download all songs</value>
+  </data>
+  <data name="choosingdownload_Author" xml:space="preserve">
+    <value>You are choosing download mode by author</value>
+  </data>
+  <data name="choosingdownload_date" xml:space="preserve">
+    <value>You are choosing to download songs by date</value>
+  </data>
+  <data name="choosingdownload_saints" xml:space="preserve">
+    <value>You are choosing to download all saints songs</value>
+  </data>
+  <data name="choosingdownload_seasonal" xml:space="preserve">
+    <value>You are choosing to download seasonal songs</value>
+  </data>
+  <data name="Christmas_season" xml:space="preserve">
+    <value>Christmas Season</value>
+  </data>
+  <data name="Cleartask_successfully" xml:space="preserve">
+    <value>Clear task successfully</value>
+  </data>
+  <data name="Clear_task" xml:space="preserve">
+    <value>Clear task</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Close_Seach" xml:space="preserve">
+    <value>Close Seach</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>code</value>
+  </data>
+  <data name="Code_Saint" xml:space="preserve">
+    <value>Id Saint</value>
+  </data>
+  <data name="CommentDay" xml:space="preserve">
+    <value>Comment Day</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="Comment_content" xml:space="preserve">
+    <value>Comment content</value>
+  </data>
+  <data name="Complete_Task" xml:space="preserve">
+    <value>Complete Task</value>
+  </data>
+  <data name="ConfirmEdit_Info" xml:space="preserve">
+    <value>Confirm Edit Info</value>
+  </data>
+  <data name="Confirmemployee_password" xml:space="preserve">
+    <value>Confirm Employee Password</value>
+  </data>
+  <data name="Confirmnewsong_creation" xml:space="preserve">
+    <value>Confirm new song creation</value>
+  </data>
+  <data name="Confirm_information" xml:space="preserve">
+    <value>Confirm Information</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="Contentsong_file" xml:space="preserve">
+    <value>Content of the song file</value>
+  </data>
+  <data name="Contenttask_empty" xml:space="preserve">
+    <value>Content task are not empty</value>
+  </data>
+  <data name="Content_Notification" xml:space="preserve">
+    <value>Content Notification...</value>
+  </data>
+  <data name="content_request" xml:space="preserve">
+    <value>Please enter the content of the request !</value>
+  </data>
+  <data name="contributeyour_comments" xml:space="preserve">
+    <value>You can contribute your comments via the mailbox here, leave information so we can respond better.</value>
+  </data>
+  <data name="Contributing_Content" xml:space="preserve">
+    <value>Contributing Content</value>
+  </data>
+  <data name="Country_Name" xml:space="preserve">
+    <value>Country Name</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateMusic_Error" xml:space="preserve">
+    <value>Create Music Fail</value>
+  </data>
+  <data name="CreateMusic_Success" xml:space="preserve">
+    <value>Create Music Success</value>
+  </data>
+  <data name="createNewMusic" xml:space="preserve">
+    <value>Add New Song</value>
+  </data>
+  <data name="Createnew_employee" xml:space="preserve">
+    <value>Create New Employee</value>
+  </data>
+  <data name="CreateNew_Saint" xml:space="preserve">
+    <value>Add New Saint</value>
+  </data>
+  <data name="Create_QR" xml:space="preserve">
+    <value>Create QR</value>
+  </data>
+  <data name="Create_SaintSuccess" xml:space="preserve">
+    <value>Create Saint Success</value>
+  </data>
+  <data name="Create_Staff" xml:space="preserve">
+    <value>Create Employee</value>
+  </data>
+  <data name="CurrentAge" xml:space="preserve">
+    <value>Current Age</value>
+  </data>
+  <data name="Currentrole_found" xml:space="preserve">
+    <value>Current role code not found</value>
+  </data>
+  <data name="Current_Outings" xml:space="preserve">
+    <value>Current Outings</value>
+  </data>
+  <data name="Current_Role" xml:space="preserve">
+    <value>Current Role</value>
+  </data>
+  <data name="Current_Season" xml:space="preserve">
+    <value>Current Season</value>
+  </data>
+  <data name="current_Year" xml:space="preserve">
+    <value>CURRENT YEAR SELECTING</value>
+  </data>
+  <data name="datafo_year" xml:space="preserve">
+    <value>The data for the year you need could not be found.</value>
+  </data>
+  <data name="Data_Administration" xml:space="preserve">
+    <value>Data Administration</value>
+  </data>
+  <data name="data_under" xml:space="preserve">
+    <value>The data is under the sample date and time section</value>
+  </data>
+  <data name="datecreate" xml:space="preserve">
+    <value>Date Create</value>
+  </data>
+  <data name="DateCreate_Song" xml:space="preserve">
+    <value>Date Create Song</value>
+  </data>
+  <data name="DateDowload" xml:space="preserve">
+    <value>Date Dowload</value>
+  </data>
+  <data name="Date_birth" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="Deactivate_account" xml:space="preserve">
+    <value>Deactivate The Account</value>
+  </data>
+  <data name="Deadline_task" xml:space="preserve">
+    <value>Deadline Task</value>
+  </data>
+  <data name="Default_mode" xml:space="preserve">
+    <value>Default mode...</value>
+  </data>
+  <data name="DeleteDowload_musicError" xml:space="preserve">
+    <value>Downloaded songs cannot be deleted!</value>
+  </data>
+  <data name="Deleted_song" xml:space="preserve">
+    <value>Deleted Song</value>
+  </data>
+  <data name="DeleteErorr" xml:space="preserve">
+    <value>Delete Erorr</value>
+  </data>
+  <data name="DeleteMiptiMusic" xml:space="preserve">
+    <value>Please tick a song to delete !</value>
+  </data>
+  <data name="DeleteSuccess" xml:space="preserve">
+    <value>Delete Success</value>
+  </data>
+  <data name="deletethissong" xml:space="preserve">
+    <value>Are you sure you want to delete this song?</value>
+  </data>
+  <data name="Delete_allcomments" xml:space="preserve">
+    <value>Delete all comments</value>
+  </data>
+  <data name="Delete_Date" xml:space="preserve">
+    <value>Delete Date</value>
+  </data>
+  <data name="Delete_ListMusicDowloadSuccess" xml:space="preserve">
+    <value>Deleted playlist successfully downloaded</value>
+  </data>
+  <data name="Delete_Notification" xml:space="preserve">
+    <value>Please tick the message you want to delete !</value>
+  </data>
+  <data name="Delete_user" xml:space="preserve">
+    <value>Delete user</value>
+  </data>
+  <data name="Demand" xml:space="preserve">
+    <value>Music Manager comprehensive management system.</value>
+  </data>
+  <data name="Design_In_2022" xml:space="preserve">
+    <value>Design In 2022</value>
+  </data>
+  <data name="Detailed_hours" xml:space="preserve">
+    <value>Detailed operating hours</value>
+  </data>
+  <data name="DetailList_SongDL" xml:space="preserve">
+    <value>Detailed List of Download Songs</value>
+  </data>
+  <data name="DetailSong" xml:space="preserve">
+    <value>Detail Song</value>
+  </data>
+  <data name="Detail_Task" xml:space="preserve">
+    <value>Detail Task</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="Dividetaskssuccessful_employees" xml:space="preserve">
+    <value>Divide tasks for successful employees</value>
+  </data>
+  <data name="DoNotHave_Account" xml:space="preserve">
+    <value>Do not have an account?</value>
+  </data>
+  <data name="Dowload" xml:space="preserve">
+    <value>Dowload</value>
+  </data>
+  <data name="DowloadMusic_Success" xml:space="preserve">
+    <value>Successful song download</value>
+  </data>
+  <data name="Dowload_Song" xml:space="preserve">
+    <value>Dowload Song</value>
+  </data>
+  <data name="DownloadedSong_List" xml:space="preserve">
+    <value>Downloaded Song List</value>
+  </data>
+  <data name="Downloader_Name" xml:space="preserve">
+    <value>Downloader Name</value>
+  </data>
+  <data name="DownloadFile_Successfully" xml:space="preserve">
+    <value>Download File Successfully</value>
+  </data>
+  <data name="Downloadfull_saints" xml:space="preserve">
+    <value>Download the full list by saints</value>
+  </data>
+  <data name="Downloadplaylists_date" xml:space="preserve">
+    <value>Download playlists by date</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>Downloads</value>
+  </data>
+  <data name="Downloadseasonal_list" xml:space="preserve">
+    <value>Download the full seasonal list</value>
+  </data>
+  <data name="Downloadsongs_author" xml:space="preserve">
+    <value>Download songs by author</value>
+  </data>
+  <data name="Download_fulllist" xml:space="preserve">
+    <value>Download the full list</value>
+  </data>
+  <data name="Download_Id" xml:space="preserve">
+    <value>Download ID</value>
+  </data>
+  <data name="Easter_season" xml:space="preserve">
+    <value>Easter Season</value>
+  </data>
+  <data name="Editauthor" xml:space="preserve">
+    <value>Edit the author's name</value>
+  </data>
+  <data name="Editemployee_successfully" xml:space="preserve">
+    <value>Edit employee successfully</value>
+  </data>
+  <data name="Editor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="Editsong_title" xml:space="preserve">
+    <value>Edit song title</value>
+  </data>
+  <data name="EditThis_Song" xml:space="preserve">
+    <value>Edit This Song</value>
+  </data>
+  <data name="Edit_File" xml:space="preserve">
+    <value>Please select the file to edit</value>
+  </data>
+  <data name="Edit_files" xml:space="preserve">
+    <value>Edit files</value>
+  </data>
+  <data name="Edit_infomation" xml:space="preserve">
+    <value>Edit Infomation</value>
+  </data>
+  <data name="Edit_Personal" xml:space="preserve">
+    <value>Editing Personal Information</value>
+  </data>
+  <data name="Edit_staff" xml:space="preserve">
+    <value>Edit Staff</value>
+  </data>
+  <data name="EmailNot_Exist" xml:space="preserve">
+    <value>Email Does Not Exist</value>
+  </data>
+  <data name="emailrequested_found" xml:space="preserve">
+    <value>The email you requested was not found, please check again</value>
+  </data>
+  <data name="Emailsyntax_incorrect" xml:space="preserve">
+    <value>Email syntax is incorrect, please check again!</value>
+  </data>
+  <data name="Email_already_exists" xml:space="preserve">
+    <value>Email already exists, Please try other Email !</value>
+  </data>
+  <data name="employeecanceled_successfully" xml:space="preserve">
+    <value>This employee has been canceled successfully</value>
+  </data>
+  <data name="Employeechart_year" xml:space="preserve">
+    <value>Employee statistics chart for the year</value>
+  </data>
+  <data name="EmployeeCode_Invalid" xml:space="preserve">
+    <value>The Employee Code You Passed In Is Invalid</value>
+  </data>
+  <data name="EmployeeHiring_Status" xml:space="preserve">
+    <value>Employee Hiring Status</value>
+  </data>
+  <data name="Employeeid_empty" xml:space="preserve">
+    <value>Employee id is empty</value>
+  </data>
+  <data name="EmployeeList_Table" xml:space="preserve">
+    <value>Employee List Table</value>
+  </data>
+  <data name="Employeeout_ofwork" xml:space="preserve">
+    <value>Employee is out of work</value>
+  </data>
+  <data name="EmployeePersonal_Information" xml:space="preserve">
+    <value>Employee's Personal Information</value>
+  </data>
+  <data name="EmployeeReport_Chart" xml:space="preserve">
+    <value>Employee Report Chart</value>
+  </data>
+  <data name="EmployeesRequired_Tasks" xml:space="preserve">
+    <value>Employees Are Required to Do Tasks</value>
+  </data>
+  <data name="Employee_Address" xml:space="preserve">
+    <value>Employee Address</value>
+  </data>
+  <data name="Employee_Authorization" xml:space="preserve">
+    <value>Employee Authorization</value>
+  </data>
+  <data name="Employee_birthday" xml:space="preserve">
+    <value>Employee birthday</value>
+  </data>
+  <data name="Employee_Chart" xml:space="preserve">
+    <value>Employee Chart</value>
+  </data>
+  <data name="Employee_Details" xml:space="preserve">
+    <value>Employee Details</value>
+  </data>
+  <data name="Employee_information" xml:space="preserve">
+    <value>Employee's personal information</value>
+  </data>
+  <data name="Employee_level" xml:space="preserve">
+    <value>Employee Level</value>
+  </data>
+  <data name="Employee_Management" xml:space="preserve">
+    <value>Employee Management</value>
+  </data>
+  <data name="Employee_Name" xml:space="preserve">
+    <value>Employee's Name</value>
+  </data>
+  <data name="Employee_Search" xml:space="preserve">
+    <value>Employee Search</value>
+  </data>
+  <data name="Employee_User" xml:space="preserve">
+    <value>Employee / User</value>
+  </data>
+  <data name="EmptyCode_Employee" xml:space="preserve">
+    <value>The employee code passed in cannot be empty!</value>
+  </data>
+  <data name="End_Date" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="England" xml:space="preserve">
+    <value>England</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="entercomment_text" xml:space="preserve">
+    <value>Please enter comment text</value>
+  </data>
+  <data name="EnterFullName" xml:space="preserve">
+    <value>Enter Full Name ...</value>
+  </data>
+  <data name="EnterGmail_Regiter" xml:space="preserve">
+    <value>Enter Gmail Regiter...</value>
+  </data>
+  <data name="EnterNameAuthor" xml:space="preserve">
+    <value>Please enter author name...</value>
+  </data>
+  <data name="EnterNameMusicSeason" xml:space="preserve">
+    <value>Enter Name Music Season ...</value>
+  </data>
+  <data name="EnterNameOrIdSatff" xml:space="preserve">
+    <value>Enter name or id staff ...</value>
+  </data>
+  <data name="EnterNameSong" xml:space="preserve">
+    <value>Please enter song title...</value>
+  </data>
+  <data name="Enternamesong_search" xml:space="preserve">
+    <value>Enter name song you want to search...</value>
+  </data>
+  <data name="Entername_author" xml:space="preserve">
+    <value>Enter the name of the author you are looking for</value>
+  </data>
+  <data name="EnterName_Saint" xml:space="preserve">
+    <value>Enter Name Saint ...</value>
+  </data>
+  <data name="Enternew_password" xml:space="preserve">
+    <value>Enter a new password ...</value>
+  </data>
+  <data name="EnterNumber_WasDoaload" xml:space="preserve">
+    <value>Enter the number downloaded...</value>
+  </data>
+  <data name="Enterreason_task" xml:space="preserve">
+    <value>Enter your reason for not accepting the task ...</value>
+  </data>
+  <data name="enterregistered_email" xml:space="preserve">
+    <value>Please enter your registered email !</value>
+  </data>
+  <data name="EnterSender_Name" xml:space="preserve">
+    <value>Enter the sender name...</value>
+  </data>
+  <data name="Entersongid_reviewer" xml:space="preserve">
+    <value>Enter song id, reviewer name...</value>
+  </data>
+  <data name="EnterTitle" xml:space="preserve">
+    <value>Enter Title...</value>
+  </data>
+  <data name="enter_content" xml:space="preserve">
+    <value>Please enter the content</value>
+  </data>
+  <data name="enter_contribution" xml:space="preserve">
+    <value>Please enter your contribution!</value>
+  </data>
+  <data name="Enter_employeegmail" xml:space="preserve">
+    <value>Enter employee gmail...</value>
+  </data>
+  <data name="Enter_Gmail" xml:space="preserve">
+    <value>Enter Gmail ...</value>
+  </data>
+  <data name="Enter_message" xml:space="preserve">
+    <value>Enter message...</value>
+  </data>
+  <data name="Enter_NameSaint" xml:space="preserve">
+    <value>Please enter name saint ...</value>
+  </data>
+  <data name="Enter_Password" xml:space="preserve">
+    <value>Enter Password ...</value>
+  </data>
+  <data name="Error404" xml:space="preserve">
+    <value>Error 404</value>
+  </data>
+  <data name="errorimage_file" xml:space="preserve">
+    <value>Please select the error image file to capture !</value>
+  </data>
+  <data name="errormusic_recovery" xml:space="preserve">
+    <value>Error music recovery</value>
+  </data>
+  <data name="Evaluate" xml:space="preserve">
+    <value>Evaluate</value>
+  </data>
+  <data name="example" xml:space="preserve">
+    <value>+ example: XinVang_18-5-2022</value>
+  </data>
+  <data name="ExitTime" xml:space="preserve">
+    <value>Exit Time</value>
+  </data>
+  <data name="Expirationdate_time" xml:space="preserve">
+    <value>Expiration date/time</value>
+  </data>
+  <data name="Expiration_date" xml:space="preserve">
+    <value>Expiration Date</value>
+  </data>
+  <data name="Expiration_Time" xml:space="preserve">
+    <value>Expiration Time</value>
+  </data>
+  <data name="EXPIRED" xml:space="preserve">
+    <value>EXPIRED</value>
+  </data>
+  <data name="Exportcomposite_file" xml:space="preserve">
+    <value>Export the composite file</value>
+  </data>
+  <data name="Export_File" xml:space="preserve">
+    <value>Export File</value>
+  </data>
+  <data name="f" xml:space="preserve">
+    <value>10 New Files</value>
+  </data>
+  <data name="Failedaccepttask_successfully" xml:space="preserve">
+    <value>Failed to accept this task successfully</value>
+  </data>
+  <data name="familiar" xml:space="preserve">
+    <value>Familiar</value>
+  </data>
+  <data name="Filecurrently_use" xml:space="preserve">
+    <value>File currently in use</value>
+  </data>
+  <data name="FileDownload_Manager" xml:space="preserve">
+    <value>File Download Manager</value>
+  </data>
+  <data name="Filename" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="Filetype" xml:space="preserve">
+    <value>File type</value>
+  </data>
+  <data name="File_Activation" xml:space="preserve">
+    <value>File Activation</value>
+  </data>
+  <data name="File_Content" xml:space="preserve">
+    <value>File Content</value>
+  </data>
+  <data name="File_Contents" xml:space="preserve">
+    <value>File Contents</value>
+  </data>
+  <data name="File_currently" xml:space="preserve">
+    <value>File currently in use</value>
+  </data>
+  <data name="File_Deactivation" xml:space="preserve">
+    <value>File Deactivation</value>
+  </data>
+  <data name="File_List" xml:space="preserve">
+    <value>File List</value>
+  </data>
+  <data name="File_management" xml:space="preserve">
+    <value>File Management</value>
+  </data>
+  <data name="File_mismatch" xml:space="preserve">
+    <value>File code mismatch</value>
+  </data>
+  <data name="File_Season" xml:space="preserve">
+    <value>Manager Season</value>
+  </data>
+  <data name="File_section" xml:space="preserve">
+    <value>File Section</value>
+  </data>
+  <data name="FilterDate_List" xml:space="preserve">
+    <value>Filter Date List</value>
+  </data>
+  <data name="Filtered_List" xml:space="preserve">
+    <value>Filtered List</value>
+  </data>
+  <data name="Filtermessages_Date" xml:space="preserve">
+    <value>Filter messages by date month year</value>
+  </data>
+  <data name="FilterSongs_Saint" xml:space="preserve">
+    <value>Filter Songs By Saint</value>
+  </data>
+  <data name="FilterSongs_Season" xml:space="preserve">
+    <value>Filter Songs By Season</value>
+  </data>
+  <data name="Filter_by" xml:space="preserve">
+    <value>Filter by</value>
+  </data>
+  <data name="Filter_data" xml:space="preserve">
+    <value>Filter the data</value>
+  </data>
+  <data name="Filter_status" xml:space="preserve">
+    <value>Filter by status</value>
+  </data>
+  <data name="Findtasks_date" xml:space="preserve">
+    <value>Find tasks by date</value>
+  </data>
+  <data name="Finish_Date" xml:space="preserve">
+    <value>Finish Date</value>
+  </data>
+  <data name="FirstandLast_Name" xml:space="preserve">
+    <value>First Name &amp; Last Name</value>
+  </data>
+  <data name="first_comment" xml:space="preserve">
+    <value>Be the first to comment</value>
+  </data>
+  <data name="first_review" xml:space="preserve">
+    <value>You are the first to review</value>
+  </data>
+  <data name="Forgot_Password" xml:space="preserve">
+    <value>Forgot Password?</value>
+  </data>
+  <data name="For_example" xml:space="preserve">
+    <value>For example</value>
+  </data>
+  <data name="FullName_Comment" xml:space="preserve">
+    <value>Writer's Name</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Generalinformation_section" xml:space="preserve">
+    <value>General Information Section</value>
+  </data>
+  <data name="General_chart" xml:space="preserve">
+    <value>General chart</value>
+  </data>
+  <data name="General_information" xml:space="preserve">
+    <value>General Information</value>
+  </data>
+  <data name="General_Report" xml:space="preserve">
+    <value>General Report</value>
+  </data>
+  <data name="General_Statistics" xml:space="preserve">
+    <value>General Statistics</value>
+  </data>
+  <data name="gentleman" xml:space="preserve">
+    <value>gentleman</value>
+  </data>
+  <data name="GetQR_code" xml:space="preserve">
+    <value>Get the QR code</value>
+  </data>
+  <data name="gmailinfo_found" xml:space="preserve">
+    <value>gmail info found</value>
+  </data>
+  <data name="GmailRegiter_Account" xml:space="preserve">
+    <value>Gmail Regiter Account</value>
+  </data>
+  <data name="Gmailrequested_found" xml:space="preserve">
+    <value>The gmail you requested was not found</value>
+  </data>
+  <data name="Gmail_staff" xml:space="preserve">
+    <value>Gmail Staff</value>
+  </data>
+  <data name="goal_bringing" xml:space="preserve">
+    <value>With the goal of bringing Vietnamese hymns everywhere, to everyone without distinction. With such intentions, we have created to meet the needs and software experience of users, thank you very much. We always want to listen to all your contributions to build more and more useful applications in the future.</value>
+  </data>
+  <data name="Have" xml:space="preserve">
+    <value>Have</value>
+  </data>
+  <data name="Havendone_yet" xml:space="preserve">
+    <value>Haven't done anything yet</value>
+  </data>
+  <data name="head" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="HistoryDowloadMusic_Success" xml:space="preserve">
+    <value>Delete history dowload music success</value>
+  </data>
+  <data name="Holiday_Management" xml:space="preserve">
+    <value>Holiday Management</value>
+  </data>
+  <data name="Home_page" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Hours_ofRoles" xml:space="preserve">
+    <value>Hours of Roles</value>
+  </data>
+  <data name="IdEmployeeAndIdStaff_notnull" xml:space="preserve">
+    <value>User Id or Employee Id cannot be left blank</value>
+  </data>
+  <data name="IDemployee_couldnotfound" xml:space="preserve">
+    <value>The ID of this employee could not be found</value>
+  </data>
+  <data name="IdMmusicNull" xml:space="preserve">
+    <value>The song code cannot be empty</value>
+  </data>
+  <data name="IdMusic" xml:space="preserve">
+    <value>Id Music</value>
+  </data>
+  <data name="IDsaintOrIDstatus_Null" xml:space="preserve">
+    <value>Vacation code or status code is empty, please check again!</value>
+  </data>
+  <data name="IdSeason_Null" xml:space="preserve">
+    <value>Id Season Null, Please try again !</value>
+  </data>
+  <data name="IdStaff" xml:space="preserve">
+    <value>Id Staff</value>
+  </data>
+  <data name="ImageError" xml:space="preserve">
+    <value>Image Error</value>
+  </data>
+  <data name="ImageNot_Format" xml:space="preserve">
+    <value>The image you entered is not in the correct format!</value>
+  </data>
+  <data name="ImageNot_Null" xml:space="preserve">
+    <value>Image Not Null</value>
+  </data>
+  <data name="ImageSatff" xml:space="preserve">
+    <value>Image Employee</value>
+  </data>
+  <data name="ImageStaff" xml:space="preserve">
+    <value>Staff Image</value>
+  </data>
+  <data name="Image_preview" xml:space="preserve">
+    <value>Image preview</value>
+  </data>
+  <data name="Implementation_progress" xml:space="preserve">
+    <value>Implementation progress</value>
+  </data>
+  <data name="improveourselves" xml:space="preserve">
+    <value>We will improve ourselves. You rated this</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Increase</value>
+  </data>
+  <data name="indicateday_year" xml:space="preserve">
+    <value>indicate the day of the year</value>
+  </data>
+  <data name="Indicatenumberemployee_day" xml:space="preserve">
+    <value>Indicate the number of employees entered that day</value>
+  </data>
+  <data name="Indicatesnumberusers_day" xml:space="preserve">
+    <value>Indicates the number of users entered for that day</value>
+  </data>
+  <data name="Indicates_number" xml:space="preserve">
+    <value>Indicates the number of songs imported for that day</value>
+  </data>
+  <data name="inputFile" xml:space="preserve">
+    <value>+ The input file must be a word PDF .pdf</value>
+  </data>
+  <data name="Introduc_Music" xml:space="preserve">
+    <value>General Introduction About Manager Music</value>
+  </data>
+  <data name="keyword_search" xml:space="preserve">
+    <value>Please enter a keyword to search</value>
+  </data>
+  <data name="Ladies" xml:space="preserve">
+    <value>Ladies</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Language_en" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Language_Name" xml:space="preserve">
+    <value>Language Name</value>
+  </data>
+  <data name="Language_vi" xml:space="preserve">
+    <value>VietNamese</value>
+  </data>
+  <data name="last" xml:space="preserve">
+    <value>last</value>
+  </data>
+  <data name="LastEdit" xml:space="preserve">
+    <value>Last Edit</value>
+  </data>
+  <data name="least1stat_moststars" xml:space="preserve">
+    <value>Please at least 1 star at most 5 stars</value>
+  </data>
+  <data name="Lent" xml:space="preserve">
+    <value>Lent</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>Like</value>
+  </data>
+  <data name="Likes" xml:space="preserve">
+    <value>Likes</value>
+  </data>
+  <data name="Likesong_success" xml:space="preserve">
+    <value>Like the song success</value>
+  </data>
+  <data name="Listimages_message" xml:space="preserve">
+    <value>List of images in the message</value>
+  </data>
+  <data name="ListMusic_Null" xml:space="preserve">
+    <value>The playlist is empty and unusable!</value>
+  </data>
+  <data name="ListSatffLocked_Account" xml:space="preserve">
+    <value>List of locked employee accounts</value>
+  </data>
+  <data name="Listsongs_year" xml:space="preserve">
+    <value>List of songs of the year</value>
+  </data>
+  <data name="List_music" xml:space="preserve">
+    <value>List Music</value>
+  </data>
+  <data name="Lockedemployee_successfully" xml:space="preserve">
+    <value>Locked employee account successfully</value>
+  </data>
+  <data name="LockingEmployee_Accounts" xml:space="preserve">
+    <value>Locking Employee Accounts</value>
+  </data>
+  <data name="Lock_accounts" xml:space="preserve">
+    <value>Lock user accounts</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginDate" xml:space="preserve">
+    <value>Login Date</value>
+  </data>
+  <data name="LoginFacebook" xml:space="preserve">
+    <value>Login With Facebook</value>
+  </data>
+  <data name="LoginFail" xml:space="preserve">
+    <value>Login failed, please try again !</value>
+  </data>
+  <data name="LoginGoogle" xml:space="preserve">
+    <value>Login With Google</value>
+  </data>
+  <data name="LoginTime" xml:space="preserve">
+    <value>Login Time</value>
+  </data>
+  <data name="Login_Information" xml:space="preserve">
+    <value>Login Information</value>
+  </data>
+  <data name="Login_Music" xml:space="preserve">
+    <value>Login to Music Manager</value>
+  </data>
+  <data name="Login_page" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Login_To_Experience" xml:space="preserve">
+    <value>Login To Experience</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>LogOut</value>
+  </data>
+  <data name="Log_function" xml:space="preserve">
+    <value>Log in to use this function</value>
+  </data>
+  <data name="Managerfile_dowload" xml:space="preserve">
+    <value>Manager File Dowload</value>
+  </data>
+  <data name="ManagerSatff" xml:space="preserve">
+    <value>Manager Staff</value>
+  </data>
+  <data name="Manager_Muiscsinging" xml:space="preserve">
+    <value>Manager Muisc singing baif management software was created with the purpose of helping everyone with a passion for hymn songs, can search for their favorite songs. The system supports all hymn songs,
+arranged according to each season of the liturgical year of the Catholic Church, regardless of whether you are a Catholic or a non-Catholic, just have a passion for catholic hymns to be able to experience the application.</value>
+  </data>
+  <data name="Manager_Music" xml:space="preserve">
+    <value>Manager Music</value>
+  </data>
+  <data name="Manager_User" xml:space="preserve">
+    <value>Manager User</value>
+  </data>
+  <data name="Marital" xml:space="preserve">
+    <value>Marriage</value>
+  </data>
+  <data name="Marriage" xml:space="preserve">
+    <value>Marriage</value>
+  </data>
+  <data name="Maximun_length" xml:space="preserve">
+    <value>Maximun length 10 characters !</value>
+  </data>
+  <data name="Ma_userrequests" xml:space="preserve">
+    <value>Manage User Requests</value>
+  </data>
+  <data name="Members_group" xml:space="preserve">
+    <value>Members of the group</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Message_time" xml:space="preserve">
+    <value>Message date and time</value>
+  </data>
+  <data name="Mission_Contents" xml:space="preserve">
+    <value>Mission Contents</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="Moretasks_employees" xml:space="preserve">
+    <value>More tasks for employees</value>
+  </data>
+  <data name="MostDownloadedSong_Month" xml:space="preserve">
+    <value>Most Downloaded Song Of The Month</value>
+  </data>
+  <data name="Music_composer" xml:space="preserve">
+    <value>Music Composer</value>
+  </data>
+  <data name="My_information" xml:space="preserve">
+    <value>My Information</value>
+  </data>
+  <data name="My_staff" xml:space="preserve">
+    <value>My Staff</value>
+  </data>
+  <data name="My_Users" xml:space="preserve">
+    <value>My Users</value>
+  </data>
+  <data name="NameFile_Song" xml:space="preserve">
+    <value>Name File Song</value>
+  </data>
+  <data name="NameSaint_NotNull" xml:space="preserve">
+    <value>Saint names are not null</value>
+  </data>
+  <data name="namesong" xml:space="preserve">
+    <value>Name Song</value>
+  </data>
+  <data name="NameStaff" xml:space="preserve">
+    <value>Staff Name</value>
+  </data>
+  <data name="Name_Saint" xml:space="preserve">
+    <value>Name Saint</value>
+  </data>
+  <data name="National_flag" xml:space="preserve">
+    <value>National Flag</value>
+  </data>
+  <data name="NewSong_Name" xml:space="preserve">
+    <value>New Song Name</value>
+  </data>
+  <data name="New_Author" xml:space="preserve">
+    <value>New Author</value>
+  </data>
+  <data name="New_Content" xml:space="preserve">
+    <value>New Content</value>
+  </data>
+  <data name="new_password" xml:space="preserve">
+    <value>Enter new password</value>
+  </data>
+  <data name="New_song" xml:space="preserve">
+    <value>New song</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>next</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Nofitication_Success" xml:space="preserve">
+    <value>Notification Success</value>
+  </data>
+  <data name="NoFound_District" xml:space="preserve">
+    <value>No districts found in this city</value>
+  </data>
+  <data name="Noimages_Id" xml:space="preserve">
+    <value>No images found for this Id</value>
+  </data>
+  <data name="Nomessages_employee" xml:space="preserve">
+    <value>No messages from this employee yet!</value>
+  </data>
+  <data name="Notaskfound_employee" xml:space="preserve">
+    <value>No task found for this employee</value>
+  </data>
+  <data name="Notaskwith_codefound" xml:space="preserve">
+    <value>No task with this code found</value>
+  </data>
+  <data name="NotChooseNew_Avata" xml:space="preserve">
+    <value>You haven't chosen a new avatar yet</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="NoteFormat_file" xml:space="preserve">
+    <value>Note: you should name the file in the correct format</value>
+  </data>
+  <data name="NoteFormat_Image" xml:space="preserve">
+    <value>Note: you should name the image in the correct format</value>
+  </data>
+  <data name="NotFindIdSeason" xml:space="preserve">
+    <value>Not find this season !</value>
+  </data>
+  <data name="NotFindIdUser_Create" xml:space="preserve">
+    <value>Couldn't find your id to initialize, please check again!</value>
+  </data>
+  <data name="NotfindID_Status" xml:space="preserve">
+    <value>The status code you need to change was not found!</value>
+  </data>
+  <data name="NotFindInfothis_Music" xml:space="preserve">
+    <value>Can't Find Information Of This Song</value>
+  </data>
+  <data name="NotFindListMusic_Anactiver" xml:space="preserve">
+    <value>No inactive songs found, from streaming playlists!</value>
+  </data>
+  <data name="NotfindMusic" xml:space="preserve">
+    <value>No songs found, please check again !</value>
+  </data>
+  <data name="NotFindSong" xml:space="preserve">
+    <value>Can't find the song</value>
+  </data>
+  <data name="NotFindStaff" xml:space="preserve">
+    <value>Not Find Staff</value>
+  </data>
+  <data name="NotFind_Deletmusic" xml:space="preserve">
+    <value>Deleted song not found!</value>
+  </data>
+  <data name="NotFind_IdSaint" xml:space="preserve">
+    <value>Can't find holidays with this code!</value>
+  </data>
+  <data name="NotFind_IDstatus" xml:space="preserve">
+    <value>Status code not found !</value>
+  </data>
+  <data name="NotFind_Info" xml:space="preserve">
+    <value>Your account information could not be found</value>
+  </data>
+  <data name="Notfind_ListDowloadMusic" xml:space="preserve">
+    <value>Download playlist not found!</value>
+  </data>
+  <data name="NotFind_StatusMusic" xml:space="preserve">
+    <value>Not fint status muisc</value>
+  </data>
+  <data name="notHave_Role" xml:space="preserve">
+    <value>You do not have role to perform this function</value>
+  </data>
+  <data name="NotificationContent" xml:space="preserve">
+    <value>Notification Content</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Notification_Error" xml:space="preserve">
+    <value>Notification Error</value>
+  </data>
+  <data name="Notifiction" xml:space="preserve">
+    <value>notification</value>
+  </data>
+  <data name="NotNull_Data" xml:space="preserve">
+    <value>Not Null !</value>
+  </data>
+  <data name="NotSendMore_5File" xml:space="preserve">
+    <value>You should not send more than 5 files, to optimize speed</value>
+  </data>
+  <data name="not_received" xml:space="preserve">
+    <value>Not received</value>
+  </data>
+  <data name="Not_resolved" xml:space="preserve">
+    <value>Not resolved</value>
+  </data>
+  <data name="not_seen" xml:space="preserve">
+    <value>Not seen</value>
+  </data>
+  <data name="Null_ListDowloadMusic" xml:space="preserve">
+    <value>Deleted list of downloaded songs is empty!</value>
+  </data>
+  <data name="NumberQRcore_generations" xml:space="preserve">
+    <value>Number of QR core generations</value>
+  </data>
+  <data name="NumberWas_Dowload" xml:space="preserve">
+    <value>Number of Posts Loaded</value>
+  </data>
+  <data name="OldSong_Name" xml:space="preserve">
+    <value>Old Song Name</value>
+  </data>
+  <data name="Old_Author" xml:space="preserve">
+    <value>Old Author</value>
+  </data>
+  <data name="Old_Content" xml:space="preserve">
+    <value>Old Content</value>
+  </data>
+  <data name="Onesong_threesutras." xml:space="preserve">
+    <value>One song equals three sutras.</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Outside_of_the_calendar" xml:space="preserve">
+    <value>Outside Of The Calendar</value>
+  </data>
+  <data name="page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="passed_match" xml:space="preserve">
+    <value>The id passed in does not match</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Password_characterandnumber" xml:space="preserve">
+    <value>Password must contain at least 1 special character and 1 number</value>
+  </data>
+  <data name="Password_incorrect" xml:space="preserve">
+    <value>Password incorrect!</value>
+  </data>
+  <data name="Password_uppercase" xml:space="preserve">
+    <value>Password must contain 1 uppercase character</value>
+  </data>
+  <data name="People_notice" xml:space="preserve">
+    <value>People Notice</value>
+  </data>
+  <data name="Percent_Support" xml:space="preserve">
+    <value>Percent Support</value>
+  </data>
+  <data name="Performers" xml:space="preserve">
+    <value>Performers</value>
+  </data>
+  <data name="Personal" xml:space="preserve">
+    <value>Personal</value>
+  </data>
+  <data name="Personal_information" xml:space="preserve">
+    <value>Personal Information</value>
+  </data>
+  <data name="PersonAssigning_Roles" xml:space="preserve">
+    <value>Person Assigning Roles</value>
+  </data>
+  <data name="Petros_Tuong" xml:space="preserve">
+    <value>Petros Tran Duy Tuong</value>
+  </data>
+  <data name="PhoneStaff" xml:space="preserve">
+    <value>Phone Staff</value>
+  </data>
+  <data name="PlaeseEnterNameMusic" xml:space="preserve">
+    <value>Plaese Enter Name Music</value>
+  </data>
+  <data name="Plan_Name" xml:space="preserve">
+    <value>Plan Name</value>
+  </data>
+  <data name="pleased_announce" xml:space="preserve">
+    <value>Is pleased to announce.</value>
+  </data>
+  <data name="Pleaseenter_accepttask" xml:space="preserve">
+    <value>Please enter the content do not accept the stask</value>
+  </data>
+  <data name="PleaseEnter_Address" xml:space="preserve">
+    <value>Please Enter Address ...</value>
+  </data>
+  <data name="PleaseEnter_PhoneNumber" xml:space="preserve">
+    <value>Please Enter Phone Number ...</value>
+  </data>
+  <data name="Post_Deleted" xml:space="preserve">
+    <value>Post Deleted</value>
+  </data>
+  <data name="Processing_Date" xml:space="preserve">
+    <value>Processing Date</value>
+  </data>
+  <data name="Processmanage" xml:space="preserve">
+    <value>Process management</value>
+  </data>
+  <data name="Province_City" xml:space="preserve">
+    <value>Province/City</value>
+  </data>
+  <data name="QRcode_song" xml:space="preserve">
+    <value>QR code of the song</value>
+  </data>
+  <data name="RatingDate" xml:space="preserve">
+    <value>Star Rating Date</value>
+  </data>
+  <data name="ReadFile" xml:space="preserve">
+    <value>Preview the song</value>
+  </data>
+  <data name="read_Error" xml:space="preserve">
+    <value>Read error letter</value>
+  </data>
+  <data name="read_Success" xml:space="preserve">
+    <value>Read success letter</value>
+  </data>
+  <data name="Received" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="recoverdeletedA_successfully" xml:space="preserve">
+    <value>Recover deleted song
+successfully</value>
+  </data>
+  <data name="recoverdeleted_successfully" xml:space="preserve">
+    <value>Recover deleted song  playlist
+successfully</value>
+  </data>
+  <data name="RegiterAccount" xml:space="preserve">
+    <value>Regiter Account</value>
+  </data>
+  <data name="RegiterAccount_Title" xml:space="preserve">
+    <value>Register an account for a better experience</value>
+  </data>
+  <data name="RegiterDate" xml:space="preserve">
+    <value>Regiter Date</value>
+  </data>
+  <data name="RegiterError" xml:space="preserve">
+    <value>Registration failed, please check again !</value>
+  </data>
+  <data name="RegiterSuccess" xml:space="preserve">
+    <value>Email registration is successful, you can login.</value>
+  </data>
+  <data name="Regiter_page" xml:space="preserve">
+    <value>Regiter</value>
+  </data>
+  <data name="Related_Comment" xml:space="preserve">
+    <value>See Related Comments</value>
+  </data>
+  <data name="RemoveAll" xml:space="preserve">
+    <value>Remove All</value>
+  </data>
+  <data name="RemoveError" xml:space="preserve">
+    <value>Notification remove fail !</value>
+  </data>
+  <data name="RemoveSuccess" xml:space="preserve">
+    <value>Notification reomve success</value>
+  </data>
+  <data name="RemovethisNotificaiton" xml:space="preserve">
+    <value>Remove This Notificaiton</value>
+  </data>
+  <data name="Remove_downloads" xml:space="preserve">
+    <value>Remove downloads of the song</value>
+  </data>
+  <data name="Remove_Song" xml:space="preserve">
+    <value>Remove Song</value>
+  </data>
+  <data name="Renewaldate_EndDate" xml:space="preserve">
+    <value>Renewal date cannot be less than current date</value>
+  </data>
+  <data name="Renew_task" xml:space="preserve">
+    <value>Renew the task</value>
+  </data>
+  <data name="Reply_content" xml:space="preserve">
+    <value>Reply content</value>
+  </data>
+  <data name="ReportSong_File" xml:space="preserve">
+    <value>Report Song File</value>
+  </data>
+  <data name="reports_employees" xml:space="preserve">
+    <value>Statistics reports of employees</value>
+  </data>
+  <data name="Report_Management" xml:space="preserve">
+    <value>Report Management</value>
+  </data>
+  <data name="Requested_ask" xml:space="preserve">
+    <value>Requested Task</value>
+  </data>
+  <data name="requestsent_successfully" xml:space="preserve">
+    <value>The request has been sent successfully, we will soon respond via the Email you sent</value>
+  </data>
+  <data name="Request_Date" xml:space="preserve">
+    <value>Request Date</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Respondent_name" xml:space="preserve">
+    <value>Respondent's name</value>
+  </data>
+  <data name="result" xml:space="preserve">
+    <value>result</value>
+  </data>
+  <data name="Retrieveemployee_password" xml:space="preserve">
+    <value>Retrieve employee's password</value>
+  </data>
+  <data name="Reviewer_name" xml:space="preserve">
+    <value>Reviewer's name</value>
+  </data>
+  <data name="ReviewNew_Updates" xml:space="preserve">
+    <value>Review New Updates</value>
+  </data>
+  <data name="RoleAndImageStaff" xml:space="preserve">
+    <value>Role And Image Employee</value>
+  </data>
+  <data name="RoleAssignment_Day" xml:space="preserve">
+    <value>Role Assignment Day</value>
+  </data>
+  <data name="Rolecode_found" xml:space="preserve">
+    <value>Role code not found</value>
+  </data>
+  <data name="Roles_ImagesEmployees" xml:space="preserve">
+    <value>Roles and Images of Employees</value>
+  </data>
+  <data name="Roleupdate_successful" xml:space="preserve">
+    <value>Role update successful</value>
+  </data>
+  <data name="Role_App" xml:space="preserve">
+    <value>App Permissions</value>
+  </data>
+  <data name="Role_Selection" xml:space="preserve">
+    <value>Role Selection</value>
+  </data>
+  <data name="SaintStatus_Change" xml:space="preserve">
+    <value>Saint Status Change</value>
+  </data>
+  <data name="Saveauthor" xml:space="preserve">
+    <value>Save author name</value>
+  </data>
+  <data name="Savesong_title" xml:space="preserve">
+    <value>Save song title</value>
+  </data>
+  <data name="Save_saint" xml:space="preserve">
+    <value>Save another saint</value>
+  </data>
+  <data name="Save_season" xml:space="preserve">
+    <value>Save this season</value>
+  </data>
+  <data name="Seach" xml:space="preserve">
+    <value>Seach</value>
+  </data>
+  <data name="SeachMusic" xml:space="preserve">
+    <value>Seach Music</value>
+  </data>
+  <data name="Seach_Music" xml:space="preserve">
+    <value>Enter name, season, id music, ...</value>
+  </data>
+  <data name="SearchEmployeeCode" xml:space="preserve">
+    <value>Search Employee Code Or Employee Name</value>
+  </data>
+  <data name="Seasonal_selection" xml:space="preserve">
+    <value>Seasonal selection</value>
+  </data>
+  <data name="Seasons" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="Seasons_Year_round" xml:space="preserve">
+    <value>Seasons Year Round</value>
+  </data>
+  <data name="Seenumber_logins" xml:space="preserve">
+    <value>See the number of logins</value>
+  </data>
+  <data name="Seepicture_message" xml:space="preserve">
+    <value>See the picture in the message</value>
+  </data>
+  <data name="see_more" xml:space="preserve">
+    <value>See more</value>
+  </data>
+  <data name="See_rating" xml:space="preserve">
+    <value>See star rating</value>
+  </data>
+  <data name="SelectDate_filter" xml:space="preserve">
+    <value>Select the Date you want to filter</value>
+  </data>
+  <data name="Selectemployee_role" xml:space="preserve">
+    <value>Select employee role</value>
+  </data>
+  <data name="selectfilesend" xml:space="preserve">
+    <value>Please select a file to send</value>
+  </data>
+  <data name="Selectfile_send" xml:space="preserve">
+    <value>Select the file to send</value>
+  </data>
+  <data name="Selectimagefile_send" xml:space="preserve">
+    <value>Select the image or file to send</value>
+  </data>
+  <data name="selectline_back" xml:space="preserve">
+    <value>Please select a line to get it back</value>
+  </data>
+  <data name="Selectrole_New" xml:space="preserve">
+    <value>Select Role New</value>
+  </data>
+  <data name="selectstatus_filter" xml:space="preserve">
+    <value>Select status to filter</value>
+  </data>
+  <data name="Selectstatus_youwantchange" xml:space="preserve">
+    <value>Select the status you want to change</value>
+  </data>
+  <data name="SelectTask_Status" xml:space="preserve">
+    <value>Select Task Status</value>
+  </data>
+  <data name="SelectUpdate_File" xml:space="preserve">
+    <value>Select Update File</value>
+  </data>
+  <data name="Select_condition" xml:space="preserve">
+    <value>Select The Condition You Want To Search For</value>
+  </data>
+  <data name="select_date" xml:space="preserve">
+    <value>Please select a date</value>
+  </data>
+  <data name="Select_Dates" xml:space="preserve">
+    <value>Select Date</value>
+  </data>
+  <data name="select_field" xml:space="preserve">
+    <value>Please select a field to proceed with account activation!</value>
+  </data>
+  <data name="Select_saint" xml:space="preserve">
+    <value>Select Saint</value>
+  </data>
+  <data name="select_status" xml:space="preserve">
+    <value>Please select a status</value>
+  </data>
+  <data name="Select_Time" xml:space="preserve">
+    <value>Please select a time</value>
+  </data>
+  <data name="select_timeperiod" xml:space="preserve">
+    <value>Please select a time period</value>
+  </data>
+  <data name="Send Contributions" xml:space="preserve">
+    <value>Send Contributions</value>
+  </data>
+  <data name="Sender" xml:space="preserve">
+    <value>Sender:</value>
+  </data>
+  <data name="Sender_FirstLast_Name" xml:space="preserve">
+    <value>Sender's First and Last Name</value>
+  </data>
+  <data name="SendFileIf_Yes" xml:space="preserve">
+    <value>Send File If Yes</value>
+  </data>
+  <data name="send_congratulations" xml:space="preserve">
+    <value>staff please send them congratulations</value>
+  </data>
+  <data name="sent" xml:space="preserve">
+    <value>sent</value>
+  </data>
+  <data name="SentError" xml:space="preserve">
+    <value>Sent Error</value>
+  </data>
+  <data name="SentMessage_Error" xml:space="preserve">
+    <value>Message could not be sent, an error occurred</value>
+  </data>
+  <data name="SentNotification_Error" xml:space="preserve">
+    <value>Sent Notification Error</value>
+  </data>
+  <data name="Sent_File" xml:space="preserve">
+    <value>Sent File</value>
+  </data>
+  <data name="SettingFileStatus" xml:space="preserve">
+    <value>Status Setting For File</value>
+  </data>
+  <data name="SharingTasks_Employees" xml:space="preserve">
+    <value>Sharing Tasks for Employees</value>
+  </data>
+  <data name="Show_Password" xml:space="preserve">
+    <value>Show Password</value>
+  </data>
+  <data name="Sign_Up" xml:space="preserve">
+    <value>Sign Up for Music Manager</value>
+  </data>
+  <data name="Since" xml:space="preserve">
+    <value>Since</value>
+  </data>
+  <data name="Singing_praying" xml:space="preserve">
+    <value>Singing is praying twice</value>
+  </data>
+  <data name="Slogan" xml:space="preserve">
+    <value>Catholic song file management system</value>
+  </data>
+  <data name="Software_Introduction" xml:space="preserve">
+    <value>Software Introduction</value>
+  </data>
+  <data name="Solved" xml:space="preserve">
+    <value>Solved</value>
+  </data>
+  <data name="Solving" xml:space="preserve">
+    <value>Solving</value>
+  </data>
+  <data name="songAlready_exists" xml:space="preserve">
+    <value>The Song Already Exists</value>
+  </data>
+  <data name="songcode_empty" xml:space="preserve">
+    <value>The input song code is empty!</value>
+  </data>
+  <data name="Songdownload_failed" xml:space="preserve">
+    <value>Song download failed, please check again!</value>
+  </data>
+  <data name="songname_currentdatemonthyear" xml:space="preserve">
+    <value>+ song name_current date month year</value>
+  </data>
+  <data name="SongReport_Chart" xml:space="preserve">
+    <value>Song Report Chart</value>
+  </data>
+  <data name="Song_Chart" xml:space="preserve">
+    <value>Song Chart</value>
+  </data>
+  <data name="Song_Comments" xml:space="preserve">
+    <value>Song Comments</value>
+  </data>
+  <data name="Song_ListPage" xml:space="preserve">
+    <value>Song List Page</value>
+  </data>
+  <data name="Song_rate" xml:space="preserve">
+    <value>Song star rate</value>
+  </data>
+  <data name="special holidays" xml:space="preserve">
+    <value>Choose special holidays</value>
+  </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="Staffnot_found" xml:space="preserve">
+    <value>Staff not found</value>
+  </data>
+  <data name="Staff_Activation" xml:space="preserve">
+    <value>Employee account activation</value>
+  </data>
+  <data name="staff_chat" xml:space="preserve">
+    <value>Staff Chat</value>
+  </data>
+  <data name="Staff_information" xml:space="preserve">
+    <value>Staff Information</value>
+  </data>
+  <data name="Starrating" xml:space="preserve">
+    <value>Star rating</value>
+  </data>
+  <data name="stars" xml:space="preserve">
+    <value>stars</value>
+  </data>
+  <data name="Startdate_dateend" xml:space="preserve">
+    <value>Start date to end date end</value>
+  </data>
+  <data name="Star_rating" xml:space="preserve">
+    <value>Star rating</value>
+  </data>
+  <data name="Star_RatingList" xml:space="preserve">
+    <value>Star Rating List</value>
+  </data>
+  <data name="Star_Review" xml:space="preserve">
+    <value>5 Star Review</value>
+  </data>
+  <data name="Statisticalchart" xml:space="preserve">
+    <value>Statistical chart</value>
+  </data>
+  <data name="Statisticalchart_songmonth" xml:space="preserve">
+    <value>Statistical chart of the latest song by month</value>
+  </data>
+  <data name="StatisticalreportEmployee" xml:space="preserve">
+    <value>Statistics Employee Reports</value>
+  </data>
+  <data name="StatisticalreportSong_file" xml:space="preserve">
+    <value>Statistical Report Song File</value>
+  </data>
+  <data name="StatisticalreportUser" xml:space="preserve">
+    <value>Statistics User Report</value>
+  </data>
+  <data name="Statistics_Report" xml:space="preserve">
+    <value> Report</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StatusAccount" xml:space="preserve">
+    <value>Account Status</value>
+  </data>
+  <data name="Statussettings_accounts" xml:space="preserve">
+    <value>Status Settings For Accounts</value>
+  </data>
+  <data name="Statussettings_season" xml:space="preserve">
+    <value>Status settings for the season</value>
+  </data>
+  <data name="Study" xml:space="preserve">
+    <value>We have studied, after a period of time, all the needs of our customers. In order to meet that demand, we have researched and developed a system to help you manage the best catholic song files.</value>
+  </data>
+  <data name="submittedconstructive_comments" xml:space="preserve">
+    <value>You have successfully submitted your constructive comments, we will get back to you soon</value>
+  </data>
+  <data name="Submit_failed" xml:space="preserve">
+    <value>Submit construction review failed please check again</value>
+  </data>
+  <data name="Submit_Plan" xml:space="preserve">
+    <value>Submit Plan</value>
+  </data>
+  <data name="Successfultask_received" xml:space="preserve">
+    <value>Successful task received</value>
+  </data>
+  <data name="Successful_rating" xml:space="preserve">
+    <value>Successful star rating</value>
+  </data>
+  <data name="Supported_Languages" xml:space="preserve">
+    <value>Supported Languages</value>
+  </data>
+  <data name="Support_expenses" xml:space="preserve">
+    <value>Support operating expenses</value>
+  </data>
+  <data name="systemonly_accepts" xml:space="preserve">
+    <value>The system only accepts files (PDF, WORD, EXCEL)</value>
+  </data>
+  <data name="SystemRequest" xml:space="preserve">
+    <value>System request is a word file .doc</value>
+  </data>
+  <data name="System_Introduction" xml:space="preserve">
+    <value>System Introduction</value>
+  </data>
+  <data name="System_Management" xml:space="preserve">
+    <value>System Management</value>
+  </data>
+  <data name="System_page" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Sytstem_File" xml:space="preserve">
+    <value>The system does not receive the file</value>
+  </data>
+  <data name="Takeback_song" xml:space="preserve">
+    <value>Take back the song</value>
+  </data>
+  <data name="Taking_mission" xml:space="preserve">
+    <value>Taking mission</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="Task" xml:space="preserve">
+    <value>Task</value>
+  </data>
+  <data name="TaskAcceptance_Status" xml:space="preserve">
+    <value>Task Acceptance Status</value>
+  </data>
+  <data name="TaskFile_List" xml:space="preserve">
+    <value>Task File List</value>
+  </data>
+  <data name="TaskManager_denied" xml:space="preserve">
+    <value>Task Manager denied</value>
+  </data>
+  <data name="Tasktitle_empty" xml:space="preserve">
+    <value>Task title is not empty</value>
+  </data>
+  <data name="TaskUpdate" xml:space="preserve">
+    <value>Task Update</value>
+  </data>
+  <data name="task_assigned" xml:space="preserve">
+    <value>This task has expired and cannot be assigned</value>
+  </data>
+  <data name="Task_Code" xml:space="preserve">
+    <value>Task Code</value>
+  </data>
+  <data name="Task_Creator" xml:space="preserve">
+    <value>Task Creator</value>
+  </data>
+  <data name="Task_Manager" xml:space="preserve">
+    <value>Task Manager</value>
+  </data>
+  <data name="Thankvery_much" xml:space="preserve">
+    <value>Hello friends, as you know this is free software that we have created, to help you have more resources if you want to find Catholic song material, for you whether you have Catholic or non-Catholic, so in order to maintain the operation of the website on google's search browser, please everyone, depending on your heart, contribute to have an operating cost. Thank you very much. (Development Duy Tuong)</value>
+  </data>
+  <data name="Theresponses_reviewcomment" xml:space="preserve">
+    <value>The responses of this review comment</value>
+  </data>
+  <data name="Thetask_expired" xml:space="preserve">
+    <value>The task has expired</value>
+  </data>
+  <data name="Thetask_expiredyet" xml:space="preserve">
+    <value>The task has not expired yet</value>
+  </data>
+  <data name="the_song" xml:space="preserve">
+    <value>the song</value>
+  </data>
+  <data name="ThisHoliday_SongList" xml:space="preserve">
+    <value>This Holiday Song List</value>
+  </data>
+  <data name="ThisSeason_List" xml:space="preserve">
+    <value>This Season's Song List</value>
+  </data>
+  <data name="TickRow_DeleteMusicDowload" xml:space="preserve">
+    <value>Please tick the rows you want to delete!</value>
+  </data>
+  <data name="ticksong_changestatus" xml:space="preserve">
+    <value>Please tick a song to change the status !</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="TimeCreate_Song" xml:space="preserve">
+    <value>Time Create Song</value>
+  </data>
+  <data name="TimeDowload" xml:space="preserve">
+    <value>Time Dowload</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Title_Notification" xml:space="preserve">
+    <value>Titile Notification</value>
+  </data>
+  <data name="title_request" xml:space="preserve">
+    <value>Please enter the title of the request !</value>
+  </data>
+  <data name="today" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="tomorrow" xml:space="preserve">
+    <value>Tomorrow</value>
+  </data>
+  <data name="TotalAcc_Time" xml:space="preserve">
+    <value>Total Account Active Time</value>
+  </data>
+  <data name="TotalDownloads" xml:space="preserve">
+    <value>Total Downloads</value>
+  </data>
+  <data name="TotalHours" xml:space="preserve">
+    <value>Total Hours of Operation</value>
+  </data>
+  <data name="TotalMusic" xml:space="preserve">
+    <value>Total Music:</value>
+  </data>
+  <data name="TotalNewSongMonth" xml:space="preserve">
+    <value>Total New Songs This Month</value>
+  </data>
+  <data name="Totalnumber_song" xml:space="preserve">
+    <value>Total number of likes for the song</value>
+  </data>
+  <data name="TotalNumber_Uploads" xml:space="preserve">
+    <value>Total Number of Uploads</value>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="TotalSongLastMonth" xml:space="preserve">
+    <value>Total Songs Of Last Month</value>
+  </data>
+  <data name="TotalSongs_App" xml:space="preserve">
+    <value>Total Songs Of The App</value>
+  </data>
+  <data name="TotalStaff" xml:space="preserve">
+    <value>Total Staff:</value>
+  </data>
+  <data name="Totaltask_canceled" xml:space="preserve">
+    <value>Total task canceled</value>
+  </data>
+  <data name="Totaltask_received" xml:space="preserve">
+    <value>Total number task received</value>
+  </data>
+  <data name="Total_Com" xml:space="preserve">
+    <value>Total Comments</value>
+  </data>
+  <data name="total_requirements" xml:space="preserve">
+    <value>Total Requirements</value>
+  </data>
+  <data name="Total_Seasson" xml:space="preserve">
+    <value>Total Seasons</value>
+  </data>
+  <data name="Total_Song" xml:space="preserve">
+    <value>Total Song</value>
+  </data>
+  <data name="Total_stars" xml:space="preserve">
+    <value>Total stars</value>
+  </data>
+  <data name="Total_Task" xml:space="preserve">
+    <value>Total Task</value>
+  </data>
+  <data name="Total_Update" xml:space="preserve">
+    <value>Total Update Music</value>
+  </data>
+  <data name="Total_User" xml:space="preserve">
+    <value>Total User</value>
+  </data>
+  <data name="turn" xml:space="preserve">
+    <value>Turn</value>
+  </data>
+  <data name="Unable_download" xml:space="preserve">
+    <value>Unable to download the file, please check again</value>
+  </data>
+  <data name="UnlockEmployee_Account" xml:space="preserve">
+    <value>Unlock Employee Account</value>
+  </data>
+  <data name="Unlockemployee_successfully" xml:space="preserve">
+    <value>Unlock employee account successfully</value>
+  </data>
+  <data name="Unlock_accounts" xml:space="preserve">
+    <value>Unlock user accounts</value>
+  </data>
+  <data name="unread_message" xml:space="preserve">
+    <value>Unread message</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UpdateDate_Time" xml:space="preserve">
+    <value>Update Date And Time</value>
+  </data>
+  <data name="UpdateDate_TimeSucc" xml:space="preserve">
+    <value>Update date and time successfully</value>
+  </data>
+  <data name="UpdateFile_Muisc" xml:space="preserve">
+    <value>Update File Muisc</value>
+  </data>
+  <data name="UpdateImage_Muisc" xml:space="preserve">
+    <value>Update Image Music</value>
+  </data>
+  <data name="UpdateMusic_Erorr" xml:space="preserve">
+    <value>Update Music Erorr</value>
+  </data>
+  <data name="UpdateMusic_Success" xml:space="preserve">
+    <value>Update Music Success</value>
+  </data>
+  <data name="UpdateSaint_Success" xml:space="preserve">
+    <value>Update Saint Success</value>
+  </data>
+  <data name="Updatetask_successfully" xml:space="preserve">
+    <value>Update task successfully</value>
+  </data>
+  <data name="Update_File" xml:space="preserve">
+    <value>Update File</value>
+  </data>
+  <data name="Update_Funtion" xml:space="preserve">
+    <value>This function is temporarily waiting for an update, please try again later!</value>
+  </data>
+  <data name="Update_history" xml:space="preserve">
+    <value>Update History</value>
+  </data>
+  <data name="Update_Saint" xml:space="preserve">
+    <value>Saint Update</value>
+  </data>
+  <data name="Update_Satff" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Update_Song" xml:space="preserve">
+    <value>Update Song</value>
+  </data>
+  <data name="Uptimestati" xml:space="preserve">
+    <value>Uptime statistics</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Userchart_year" xml:space="preserve">
+    <value>User statistics chart for the year</value>
+  </data>
+  <data name="usercode_valid" xml:space="preserve">
+    <value>Your user code is not valid</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>User name</value>
+  </data>
+  <data name="UserReport_Chart" xml:space="preserve">
+    <value>User Report Chart</value>
+  </data>
+  <data name="UserR_Details" xml:space="preserve">
+    <value>User Request Details</value>
+  </data>
+  <data name="User_Administration" xml:space="preserve">
+    <value>User Administration</value>
+  </data>
+  <data name="User_Charts" xml:space="preserve">
+    <value>User Charts</value>
+  </data>
+  <data name="User_Details" xml:space="preserve">
+    <value>User Details</value>
+  </data>
+  <data name="User_information" xml:space="preserve">
+    <value>User Information</value>
+  </data>
+  <data name="User_Notice" xml:space="preserve">
+    <value>User Notification</value>
+  </data>
+  <data name="User_report" xml:space="preserve">
+    <value>User report statistics</value>
+  </data>
+  <data name="Vietnam" xml:space="preserve">
+    <value>Vietnam</value>
+  </data>
+  <data name="Vietnamese" xml:space="preserve">
+    <value>Vietnamese</value>
+  </data>
+  <data name="ViewAZ" xml:space="preserve">
+    <value>View from A - Z</value>
+  </data>
+  <data name="ViewDetail" xml:space="preserve">
+    <value>View Detail</value>
+  </data>
+  <data name="ViewDetailSong" xml:space="preserve">
+    <value>View detail this song</value>
+  </data>
+  <data name="Viewlist_files" xml:space="preserve">
+    <value>View list of files</value>
+  </data>
+  <data name="ViewZA" xml:space="preserve">
+    <value>View from Z - A</value>
+  </data>
+  <data name="View_AllNotifications" xml:space="preserve">
+    <value>View All Notifications</value>
+  </data>
+  <data name="View_intro" xml:space="preserve">
+    <value>View Intro</value>
+  </data>
+  <data name="View_List" xml:space="preserve">
+    <value>View List</value>
+  </data>
+  <data name="View_task" xml:space="preserve">
+    <value>View task</value>
+  </data>
+  <data name="View_Upgrade_Levels" xml:space="preserve">
+    <value>View Upgrade Levels</value>
+  </data>
+  <data name="Visited_Website" xml:space="preserve">
+    <value>Number of Users Who Visited Website</value>
+  </data>
+  <data name="WasDowload" xml:space="preserve">
+    <value>Was Download</value>
+  </data>
+  <data name="WasFind" xml:space="preserve">
+    <value>Had found:</value>
+  </data>
+  <data name="watched" xml:space="preserve">
+    <value>Watched</value>
+  </data>
+  <data name="Wellcome" xml:space="preserve">
+    <value>Wellcome</value>
+  </data>
+  <data name="working_day" xml:space="preserve">
+    <value>Working Day</value>
+  </data>
+  <data name="Work_Progress" xml:space="preserve">
+    <value>Work Progress</value>
+  </data>
+  <data name="Year-round_Season_Management" xml:space="preserve">
+    <value>Season Management</value>
+  </data>
+  <data name="yesterday" xml:space="preserve">
+    <value>Yesterday</value>
+  </data>
+  <data name="Yesterday_song" xml:space="preserve">
+    <value>Yesterday's song</value>
+  </data>
+  <data name="Youliked" xml:space="preserve">
+    <value>You liked</value>
+  </data>
+  <data name="Younot_selectedimage" xml:space="preserve">
+    <value>You haven't selected an image yet</value>
+  </data>
+  <data name="Yourated_this" xml:space="preserve">
+    <value>Thanks! You rated this</value>
+  </data>
+  <data name="you_have" xml:space="preserve">
+    <value>You have</value>
+  </data>
+</root>

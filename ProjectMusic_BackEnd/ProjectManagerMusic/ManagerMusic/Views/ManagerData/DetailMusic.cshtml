@@ -1,0 +1,320 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = @languade.Getkey("DetailSong");
+    Layout = "~/Views/Shared/Manager_Data/Page_DetailFileMusic.cshtml";
+}
+@{ 
+    Guid MisucId = ViewBag.IdMusic;
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span>@languade.Getkey("Admin_Information")</span>
+        <span><a asp-action="IndexFile" asp-controller="ManagerData" style="color: #97a3b9;">@languade.Getkey("File_management")</a></span>
+        <span>@languade.Getkey("DetailSong")</span>
+    </div>
+    <partial name="~/Views/ManagerData/MenuManagerFile.cshtml" />
+    <h2 class="az-content-title">@languade.Getkey("DetailSong")</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align: right;">
+                <a id="F_ChangeStatusMuisc" class="btn btn-outline-secondary" style="border-radius: 5px;"><i class="fas fa-sync"></i> @languade.Getkey("Change_Status")</a>
+                <a id="F_DeleteMusic" class="btn btn-outline-secondary" style="border-radius: 5px;"><i class="fas fa-trash"></i> @languade.Getkey("Remove_Song")</a>
+                <a id="F_DowloadMusic" class="btn btn-outline-secondary" style="border-radius: 5px;"><i class="fas fa-download"></i> @languade.Getkey("Dowload_Song")</a>
+                <a href="@Url.Action("UpdateMusic","ManagerData", new {IdMuisc =  MisucId})" style="border-radius: 5px;" class="btn btn-outline-secondary"><i class="fas fa-edit"></i> @languade.Getkey("EditThis_Song")</a>
+                <button id="btn_CreateQR" style="border-radius: 5px;" class="btn btn-outline-secondary"><i class="fas fa-qrcode"></i> @languade.Getkey("Create_QR")</button>
+                <a href="@Url.Action("UpdateHistory","ManagerData", new {IdMusic =  MisucId})" style="border-radius: 5px;" class="btn btn-outline-secondary"><i class="fas fa-history"></i> @languade.Getkey("Update_history")</a>
+            </p>
+            <p style="text-align:left; color: red" id="TitleNotification"></p>
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="mb-3">
+
+                        <p style="text-align: center; font-family: inherit; font-weight: 600;"><i class="fas fa-file-word"></i> @languade.Getkey("File_section")</p>
+
+                        <label class="form-label">
+                            @languade.Getkey("datecreate")
+                        </label>
+                        <input id="Txt_EnterDateCreateMusic" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("IdStaff")
+                        </label>
+                        <input id="Txt_EnterIdUser" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Employee_Name")
+                        </label>
+                        <input id="Txt_EnterUser" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Employee_Authorization")
+                        </label>
+                        <input id="Txt_EnterNameRole" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("time")
+                        </label>
+                        <input id="Txt_TimeCreate" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("NumberQRcore_generations")
+                        </label>
+                        <input id="Txt_EnterQRCore" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Dowload")
+                        </label>
+                        <input id="Txt_EnterDowload" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                </div>
+                <div class="col-md-8">
+
+                    <div class="mb-3">
+                        <p style="text-align: center; font-family: inherit; font-weight: 600;"><i class="fas fa-file"></i> @languade.Getkey("Generalinformation_section")</p>
+                        <label class="form-label">
+                            @languade.Getkey("IdMusic")
+                        </label>
+                        <input id="Txt_EnterIdMusic" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("namesong")
+                        </label>
+                        <input id="Txt_EnterNameMusic" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Authour_Name")
+                        </label>
+                        <input id="Txt_EnterNameAuthor" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Seasons")
+                        </label>
+                        <input id="Txt_EnterNameSeason" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Outside_of_the_calendar")
+                        </label>
+                        <input id="Txt_EnterNameSaint" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Status")
+                        </label>
+                        <input id="Txt_EnterNameStatus" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Like")
+                        </label>
+                        <input id="Txt_EnterLike" style="border-radius: 5px;" type="text" class="form-control" disabled />
+                    </div>
+
+                    <div class="mb-3">
+                        <p>
+                            @languade.Getkey("File_currently"): <a href="#" id="TxtNameFile"></a>
+                        </p>
+                        <hr />
+                        <p style="text-align: right;">
+                            <a id="btn_readcontentfile" style="color: #2f2fb1; border: solid 1px; font-weight: 600; border-radius: 5px;">@languade.Getkey("ReadFile")</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- comemt -->
+            <p style="color: black; font-size:20px; font-family: initial; font-weight: 600;">@languade.Getkey("Song_Comments")</p>
+            <p style="color:black; font-size:15px; text-align:right;">Tổng Bình Luận: <b style="color:red" id="TotalComment"></b></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("No")</th>
+                        <th scope="col">@languade.Getkey("FullName_Comment")</th>
+                        <th scope="col">@languade.Getkey("Role_App")</th>
+                        <th scope="col">@languade.Getkey("Content")</th>
+                        <th scope="col">@languade.Getkey("datecreate")</th>
+                        <th scope="col">@languade.Getkey("time")</th>
+                        <th scope="col">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="BodyComment">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="paginationComment" class="pagination"></div>
+            </div>
+
+
+            <!-- rating-->
+            <br />
+            <p style="color: black; font-size:20px; font-family: initial; font-weight: 600;">@languade.Getkey("Song_rate")</p>
+            <p style="color:black; font-size:15px; text-align:right;">@languade.Getkey("Total_stars"): <b style="color:red" id="TotalRating"></b></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("No")</th>
+                        <th scope="col">@languade.Getkey("Star_rating")</th>
+                        <th scope="col">@languade.Getkey("FirstandLast_Name")</th>
+                        <th scope="col">@languade.Getkey("Role_App")</th>
+                        <th scope="col">@languade.Getkey("datecreate")</th>
+                        <th scope="col">@languade.Getkey("time")</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyRatings">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPageRating" style="color:red;"></b>/<b id="TotalItemRating" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="paginationRating" class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- Modal loading create Music -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal read content in file .doc-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowContentFileDox">
+    <div class="modal-dialog" style="max-width: 90%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("File_Contents") <i class="fas fa-file-image"></i></h5>
+                <button type="button" class="btn-close" id="btn-closecontentfile">X</button>
+            </div>
+            <div class="modal-body" id="ImageMusicBody" style="height: 600px; overflow: scroll;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal change status music-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowChangeStatusMusic">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Changesong_status") <i class="fas fa-exchange"></i></h5>
+                <button type="button" class="btn-close" id="btn_closestatusmusic">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">
+                        Trạng thái bài hát
+                        <span style="color: green" id="successCheck"></span>
+                    </label>
+                    <select class="form-control" id="SelectStatus" style="border-radius: 10px;"></select>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_changeStatus" type="button" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-edit"></i> @languade.Getkey("Change")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal delete music-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowDeleteMusic">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("deletethissong")</h5>
+                <button type="button" class="btn-close" id="btn_closeDelete">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button style="border-radius:10px;" id="agree_Delete" type="button" class="btn btn-danger">@languade.Getkey("agree")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button style="border-radius:10px;" id="cancel_Delete" type="button" class="btn btn-primary">@languade.Getkey("cancel")</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@ViewBag.IdMusic" id="IdMusic" />
+<input type="hidden" value="@languade.Getkey("NotFindInfothis_Music")" id="NotFindInfothis_Music" />
+<input type="hidden" value="@languade.Getkey("ChooseStatusMusic")" id="ChooseStatusMusic" />
+<input type="hidden" value="@languade.Getkey("Selectstatus_youwantchange")" id="Selectstatus_youwantchange" />
+<input type="hidden" value="@languade.Getkey("select_status")" id="select_status" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+<input type="hidden" value="@languade.Getkey("Employeeid_empty")" id="Employeeid_empty" />
+<input type="hidden" value="@languade.Getkey("NotFindSong")" id="NotFindSong" />
+<input type="hidden" value="@languade.Getkey("Staffnot_found")" id="Staffnot_found" />
+<input type="hidden" value="@languade.Getkey("Changesongstatus_successfully")" id="Changesongstatus_successfully" />
+<input type="hidden" value="@languade.Getkey("Changesongstatus_error")" id="Changesongstatus_error" />
+<input type="hidden" value="@languade.Getkey("IdMmusicNull")" id="IdMmusicNull" />
+<input type="hidden" value="@languade.Getkey("DeleteSuccess")" id="DeleteSuccess" />
+<input type="hidden" value="@languade.Getkey("DeleteErorr")" id="DeleteErorr" />
+<input type="hidden" value="@languade.Getkey("Songdownload_failed")" id="Songdownload_failed" />
+<input type="hidden" value="@languade.Getkey("DowloadMusic_Success")" id="DowloadMusic_Success" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("Related_Comment")" id="Related_Comment"/>

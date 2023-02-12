@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" type="image/png" href="~/img/logo.png">
+
+    <!-- vendor css -->
+    <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="~/lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="~/lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="~/css/azia.css">
+    <link rel="stylesheet" href="~/css/toastr.min.css">
+    <link rel="stylesheet" href="~/css/Ratings.css">
+</head>
+<body>
+    <partial name="~/Views/HeaderMenu/Index.cshtml" />
+    @RenderBody()
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="~/lib/ionicons/ionicons.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+    <script src="~/js/js_Comments/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/jquery.twbsPagination.min.js"></script>
+    <script src="~/js/js_Partial/HeaderMenu.js" asp-append-version="true"></script>
+    <script src="~/js/azia.js"></script>
+    <script src="~/js/ListMusic.js" asp-append-version="true"></script>
+</body>
+</html>

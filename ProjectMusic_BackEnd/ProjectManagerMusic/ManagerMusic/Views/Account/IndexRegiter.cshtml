@@ -1,0 +1,107 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Sign_Up");
+    Layout = "~/Views/Shared/Page_Client/Page_Signup.cshtml";
+}
+
+<div class="az-signup-wrapper">
+    <div class="az-column-signup-left">
+        <div>
+            <i class="fas fa-music" style="font-size: 50px; margin: 10px 10px;"></i>
+            <h1 class="az-logo">Manager<span>-</span>Music</h1>
+            <h5>@languade.Getkey("Slogan")</h5>
+            <p>@languade.Getkey("Study")</p>
+            <p>@languade.Getkey("Demand")</p>
+        </div>
+    </div><!-- az-column-signup-left -->
+    <div class="az-column-signup">
+        <div class="az-signup-header">
+            <h4>@languade.Getkey("RegiterAccount_Title")</h4>
+
+            <div class="form-group">
+                <label>@languade.Getkey("FirstandLast_Name") <span style="color:green;" id="checkOkName"></span></label>
+                <input type="text" id="Txt_Name" class="form-control" onkeyup="checkvalueName()"
+                       placeholder="@languade.Getkey("EnterFullName")" style="border-radius: 10px;">
+                <span style="color:red; font-family: initial;" id="ValidaName"></span>
+            </div><!-- form-group -->
+            <div class="form-group">
+                <label>@languade.Getkey("Birthday") <span style="color:green;" id="checkOkBirthday"></span></label>
+                <input type="date" id="Txt_Birthday" class="form-control" onclick="checkvalueBirthday()" style="border-radius: 10px;">
+                <span style="color:red; font-family: initial;" id="ValidaBirthday"></span>
+            </div><!-- form-group -->
+            <div class="form-group">
+                <label>Email <span style="color:green;" id="checkOkGmail"></span></label>
+                <input type="email" id="Txt_Gmail" class="form-control" onkeyup="checkvalueGmail()"
+                       placeholder="@languade.Getkey("Enter_Gmail")" style="border-radius: 10px;">
+                <span style="color:red; font-family: initial;" id="ValidaGmail"></span>
+            </div><!-- form-group -->
+            <div class="form-group">
+                <label>@languade.Getkey("Password") <span style="color:green;" id="checkOkPassword"></span></label>
+                <input type="password" id="Txt_Password" class="form-control" onkeyup="checkvaluePassword()"
+                       placeholder="@languade.Getkey("Enter_Password")" style="border-radius: 10px;">
+                <p style="margin-top: 10px; font-family: initial; text-align: right;">
+                    <input type="checkbox" onclick="myFunction()">@languade.Getkey("Show_Password")
+                </p>               
+                <span style="color:red; font-family: initial;" id="ValidaPassword"></span>
+            </div><!-- form-group -->
+            <div class="form-group">
+                <label>@languade.Getkey("ChooseGender") <span style="color:green;" id="checkOkGender"></span></label>
+                <div class="row g-3 align-items-center" style="margin-left: 20px;">
+                      <div class="col-auto">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="CheckGender" value="1" id="Checkman" />
+                            <label class="form-check-label" style="color: black; font-weight: 600;">
+                                @languade.Getkey("gentleman")
+                            </label>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="CheckGender" value="2" id="Checkwoment" />
+                            <label class="form-check-label" style="color: black; font-weight: 600;">
+                                @languade.Getkey("Ladies")
+                            </label>
+                        </div>
+                      </div>
+                </div>
+                <span style="color:red; font-family: initial;" id="ValidaGender"></span>
+            </div><!-- form-group -->
+            <div class="form-group">
+                <label>@languade.Getkey("ChooseAddress") <span style="color:green;" id="checkOkAddress"></span></label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="hidden" id="S_City" value="@languade.Getkey("ChooseCity")" />
+                        <select class="form-control" id="SelectCity" style="border-radius: 10px;"></select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="hidden" id="S_District" value="@languade.Getkey("ChooseDistrict")" />
+                        <select class="form-control" id="SelectDistrict" style="border-radius: 10px;" disabled></select>
+                    </div>
+                </div>
+                <span style="color:red; font-family: initial;" id="ValidaAddress"></span>
+            </div><!-- form-group -->
+
+            <button class="btn btn-primary btn-block" id="btn_SignUp" style="border-radius: 10px;">@languade.Getkey("Regiter_page")</button>
+
+        </div><!-- az-signup-header -->
+        <div class="az-signup-footer">
+            <p>Đã có tài khoản? <a asp-action="Login" asp-controller="Account">@languade.Getkey("Login")</a></p>
+        </div><!-- az-signin-footer -->
+    </div><!-- az-column-signup -->
+</div><!-- az-signup-wrapper -->
+<!--Message Translation-->
+<input type="hidden" id="ErrorDistrict" value="@languade.Getkey("NoFound_District")" />
+<input type="hidden" id="NotificationError" value="@languade.Getkey("Notification_Error")"  />
+<input type="hidden" id="NotificationSuccess" value="@languade.Getkey("Nofitication_Success")"  />
+<input type="hidden" id="ErrorChooseCity" value="@languade.Getkey("ChooseCity")"  />
+<input type="hidden" id="ErrorGender" value="@languade.Getkey("ChooseGender")"  />
+<input type="hidden" id="ErrorNulData" value="@languade.Getkey("NotNull_Data")"  />
+<input type="hidden" id="ErrorMaximunlength" value="@languade.Getkey("Maximun_length")"  />
+<input type="hidden" id="EmailAlreadyExists" value="@languade.Getkey("Email_already_exists")"  />
+<input type="hidden" id="EmailRegiterSuccess" value="@languade.Getkey("RegiterSuccess")"  />
+<input type="hidden" id="ErrorRegiterFail" value="@languade.Getkey("RegiterError")"  />
+<input type="hidden" id="ErrorEmailsyntax" value="@languade.Getkey("Emailsyntax_incorrect")"  />
+<input type="hidden" id="Passwordcharacterandnumber" value="@languade.Getkey("Password_characterandnumber")"/>
+<input type="hidden" id="PasswordUppercase" value="@languade.Getkey("Password_uppercase")"/>
+

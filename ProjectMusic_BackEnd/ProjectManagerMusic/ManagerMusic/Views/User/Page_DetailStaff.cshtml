@@ -1,0 +1,447 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Staff_information");
+    Layout = "~/Views/Shared/Manager_Staff/Page_DetailStaff.cshtml";
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a asp-action="Page_Staff" asp-controller="User" style="color: #97a3b9;">@languade.Getkey("ManagerSatff")</a></span>
+        <span>@languade.Getkey("Staff_information")</span>
+    </div>
+
+    <h2 class="az-content-title">Chi Tiết Nhân Viên</h2>
+    <p style="text-align:right;">
+
+        <a href="@Url.Action("Page_UpdateStaff","User", new{IdUser = ViewBag.IdUser})" id="btn_EditStaff" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Edit_staff")"><i class="fas fa-user-edit"></i></a>
+
+        <a id="btn-ShowModallockAccount" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("LockingEmployee_Accounts")"><i class="fas fa-lock"></i></a>
+
+        <a id="btn-ShowModalOpenlock" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("UnlockEmployee_Account")"><i class="fas fa-lock-open"></i></a>
+
+        <button type="button" id="btn-ShowModalHideStaff" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Cancellation_EmployeeHire")"><i class="fas fa-user-alt-slash"></i></button>
+
+        <button type="button" id="btn-ShowModalRoleStaff" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("AuthorizeThis_Employee")"><i class="fas fa-user-tag"></i></button>
+
+        <button type="button" id="btn-ShowModalTakeAgainPassword" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Moretasks_employees")"><i class="fas fa-clipboard-list"></i></button>
+
+        <button id="btn-ShowModalChangePassword" style="border: none;" class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("ChangeEmployee_Password")"><i class="fas fa-file-invoice"></i></button>
+
+        <button  style="border: none;" class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Seenumber_logins")"><i class="fas fa-sign-in-alt"></i></button>
+
+    </p>
+
+    <div class="row" id="BodyDetail">
+        <div class="col-md-6" style="border: 2px solid black; border-radius: 10px;">
+            <p style="text-align: center;">@languade.Getkey("Roles_ImagesEmployees")</p>
+
+            <div class="mb-3" id="ImgAvata">
+            </div>
+            <div class="mb-3">
+                <label id="NameRole" class="form-label" style="text-align: center; color: black; font-weight: 600;">
+                </label>
+            </div>
+            <div class="mb-3">
+                <label id="IdStaffGet" class="form-label" style="text-align: center; color: black; font-weight: 600;">
+                </label>
+            </div>
+            <div class="mb-3">
+                <label id="NameActiver" class="form-label" style="text-align: center; font-weight: 600;">
+                </label>
+            </div>
+            <div class="mb-3">
+                <label id="LeverStaff" class="form-label" style="text-align: center; color: black; font-weight: 600;">
+                </label>
+            </div>
+            <div class="mb-3">
+                <label id="HideStaff" class="form-label" style="text-align: center; color: black; font-weight: 600;">
+                </label>
+            </div>
+
+        </div>
+        <div class="col-md-6" style="border: 2px solid black; border-radius: 10px;">
+            <p style="text-align: center;">@languade.Getkey("EmployeePersonal_Information")</p>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fas fa-file-signature"></i> @languade.Getkey("Employee_Name")
+                </label>
+                <input type="text" class="form-control" id="TxtFullName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fas fa-birthday-cake"></i> @languade.Getkey("Employee_birthday")
+                </label>
+                <input type="text" class="form-control" id="TxtbirthdayStaff">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fas fa-mailbox"></i> @languade.Getkey("Gmail_staff")
+                </label>
+                <input type="email" class="form-control" id="TxtgmailStaff">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fas fa-address-card"></i> @languade.Getkey("Employee_Address")
+                </label>
+                <textarea class="form-control" id="TxtAddress">               
+                  </textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fas fa-phone"></i> @languade.Getkey("PhoneStaff")
+                </label>
+                <input type="number" class="form-control" id="TxtPhone">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fas fa-rings-wedding"></i> @languade.Getkey("Marriage")
+                </label>
+                <input type="text" class="form-control" id="TxtMarriage">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fas fa-venus-mars"></i> @languade.Getkey("Gender")
+                </label>
+                <input type="text" class="form-control" id="TxtGender">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-home"></i> @languade.Getkey("District")
+                        </label>
+                        <input type="text" class="form-control" id="TxtDistrict">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-city"></i> @languade.Getkey("Province_City")
+                        </label>
+                        <input type="text" class="form-control" id="TxtCity">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- modal load -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingSignUp">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Lock account staff-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-LockAccountStaff">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Areyoublock_account")</h5>
+                <button type="button" class="btn-close" id="btn_closeLockAccount">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button style="border-radius: 10px;" type="button" id="Btn_AgreenBlock" class="btn btn-danger">@languade.Getkey("Agree_Lock")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button style="border-radius: 10px;" type="button" id="Btn_AnagreenBlock" class="btn btn-primary">@languade.Getkey("Cancel_lock")</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--open Lock account staff-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LockOpenAccountStaff">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("AreYouSurnlock_Account")</h5>
+                <button type="button" class="btn-close" id="btn_closeOpenLockAccount">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button style="border-radius: 10px;" type="button" id="Btn_OpenAgreenBlock" class="btn btn-danger">@languade.Getkey("Agree_Unlock")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button style="border-radius: 10px;" type="button" id="Btn_OpenAnagreenBlock" class="btn btn-primary">@languade.Getkey("Cancel_Unlock")</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--cancel hide aacount staff-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_HireStaff">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Areyousurecancel_hireemployee")</h5>
+                <button type="button" class="btn-close" id="btn_closeHireStaff">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="AgreenHide" type="button" class="btn btn-danger">@languade.Getkey("agree")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center;">
+                            <button id="CancelHide" type="button" class="btn btn-primary">@languade.Getkey("cancel")</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--role staff-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_RoleStaff">
+    <div class="modal-dialog" style="max-width: 80%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("AuthorizeThis_Employee")</h5>
+                <button type="button" class="btn-close" id="btn_closeRoleStaff">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("Current_Role")</label>
+                            <input type="text" class="form-control" id="TxtRoleCurent"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">@languade.Getkey("Selectrole_New")</label>
+                        <select class="form-control" id="SelectRoleStaff">
+                        </select>
+                        <span id="Error_Data" style=" color: red; font-size: 13px; font-family: inherit; float: right; margin: 10px 0px;"></span>
+                    </div>
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">@languade.Getkey("STT")</th>
+                                    <th scope="col">@languade.Getkey("Current_Role")</th>
+                                    <th scope="col">@languade.Getkey("Since")</th>
+                                    <th scope="col">@languade.Getkey("End_Date")</th>
+                                    <th scope="col">@languade.Getkey("PersonAssigning_Roles")</th>
+                                    <th scope="col">@languade.Getkey("RoleAssignment_Day")</th>
+                                    <th scope="col">@languade.Getkey("Hours_ofRoles")</th>
+                                </tr>
+                            </thead>
+                            <tbody id="Body_HistoryRole">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_RoleStaff" type="button" style="border-radius: 5px;" class="btn btn-primary"><i class="fas fa-user-tag"></i> @languade.Getkey("Assign_roles")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--take again password-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_Plan">
+    <div class="modal-dialog" style="max-width: 80%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("SharingTasks_Employees"): <b id="TxtNameStaff" style="color: red;"></b></h5>
+                <button type="button" class="btn-close" id="btn_closePlan">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align: center; font-weight: 600; font-family: initial; font-size: 17px;">@languade.Getkey("Mission_Contents")</p>
+                        <div class="mb-3">
+                            <label class="form-label">
+                            @languade.Getkey("Plan_Name")
+                                <span id="SuccessPlanTitle" style="color: green; float: right"></span>
+                            </label>
+                            <input onkeyup="FuntionCheckTitlePlan()" style="border-radius: 10px;" type="text" class="form-control" id="TxtTitle" placeholder="@languade.Getkey("EnterTitle")" />
+                            <span id="ErrorTitlePlan" style="color: red; float: right; font-size: 14px;"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                @languade.Getkey("Mission_Contents")
+                                <span id="SuccessPlanContent" style="color: green; float: right"></span>
+                            </label>
+                            <textarea onkeyup="FuntionCheckContentPlan()" style="border-radius: 10px;" class="form-control" id="TxtContent" placeholder="@languade.Getkey("enter_content")"></textarea>
+                            <span id="ErrorContentPlan" style="color: red; float: right; font-size: 14px;"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">
+                                        @languade.Getkey("Expiration_date")
+                                        <span id="SuccessPlanDate" style="color: green; float: right"></span>
+                                    </label>
+                                    <input onchange="FuntionChangeDatePlan()" style="border-radius: 10px;" type="date" class="form-control" id="TxtDateTimeCompele" />
+                                    <span id="ErrorDatePlan" style="color: red; float: right; font-size: 14px;"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">
+                                        @languade.Getkey("Expiration_Time")
+                                        <span id="SuccessPlanTime" style="color: green; float: right"></span>
+                                    </label>
+                                    <input onchange="FuntionChangeTimePlan()" style="border-radius: 10px;" type="time" class="form-control" id="TxtTimeCompele" />
+                                    <span id="ErrorTimePlan" style="color: red; float: right; font-size: 14px;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align: center; font-weight: 600; font-family: initial; font-size: 17px;">@languade.Getkey("File_section")</p>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("SendFileIf_Yes")</label>
+                            <input style="border-radius: 10px;" type="file" multiple class="form-control" id="TxtFiles" />
+                            <div id="filelist">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_SentData" type="button" style="border-radius: 5px;" class="btn btn-primary"><i class="fas fa-mail-bulk"></i> @languade.Getkey("Submit_Plan")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--reset password-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ChangePasswordStaff">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("ChangeEmployee_Password")</h5>
+                <button type="button" class="btn-close" id="btn_closeChangePasswordStaff">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="mb-3">
+                            <span id="data_SuccessChange" style="color:green;"></span>
+                            <input type="email" class="form-control" placeholder="@languade.Getkey("Enter_employeegmail")" id="TxtChangeEmailStaff" onkeyup="ValidateTxtEmailPassword()" />
+                            <span style="color: red;" id="Error_DataChange"></span>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span>@languade.Getkey("Employee_Name"): <b id="fullnameStaff" style="color: red;"></b></span>
+                                    <br />
+                                    <span> @languade.Getkey("IdStaff"): <b id="IdNameStaff" style="color: red;"></b></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="btnCheckGmail" style="font-size: 10px; font-weight: 600; margin: 5px 5px; float: right; border-radius: 20px;" type="button" class="btn btn-primary"><i class="fas fa-search"></i> @languade.Getkey("Check")</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <span id="data_PasswordSuccessChange" style="color:green;"></span>
+                            <input type="password" class="form-control" placeholder="@languade.Getkey("new_password") ..." id="TxtChangePasswordStaff" onkeyup="ValidateTxtPassword()" />
+                            <span style=" float: right; margin: 5px 1px; font-family: 'Font Awesome 5 Brands'; color: black; font-weight: 700;">
+                                <input type="checkbox" onclick="myFunction()">@languade.Getkey("Show_Password")
+                            </span>
+                            <span style="color: red;" id="Error_PasswordDataChange"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <span id="data_PasswordConfimSuccessChange" style="color:green;"></span>
+                            <input type="password" class="form-control" placeholder="@languade.Getkey("Enternew_password")" id="TxtChangePasswordConfimStaff" onkeyup="ValidateTxtPasswordConfim()" />
+                            <span style="color: red;" id="Error_PasswordConfimDataChange"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_SentDataPassword" type="button" style="border-radius: 5px; display: none;" class="btn btn-primary"><i class="fas fa-retweet"></i> @languade.Getkey("ChangeEmployee_Password")</button>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@ViewBag.IdUser" id="IdUser" />
+<input type="hidden" id="IdRole"/>
+<input type="hidden" value="@languade.Getkey("BackEmployee_List")" id="BackEmployee_List"/>
+<input type="hidden" value="@languade.Getkey("NotFindStaff")" id="NotFindStaff"/>
+<input type="hidden" value="@languade.Getkey("EmployeeCode_Invalid")" id="EmployeeCode_Invalid"/>
+<input type="hidden" value="@languade.Getkey("EmployeeHiring_Status")" id="EmployeeHiring_Status"/>
+<input type="hidden" value="@languade.Getkey("IdStaff")" id="IdStaffs"/>
+<input type="hidden" value="@languade.Getkey("Account")" id="Account"/>
+<input type="hidden" value="@languade.Getkey("Employee_level")" id="Employee_level"/>
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/> 
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success"/>
+<input type="hidden" value="@languade.Getkey("EmptyCode_Employee")" id="EmptyCode_Employee"/>
+<input type="hidden" value="@languade.Getkey("Lockedemployee_successfully")" id="Lockedemployee_successfully"/>
+<input type="hidden" value="@languade.Getkey("Unlockemployee_successfully")" id="Unlockemployee_successfully"/>
+<input type="hidden" value="@languade.Getkey("Choose_Role")" id="Choose_Role"/>
+<input type="hidden" value="@languade.Getkey("Rolecode_found")" id="Rolecode_found"/>
+<input type="hidden" value="@languade.Getkey("Currentrole_found")" id="Currentrole_found"/>
+<input type="hidden" value="@languade.Getkey("Roleupdate_successful")" id="Roleupdate_successful"/>
+<input type="hidden" value="@languade.Getkey("Gmailrequested_found")" id="Gmailrequested_found"/>
+<input type="hidden" value="@languade.Getkey("gmailinfo_found")" id="gmailinfo_found"/>
+<input type="hidden" value="@languade.Getkey("Maximun_length")" id="Maximun_length"/>
+<input type="hidden" value="@languade.Getkey("Password_incorrect")" id="Password_incorrect"/>
+<input type="hidden" value="@languade.Getkey("Password_characterandnumber")" id="Password_characterandnumber"/>
+<input type="hidden" value="@languade.Getkey("Password_uppercase")" id="Password_uppercase"/>
+<input type="hidden" value="@languade.Getkey("Changepassword_successfully")" id="Changepassword_successfully"/>
+<input type="hidden" value="@languade.Getkey("Changepassword_failed")" id="Changepassword_failed"/>
+<input type="hidden" value="@languade.Getkey("employeecanceled_successfully")" id="employeecanceled_successfully"/>
+<input type="hidden" value="@languade.Getkey("Dividetaskssuccessful_employees")" id="Dividetaskssuccessful_employees"/>
+<input type="hidden" value="@languade.Getkey("NotNull_Data")" id="NotNull_Data"/>
+<input type="hidden" value="@languade.Getkey("NotSendMore_5File")" id="NotSendMore_5File"/>

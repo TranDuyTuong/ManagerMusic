@@ -1,0 +1,13 @@
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\bin\Debug\net5.0\appsettings.json
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\bin\Debug\net5.0\DataTable.deps.json
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\bin\Debug\net5.0\DataTable.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\bin\Debug\net5.0\ref\DataTable.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\bin\Debug\net5.0\DataTable.pdb
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\obj\Debug\net5.0\DataTable.csproj.AssemblyReference.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\obj\Debug\net5.0\DataTable.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\obj\Debug\net5.0\DataTable.AssemblyInfoInputs.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\obj\Debug\net5.0\DataTable.AssemblyInfo.cs
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\obj\Debug\net5.0\DataTable.csproj.CoreCompileInputs.cache
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\obj\Debug\net5.0\DataTable.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\obj\Debug\net5.0\ref\DataTable.dll
+D:\Development_Project\Dev_ManagerMusic\ProjectMusic_BackEnd\ProjectManagerMusic\DataTable\obj\Debug\net5.0\DataTable.pdb

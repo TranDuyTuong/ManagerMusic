@@ -1,0 +1,111 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Ma_userrequests");
+    Layout = "~/Views/Shared/Manager_User/Page_ManagerRequestUser.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Manager_User")</a></span>
+        <span>@languade.Getkey("Ma_userrequests")</span>
+    </div>
+
+    <h2 class="az-content-title"><i class="fas fa-bars"></i> @languade.Getkey("Ma_userrequests")</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <p style="text-align:right;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input onkeyup="ChangeTextName()" type="text" placeholder="Nhập vào tên người yêu cầu ..." id="TxtNameUser" class="form-control" style="border-radius: 10px;">
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control" id="SelectStatusRequest" style="border-radius: 10px;">
+                        </select>
+                    </div>
+                </div>
+                <hr />
+                <button id="modaFiulterDay" type="button" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Lọc theo ngày">
+                    <i class="fas fa-calendar"></i>
+                </button>
+
+                <a asp-action="Page_ProgressRequestUser" asp-controller="ManagerRequestUser" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="Xem tiến trình xử lý"><i class="fas fa-list-alt"></i></a>
+
+                <a href="#" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="Xuất file Excel tổng hợp"><i class="fas fa-file-excel"></i></a>
+
+                <a href="#" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                   data-bs-placement="top" title="Làm Mới"><i class="fas fa-spinner"></i></a>
+
+                <a style="border: none;" class="btn btn-outline-secondary">Tổng số yêu cầu: <b style="color: red;" id="TotalRequest"></b></a>
+
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">STT <i class="fa fa-fw fa-sort"></i></th>
+                        <th scope="col">Tên Người Dùng</th>
+                        <th scope="col">Tiêu Đề Yêu Cầu</th>
+                        <th scope="col">Ngày Gửi Yêu Cầu</th>
+                        <th scope="col">Trạng Thái</th>
+                        <th scope="col">Lựa Chọn</th>
+                    </tr>
+                </thead>
+                <tbody id="BodyRequestUser">
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 10px;">@languade.Getkey("page") : <b id="TotalItem" style="color:red;"></b>/<b id="ItemInPage" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="container">
+                <div class="row" style="clear: both; margin: 0px 1px;">
+                    <div id="pagination" class="pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+                Thiết Kế Vào Năm
+                2022
+            </span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Do <a href="#"
+                      target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com
+            </span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!--Modal Fuilter date request-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_ShowFuilterDate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chọn Ngày Muốn Lọc</h5>
+                <button type="button" class="btn-close" id="btn_CLoseFuilterDate">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label" style="font-size:15px;" id="TxtStartEnd">Ngày bắt đầu đến ngày kết thúc</label>
+
+                    <input name="daterange" class="form-control" type="text" id="rangeDate" placeholder="Vui lòng chọn khoảng thời gian" data-input>
+                    <span style="color: red" id="TxtErrorData"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button style="border-radius: 10px;" id="btn_FuilterDate" type="button" class="btn btn-primary"><i class="fas fa-filter"></i> Lọc Ngày</button>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />

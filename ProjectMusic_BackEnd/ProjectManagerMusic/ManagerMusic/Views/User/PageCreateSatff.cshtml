@@ -1,0 +1,207 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = "Thêm Mới Nhân Viên";
+    Layout = "~/Views/Shared/Manager_Staff/Page_CreateStaff.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a asp-action="Page_Staff" asp-controller="User" style="color: #97a3b9;">@languade.Getkey("ManagerSatff")</a></span>
+        <span>@languade.Getkey("Create_Staff")</span>
+    </div>
+
+    <h2 class="az-content-title">@languade.Getkey("Create_Staff")</h2>
+
+    <div class="row">
+        <div class="col-md-5" style="border: 2px solid black; border-radius: 10px;">
+            <p style="text-align: center;">@languade.Getkey("RoleAndImageStaff")</p>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("ImageSatff")
+                    <span style="color:green;" id="checkOkFileInportStaff"></span>
+                </label>
+                <input type="file" class="form-control" onchange="checkvalueFileImageStaff()" id="Txt_InportFileNameStaff">
+                <span style="color:red; font-family: initial;" id="ValidateFileNameStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Employee_Authorization")
+                    <span style="color:green;" id="checkOkRoleStaff"></span>
+                </label>
+                <select class="form-control" id="Txt_SelectRole">
+                </select>
+                <span style="color:red; font-family: initial;" id="ValidateRoleStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("StatusAccount")
+                    <span style="color:green;" id="checkOkStatusAccount"></span>
+                </label>
+                <select class="form-control" id="Txt_SelectStatusAccount">
+                </select>
+                <span style="color:red; font-family: initial;" id="ValidateStatusAccount"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("Employee_level")</label>
+                <input type="hidden" class="form-control" id="Txt_IdLeverUser">
+                <input type="text" class="form-control" disabled id="Txt_LeverUser">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Marital")
+                    <span style="color:green;" id="checkOkMarriageStaff"></span>
+                </label>
+                <select class="form-control" id="Txt_SelectMarriage"></select>
+                <span style="color:red; font-family: initial;" id="ValidateMarriageStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("ChooseGender")
+                    <span style="color:green;" id="checkOkGenderStaff"></span>
+                </label>
+                <select class="form-control" id="Txt_SelectGender"></select>
+                <span style="color:red; font-family: initial;" id="ValidateGenderStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("ChooseCity")
+                    <span style="color:green;" id="checkOkcity"></span>
+                </label>
+                <select class="form-control" id="Txt_SelectCity"></select>
+                <span style="color:red; font-family: initial;" id="Validatecity"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("ChooseDistrict")
+                </label>
+                <select class="form-control" id="Txt_SelectDistrict"></select>
+            </div>
+
+        </div>
+        <div class="col-md-7">
+            <p style="text-align: center;">@languade.Getkey("Employee_information")</p>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Employee_Name")
+                    <span style="color:green;" id="checkOkNameStaff"></span>
+                </label>
+                <input type="text" class="form-control" placeholder="@languade.Getkey("EnterFullName")" id="TxtNameStaff" onkeyup="ValidateTxtNameStaff()">
+                <span style="color:red; font-family: initial;" id="ValidateNameStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Birthday")
+                    <span style="color:green;" id="checkOkBirthdayStaff"></span>
+                </label>
+                <input type="date" class="form-control" onchange="ValidateTxtDateBirthday()" id="TxtBirthdayStaff">
+                <span style="color:red; font-family: initial;" id="ValidateBirtdayStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Gmail_staff")
+                    <span style="color:green;" id="checkOkGmailStaff"></span>
+                </label>
+                <input type="email" class="form-control" placeholder="@languade.Getkey("Enter_Gmail")" id="TxtGmailStaff" onkeyup="ValidateTxtGmailStaff()">
+                <span style="color:red; font-family: initial;" id="ValidateGmailStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Password")
+                    <span style="color:green;" id="checkOkPasswordStaff"></span>
+                </label>
+                <input type="password" class="form-control" placeholder="@languade.Getkey("Enter_Password")" id="TxtPassword" onkeyup="ValidateTxtPassword()">
+                <span style="color:red; font-family: initial;" id="ValidatePasswordStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Confirmemployee_password")
+                    <span style="color:green;" id="checkOkPasswordConfimStaff"></span>
+                </label>
+                <input type="password" class="form-control" placeholder="@languade.Getkey("Enter_Password")" id="TxtPasswordConfim" onkeyup="ValidateTxtComfimPassword()">
+                <span style="color:red; font-family: initial;" id="ValidatePasswordConfimStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("Employee_Address")
+                    <span style="color:green;" id="checkOkAddressStaff"></span>
+                </label>
+                <input type="text" class="form-control" placeholder="@languade.Getkey("PleaseEnter_Address")" id="TxtAddresss" onkeyup="ValidateTxtAddresss()">
+                <span style="color:red; font-family: initial;" id="ValidateAddressStaff"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    @languade.Getkey("PhoneStaff")
+                    <span style="color:green;" id="checkOkPhoneNumberStaff"></span>
+                </label>
+                <input type="number" class="form-control" placeholder="@languade.Getkey("PleaseEnter_PhoneNumber")" id="TxtPhoneNumber" onkeyup="ValidatePhoneNumberStaff()">
+                <span style="color:red; font-family: initial;" id="ValidatePhoneNumberStaff"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p style="text-align: left;">
+                        <a asp-action="Page_Staff" asp-controller="User" style="border-radius: 5px;" class="btn btn-outline-danger"><i class="fas fa-user-times"></i> @languade.Getkey("CancelCreate_Employee")</a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p style="text-align: right;">
+                        <button id="btn_CreateStaff" style="border-radius: 5px;" type="submit" class="btn btn-outline-primary"><i class="fas fa-user-plus"></i> @languade.Getkey("Createnew_employee")</button>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- modal load -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingSignUp">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@languade.Getkey("Choose_avalue")" id="Choose_avalue" />
+<input type="hidden" id="S_City" value="@languade.Getkey("ChooseCity")" />
+<input type="hidden" id="S_District" value="@languade.Getkey("ChooseDistrict")" />
+
+<input type="hidden" value="@languade.Getkey("NotificationError")" id="NotificationError"/>
+<input type="hidden" value="@languade.Getkey("NotificationSuccess")" id="NotificationSuccess"/>
+<input type="hidden" value="@languade.Getkey("Email_already_exists")" id="EmailAlreadyExists"/>
+<input type="hidden" value="@languade.Getkey("RegiterSuccess")" id="EmailRegiterSuccess"/>
+<input type="hidden" value="@languade.Getkey("RegiterError")" id="ErrorRegiterFail"/>
+<input type="hidden" value="@languade.Getkey("ErrorEmailsyntax")" id="ErrorEmailsyntax"/>
+<input type="hidden" value="@languade.Getkey("Password_characterandnumber")" id="Passwordcharacterandnumber"/>
+<input type="hidden" value="@languade.Getkey("Password_uppercase")" id="PasswordUppercase"/>
+<input type="hidden" value="@languade.Getkey("Maximun_length")" id="ErrorMaximunlength"/>
+<input type="hidden" value="@languade.Getkey("NotNull_Data")" id="ErrorNulData"/>
+<input type="hidden" value="@languade.Getkey("Password_incorrect")" id="Password_incorrect"/>
+

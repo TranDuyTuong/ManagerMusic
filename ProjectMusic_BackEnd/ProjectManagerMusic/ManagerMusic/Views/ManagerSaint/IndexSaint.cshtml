@@ -1,0 +1,228 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Holiday_Management");
+    Layout = "~/Views/Shared/Manager_Data/ManagerSaints.cshtml";
+}
+
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+    <div class="container">
+        <partial name="~/Views/SidebarMenu/Index.cshtml" />
+
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+            <div class="az-content-breadcrumb">
+                <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+                <span>@languade.Getkey("Admin_Information")</span>
+                <span>@languade.Getkey("Holiday_Management")</span>
+            </div>
+            <partial name="~/Views/ManagerData/MenuManagerFile.cshtml" />
+
+            <h2 class="az-content-title">@languade.Getkey("Holiday_Management")</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input id="TxtSeach" onchange="eventSeachMusic()" style="border-radius: 10px;" type="text" class="form-control" placeholder="@languade.Getkey("Enter_NameSaint")" />
+                        </div>
+                        <div class="col-md-6">
+                            <p style="text-align:right;">
+                                <a id="Btn_Create" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Create")"><i class="fas fa-plus-circle"></i></a>
+                                <a asp-action="IndexSaint" asp-controller="ManagerSaint" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("reset")"><i class="fas fa-spinner"></i></a>
+                                <a>@languade.Getkey("Totals"): <b id="Total_Season" style="color: red; font-family: initial;"></b></a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">@languade.Getkey("No") <i class="fas fa-sort" id="sort_Id"></i></th>
+                                <th scope="col">@languade.Getkey("Name_Saint") <i class="fas fa-sort" id="sort_Name"></i></th>
+                                <th scope="col">@languade.Getkey("datecreate") <i class="fas fa-sort" id="sort_Date"></i></th>
+                                <th scope="col">@languade.Getkey("time")</th>
+                                <th scope="col">@languade.Getkey("Status") <i class="fas fa-sort" id="sort_Status"></i></th>
+                                <th scope="col">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="body_Saint">
+                        </tbody>
+                    </table>
+                    <p style="text-align:right;">@languade.Getkey("page") : <b id="TotalItem" style="color:red;"></b>/<b id="ItemInPage" style="color:black;"></b></p>
+                    <!-- Pagination -->
+                    <div class="row" style="clear: both;">
+                        <div id="pagination" class="pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="az-footer mg-t-auto">
+                <div class="container">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+                </div><!-- container -->
+            </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+    </div><!-- container -->
+</div><!-- az-content -->
+<!-- modal show list music buy saint-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowListMusicBuySaint">
+    <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("ThisHoliday_SongList")</h5>
+                <button type="button" class="btn-close" id="btn_closemodalSaint">X</button>
+            </div>
+            <div class="modal-body" style="overflow: scroll;">
+                <p style="text-align:right; font-weight:600; font-family:initial;">
+                    @languade.Getkey("Total_Song"):
+                    <b id="Total_Music" style="color: red;"></b>
+                </p>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">@languade.Getkey("No") <i class="fas fa-sort" id="IDsort"></i></th>
+                            <th scope="col">@languade.Getkey("namesong") <i class="fas fa-sort" id="NAMEsort"></i></th>
+                            <th scope="col">@languade.Getkey("datecreate") <i class="fas fa-sort" id="DATEsort"></i></th>
+                            <th scope="col">@languade.Getkey("Seasons")</th>
+                            <th scope="col">@languade.Getkey("Status") <i class="fas fa-sort" id="STATUSsort"></i></th>
+                            <th scope="col">@languade.Getkey("Options")</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Body_SaintListMusic">
+                    </tbody>
+                </table>
+                <p style="text-align:right;">@languade.Getkey("page") : <b id="TotalItem_List" style="color:red;"></b>/<b id="ItemInPage_List" style="color:black;"></b></p>
+                <!-- Pagination -->
+                <div class="row" style="clear: both;">
+                    <div id="paginationViewList" class="pagination" style="margin-left: 10px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--create new saint-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_CreateSaint">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> @languade.Getkey("CreateNew_Saint")</h5>
+                <button type="button" class="btn-close" id="btn_closeCreate">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Name_Saint")</label>
+                    <input id="TxtSaint" onkeyup="functionGetText()" style="border-radius: 10px;" type="text" class="form-control" placeholder="@languade.Getkey("EnterName_Saint")">
+                    <span class="form-text" style="color: red;" id="errorData"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_CreateNewSaint" type="button" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-plus"></i> @languade.Getkey("Create")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Change Status saint-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ChangeStatus">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> @languade.Getkey("SaintStatus_Change")</h5>
+                <button type="button" class="btn-close" id="btn_closeChangeStatus">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <select class="form-control" id="TxtSelect" style="border-radius: 10px;">
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_ChangeStatus" type="button" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-sync"></i> @languade.Getkey("Change")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--create update saint-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_UpdateSaint">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> @languade.Getkey("Update_Saint")</h5>
+                <button type="button" class="btn-close" id="btn_closeUpdate">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Code_Saint")</label>
+                    <input id="TxtIdSaint" style="border-radius: 10px;" type="text" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Name_Saint")</label>
+                    <input id="TxtNameSaint" onkeyup="functionNameSaint()" style="border-radius: 10px;" type="text" class="form-control" placeholder="@languade.Getkey("EnterName_Saint")">
+                    <span class="form-text" style="color: red;" id="errorName"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("datecreate")</label>
+                    <input id="TxtDate" style="border-radius: 10px;" type="text" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("time")</label>
+                    <input id="TxtTime" style="border-radius: 10px;" type="text" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Status")</label>
+                    <input id="TxtStatus" style="border-radius: 10px;" type="text" class="form-control" disabled />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_UpdateSaint" type="button" class="btn btn-primary" style="border-radius: 10px;"><i class="fas fa-plus"></i> @languade.Getkey("Update_Saint")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal loading create saint -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+<input type="hidden" value="@languade.Getkey("Employeeid_empty")" id="Employeeid_empty" />
+<input type="hidden" value="@languade.Getkey("Create_SaintSuccess")" id="Create_SaintSuccess" />
+<input type="hidden" value="@languade.Getkey("NotFind_IdSaint")" id="NotFind_IdSaint" />
+<input type="hidden" value="@languade.Getkey("UpdateSaint_Success")" id="UpdateSaint_Success" />
+<input type="hidden" value="@languade.Getkey("IDsaintOrIDstatus_Null")" id="IDsaintOrIDstatus_Null"/>
+<input type="hidden" value="@languade.Getkey("NotFind_IDstatus")" id="NotFind_IDstatus"/>
+<input type="hidden" value="@languade.Getkey("ChangeStatus_SeasonSuccess")" id="ChangeStatus_SeasonSuccess"/>
+<input type="hidden" value="@languade.Getkey("ViewDetailSong")" id="ViewDetailSong" />
+<input type="hidden" value="@languade.Getkey("Update")" id="Update"/>
+<input type="hidden" value="@languade.Getkey("Change_Status")" id="Change_Status"/>
+<input type="hidden" value="@languade.Getkey("View_List")" id="View_List"/>
+<input type="hidden" value="@languade.Getkey("NameSaint_NotNull")" id="NameSaint_NotNull"/>

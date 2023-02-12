@@ -1,0 +1,82 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Building_Apps");
+    Layout = "~/Views/Shared/Page_Client/BuildSoftware.cshtml";
+}
+
+<div class="az-content az-content-dashboard">
+    <div class="container">
+        <div class="az-content-body">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 style="text-align: center;">@languade.Getkey("Support_expenses")</h4>
+                        <img class="img-fluid" src="~/img/supercharge-yor-support.jpg" />
+                        <div class="mb-3">
+                            <label class="form-label" style=" text-align: center; margin: 10px 10px; font-family: initial; color: black; font-size: 15px;">@languade.Getkey("Contact")</label>
+                            <p>
+                                <i class="fab fa-facebook" style="color: blue;"></i> - <a href="https://www.facebook.com/profile.php?id=100004940419418">Duy Tường</a>
+                                <br />
+                                <i class="fas fa-mail-bulk" style="color: red;"></i> - duytuong0503@gmail.com
+                                <br />
+                                <i class="fas fa-mobile" style="color: green;"></i> - SĐT(0335520146)
+                            </p>                            
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <p style="text-align: justify;">
+                            @languade.Getkey("Thankvery_much")
+                        </p>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("Bank_number")</label>
+                            <input type="text" class="form-control" value="xxx0111" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("Account Holder")</label>
+                            <input type="text" class="form-control" value="TRẦN DUY TƯỜNG" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">@languade.Getkey("Bank")</label>
+                            <input type="text" class="form-control" value="Vietinbank" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="font-family:initial; font-size: 16px;">
+                            <i class="far fa-envelope"></i>
+                            @languade.Getkey("contributeyour_comments")
+                        </p>
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-file"></i> @languade.Getkey("Contributing_Content")</label>
+                            <textarea id="TxtContent" class="form-control">
+                            </textarea>
+                            <span id="ErorrContent" style="color:red; font-size: 13px; font-family: initial"></span>
+                        </div>
+                        <button class="btn btn-primary" id="SentContribute"><i class="fas fa-paper-plane"></i> @languade.Getkey("Send Contributions")</button>
+                        <span id="ErorrLogin" style="color:red; font-family: initial; font-size:15px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div><!-- az-content-body -->
+    </div>
+</div><!-- az-content -->
+
+<div class="az-footer ht-40">
+    <div class="container ht-100p pd-t-0-f">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+    </div><!-- container -->
+</div><!-- az-footer -->
+
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="ErrorNotification" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success"/>
+<input type="hidden" value="@languade.Getkey("Log_function")" id="Log_function"/>
+<input type="hidden" value="@languade.Getkey("enter_contribution")" id="enter_contribution"/>
+<input type="hidden" value="@languade.Getkey("submittedconstructive_comments")" id="submittedconstructive_comments"/>
+<input type="hidden" value="@languade.Getkey("Submit_failed")" id="Submit_failed"/>
+

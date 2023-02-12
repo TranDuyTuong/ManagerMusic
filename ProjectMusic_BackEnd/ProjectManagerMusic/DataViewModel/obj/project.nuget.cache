@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CvjXRCHgXktGHNXrgB3A/mXzGf2x28A/db82aBEwLthh2e5cQcSI2ETNyd9Ft7UIU3pfy+4iDDPiJpNnl4C0DQ==",
+  "success": true,
+  "projectFilePath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataViewModel\\DataViewModel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\duytu\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\duytu\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\duytu\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

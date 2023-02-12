@@ -1,0 +1,165 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("DetailSong");
+    Layout = "~/Views/Shared/Page_Client/DetailMusic.cshtml";
+}
+
+<div class="az-content az-content-dashboard">
+    <div class="container">
+        <div class="az-content-body">
+            <div class="az-dashboard-one-title">
+                <div>
+                    <h3 class="az-dashboard-title" id="Txt_TitleMusic"></h3>
+                </div>
+                <div class="az-content-header-right">
+
+                    <div class="media">
+                        <div class="media-body">
+                            <button onclick="Btn_DowloadFilePDF()" type="button" style="border-radius: 10px;" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Dowload_Song")"><i class="fas fa-download"></i></button>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                    <div class="media">
+                        <div class="media-body">
+                            <button id="btn_Comment" type="button" style="border-radius: 10px;" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Song_Comments")"><i class="fas fa-comment"></i></button>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                    <div class="media">
+                        <div class="media-body">
+                            <a asp-action="IndexListMusic" asp-controller="ClientListMusic" style="border-radius: 10px;" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("List_music")"><i class="fas fa-chevron-left"></i></a>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                </div><!-- media -->
+            </div>
+        </div><!-- az-dashboard-one-title -->
+    </div><!-- row -->
+</div><!-- row -->
+
+<div class="container">
+    <div class="row">    
+        <div class="col-md-8" style="border:1px solid black;">
+            <p style="text-align: center; font-size:20px; font-family: inherit;">@languade.Getkey("Contentsong_file")</p>
+            <div>
+                <button style="border-radius: 10px;" class="btn btn-primary" type="button" onclick="zoomin()"><i class="fas fa-plus"></i></button>
+                <button style="border-radius: 10px;" class="btn btn-primary" type="button" onclick="zoomout()"><i class="fas fa-minus"></i></button>
+                <button style="border-radius: 10px;" class="btn btn-primary" type="button" onclick="FullCreen()"><i class="fas fa-expand-arrows-alt"></i></button>
+                <button style="border-radius: 10px;" class="btn btn-primary" type="button" onclick="ViewPDFfile()"><i class="fas fa-file-pdf"></i></button>
+            </div>
+            <div class="main dragscroll">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p style="text-align: center; font-size:20px; font-family: inherit;">@languade.Getkey("Attached_info")</p>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("IdMusic")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtIdMuiscs" disabled>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("Authour_Name")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtAuthor" disabled>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("DateCreate_Song")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtDateCreate" disabled>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("NameFile_Song")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtFileName" disabled>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("Seasons")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtNameSeason" disabled>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("Name_Saint")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtNameSaint" disabled>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("Totalnumber_song")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtTotalLike" disabled>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("Downloads")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtTotalDowload" disabled>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">@languade.Getkey("Comments")</label>
+                <input style="border-radius: 10px;" type="text" class="form-control" id="TxtTotalComment" disabled>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- </div> az-content-body -->
+<!--</div>-->
+<!-- </div>az-content -->
+
+<div class="az-footer ht-40">
+    <div class="container ht-100p pd-t-0-f">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+    </div><!-- container -->
+</div><!-- az-footer -->
+<!--comment-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_Comment">
+    <div class="modal-dialog" style="max-width: 70%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-comments"></i> @languade.Getkey("Total_Com") (<b id="TotalComment"></b>)</h5>
+                <button type="button" class="btn-close" id="colse_Comment">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row" id="DisplayComment">
+                    <div class="col-md-6">
+                        <input id="TxtCommentMusic" style="border-radius: 5px;" type="text" class="form-control" placeholder="@languade.Getkey("Comment_content") ...">
+                    </div>
+                    <div class="col-md-6">
+                        <button id="Btn_SentComment" style="border-radius: 5px;" type="button" class="btn btn-primary">@languade.Getkey("sent")</button>
+                    </div>
+                </div>
+                <div class="row" style="height: 450px; overflow: scroll;">
+                    <div class="col-md-12">
+                        <hr />
+                        <ul class="list-group list-group-flush" id="BodyComment">
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@*view full screen*@
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modalFull_Screen">
+    <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("the_song")</h5>
+                <button type="button" class="btn-close" id="CloseScreen">X</button>
+            </div>
+            <div class="modal-body" style="overflow: scroll; height: 650px;" id="BodayImage">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@ViewBag.IdMuisc" id="IdMusic_D"/>
+<input type="hidden" value="@languade.Getkey("first_comment")" id="first_comment"/>
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/>
+<input type="hidden" value="@languade.Getkey("entercomment_text")" id="entercomment_text"/>

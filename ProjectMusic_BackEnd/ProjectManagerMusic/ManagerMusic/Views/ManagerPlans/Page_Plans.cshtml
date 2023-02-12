@@ -1,0 +1,220 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Task_Manager");
+    Layout = "~/Views/Shared/Manager_Plans/ManagerPlans.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span>@languade.Getkey("Task_Manager")</span>
+    </div>
+
+    <h2 class="az-content-title">@languade.Getkey("Task_Manager")</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align:right;">
+
+                <a id="TotalCancelPlans" asp-action="Page_PlansCancel" asp-controller="ManagerPlans" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Totaltask_canceled")">
+                    <i class="fas fa-bell"></i>
+                    <span style="color: red; font-weight: 600;" id="TotalNotificationPlan"></span>
+                </a>
+
+                <a id="Btn_FulterDate" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Findtasks_date")"><i class="far fa-calendar-times"></i></a>
+
+                <a id="Btn_SelectStatus" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Choose_Status")"><i class="fas fa-list"></i></a>
+
+                <a asp-action="Page_Plans" asp-controller="ManagerPlans" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("reset")"><i class="fas fa-power-off"></i></a>
+
+                <a style="border: none;" class="btn btn-outline-secondary">@languade.Getkey("Total_Task") <b id="TxtTotalPlan"></b></a>
+
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("No") <i class="fa fa-fw fa-sort"></i></th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Task")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Performers")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Admin_Request")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("datecreate")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Expirationdate_time")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Status")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Work_Progress")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="Body_Data">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="pagination" class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- choose option activer funtion file -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowPlan">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-toolbox"></i> @languade.Getkey("Requested_ask")</h5>
+                <button type="button" class="btn-close" id="btn_closePlan">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-danger" id="btn_TakePlan">@languade.Getkey("agree")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-primary" id="btn_CancelPlan">@languade.Getkey("cancel")</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- choose option activer funtion file -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowCancelPlan">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("AreYouSure_CancelTask")</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-danger" id="btn_1CancelPlan">@languade.Getkey("agree")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-primary" id="btn_2CancelPlan">@languade.Getkey("cancel")</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <textarea id="ContentTxt" class="form-control" placeholder="@languade.Getkey("Enterreason_task")"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal loading create saint -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal fuliter plan by date-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_FuliterDate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("FilterDate_List")</h5>
+                <button type="button" class="btn-close" id="BtnCloseFulter">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="font-size: 17px; font-family: initial;">
+                            @languade.Getkey("Select_Dates")
+                        </p>
+                        <input style="margin: 10px 0px; font-size: 16px; font-weight: 600; width: 100%; font-family: initial;" type="text" id="rangeDate" placeholder="@languade.Getkey("select_date")" data-input>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="Btn_FuilterDateCompelete" type="button" style="border-radius: 10px;" class="btn btn-primary">@languade.Getkey("Expiration_date")</button>
+                <button id="Btn_FuilterDateTime" style="border-radius: 10px;" type="button" class="btn btn-primary">@languade.Getkey("datecreate")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal select status plan-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_SelectStatusPlan">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="far fa-caret-square-down"></i> @languade.Getkey("SelectTask_Status")</h5>
+                <button type="button" class="btn-close" id="Btn_CloseSelectStatus">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <select class="form-control" id="Select_Status" style="border-radius: 10px;">
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="Btn_SeachStatus" type="button" class="btn btn-primary"><i class="fas fa-search"></i> @languade.Getkey("Seach")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@ViewBag.IdUser" id="IdUser" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("NotFindStaff")" id="NotFindStaff" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/>
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+<input type="hidden" value="@languade.Getkey("Notaskfound_employee")" id="Notaskfound_employee"/>
+<input type="hidden" value="@languade.Getkey("EXPIRED")" id="EXPIRED"/>
+<input type="hidden" value="@languade.Getkey("not_received")" id="not_received"/>
+<input type="hidden" value="@languade.Getkey("Received")" id="Received"/>
+<input type="hidden" value="@languade.Getkey("Cancelled")" id="Cancelled"/>
+<input type="hidden" value="@languade.Getkey("View_task")" id="View_task"/>
+<input type="hidden" value="@languade.Getkey("Clear_task")" id="Clear_task"/>
+<input type="hidden" value="@languade.Getkey("Taking_mission")" id="Taking_mission"/>
+<input type="hidden" value="@languade.Getkey("Cancel_task")" id="Cancel_task"/>
+<input type="hidden" value="@languade.Getkey("passed_match")" id="passed_match"/>
+<input type="hidden" value="@languade.Getkey("Notaskwith_codefound")" id="Notaskwith_codefound"/>
+<input type="hidden" value="@languade.Getkey("Successfultask_received")" id="Successfultask_received"/>
+<input type="hidden" value="@languade.Getkey("EmployeeCode_Invalid")" id="EmployeeCode_Invalid"/>
+<input type="hidden" value="@languade.Getkey("Pleaseenter_accepttask")" id="Pleaseenter_accepttask"/>
+<input type="hidden" value="@languade.Getkey("Failedaccepttask_successfully")" id="Failedaccepttask_successfully"/>
+<input type="hidden" value="@languade.Getkey("Choose_Status")" id="Choose_Status"/>
+<input type="hidden" value="@languade.Getkey("Cleartask_successfully")" id="Cleartask_successfully"/>
+

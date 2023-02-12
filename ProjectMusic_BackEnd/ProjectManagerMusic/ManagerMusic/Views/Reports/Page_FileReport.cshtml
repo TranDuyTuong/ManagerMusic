@@ -1,0 +1,211 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("ReportSong_File");
+    Layout = "~/Views/Shared/Manger_Report/ManagerReportFile.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span>@languade.Getkey("Admin_Information")</span>
+        <span><a asp-action="Page_Report" asp-controller="Reports" style="color: #97a3b9;">@languade.Getkey("Report_Management")</a></span>
+        <span>@languade.Getkey("ReportSong_File")</span>
+    </div>
+
+    <h2 class="az-content-title"><i class="fas fa-music"></i> @languade.Getkey("ReportSong_File")</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align:right;">
+
+                <a id="DowLoadAllFile_Music" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top"
+                   title="@languade.Getkey("Download_fulllist")"><i class="fas fa-file-export"></i></a>
+
+                <a id="DowloadBuAuthor" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top"
+                   title="@languade.Getkey("Downloadsongs_author")"><i class="fas fa-file-download"></i></a>
+
+                <a id="btn_ShowModalSeason" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top"
+                   title="@languade.Getkey("Downloadseasonal_list")"><i class="fas fa-download"></i></a>
+
+                <a id="btn_ShowModalsaints" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top"
+                   title="@languade.Getkey("Downloadfull_saints")"><i class="fas fa-cloud-download-alt"></i></a>
+
+                <a id="btn_ShowModalDate" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top"
+                   title="@languade.Getkey("Downloadplaylists_date")"><i class="fas fa-calendar"></i></a>
+
+                <a id="BtnReset" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("reset")">
+                    <i class="fas fa-spinner"></i>
+                </a>
+
+                <a style="border: none; font-size: 15px; font-family: initial; font-weight: 600; color: black;"
+                   class="btn btn-outline-secondary">@languade.Getkey("Total_Song"): <b id="TotalMusics"></b></a>
+
+            </p>
+            <p id="TxtNotification" style="text-align: center; color: red; font-weight: 600; font-size: 13px; font-family: initial"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="font-size: 20px; font-family: initial">
+                <i class="fas fa-list"></i> @languade.Getkey("Filtered_List")
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("IdMusic")</th>
+                        <th scope="col">@languade.Getkey("namesong")</th>
+                        <th scope="col">@languade.Getkey("Authour_Name")</th>
+                        <th scope="col">@languade.Getkey("datecreate")</th>
+                        <th scope="col">@languade.Getkey("Seasons")</th>
+                        <th scope="col">@languade.Getkey("Name_Saint")</th>
+                        <th scope="col">@languade.Getkey("IdStaff")</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyDataMusic">
+                </tbody>
+            </table>
+
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="TotalItem" style="color:red;"></b>/<b id="ItemInPage" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="pagination" class="pagination"></div>
+            </div>
+
+            <p style="text-align: right;">
+                <a class="btn btn-success" id="BtnDowLoadReport" style="border-radius: 10px;">
+                    <i class="fas fa-file-excel"></i>
+                    @languade.Getkey("Export_File")
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+                @languade.Getkey("Design_In_2022")
+            </span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Do <a href="#"
+                      target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com
+            </span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!--lọc theo mùa-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalSeasonView">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("FilterSongs_Season")</h5>
+                <button type="button" class="btn-close" id="btn_closeSeason">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label" style="color: black; margin: 10px 10px;">@languade.Getkey("Choose_the_Season_You_Need")</label>
+                    <select class="form-control" style="border-radius: 10px;" id="SelectSeason">                                              
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="Btn_FindSeason" class="btn btn-primary" style="border-radius: 5px;">
+                    <i class="fas fa-filter"></i> @languade.Getkey("Filter_data")
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--lọc theo ngày lễ-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalsaintsView">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("FilterSongs_Saint")</h5>
+                <button type="button" class="btn-close" id="btn_closesaints">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label" style="color: black; margin: 10px 10px;">@languade.Getkey("Select_saint")</label>
+                    <select class="form-control" style="border-radius: 10px;" id="SelectSaints">                                             
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="BtnSeach_Saints" type="button" class="btn btn-primary" style="border-radius: 5px;">
+                    <i class="fas fa-filter"></i> @languade.Getkey("Filter_data")
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Fuilter date request-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_ShowFuilterDate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("SelectDate_filter")</h5>
+                <button type="button" class="btn-close" id="btn_CLoseFuilterDate">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label" style="font-size:15px;" id="TxtStartEnd">
+                        @languade.Getkey("Startdate_dateend")
+                    </label>
+
+                    <input name="daterange" class="form-control" type="text" id="rangeDate"
+                           placeholder="@languade.Getkey("select_timeperiod")" data-input>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button style="border-radius: 5px;" id="btn_FuilterDate" type="button" class="btn btn-primary">
+                    <i class="fas fa-filter"></i> @languade.Getkey("Filter_data")
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Seach Author-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ModalSeachAuthor">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-file-signature"></i> @languade.Getkey("Entername_author")</h5>
+                <button type="button" class="btn-close" id="CloseAuthor">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <input style="border-radius: 10px;" type="text" class="form-control" id="TxtNameAuthor" placeholder="@languade.Getkey("EnterNameAuthor")">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button style="border-radius: 10px;" type="button" class="btn btn-primary" id="BtnSeach_Author"><i class="fas fa-search"></i> @languade.Getkey("Seach")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("Choose_the_Season_You_Need")" id="Choose_the_Season_You_Need"/>
+<input type="hidden" value="@languade.Getkey("choosingdownload_seasonal")" id="choosingdownload_seasonal"/>
+<input type="hidden" value="@languade.Getkey("Select_saint")" id="Select_saint"/>
+<input type="hidden" value="@languade.Getkey("choosingdownload_saints")" id="choosingdownload_saints"/>
+<input type="hidden" value="@languade.Getkey("choosingdownload_date")" id="choosingdownload_date"/>
+<input type="hidden" value="@languade.Getkey("choosingdownload_All")" id="choosingdownload_All"/>
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/>
+<input type="hidden" value="@languade.Getkey("EnterNameAuthor")" id="EnterNameAuthor"/>
+<input type="hidden" value="@languade.Getkey("choosingdownload_Author")" id="choosingdownload_Author"/>
+<input type="hidden" value="@languade.Getkey("Apply")" id="Apply"/>
+<input type="hidden" value="@languade.Getkey("cancel")" id="cancel"/>

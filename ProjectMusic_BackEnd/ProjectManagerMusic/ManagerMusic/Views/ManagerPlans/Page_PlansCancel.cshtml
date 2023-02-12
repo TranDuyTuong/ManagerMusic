@@ -1,0 +1,61 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("TaskManager_denied");
+    Layout = "~/Views/Shared/Manager_Plans/ManagerCancelPlans.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span><a asp-controller="ManagerPlans" asp-action="Page_Plans" style="color: #97a3b9;">@languade.Getkey("Task_Manager")</a></span>
+        <span>@languade.Getkey("TaskManager_denied")</span>
+    </div>
+
+    <h2 class="az-content-title">@languade.Getkey("TaskManager_denied")</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align:right;">
+
+                <a asp-action="Page_PlansCancel" asp-controller="ManagerPlans" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("reset")"><i class="fas fa-power-off"></i></a>
+
+                <a style="border: none;" class="btn btn-outline-secondary">@languade.Getkey("Total_Task"): <b id="TxtTotalPlan"></b></a>
+
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("No") <i class="fa fa-fw fa-sort"></i></th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Task_Code")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Performers")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Admin_Request")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("datecreate")</th>
+                        <th scope="col" style="text-align: center;">@languade.Getkey("Content")</th>
+                    </tr>
+                </thead>
+                <tbody id="Body_Data">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="pagination" class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+

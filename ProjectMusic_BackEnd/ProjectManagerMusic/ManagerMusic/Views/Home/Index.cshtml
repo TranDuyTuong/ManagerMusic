@@ -1,0 +1,415 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Manager_Music");
+    Layout = "~/Views/Shared/Page_Client/Index.cshtml";
+}
+
+<div class="az-content az-content-dashboard">
+    <div class="container">
+        <div class="az-content-body">
+            <div class="az-dashboard-one-title">
+                <div>
+                    <h2 class="az-dashboard-title">@languade.Getkey("Singing_praying")</h2>
+                    <p class="az-dashboard-text">@languade.Getkey("Onesong_threesutras.")</p>
+                </div>
+                <div class="az-content-header-right">
+                    <div class="media">
+                        <div class="media-body">
+                            <label>@languade.Getkey("yesterday")</label>
+                            <h6 id="Get_Yesterday"></h6>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="media">
+                        <div class="media-body">
+                            <label>@languade.Getkey("today")</label>
+                            <h6 id="Get_Today"></h6>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="media">
+                        <div class="media-body">
+                            <label>@languade.Getkey("tomorrow")</label>
+                            <h6 id="Get_Tomorow"></h6>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                </div>
+            </div><!-- az-dashboard-one-title -->
+
+            <div class="az-dashboard-nav">
+                <nav class="nav">
+                    <a class="nav-link active" data-toggle="tab" href="#">@languade.Getkey("General_Statistics")</a>
+                </nav>
+
+            </div>
+
+            <div class="row row-sm mg-b-20">
+                <div class="col-lg-8 ht-lg-100p">
+                    <div class="card card-dashboard-one">
+                        <div class="card-header">
+                            <div>
+                                <h6 class="card-title">
+                                    @languade.Getkey("Statisticalchart_songmonth")
+                                    | @languade.Getkey("current_Year") <b id="titleYear" style="color: red;"></b>
+                                </h6>
+                            </div>
+                            <div class="btn-group">
+                                <select class="form-select select_OptionYear" onchange="SelectDataYear()">
+                                    <option selected>@languade.Getkey("ChooseYear")</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                    <option value="2031">2031</option>
+                                    <option value="2032">2032</option>
+                                </select>
+                            </div>
+                        </div><!-- card-header -->
+
+                        <div class="card-body">
+                            <div id="columnchart_material" style="width: auto; height: 310px;"></div>
+                        </div><!-- card-body -->
+                    </div><!-- card -->
+                </div><!-- col -->
+
+                <div class="col-lg-4 mg-t-20 mg-lg-t-0">
+                    <div class="row row-sm">
+                        <div class="col-sm-6">
+                            <div class="card card-dashboard-two">
+                                <div class="card-header">
+                                    <h6>
+                                        <span id="MuiscMonth"></span>
+                                        <i id="trendData" class="icon ion-md-trending-up" style="color: green; display: none;"></i>
+                                        <i id="DownData" class='fas fa-arrow-down' style="color: red; display: none;"></i>
+                                        <i id="EqualData" class='fas fa-arrows-alt-h' style="display: none;"></i>
+                                        <i class="Text-Up" style="font-size: 20px;">@*@languade.Getkey("Increase")*@</i>
+                                    </h6>
+                                    <p>@languade.Getkey("TotalNewSongMonth")</p>
+                                </div><!-- card-header -->
+                                <div class="card-body">
+                                    <div class="chart-wrapper">
+                                        <div id="flotChart1" class="flot-chart"></div>
+                                    </div><!-- chart-wrapper -->
+                                </div><!-- card-body -->
+                            </div><!-- card -->
+                        </div><!-- col -->
+                        <div class="col-sm-6 mg-t-20 mg-sm-t-0">
+                            <div class="card card-dashboard-two">
+                                <div class="card-header">
+                                    <h6 id="MusicLastMonth"></h6>
+                                    <p>@languade.Getkey("TotalSongLastMonth")</p>
+                                </div><!-- card-header -->
+                                <div class="card-body">
+                                    <div class="chart-wrapper">
+                                        <div id="flotChart2" class="flot-chart"></div>
+                                    </div><!-- chart-wrapper -->
+                                </div><!-- card-body -->
+                            </div><!-- card -->
+                        </div><!-- col -->
+                        <div class="col-sm-12 mg-t-20">
+                            <div class="card card-dashboard-three">
+                                <div class="card-header">
+                                    <p>@languade.Getkey("TotalDownloads")</p>
+                                    <p type="button" id="showListMusic_Dowload">
+                                        <b id="TotalDowMuisc"></b> <small class="tx-success">@languade.Getkey("turn")</small>
+                                    </p>
+                                    <hr />
+                                    <p>@languade.Getkey("TotalNumber_Uploads")</p>
+                                    <p type="button">
+                                        <b id="TotalUpMuisc"></b> <small class="tx-success">@languade.Getkey("turn")</small>
+                                    </p>
+                                </div><!-- card-header -->
+                                <div class="card-body">
+                                    <div class="chart"><canvas id="chartBar5"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- row -->
+                </div><!--col -->
+            </div><!-- row -->
+
+            <div class="row row-sm mg-b-20">
+                <div class="col-lg-4">
+                    <div class="card card-dashboard-pageviews">
+                        <div class="card-header">
+                            <h6 class="card-title">@languade.Getkey("MostDownloadedSong_Month")</h6>
+                        </div><!-- card-header -->
+                        <div class="card-body" id="MusicDowloadMoreMonth">
+                        </div><!-- card-body -->
+                    </div><!-- card -->
+
+                </div><!-- col -->
+                <div class="col-lg-8 mg-t-20 mg-lg-t-0">
+                    <div class="card card-dashboard-four">
+                        <div class="card-header">
+                            <h6 class="card-title">@languade.Getkey("TotalSongs_App")</h6>
+                        </div><!-- card-header -->
+                        <div class="card-body row">
+                            <div class="col-md-12 col-lg-12 mg-lg-l-auto mg-t-20 mg-md-t-0" id="BodyProgress">
+                            </div><!-- col -->
+                        </div><!-- card-body -->
+                    </div><!-- card-dashboard-four -->
+                </div><!-- col -->
+            </div><!-- row -->
+
+            <div class="row row-sm mg-b-20 mg-lg-b-0">
+                <div class="col-lg-5 col-xl-4">
+                    <div class="row row-sm">
+                        <div class="col-md-6 col-lg-12 mg-b-20 mg-md-b-0 mg-lg-b-20">
+                            <div class="card card-dashboard-five">
+                                <div class="card-header">
+                                    <h6 class="card-title">@languade.Getkey("Appreviews")</h6>
+                                </div><!-- card-header -->
+                                <div class="card-body row row-sm">
+                                    <div class="col-6 d-sm-flex align-items-center">
+                                        <div class="card-chart bg-primary">
+                                            <span id="TotalRatings" style="color: white;" class="peity-bar" data-peity='{"fill": ["#fff"], "width": 20, "height": 20 }'></span>
+                                        </div>
+                                        <div>
+                                            <label>@languade.Getkey("Star_Review")</label>
+                                            <h6><i class="fas fa-star"></i></h6>
+                                        </div>
+                                    </div><!-- col -->
+                                    <div class="col-6 d-sm-flex align-items-center">
+                                        <div class="card-chart bg-purple">
+                                            <span id="TotalComments" style="color: white;" class="peity-bar" data-peity='{"fill": ["#fff"], "width": 21, "height": 20 }'></span>
+                                        </div>
+                                        <div>
+                                            <label>@languade.Getkey("Comments")</label>
+                                            <h6><i class="fas fa-comment"></i></h6>
+                                        </div>
+                                    </div><!-- col -->
+                                </div><!-- card-body -->
+                            </div><!-- card-dashboard-five -->
+                        </div><!-- col -->
+                        <div class="col-md-6 col-lg-12">
+                            <div class="card card-dashboard-five">
+                                <div class="card-header">
+                                    <h6 class="card-title">@languade.Getkey("Visited_Website")</h6>
+                                </div><!-- card-header -->
+                                <div class="card-body row row-sm">
+                                    <div class="col-6 d-sm-flex align-items-center">
+                                        <div>
+                                            <label>@languade.Getkey("familiar")</label>
+                                            <h4 id="UserAccount"></h4>
+                                        </div>
+                                    </div><!-- col -->
+                                    <div class="col-6 d-sm-flex align-items-center">
+                                        <div>
+                                            <label>@languade.Getkey("System_Introduction")</label>
+                                            <a id="btn-InfomationWebsite" style="font-weight: 600; font-family: inherit;"><i class="fas fa-street-view"></i> @languade.Getkey("View_intro")</a>
+                                        </div>
+                                    </div><!-- col -->
+                                </div><!-- card-body -->
+                            </div><!-- card-dashboard-five -->
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- col-lg-3 -->
+                <div class="col-lg-7 col-xl-8 mg-t-20 mg-lg-t-0">
+                    <div class="card card-table-one">
+                        <h6 class="card-title"><i class="fas fa-language"></i> @languade.Getkey("Supported_Languages")</h6>
+                        <br>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="wd-45p">@languade.Getkey("National_flag")</th>
+                                        <th>@languade.Getkey("Country_Name")</th>
+                                        <th>@languade.Getkey("Language_Name")</th>
+                                        <th>@languade.Getkey("Percent_Support")</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="flag-icon flag-icon-gb flag-icon-squared"></i></td>
+                                        <td><strong>@languade.Getkey("England")</strong></td>
+                                        <td><strong>@languade.Getkey("English")</strong></td>
+                                        <td>95%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="flag-icon flag-icon-vn flag-icon-squared"></i></td>
+                                        <td><strong>@languade.Getkey("Vietnam")</strong></td>
+                                        <td><strong>@languade.Getkey("Vietnamese")</strong></td>
+                                        <td>100%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- table-responsive -->
+                    </div><!-- card -->
+                </div><!-- col-lg -->
+
+            </div><!-- row -->
+        </div><!-- az-content-body -->
+    </div>
+</div><!-- az-content -->
+
+<div class="az-footer ht-40">
+    <div class="container ht-100p pd-t-0-f">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+    </div><!-- container -->
+</div><!-- az-footer -->
+
+<!-- Modal show list music were dowload -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowMusic-Dowload">
+    <div class="modal-dialog modal-WithDowload">
+        <div class="modal-content modal-HeigthDowload">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("DownloadedSong_List")</h5>
+                <button type="button" class="btn-close" id="btn-closeModalDowload">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <button style="border-radius: 20px;" id="Btn_reset" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Làm Mới" class="btn btn-primary"><i class="fas fa-sync-alt"></i></button>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                <input onchange="SeachMuiscDowloadNomal()" type="text" class="form-control seachNameMusic-Dowload" placeholder="@languade.Getkey("Enternamesong_search")">
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn-SeachEnhance" id="btn-SeachNameMusicOption-Dowload">@languade.Getkey("Advancedsearch")</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="body-centerFormSeachMusic-Dowload">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("No")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("namesong")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("Seasons")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("WasDowload")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="BodyDowload">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <span>Manager Music</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal show detail list music were dowload-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="ShowMusicDetailDowload">
+    <div class="modal-dialog modal-WithDowload">
+        <div class="modal-content modal-HeigthDowload">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("DetailList_SongDL")</h5>
+                <button type="button" class="btn-close" id="closeDetailDowload">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="body-centerFormSeachMusic-Dowload">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("No")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("namesong")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("Seasons")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("DateDowload")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("TimeDowload")</th>
+                                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="BodyDetailDowload">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <span>Manager Music</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal show option choose type seach Name Music Dowload -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowOption-SeachMusicDowload">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Select_condition")</h5>
+                <button type="button" class="btn-close" id="btn-CloseModalOption-SeachMusicDowload">X</button>
+            </div>
+            <div class="modal-body">
+
+                <!-- tim theo mua -->
+                <div class="mb-3">
+                    <label class="form-label select-label">@languade.Getkey("Choose_the_Season_You_Need")</label>
+                    <select class="form-select select-Option-Sumer" id="SelectSeason">
+                        <option selected value="0">--@languade.Getkey("Choose_the_Season_You_Need")--</option>
+                        <option value="1">@languade.Getkey("Seasons_Year_round")</option>
+                        <option value="2">@languade.Getkey("Advent")</option>
+                        <option value="3">@languade.Getkey("Christmas_season")</option>
+                        <option value="4">@languade.Getkey("Easter_season")</option>
+                        <option value="5">@languade.Getkey("Lent")</option>
+                        <option value="6">@languade.Getkey("Outside_of_the_calendar")</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="Btn_SeachMusicDowload" type="button" class="btn btn-primary btn-styleOption"><i class="fas fa-search"></i> @languade.Getkey("Seach")</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal show rule of system website -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-InfomationWabsite-Music">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Introduc_Music")</h5>
+                <button type="button" class="btn-close" id="btn-closeInfomation">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Software_Introduction")</label>
+                    <p style="text-align: justify;">
+                        @languade.Getkey("Manager_Muiscsinging")
+                    </p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@languade.Getkey("Target")</label>
+                    <p style="text-align: justify;">
+                        @languade.Getkey("goal_bringing")
+                    </p>
+                    <span style="font-family: initial; color: red;">@languade.Getkey("pleased_announce")</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span>@languade.Getkey("Petros_Tuong")</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="ErrorNotification" />
+<input type="hidden" value="@languade.Getkey("ViewDetail")" id="ViewDetail" />
+<input type="hidden" value="@languade.Getkey("Dowload")" id="Dowload" />
+<input type="hidden" value="@languade.Getkey("Seasons_Year_round")" id="Seasons_Year_round"/>
+<input type="hidden" value="@languade.Getkey("Christmas_season")" id="Christmas_season"/>
+<input type="hidden" value="@languade.Getkey("Lent")" id="Lent"/>
+<input type="hidden" value="@languade.Getkey("Easter_season")" id="Easter_season"/>
+<input type="hidden" value="@languade.Getkey("Advent")" id="Advent"/>
+<input type="hidden" value="@languade.Getkey("Outside_of_the_calendar")" id="Outside_of_the_calendar"/>
+<input type="hidden" value="@languade.Getkey("turn")" id="turn"/>
+<input type="hidden" value="@languade.Getkey("datafo_year")" id="datafo_year"/>
+<input type="hidden" value="@languade.Getkey("Month")" id="Month"/>
+<input type="hidden" value="@languade.Getkey("the_song")" id="the_song"/>
+<input type="hidden" value="@languade.Getkey("Choose_the_Season_You_Need")" id="Choose_the_Season_You_Need"/>
+<input type="hidden" value="@languade.Getkey("keyword_search")" id="keyword_search"/>
+

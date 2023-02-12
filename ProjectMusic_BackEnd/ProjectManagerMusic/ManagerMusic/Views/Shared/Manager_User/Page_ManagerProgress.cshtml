@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" type="image/png" href="~/img/logo.png">
+    <!-- vendor css -->
+    <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="~/lib/typicons.font/typicons.css" rel="stylesheet">
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="~/css/azia.css">
+</head>
+<body>
+
+    <div class="az-header">
+        <div class="container">
+            <div class="az-header-left">
+                <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+                <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+            </div><!-- az-header-left -->
+            <div class="az-header-menu">
+                <div class="az-header-menu-header">
+                    <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+                    <a href="" class="close">&times;</a>
+                </div><!-- az-header-menu-header -->
+                <ul class="nav">
+                    <li class="nav-item active show">
+                        <a href="index.html" class="nav-link">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Hệ Thống</a>
+                        <nav class="az-menu-sub">
+                            <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                            <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+                        </nav>
+                    </li>
+                    <li class="nav-item">
+                        <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Theo mùa</a>
+                        <div class="az-menu-sub">
+                            <div class="container">
+                                <div>
+                                    <nav class="nav">
+                                        <a href="elem-buttons.html" class="nav-link">Mùa Thường Niên</a>
+                                        <a href="elem-dropdown.html" class="nav-link">Mùa Chay</a>
+                                        <a href="table-basic.html" class="nav-link">Mùa Vọng</a>
+                                        <a href="elem-icons.html" class="nav-link">Mùa Giáng Sinh</a>
+                                        <a href="table-basic.html" class="nav-link">Mùa Phục Sinh</a>
+                                        <a href="table-basic.html" class="nav-link">Ngoại Lịch</a>
+                                    </nav>
+                                </div>
+                            </div><!-- container -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+                        <nav class="az-menu-sub">
+                            <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                            <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+                        </nav>
+                    </li>
+                </ul>
+            </div><!-- az-header-menu -->
+        </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+        <div class="container">
+            <div class="az-content-left az-content-left-components">
+                <div class="component-item">
+                    <label><i class="fas fa-newspaper"></i> Thông Tin Chung</label>
+                    <nav class="nav flex-column">
+                        <a href="Infomation-Admin.html" class="nav-link"><i class="fas fa-arrow-right"></i> Cá Nhân</a>
+                        <a id="btn_LeverRole" class="nav-link">
+                            <i class="fas fa-arrow-right"></i> Xem Cấp Độ Nâng
+                            Cấp
+                        </a>
+                    </nav>
+
+                    <label><i class="fas fa-database"></i> Quản Trị Dữ Liệu</label>
+                    <nav class="nav flex-column">
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý File</a>
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Mùa Quanh Năm</a>
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Ngày Lễ</a>
+                    </nav>
+
+                    <label><i class="fas fa-user"></i> Quản Trị Nhân Viên</label>
+                    <nav class="nav flex-column">
+                        <a href="chart-chartjs.html" class="nav-link"><i class="fas fa-arrow-right"></i> Nhân Viên Của Tôi</a>
+                    </nav>
+
+                    <label><i class="fas fa-users"></i> Quản Trị Người Dùng</label>
+                    <nav class="nav flex-column">
+                        <a href="table-basic.html" class="nav-link active"><i class="fas fa-arrow-right"></i> Người Dùng Của Tôi</a>
+                    </nav>
+
+                    <label><i class="fas fa-chart-bar"></i> Thống Kê Báo Cáo</label>
+                    <nav class="nav flex-column">
+                        <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Báo Cáo Chung</a>
+                    </nav>
+
+                </div><!-- component-item -->
+
+            </div><!-- az-content-left -->
+            <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+                <div class="az-content-breadcrumb">
+                    <span><a href="#" style="color: #97a3b9;">Trang Chủ</a></span>
+                    <span><a href="#" style="color: #97a3b9;">Thông Tin Admin</a></span>
+                    <span><a href="#" style="color: #97a3b9;">Quản Lý Người Dùng</a></span>
+                    <span><a href="#" style="color: #97a3b9;">Bảo Mật Người Dùng</a></span>
+                    <span>Quản Lý Tiến Trình Yêu Cầu</span>
+                </div>
+
+                <h2 class="az-content-title">Danh Sách Tiến Trình Yêu Cầu</h2>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="text-align:right;">
+                            <a href="#" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                               data-bs-placement="top" title="Xuất file tổng hợp"><i class="fas fa-file-excel"></i></a>
+
+                            <a href="#" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                               data-bs-placement="top" title="Làm Mới"><i class="fas fa-spinner"></i></a>
+                            <a href="#">Tổng số yêu cầu: 300</a>
+                        </p>
+
+                        <p style="color: blue; font-size: 15px; font-weight: 600;">
+                            <i class="fas fa-hand-point-right"></i> Chưa Giải Quyết (23)
+                            <a href="#" style="border: none;" class="btn btn-outline-primary" data-bs-toggle="tooltip"
+                               data-bs-placement="top" title="Xuất Excel yêu cầu chưa giải quyết"><i class="fas fa-file-excel"></i></a>
+                        </p>
+                        <div style="height: 300px; overflow: scroll; width: 100%; border: 1px solid; border-radius: 5px; margin: 5px 10px;">
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày yêu cầu: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày yêu cầu: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày yêu cầu: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p style="color: orange; font-size: 15px; font-weight: 600;">
+                            <i class="fas fa-hand-point-right"></i> Đang Giải Quyết (34)
+                            <a href="#" style="border: none;" class="btn btn-outline-warning" data-bs-toggle="tooltip"
+                               data-bs-placement="top" title="Xuất Excel yêu cầu đang giải quyết"><i class="fas fa-file-excel"></i></a>
+                        </p>
+                        <div style="height: 300px; overflow: scroll; width: 100%; border: 1px solid; border-radius: 5px; margin: 5px 10px;">
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày xử lý: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày xử lý: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày xử lý: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="color: green; font-size: 15px; font-weight: 600;">
+                            <i class="fas fa-hand-point-right"></i> Đã Giải Quyết (50)
+                            <a href="#" style="border: none;" class="btn btn-outline-success" data-bs-toggle="tooltip"
+                               data-bs-placement="top" title="Xuất Excel yêu cầu đã hoàn thành"><i class="fas fa-file-excel"></i></a>
+                        </p>
+                        <div style="height: 300px; overflow: scroll; width: 100%; border: 1px solid; border-radius: 5px; margin: 5px 10px;">
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày hoàn thành: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày hoàn thành: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div style="margin: 15px 15px;">
+                                <div class="az-content-breadcrumb">
+                                    <span><a href="#" style="color: black;">Trần Duy Tường</a></span>
+                                    <span><a href="#" style="color: black;">Tiêu đề yêu cầu</a></span>
+                                    <span><a href="#" style="color: black;">mã số: 123</a></span>
+                                    <span><a href="#" style="color: black;">Ngày hoàn thành: 12/04/2022</a></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="az-footer mg-t-auto">
+                    <div class="container">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                            Do <a href="#"
+                                  target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com
+                        </span>
+                    </div><!-- container -->
+                </div><!-- az-footer -->
+            </div><!-- az-content-body -->
+        </div><!-- container -->
+    </div><!-- az-content -->
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/ionicons/ionicons.js"></script>
+    <script src="~/js/azia.js"></script>
+</body>
+</html>

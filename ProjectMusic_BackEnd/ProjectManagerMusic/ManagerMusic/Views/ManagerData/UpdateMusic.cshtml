@@ -1,0 +1,198 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = @languade.Getkey("Update_Song");
+    Layout = "~/Views/Shared/Manager_Data/Page_EditFileMusic.cshtml";
+}
+@{
+    Guid Id = ViewBag.IdMuiscUpdate;
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span>@languade.Getkey("Admin_Information")</span>
+        <span><a asp-action="IndexFile" asp-controller="ManagerData" style="color: #97a3b9;">@languade.Getkey("File_management")</a></span>
+        <span><a href="@Url.Action("DetailMusic","ManagerData", new {IdMusic = Id})" style="color: #97a3b9;">@languade.Getkey("DetailSong")</a></span>
+        <span>@languade.Getkey("Update_Song")</span>
+    </div>
+    <partial name="~/Views/ManagerData/MenuManagerFile.cshtml" />
+    <h2 class="az-content-title">@languade.Getkey("Update_Song")</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="mb-3">
+                        <p style="text-align: center; font-family: inherit; font-weight: 600;"><i class="fas fa-file-word"></i> Phần File</p>
+                        <label class="form-label">@languade.Getkey("UpdateFile_Muisc")</label>
+                        <input type="file" class="form-control" style="border-radius: 10px;" id="FileExport">
+                        <span style="color:red; font-family: initial;" id="ValidaFileNameMusic"></span>
+                        <div class="form-text">
+                            @languade.Getkey("NoteFormat_file")<br />
+                            @languade.Getkey("songname_currentdatemonthyear") <br />
+                            @languade.Getkey("example") <br />
+                            @languade.Getkey("inputFile")
+                        </div>
+                        <p style="text-align:right; color:red;" id="TxtNameFile"></p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">@languade.Getkey("UpdateImage_Muisc")</label>
+                        <input type="file" class="form-control" style="border-radius: 10px;" id="FileImageExport">
+                        <span style="color:red; font-family: initial;" id="ValidaFileIamgeMusic"></span>
+                        <div class="form-text">
+                            @languade.Getkey("NoteFormat_Image")<br />
+                            @languade.Getkey("songname_currentdatemonthyear") <br />
+                            @languade.Getkey("example") <br />
+                        </div>
+                        <button style="margin-left: 190px; border: none; font-size: 15px; background: none; color: blue; font-weight: 600; " id="ViewImage" type="button">@languade.Getkey("ReadFile")</button>
+                        <hr />
+                        <p>
+                            @languade.Getkey("Filecurrently_use"): <a id="CurrentFile"></a>
+                        </p>
+
+                    </div>
+
+                </div>
+                <div class="col-md-8">
+
+                    <div class="mb-3">
+                        <p style="text-align: center; font-family: inherit; font-weight: 600;"><i class="fas fa-file"></i> @languade.Getkey("Generalinformation_section")</p>
+                        <label class="form-label">
+                            <span style="color:green;" id="checkOkNameMusic"></span>
+                            @languade.Getkey("namesong")
+
+                            <a id="btn_EditNameMusic" style="font-size: 20px; margin: 3px 3px; color: blue;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Editsong_title")"><i class="fas fa-edit"></i></a>
+
+                            <a id="btn_SaveNameMusic" style="font-size: 20px; margin: 3px 3px; color: black;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Savesong_title")"><i class="fas fa-save"></i></a>
+
+                            <a id="btn_RemoveNameMusic" style="font-size: 20px; margin: 3px 3px; color: red;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Canceledit_title")"><i class="fas fa-window-close"></i></a>
+
+                        </label>
+                        <input id="Txt_EnterNameMusic" onkeyup="CheckValueNameMusic()" style="border-radius: 5px;" type="text" class="form-control" disabled>
+                        <span style="color:red; font-family: initial;" id="ValidaNameMusic"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <span style="color:green;" id="checkOkNameAuthor"></span>
+                            @languade.Getkey("Authour_Name")
+
+                            <a id="btn_EditNameAuthor" style="font-size: 20px; margin: 3px 3px; color: blue;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Editauthor")"><i class="fas fa-edit"></i></a>
+
+                            <a id="btn_SaveNameAuthor" style="font-size: 20px; margin: 3px 3px; color: black;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Saveauthor")"><i class="fas fa-save"></i></a>
+
+                            <a id="btn_RemoveNameAuthor" style="font-size: 20px; margin: 3px 3px; color: red;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Canceledit_author")"><i class="fas fa-window-close"></i></a>
+
+                        </label>
+                        <input id="Txt_EnterNameAuthor" onkeyup="CheckValueNameAuthor()" style="border-radius: 5px;" type="text" class="form-control" disabled>
+                        <span style="color:red; font-family: initial;" id="ValidaNameAuthor"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("Choose_the_Season_You_Need")
+
+                            <a id="btn_EditSeason" style="font-size: 20px; margin: 3px 3px; color: blue;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Choose_anotherseason")"><i class="fas fa-edit"></i></a>
+
+                            <a id="btn_SaveSeason" style="font-size: 20px; margin: 3px 3px; color: black;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Save_season")"><i class="fas fa-save"></i></a>
+
+                        </label>
+                        <select style="border-radius: 5px;" class="form-control" id="SelectSeason" disabled>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            @languade.Getkey("special holidays")
+
+                            <a id="btn_EditSainst" style="font-size: 20px; margin: 3px 3px; color: blue;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Chooseanother_saints")"><i class="fas fa-edit"></i></a>
+
+                            <a id="btn_SaveSainst" style="font-size: 20px; margin: 3px 3px; color: black;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Save_saint")"><i class="fas fa-save"></i></a>
+
+                        </label>
+                        <select style="border-radius: 5px;" class="form-control" id="SelectSainst" disabled>
+                        </select>
+                    </div>
+
+                    <p style="text-align: right;">
+                        <button id="btn_confimEdit" style="border-radius: 5px;" type="button" class="btn btn-outline-secondary"><i class="fas fa-edit"></i> @languade.Getkey("ConfirmEdit_Info")</button>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- Modal loading create Music -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal read content in file .doc-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowContentFileDox">
+    <div class="modal-dialog" style="max-width: 90%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("File_Contents") <i class="fas fa-file-image"></i></h5>
+                <button type="button" class="btn-close" id="btn_closecontentfile">X</button>
+            </div>
+            <div class="modal-body" id="ImageMusic_Data" style="height: 600px; overflow: scroll;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal read content in file .doc update-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowContentFileUpdate">
+    <div class="modal-dialog" style="max-width: 90%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("File_Contents") <i class="fas fa-file-image"></i></h5>
+                <button type="button" class="btn-close" id="btn_closecontentfileImage">X</button>
+            </div>
+            <div class="modal-body" id="ImageMusic_DataUpdate" style="height: 600px; overflow: scroll;">
+                <img id="img_NewAvata" style="width: auto; height: auto" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@ViewBag.IdMuiscUpdate" id="IdMuisc" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+<input type="hidden" value="@languade.Getkey("NotFindSong")" id="NotFindSong" />
+<input type="hidden" value="@languade.Getkey("IdMmusicNull")" id="IdMmusicNull" />
+<input type="hidden" value="@languade.Getkey("Younot_selectedimage")" id="Younot_selectedimage"/>
+<input type="hidden" value="@languade.Getkey("SystemRequest")" id="SystemRequest"/>
+<input type="hidden" value="@languade.Getkey("ImageNot_Null")" id="ImageNot_Null"/>
+<input type="hidden" value="@languade.Getkey("NotFindIdUser_Create")" id="NotFindIdUser_Create" />
+<input type="hidden" value="@languade.Getkey("UpdateMusic_Success")" id="UpdateMusic_Success"/>
+<input type="hidden" value="@languade.Getkey("UpdateMusic_Erorr")" id="UpdateMusic_Erorr"/>

@@ -1,0 +1,9 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Error404");
+    Layout = "~/Views/Shared/Page_Client/Index.cshtml";
+}
+<img src="~/img/404.jpg" style="width: 100%; height:656px;" alt="Error Page" />
+
+

@@ -1,0 +1,68 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+
+@{
+    ViewData["Title"] = @languade.Getkey("Update_history");
+    Layout = "~/Views/Shared/Manager_Data/Page_DetailFileMusic.cshtml";
+}
+@{ 
+    Guid Id_Music = ViewBag.IdMusic;
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span>@languade.Getkey("Admin_Information")</span>
+        <span><a asp-action="IndexFile" asp-controller="ManagerData" style="color: #97a3b9;">@languade.Getkey("File_management")</a></span>
+        <span><a href="@Url.Action("DetailMusic","ManagerData", new {IdMusic =  Id_Music})" style="color: #97a3b9;">@languade.Getkey("DetailSong")</a></span>
+        <span>@languade.Getkey("Update_history")</span>
+    </div>
+    <partial name="~/Views/ManagerData/MenuManagerFile.cshtml" />
+    <h2 class="az-content-title">@languade.Getkey("Update_history")</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="color:black; font-size:15px; text-align:right;">@languade.Getkey("Total_Update"): <b style="color:red" id="TotalHistory"></b></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("No")</th>
+                        <th scope="col">@languade.Getkey("Editor")</th>
+                        <th scope="col">@languade.Getkey("the_song")"</th>
+                        <th scope="col">@languade.Getkey("File_Content")</th>
+                        <th scope="col">@languade.Getkey("Music_composer")</th>
+                        <th scope="col">@languade.Getkey("Current_Season")</th>
+                        <th scope="col">@languade.Getkey("Current_Outings")</th>
+                        <th scope="col">@languade.Getkey("Update")</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyHistory">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPageHistory" style="color:red;"></b>/<b id="TotalItemHistory" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="paginationHitory" class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+
+<input type="hidden" value="@ViewBag.IdMusic" id="IdMusic" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("OldSong_Name")" id="OldSong_Name"/>
+<input type="hidden" value="@languade.Getkey("NewSong_Name")" id="NewSong_Name"/>
+<input type="hidden" value="@languade.Getkey("Old_Content")" id="Old_Content"/>
+<input type="hidden" value="@languade.Getkey("New_Content")" id="New_Content"/>
+<input type="hidden" value="@languade.Getkey("Old_Author")" id="Old_Author"/>
+<input type="hidden" value="@languade.Getkey("New_Author")" id="New_Author"/>
+

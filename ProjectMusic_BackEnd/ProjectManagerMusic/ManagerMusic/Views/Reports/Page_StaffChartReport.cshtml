@@ -1,0 +1,93 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("reports_employees");
+    Layout = "~/Views/Shared/Manger_Report/MangerReportChart.cshtml";
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span>@languade.Getkey("Admin_Information")</span>
+        <span><a asp-action="Page_Report" asp-controller="Reports" style="color: #97a3b9;">@languade.Getkey("Report_Management")</a></span>
+        <span>@languade.Getkey("EmployeeReport_Chart")</span>
+    </div>
+
+    <h2 class="az-content-title"><i class="fas fa-chart-area"></i> @languade.Getkey("reports_employees")</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align:right;">
+
+                <a asp-action="Page_FileChartReport" asp-controller="Reports" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Song_Chart")">
+                    <i class="fas fa-music"></i>
+                </a>
+
+                <a asp-action="Page_UserChartReport" asp-controller="Reports" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top"
+                   title="@languade.Getkey("User_Charts")"><i class="fas fa-users"></i></a>
+
+                <a id="btn_Reload" style="border: none;" class="btn btn-outline-secondary"
+                   data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("reset")">
+                    <i class="fas fa-spinner"></i>
+                </a>
+
+                <a style="border: none; font-size: 15px; font-family: initial; font-weight: 600; color: black;"
+                   class="btn btn-outline-secondary">@languade.Getkey("TotalStaff"): <b id="TotalSatff"></b></a>
+
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <p style="font-size: 20px; font-family: initial">
+                        <i class="fas fa-user-astronaut"></i> @languade.Getkey("Employee_Chart")
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <select style="border-radius: 10px;" class="form-control" id="SelectValue">
+                        <option selected>@languade.Getkey("ChooseYear") ...</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button id="Btn_SelectYear" style="border-radius: 10px;" type="button" class="btn btn-primary">
+                        <i class="fas fa-filter"></i> @languade.Getkey("Filter_data")
+                    </button>
+                </div>
+            </div>
+
+            <div id="calendar_basic" style="width: 1000px; height: 200px;"></div>
+            <p style="text-align: center;">@languade.Getkey("Employeechart_year")</p>
+            <br>
+            <p style="color: black; font-weight: 600;"><i class="fas fa-sticky-note"></i> @languade.Getkey("Note")</p>
+            <p><b>@languade.Getkey("For_example"):</b> <span style="color: red; font-weight: 600;">October 13, 2021:</span> <i>@languade.Getkey("indicateday_year")</i></p>
+            <p><b>@languade.Getkey("data_under"):</b> <span style="color: red; font-weight: 600;">100</span> <i>@languade.Getkey("Indicatenumberemployee_day")</i></p>
+
+        </div>
+    </div>
+
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+                @languade.Getkey("Design_In_2022")
+            </span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Do <a href="#"
+                      target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com
+                </span>
+            </div><!-- container -->
+        </div><!-- az-footer -->
+    </div><!-- az-content-body -->
+    <input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+    <input type="hidden" value="@languade.Getkey("datafo_year")" id="datafo_year" />
+    <input type="hidden" value="@languade.Getkey("Apply")" id="Apply" />
+    <input type="hidden" value="@languade.Getkey("cancel")" id="cancel" />
+    <script src="~/js/Manager_StaffChart.js" asp-append-version="true"></script>
+

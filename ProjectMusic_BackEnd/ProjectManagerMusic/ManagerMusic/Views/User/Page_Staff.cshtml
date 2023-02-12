@@ -1,0 +1,126 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("ManagerSatff");
+    Layout = "~/Views/Shared/Manager_Staff/ManagerStaff.cshtml";
+}
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span><a href="#" style="color: #97a3b9;">@languade.Getkey("Admin_Information")</a></span>
+        <span>@languade.Getkey("ManagerSatff")</span>
+    </div>
+
+    <h2 class="az-content-title">@languade.Getkey("ManagerSatff")</h2>
+    <p style="text-align: left; font-family: inherit; color: red;">
+       @languade.Getkey("BirthdayOf") <b style="color:red" id="NumberBirthday">( 4 )</b> @languade.Getkey("send_congratulations")
+    </p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row g-3 align-items-center" id="SeachMusic-Admin">
+                <div class="col-auto" style="background: #0000000d; border-radius: 5px;">
+                    <input style="width: 300px; border-radius: 5px;" type="text" onkeyup="eventSeachMusic()" id="TxtInputMusic" placeholder="@languade.Getkey("EnterNameOrIdSatff")">
+                    <a style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Advancedsearch")"><i class="fas fa-search-plus"></i></a>
+                    <a id="btn-closeSeachMusic" style="border: none; color: red; float: right;" tdata-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Close_Seach")">X</a>
+                </div>
+                <hr />
+            </div>
+
+            <div id="Modal-ShowSelectSumer" style="background: #0000001f; border-radius: 10px; display: block; height: 75px;">
+                <p style="text-align: right; margin: 10px 10px;">
+                    <a id="btn-closeModalSelect" style="border: none; color: red;" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Close_Seach")">X</a>
+                </p>
+                <select class="form-control" style="border-radius: 5px;" id="SelectRole"></select>
+            </div>
+
+            <p style="text-align:right;">
+
+                <a id="btn-ShowModalCraeteMusic" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Employee_birthday")"><i class="fas fa-birthday-cake"></i></a>
+
+                <a id="btn-ShowModalCraeteMusic" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Retrieveemployee_password")"><i class="fas fa-key"></i></a>
+
+                <a asp-action="PageCreateSatff" asp-controller="User" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Create_Staff")"><i class="fas fa-plus-circle"></i></a>
+
+                <a id="btn-ShowModalSelect" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Selectemployee_role")"><i class="fas fa-list-alt"></i></a>
+
+                <a id="btn-ShowFormSeachMusic" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Employee_Search")"><i class="fas fa-search"></i></a>
+
+                <a href="#" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Employeeout_ofwork")"><i class="fas fa-user-alt-slash"></i></a>
+
+                <a href="#" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("ListSatffLocked_Account")"><i class="fas fa-user-lock"></i></a>
+
+                <a id="btn-showModalActiverFile" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("Staff_Activation")"><i class="fas fa-cog"></i></a>
+
+                <a style="border: none;" class="btn btn-outline-secondary">@languade.Getkey("TotalStaff") <b id="TxtTotalSatff"></b></a>
+
+            </p>
+            <p id="TileNotification"></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <input type="checkbox" id="selectall" />
+                        </th>
+                        <th scope="col">@languade.Getkey("No") <i class="fa fa-fw fa-sort"></i></th>
+                        <th scope="col">@languade.Getkey("NameStaff")</th>
+                        <th scope="col">@languade.Getkey("working_day")</th>
+                        <th scope="col">@languade.Getkey("ImageStaff")</th>
+                        <th scope="col">@languade.Getkey("Role_App")</th>
+                        <th scope="col">@languade.Getkey("Status")</th>
+                        <th scope="col">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="Body_Data">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="pagination" class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- choose option activer funtion file -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowChooseActiverFile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-toolbox"></i> @languade.Getkey("Statussettings_accounts")</h5>
+                <button type="button" class="btn-close" id="btn-closeactiver">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-secondary">@languade.Getkey("Active_account")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-secondary" id="btn-Anactiver">@languade.Getkey("Deactivate_account")</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("NotFindStaff")" id="NotFindStaff"/>
+<input type="hidden" value="@languade.Getkey("Edit_staff")" id="Edit_staff"/>
+<input type="hidden" value="@languade.Getkey("Employee_Details")" id="Employee_Details"/>
+<input type="hidden" value="@languade.Getkey("Role Selection")" id="Role_Selection"/>
+<input type="hidden" value="@languade.Getkey("select_field")" id="select_field"/>
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/>

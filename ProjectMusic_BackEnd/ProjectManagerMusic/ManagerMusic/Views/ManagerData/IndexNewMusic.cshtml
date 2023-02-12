@@ -1,0 +1,76 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("New_song");
+    Layout = "~/Views/Shared/Manager_Data/ManagerFileNew.cshtml";
+}
+
+
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+    <div class="container">
+        <partial name="~/Views/SidebarMenu/Index.cshtml" />
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+            <div class="az-content-breadcrumb">
+                <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+                <span>@languade.Getkey("Admin_Information")</span>
+                <span><a asp-action="IndexFile" asp-controller="ManagerData" style="color: #97a3b9;">@languade.Getkey("File_management")</a></span>
+                <span>@languade.Getkey("10_Newly_Created_Files")</span>
+            </div>
+
+            <partial name="~/Views/ManagerData/MenuManagerFile.cshtml" />
+
+            <h2 class="az-content-title"> @languade.Getkey("10_Newly_Created_Files")</h2>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p style="color: red; text-align: left;" id="titleNotification"></p>
+                        </div>
+                    </div>
+                    <p style="color: red;" id="SeachMusic"></p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">@languade.Getkey("No")</th>
+                                <th scope="col">@languade.Getkey("namesong")</th>
+                                <th scope="col">@languade.Getkey("datecreate")</th>
+                                <th scope="col">@languade.Getkey("Seasons")</th>
+                                <th scope="col">@languade.Getkey("Status")</th>
+                                <th scope="col">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody id="body_Music">
+                        </tbody>
+                    </table>
+                    <p style="text-align:right;">@languade.Getkey("page") : <b id="ItemInPage" style="color:red;"></b>/<b id="TotalItem" style="color:black;"></b></p>
+                    <!-- Pagination -->
+                    <div class="row" style="clear: both;">
+                        <div id="pagination" class="pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="az-footer mg-t-auto">
+                <div class="container">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+                </div><!-- container -->
+            </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+    </div><!-- container -->
+</div><!-- az-content -->
+
+<input type="hidden" value="@languade.Getkey("NotfindMusic")" id="NotfindMusic" />
+<input type="hidden" value="@languade.Getkey("TotalMusic")" id="TotalMusic" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("ViewDetailSong")" id="ViewDetailSong" />
+<input type="hidden" value="@languade.Getkey("NotFindInfothis_Music")" id="NotFindInfothis_Music" />
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error" />
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success" />
+
+

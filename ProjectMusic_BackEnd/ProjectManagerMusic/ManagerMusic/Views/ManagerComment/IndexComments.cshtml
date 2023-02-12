@@ -1,0 +1,143 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = @languade.Getkey("Song_Comments");
+    Layout = "~/Views/Shared/Manager_Data/Page_ManagerCommentMusic.cshtml";
+}
+
+<div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+    <div class="container">
+        <partial name="~/Views/SidebarMenu/Index.cshtml" />
+
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+            <div class="az-content-breadcrumb">
+                <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+                <span>@languade.Getkey("Admin_Information")</span>
+                <span><a asp-action="IndexFile" asp-controller="ManagerData" style="color: #97a3b9;">@languade.Getkey("File_management")</a></span>
+                <span>@languade.Getkey("Song_Comments")</span>
+            </div>
+            <partial name="~/Views/ManagerData/MenuManagerFile.cshtml" />
+
+            <h2 class="az-content-title">@languade.Getkey("Song_Comments")</h2>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <input onchange="evertSeachComment()" style="width: 170%; border-radius: 5px;" type="text" class="form-control" placeholder=@languade.Getkey("Entersongid_reviewer")>
+                        </div>
+                    </div>
+
+                    <p style="text-align:right;">
+                        <a style="border: none;" id="btn-ActiverRemoveComment" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="@languade.Getkey("Delete_allcomments")"><i class="fas fa-trash"></i></a>
+                        <a style="border: none;" class="btn btn-outline-secondary">@languade.Getkey("Comments"): <b>23</b></a>
+                    </p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <input type="checkbox" id="selectall" />
+                                </th>
+                                <th scope="col">@languade.Getkey("No")</th>
+                                <th scope="col">@languade.Getkey("namesong")</th>
+                                <th scope="col">@languade.Getkey("Reviewer_name")</th>
+                                <th scope="col">@languade.Getkey("Comment_content")</th>
+                                <th scope="col">@languade.Getkey("DateCreate_Song")</th>
+                                <th scope="col">@languade.Getkey("Answer")</th>
+                                <th scope="col">@languade.Getkey("Options")</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <input type="checkbox" class="case" name="case" value="1" />
+                                </th>
+                                <td>1</td>
+                                <td>tt</td>
+                                <td>Otto</td>
+                                <td>mdo</td>
+                                <td>mdo</td>
+                                <td>
+                                    <p style="font-family: inherit; color: green;">
+                                        <i class="fas fa-plus-circle"></i>
+                                        Hoạt Động
+                                    </p>
+                                </td>
+                                <td>
+                                    <a style="border: none;" id="btn-ShowChooseOption" class="btn btn-outline-secondary" ata-bs-toggle="tooltip" data-bs-placement="top" title="Lựa Chọn Chức Năng"><i class="fas fa-ellipsis-v"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="az-footer mg-t-auto">
+                <div class="container">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> từ duytuong0503@gmail.com</span>
+                </div><!-- container -->
+            </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+    </div><!-- container -->
+</div><!-- az-content -->
+
+<!-- choose option activer funtion file -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowChooseActiverFile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-toolbox"></i> @languade.Getkey("Aredelete_selectedcomments")</h5>
+                <button type="button" class="btn-close" id="btn-closeactiver">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-secondary">@languade.Getkey("agree")</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align:center;">
+                            <button type="button" class="btn btn-outline-secondary" id="btn-Anactiver">@languade.Getkey("cancel")</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal show list answer comment -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowAnswerComment">
+    <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content" style="height: 600px; overflow: scroll;">
+            <div class="modal-header">
+                <h5 class="modal-title">@languade.Getkey("Theresponses_reviewcomment")</h5>
+                <button type="button" class="btn-close" id="btn-closemodalAnswerComment">X</button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">@languade.Getkey("No")</th>
+                            <th scope="col">@languade.Getkey("Respondent_name")</th>
+                            <th scope="col">@languade.Getkey("Reply_content")</th>
+                            <th scope="col">@languade.Getkey("datecreate")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,110 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("User_Notice");
+    Layout = "~/Views/Shared/Page_Client/ViewAllNotifications.cshtml";
+}
+
+<div class="az-content az-content-dashboard">
+    <div class="container">
+        <div class="az-content-body">
+            <div class="az-dashboard-one-title">
+                <div>
+                    <h3 class="az-dashboard-title"><i class="fas fa-bell"></i> @languade.Getkey("All_Notification")</h3>
+                </div>
+                <div class="az-content-header-right">
+
+                    <div class="media">
+                        <div class="media-body">
+                            <button id="btn_remove" type="button" style="border-radius: 10px;" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("RemoveAll")"><i class="fas fa-trash"></i></button>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                    <div class="media">
+                        <div class="media-body">
+                            <a asp-action="PageNotificationUer" asp-controller="Notification" style="border-radius: 10px;" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="@languade.Getkey("reset")"><i class="fas fa-spinner"></i></a>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                    <div class="media">
+                        <div class="media-body">
+                            <button type="button" style="border-radius: 10px;" class="btn btn-secondary">
+                                @languade.Getkey("you_have") <b style="color: red;" id="NumberNotification"></b> @languade.Getkey("Notifiction")
+                            </button>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+
+                </div><!-- media -->
+            </div>
+        </div><!-- az-dashboard-one-title -->
+    </div><!-- row -->
+</div><!-- row -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <input type="checkbox" id="selectall" />
+                        </th>
+                        <th scope="col">@languade.Getkey("No")</th>
+                        <th scope="col">@languade.Getkey("NotificationContent")</th>
+                        <th scope="col">@languade.Getkey("People_notice")</th>
+                        <th scope="col">@languade.Getkey("time")</th>
+                        <th scope="col">@languade.Getkey("datecreate")</th>
+                        <th scope="col">@languade.Getkey("Status")</th>
+                        <th scope="col">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="T_bodyNotification">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="TotalItem" style="color:red;"></b>/<b id="ItemInPage" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="pagination" class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal loading create Music -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_Loading">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@languade.Getkey("RemovethisNotificaiton")" id="btn_ReomveData" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+<input type="hidden" value="@languade.Getkey("watched")" id="watched"/>
+<input type="hidden" value="@languade.Getkey("not_seen")" id="not_seen"/>
+<input type="hidden" value="@languade.Getkey("Delete_Notification")" id="ChooseRow"/>
+<input type="hidden" value="@languade.Getkey("Notification_Error")" id="Notification_Error"/>
+<input type="hidden" value="@languade.Getkey("RemoveError")" id="RemoveError"/>
+<input type="hidden" value="@languade.Getkey("Nofitication_Success")" id="Nofitication_Success"/>
+<input type="hidden" value="@languade.Getkey("RemoveSuccess")" id="RemoveSuccess"/>
