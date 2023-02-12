@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>Tất cả thông báo</title>
+    <link rel="shortcut icon" type="image/png" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/logo.png">
+    <!-- vendor css -->
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/css/azia.css">
+
+  </head>
+  <body>
+
+    <div class="az-header">
+      <div class="container">
+        <div class="az-header-left">
+          <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+          <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+          <div class="az-header-menu-header">
+            <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+            <a href="" class="close">&times;</a>
+          </div><!-- az-header-menu-header -->
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Trang Chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Hệ Thống</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+              </nav>
+            </li>
+            <li class="nav-item active show">
+              <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+              </nav>
+            </li>
+            <li class="nav-item">
+              <a href="page-signin.html" class="nav-link">Xin Chào: Trần Duy Tường</a>
+            </li>
+          </ul>
+        </div><!-- az-header-menu -->
+        <div class="az-header-right">
+          <div class="dropdown az-profile-menu">
+            <a class="az-img-user" style="font-size: 20px; color: #383636d4; border: 2px solid;">
+              <i class="fas fa-user" style="margin: 1px 5px;"></i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="az-dropdown-header d-sm-none">
+                <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+              </div>
+
+              <!-- info admin -->
+              <div class="az-header-profile">
+                <div class="az-img-user">
+                  <i class="fas fa-user-cog" style="font-size: 90px; color: #238181; text-shadow: 2px 1px 1px; margin: -5px -5px;"></i>
+                </div><!-- az-img-user -->
+                <h6>Duy Tường</h6>
+                <span>Quản Lý Viên</span>
+              </div><!-- az-header-profile -->
+
+              <button type="button" id="btn_ShowInfoAdmin" class="dropdown-item"><i class="typcn typcn-user-outline"></i> Thông Tin Của Tôi</button>
+              <a class="dropdown-item"><i class="typcn typcn-edit"></i> Chỉnh Sửa Thông Tin</a>
+              <a class="dropdown-item"><i class="fas fa-cog"></i> Quản Lý Hệ Thống</a>
+              <button type="button" id="btn_SignOut" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Thoát</button>
+
+            </div><!-- dropdown-menu -->
+          </div>
+        </div><!-- az-header-right -->
+      </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content az-content-dashboard">
+      <div class="container">
+        <div class="az-content-body">
+          <div class="az-dashboard-one-title">
+            <div>
+              <h3 class="az-dashboard-title"><i class="fas fa-bell"></i> Tất cả các thông báo</h3>
+            </div>
+            <div class="az-content-header-right">
+
+              <div class="media">
+                <div class="media-body">
+                   <button id="btn_remove" type="button" style="border-radius: 10px;" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Xóa tất cả"><i class="fas fa-trash"></i></button>
+                </div><!-- media-body -->
+              </div><!-- media -->
+
+              <div class="media">
+                <div class="media-body">
+                   <button type="button" style="border-radius: 10px;" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Làm mới"><i class="fas fa-spinner"></i></button>
+                </div><!-- media-body -->
+              </div><!-- media -->
+
+              <div class="media">
+                <div class="media-body">
+                   <p>Bạn đang có <b>24</b> thông báo</p>
+                </div><!-- media-body -->
+              </div><!-- media -->
+
+              </div><!-- media -->
+            </div>
+          </div><!-- az-dashboard-one-title -->
+          </div><!-- row -->
+          </div><!-- row -->
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          <input type="checkbox" id="selectall"/>
+                        </th>
+                        <th scope="col">STT</th>
+                        <th scope="col">Nội Dung Thông Báo</th>
+                        <th scope="col">Người Thông Báo</th>
+                        <th scope="col">Thời gian</th>
+                        <th scope="col">Ngày Tạo</th>
+                        <th scope="col">Lựa Chọn</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="1"/>
+                        </th>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Xóa thông báo này" style="border: none;"><i class="fas fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="2"/>
+                        </th>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="3"/>
+                        </th>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+              </div>
+            </div>
+          </div>
+
+        </div><!-- az-content-body -->
+      </div>
+    </div><!-- az-content -->
+
+
+          <!-- Modal loading create Music -->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_Loading">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background:none; border:none;">
+        <div class="modal-body">
+          <div class="row" style="margin-top:200px;">
+              <div class="col-md-4"></div>     
+                <div class="col-md-4">
+                    <div class="spinner-grow text-primary" role="status">
+                      <span class="visually-hidden"></span>
+                    </div>
+                    <div class="spinner-grow text-secondary" role="status">
+                      <span class="visually-hidden"></span>
+                    </div>
+                    <div class="spinner-grow text-success" role="status">
+                      <span class="visually-hidden"></span>
+                    </div>
+                </div>
+              <div class="col-md-4"></div>  
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery/jquery.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/ionicons.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery.flot/jquery.flot.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery.flot/jquery.flot.resize.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/peity/jquery.peity.min.js"></script>
+
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/azia.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/ViewAllNotification.js"></script>
+    
+  </body>
+</html>

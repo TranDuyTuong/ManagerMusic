@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>Quản Lý Báo Cáo</title>
+    <link rel="shortcut icon" type="image/png" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/logo.png">
+    <!-- vendor css -->
+    <link
+        href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/fontawesome-free/css/all.min.css"
+        rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/css/ionicons.min.css"
+        rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/typicons.font/typicons.css"
+        rel="stylesheet">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/css/azia.css">
+
+</head>
+
+<body>
+
+    <div class="az-header">
+        <div class="container">
+            <div class="az-header-left">
+                <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+                <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+            </div><!-- az-header-left -->
+            <div class="az-header-menu">
+                <div class="az-header-menu-header">
+                    <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+                    <a href="" class="close">&times;</a>
+                </div><!-- az-header-menu-header -->
+                <ul class="nav">
+                    <li class="nav-item active show">
+                        <a href="index.html" class="nav-link">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Hệ Thống</a>
+                        <nav class="az-menu-sub">
+                            <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                            <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+                        </nav>
+                    </li>
+                    <li class="nav-item">
+                        <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Theo mùa</a>
+                        <div class="az-menu-sub">
+                            <div class="container">
+                                <div>
+                                    <nav class="nav">
+                                        <a href="elem-buttons.html" class="nav-link">Mùa Thường Niên</a>
+                                        <a href="elem-dropdown.html" class="nav-link">Mùa Chay</a>
+                                        <a href="table-basic.html" class="nav-link">Mùa Vọng</a>
+                                        <a href="elem-icons.html" class="nav-link">Mùa Giáng Sinh</a>
+                                        <a href="table-basic.html" class="nav-link">Mùa Phục Sinh</a>
+                                        <a href="table-basic.html" class="nav-link">Ngoại Lịch</a>
+                                    </nav>
+                                </div>
+                            </div><!-- container -->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+                        <nav class="az-menu-sub">
+                            <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                            <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+                        </nav>
+                    </li>
+                </ul>
+            </div><!-- az-header-menu -->
+        </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+        <div class="container">
+            <div class="az-content-left az-content-left-components">
+                <div class="component-item">
+                    <label><i class="fas fa-newspaper"></i> Thông Tin Chung</label>
+                    <nav class="nav flex-column">
+                        <a href="Infomation-Admin.html" class="nav-link"><i class="fas fa-arrow-right"></i> Cá Nhân</a>
+                        <a type="button" id="btn_LeverRole" class="nav-link"><i class="fas fa-arrow-right"></i> Xem Cấp
+                            Độ Nâng Cấp</a>
+                    </nav>
+
+                    <label><i class="fas fa-database"></i> Quản Trị Dữ Liệu</label>
+                    <nav class="nav flex-column">
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý
+                            File</a>
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Mùa
+                            Quanh Năm</a>
+                        <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Ngày
+                            Lễ</a>
+                    </nav>
+
+                    <label><i class="fas fa-user"></i> Quản Trị Nhân Viên</label>
+                    <nav class="nav flex-column">
+                        <a href="chart-chartjs.html" class="nav-link"><i class="fas fa-arrow-right"></i> Nhân Viên Của
+                            Tôi</a>
+                    </nav>
+
+                    <label><i class="fas fa-users"></i> Quản Trị Người Dùng</label>
+                    <nav class="nav flex-column">
+                        <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Người Dùng Của
+                            Tôi</a>
+                    </nav>
+
+                    <label><i class="fas fa-chart-bar"></i> Thống Kê Báo Cáo</label>
+                    <nav class="nav flex-column">
+                        <a href="table-basic.html" class="nav-link active"><i class="fas fa-arrow-right"></i> Báo Cáo
+                            Chung</a>
+                    </nav>
+
+                </div><!-- component-item -->
+
+            </div><!-- az-content-left -->
+            <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+                <div class="az-content-breadcrumb">
+                    <span><a href="#" style="color: #97a3b9;">Trang Chủ</a></span>
+                    <span><a href="#" style="color: #97a3b9;">Thông Tin Admin</a></span>
+                    <span>Quản Lý Báo Cáo</span>
+                </div>
+
+                <h2 class="az-content-title"><i class="fas fa-download"></i> Quản Lý Báo Cáo</h2>
+                <div class="row">
+                    <div class="col-md-5" style="margin: 10px 10px; background-color: #ff0000a8; width: 100%; height: 250px; border-radius: 20px;">
+                        <label class="form-label"
+                            style="color: black; font-size: 20px; font-family: initial; font-weight: 600; text-align: center;">
+                            Thống Kê Báo Cáo File Bài Hát
+                        </label>
+                        <p class="hover_File" style="text-align: center; font-size: 100px; margin-top: 20px;">
+                            <a href="#" style="color: black;">
+                                <i class="fas fa-file" ></i>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-md-5" style="margin: 10px 10px; background-color: #008000a1; width: 100%; height: 250px; border-radius: 20px;">
+                        <label class="form-label" style="color: black; font-size: 20px; font-family: initial; font-weight: 600; text-align: center;">
+                            Thống Kê Báo Cáo Nhân Viên
+                        </label>
+                        <p class="hover_Staff" style="text-align: center; font-size: 100px; margin-top: 20px;">
+                            <a href="#" style="color: black;">
+                                <i class="fas fa-user-cog"></i>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-md-5" style="margin: 10px 10px; background-color: #00f1ff82; width: 100%; height: 250px; border-radius: 20px;">
+                        <label class="form-label" style="color: black; font-size: 20px; font-family: initial; font-weight: 600; text-align: center;">
+                            Thống Kê Báo Cáo Người Dùng
+                        </label>
+                        <p class="hover_User" style="text-align: center; font-size: 100px; margin-top: 20px;">
+                            <a href="#" style="color: black;">
+                                <i class="fas fa-users"></i>
+                            </a>                            
+                        </p>
+                    </div>
+                    <div class="col-md-5" style="margin: 10px 10px; background-color: #2a00ff82; width: 100%; height: 250px; border-radius: 20px;">
+                        <label class="form-label" style="color: black; font-size: 20px; font-family: initial; font-weight: 600; text-align: center;">
+                            Thống Kê Biểu Đồ
+                        </label>
+                        <p class="hover_User" style="text-align: center; font-size: 100px; margin-top: 20px;">
+                            <a href="#" style="color: black;">
+                                <i class="fas fa-chart-bar"></i>
+                            </a>                            
+                        </p>
+                    </div>
+                    <p style="font-size: 20px; margin: 10px 10px; font-family: initial;">Hệ thống sẻ xuất các báo cáo liên quan đế các phần mà bạn yêu cầu (excel file, word file, pdf file)</p>
+                </div>
+
+                <div class="az-footer mg-t-auto">
+                    <div class="container">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm
+                            2022</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#"
+                                target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+                    </div><!-- container -->
+                </div><!-- az-footer -->
+            </div><!-- az-content-body -->
+        </div><!-- container -->
+    </div><!-- az-content -->
+
+    <script
+        src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery/jquery.min.js"></script>
+    <script
+        src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/ionicons.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/azia.js"></script>
+</body>
+
+</html>

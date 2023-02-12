@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-90680653-2');
+  </script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Meta -->
+  <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+  <meta name="author" content="BootstrapDash">
+
+  <title>Quản Lý Chi Tiết Người Dùng</title>
+    <link rel="shortcut icon" type="image/png" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/logo.png">
+  <!-- vendor css -->
+  <link
+    href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/fontawesome-free/css/all.min.css"
+    rel="stylesheet">
+  <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/css/ionicons.min.css"
+    rel="stylesheet">
+  <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/typicons.font/typicons.css"
+    rel="stylesheet">
+
+  <!-- azia CSS -->
+  <link rel="stylesheet" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/css/azia.css">
+
+</head>
+
+<body>
+
+  <div class="az-header">
+    <div class="container">
+      <div class="az-header-left">
+        <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+        <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+      </div><!-- az-header-left -->
+      <div class="az-header-menu">
+        <div class="az-header-menu-header">
+          <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+          <a href="" class="close">&times;</a>
+        </div><!-- az-header-menu-header -->
+        <ul class="nav">
+          <li class="nav-item active show">
+            <a href="index.html" class="nav-link">Trang Chủ</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link with-sub">Hệ Thống</a>
+            <nav class="az-menu-sub">
+              <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+              <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+            </nav>
+          </li>
+          <li class="nav-item">
+            <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link with-sub">Theo mùa</a>
+            <div class="az-menu-sub">
+              <div class="container">
+                <div>
+                  <nav class="nav">
+                    <a href="elem-buttons.html" class="nav-link">Mùa Thường Niên</a>
+                    <a href="elem-dropdown.html" class="nav-link">Mùa Chay</a>
+                    <a href="table-basic.html" class="nav-link">Mùa Vọng</a>
+                    <a href="elem-icons.html" class="nav-link">Mùa Giáng Sinh</a>
+                    <a href="table-basic.html" class="nav-link">Mùa Phục Sinh</a>
+                    <a href="table-basic.html" class="nav-link">Ngoại Lịch</a>
+                  </nav>
+                </div>
+              </div><!-- container -->
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+            <nav class="az-menu-sub">
+              <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+              <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+            </nav>
+          </li>
+        </ul>
+      </div><!-- az-header-menu -->
+    </div><!-- container -->
+  </div><!-- az-header -->
+
+  <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+    <div class="container">
+      <div class="az-content-left az-content-left-components">
+        <div class="component-item">
+          <label><i class="fas fa-newspaper"></i> Thông Tin Chung</label>
+          <nav class="nav flex-column">
+            <a href="Infomation-Admin.html" class="nav-link"><i class="fas fa-arrow-right"></i> Cá Nhân</a>
+            <a type="button" id="btn_LeverRole" class="nav-link"><i class="fas fa-arrow-right"></i> Xem Cấp Độ Nâng
+              Cấp</a>
+          </nav>
+
+          <label><i class="fas fa-database"></i> Quản Trị Dữ Liệu</label>
+          <nav class="nav flex-column">
+            <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý File</a>
+            <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Mùa Quanh Năm</a>
+            <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Ngày Lễ</a>
+          </nav>
+
+          <label><i class="fas fa-user"></i> Quản Trị Nhân Viên</label>
+          <nav class="nav flex-column">
+            <a href="chart-chartjs.html" class="nav-link"><i class="fas fa-arrow-right"></i> Nhân Viên Của Tôi</a>
+          </nav>
+
+          <label><i class="fas fa-users"></i> Quản Trị Người Dùng</label>
+          <nav class="nav flex-column">
+            <a href="table-basic.html" class="nav-link active"><i class="fas fa-arrow-right"></i> Người Dùng Của Tôi</a>
+          </nav>
+
+          <label><i class="fas fa-chart-bar"></i> Thống Kê Báo Cáo</label>
+          <nav class="nav flex-column">
+            <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Báo Cáo Chung</a>
+          </nav>
+
+        </div><!-- component-item -->
+
+      </div><!-- az-content-left -->
+      <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+        <div class="az-content-breadcrumb">
+          <span><a href="#" style="color: #97a3b9;">Trang Chủ</a></span>
+          <span><a href="#" style="color: #97a3b9;">Thông Tin Admin</a></span>
+          <span><a href="#" style="color: #97a3b9;">Quản Lý Người Dùng</a></span>
+          <span>Chi Tiết Người Dùng: 001 - Trần Duy Tường</span>
+        </div>
+
+        <h2 class="az-content-title"><i class="fas fa-users"></i> Chi Tiết Người Dùng</h2>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p style="text-align:right;">
+              <a id="btn-ShowModalTimeWork" style="border: none;" class="btn btn-outline-secondary" type="button"
+                data-bs-toggle="tooltip" data-bs-placement="top" title="Chi Tiết Giờ Hoạt Động"><i
+                  class="fas fa-globe"></i></a>
+              <a id="btn-ShowModalLockAccount" style="border: none;" class="btn btn-outline-secondary" type="button"
+                data-bs-toggle="tooltip" data-bs-placement="top" title="Khóa tài khoản người dùng"><i
+                  class="fas fa-user-lock"></i></a>
+              <a id="btn-ShowModalAnLockAccount" style="border: none;" class="btn btn-outline-secondary" type="button"
+                data-bs-toggle="tooltip" data-bs-placement="top" title="Mở khóa tài khoản người dùng"><i
+                  class="fas fa-lock-open"></i></a>
+              <a id="btn-ShowModalRemoveUser" style="border: none;" class="btn btn-outline-secondary" type="button"
+                data-bs-toggle="tooltip" data-bs-placement="top" title="Xóa người dùng"><i class="fas fa-trash"></i></a>
+              <a href="#" style="border: none;" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                data-bs-placement="top" title="Làm Mới"><i class="fas fa-spinner"></i></a>
+            </p>
+            <p style="text-align: center; font-size:20px;"><i class="fas fa-address-card"></i> Thông Tin Người Dùng</p>
+            <div class="row">
+              <div class="col-md-6" style="border-radius: 5px; border: 2px solid;">
+                <p style="text-align: center; font-size:15px; color: black;">Thông Tin Cá Nhân</p>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Tên Người Dùng</label>
+                  <input type="email" class="form-control" value="Trần Duy Tường" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Ngày Tháng Năm Sinh</label>
+                  <input type="email" class="form-control" value="05/03/2000" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Tuổi Hiện Tại</label>
+                  <input type="email" class="form-control" value="24" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Địa Chỉ Gmail</label>
+                  <input type="email" class="form-control" value="duytuong0503@gmail.com" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Giới Tính</label>
+                  <input type="email" class="form-control" value="Nam" disabled>
+                </div>
+
+              </div>
+              <div class="col-md-6" style="border-radius: 5px; border: 2px solid;">
+                <p style="text-align: center; font-size:15px; color: black;">Thông Tin Tài Khoản</p>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Ngày Đăng Ký Tài Khoản</label>
+                  <input type="email" class="form-control" value="13/08/2022" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Cấp Độ Tài Khoản</label>
+                  <input type="email" class="form-control" value="Lever 1" disabled
+                    style="color: Red; font-weight: 600;">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Trạng Thái Tài Khoản</label>
+                  <input type="email" class="form-control" value="Hoạt Động" disabled
+                    style="color: green; font-weight: 600;">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Lần Chỉnh Sửa Cuối Cùng</label>
+                  <input type="email" class="form-control" value="20/07/2022" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Tổng Thời Gian Tài Khoản Hoạt Động</label>
+                  <input type="email" class="form-control" value="45 tiếng" disabled
+                    style="color: Black; font-weight: 600;">
+                </div>
+
+              </div>
+              <div class="col-md-12">
+                <br />
+                <p style="font-size:15px; color: black;"><i class="fas fa-comment"></i> Bình Luận Bài Hát</p>
+
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col">Tên Bài Hát</th>
+                      <th scope="col">Ngày Bình Luận</th>
+                      <th scope="col">Nội Dung</th>
+                      <th scope="col">Trạng Thái</th>
+                      <th scope="col">Lựa Chọn</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>@mdo</td>
+                      <td>
+                        <button id="btn_Answer" type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip"
+                          data-bs-placement="right" title="Xem Câu Trả Lời" style="border: none;"><i
+                            class="fas fa-comments"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <br />
+                <p style="font-size:15px; color: black;"><i class="fas fa-star"></i> Đánh Giá Sao</p>
+
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col">Tên Bài Hát</th>
+                      <th scope="col">Ngày Đánh Giá Sao</th>
+                      <th scope="col">Sao Đánh Giá</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <br />
+                <p style="font-size:15px; color: black;"><i class="fas fa-download"></i> Lượt Tải Bài Hát</p>
+
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col">Tên Bài Hát</th>
+                      <th scope="col">Ngày Tải</th>
+                      <th scope="col">Trạng Thái Tải</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <br />
+                <p style="font-size:15px; color: black;"><i class="fab fa-wpforms"></i> Các Yêu Cầu Của Người Dùng</p>
+
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col">Tiêu Đề</th>
+                      <th scope="col">Ngày Yêu Cầu</th>
+                      <th scope="col">Trạng Thái Giải Quyết</th>
+                      <th scope="col">Lựa Chọn</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>
+                        <button id="btn_Request" type="button" class="btn btn-outline-secondary"
+                          data-bs-toggle="tooltip" data-bs-placement="right" title="Xem Toàn Bộ Nội Dung"
+                          style="border: none;"><i class="fas fa-folder-open"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="az-footer mg-t-auto">
+          <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#"
+                target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+          </div><!-- container -->
+        </div><!-- az-footer -->
+      </div><!-- az-content-body -->
+    </div><!-- container -->
+  </div><!-- az-content -->
+
+  <!--modal View Answer-->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_ShowAnswer">
+    <div class="modal-dialog" style="max-width: 90%;">
+      <div class="modal-content" style="height: 600px;">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-list"></i> Danh Sách Câu Trả Lời Cho Bình Luận Này</h5>
+          <button type="button" class="btn-close" id="btn_CloseAnswer">X</button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên Người Trả Lời</th>
+                <th scope="col">Ngày Trả Lời</th>
+                <th scope="col">Nội Dung</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--modal View Detail Request-->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_ShowRequest">
+    <div class="modal-dialog" style="max-width: 50%;">
+      <div class="modal-content" style="height: 600px;">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-clipboard-list"></i> Phiếu chi tiết yêu cầu</h5>
+          <button type="button" class="btn-close" id="btn_CloseRequest">X</button>
+        </div>
+        <div class="modal-body" style="overflow: scroll;">
+          <div class="row">
+            <div class="col-md-12">
+              <p style="text-align: center; color: black; font-weight: 600; font-size: 20px;">Yêu Cầu Về Phần Mềm Hệ
+                Thống</p>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label" style="color: black; font-weight: 600;">Tên Người Yêu Cầu</label>
+                    <input type="text" class="form-control" value="Trần Duy Tường" disabled>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label" style="color: black; font-weight: 600;">Ngày Yêu Cầu</label>
+                    <input type="text" class="form-control" value="10/03/2022" disabled>
+                  </div>
+                </div>
+              </div>
+
+              <label class="form-label" style="color: black; font-weight: 600;">Nội Dung Yêu Cầu</label>
+              <p style="font-family: inherit; text-align: justify;">
+                Feeback nhiều quá, team mình tiếp tục nhận làm tiểu luận, bài tập lớn, báo cáo tốt nghiệp, luận văn của
+                các ngành sau đây
+                Giáo Dục: Quản lý giáo dục, Giáo dục Mầm non, Giáo dục Tiểu học, Giáo dục Đặc biệt, Sư phạm Ngữ văn,
+                Giáo dục Thể chất, Giáo dục Chính trị, Giáo dục Quốc phòng - An ninh,...
+                - Chính trị - Xã hội - Văn học: Triết học, Chủ nghĩa xã hội khoa học, Tôn giáo học, Lịch sử, Ngôn ngữ
+                học, Xã hội học, Văn học, Công tác xã hội,...
+                - Kinh tế học: Kinh tế, Kinh tế chính trị, Kinh tế đầu tư, Kinh tế phát triển, Kinh tế quốc tế, Thống kê
+                kinh tế,...
+                - Khoa học chính trị: Chính trị học, Xây dựng Đảng và chính quyền nhà nước
+                - Tâm lý học: Tâm lý học, Tâm lý học giáo dục
+                - Kinh doanh: Quản trị kinh doanh, Marketing, Kinh doanh quốc tế, Kinh doanh thương mại
+                - Tài chính: Tài chính ngân hàng, Tài chính, Bảo Hiểm, Tài chính công, Tài chính doanh nghiệp, Tài chính
+                quốc tế,...
+                - Kế toán – Kiểm toán: Kế toán, Kiểm toán
+                - Quản trị – Quản lý: Khoa học quản lý, Quản lý công, Quản trị nhân lực, Hệ thống thông tin quản lý,
+                Quản trị văn phòng, Quan hệ lao động, Quản lý dự án, Quản lý kinh tế, Quản lý nhà nước, Quản lý tài
+                nguyên và môi trường, Quản lý tài nguyên rừng,...
+                - Luật: Luật hiến pháp và luật hành chính, Luật dân sự và tố tụng dân sự, Luật hình sự và tố tụng hình
+                sự, Luật kinh tế, Luật quốc tế,...
+                - Du lịch: Du lịch, Quản trị du lịch lữ hành, Quản trị nhà hàng và dịch vụ ăn uống, Quản trị khách sạn,
+                Quản trị dịch vụ du lịch và lữ hành,...
+                - Văn Hoá: Văn hóa học, Quản lý văn hoá
+                - Y tế: Quản lý bệnh viện, Tổ chức và quản lý y tế, Y đa khoa, Điều dưỡng, Y học dự phòng, Y tế công
+                cộng, Dược học, Y học cổ truyền, Y học Đông Y
+                - Kinh tế nông nghiệp: Kinh tế nông nghiệp, Kinh doanh nông nghiệp, Hợp tác xã
+                - Quản lý đất đai, Xuất nhập khẩu, Logistic, Kinh tế đối ngoại, Chính sách công, Bảo hộ lao động, Quan
+                hệ quốc tế, Việt Nam học, Kinh tế công nghiệp, Quan hệ công chúng, Đông Nam Á học, Quốc tế học, Lưu trữ
+                học, Quản lý thông tin, Thông tin - thư viện
+                Ngoài ra nhận luận văn thạc sỹ, báo cáo tốt nghiệp, chỉnh sửa slide, word nhé
+              </p>
+              <hr />
+              <span style="color: green; text-align: center; font-weight: 600;">Đã xử lý yêu cầu này thành công</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button style="border-radius: 10px;" type="button" class="btn btn-primary"><i class="fas fa-file-word"></i>
+            Xuất File Word</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal view time Activer-->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_ShowTimeWorkuser">
+    <div class="modal-dialog" style="max-width: 90%;">
+      <div class="modal-content" style="height: 600px;">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-signal"></i> Thống Kê Khoản Thời Gian Hoạt Động</h5>
+          <button type="button" class="btn-close" id="btn_CloseWorkTime">X</button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Ngày Đăng Nhập</th>
+                <th scope="col">Thời Gian Đăng Nhập</th>
+                <th scope="col">Thời Gian Thoát</th>
+                <th scope="col">Tổng Giờ Hoạt Động</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button style="border-radius: 10px;" type="button" class="btn btn-success"><i
+              class="fas fa-file-excel"></i>Xuất File Excel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal Show option lock account user-->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_LockAccountUser">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bạn có chắc chắn muốn khóa tài khoản này <i class="fas fa-question"></i></h5>
+          <button type="button" class="btn-close" id="btn_CloseOptionLock">X</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p style="text-align: center;">
+                <button id="btn_AgrrenLock" style="border-radius: 10px;" type="button" class="btn btn-danger">Đồng
+                  Ý</button>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p style="text-align: center;">
+                <button id="btn_CancelLock" style="border-radius: 10px;" type="button" class="btn btn-success">Hủy
+                  Bỏ</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal Show option lock account user-->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_AnLockAccountUser">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bạn có chắc chắn muốn mở khóa tài khoản này <i class="fas fa-question"></i></h5>
+          <button type="button" class="btn-close" id="btn_CloseOptionAnLock">X</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p style="text-align: center;">
+                <button id="btn_AgrrenAnLock" style="border-radius: 10px;" type="button" class="btn btn-danger">Đồng
+                  Ý</button>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p style="text-align: center;">
+                <button id="btn_CancelAnLock" style="border-radius: 10px;" type="button" class="btn btn-success">Hủy
+                  Bỏ</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal Show option remove user-->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="Modal_RemoveUser">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bạn có chắc chắn muốn xóa người dùng này <i class="fas fa-question"></i></h5>
+          <button type="button" class="btn-close" id="btn_CloseOptionRemove">X</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p style="text-align: center;">
+                <button id="btn_AgrrenRemove" style="border-radius: 10px;" type="button" class="btn btn-danger">Đồng
+                  Ý</button>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p style="text-align: center;">
+                <button id="btn_CancelRemove" style="border-radius: 10px;" type="button" class="btn btn-success">Hủy
+                  Bỏ</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal load -->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingSignUp">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background:none; border:none;">
+        <div class="modal-body">
+          <div class="row" style="margin-top:200px;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="spinner-grow text-primary" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-secondary" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery/jquery.min.js"></script>
+  <script
+    src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/ionicons.js"></script>
+  <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/azia.js"></script>
+  <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/Manager_DetailUser.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>Quản Lý Mùa Quanh Năm</title>
+    <link rel="shortcut icon" type="image/png" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/logo.png">
+    <!-- vendor css -->
+    <link href="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/typicons.font/typicons.css" rel="stylesheet">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/css/azia.css">
+
+  </head>
+  <body>
+
+    <div class="az-header">
+      <div class="container">
+        <div class="az-header-left">
+          <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+          <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+          <div class="az-header-menu-header">
+            <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+            <a href="" class="close">&times;</a>
+          </div><!-- az-header-menu-header -->
+          <ul class="nav">
+            <li class="nav-item active show">
+              <a href="index.html" class="nav-link">Trang Chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Hệ Thống</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+              </nav>
+            </li>
+            <li class="nav-item">
+              <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Theo mùa</a>
+              <div class="az-menu-sub">
+                <div class="container">
+                  <div>
+                    <nav class="nav">
+                      <a href="elem-buttons.html" class="nav-link">Mùa Thường Niên</a>
+                      <a href="elem-dropdown.html" class="nav-link">Mùa Chay</a>
+                      <a href="table-basic.html" class="nav-link">Mùa Vọng</a>
+                      <a href="elem-icons.html" class="nav-link">Mùa Giáng Sinh</a>
+                      <a href="table-basic.html" class="nav-link">Mùa Phục Sinh</a>
+                      <a href="table-basic.html" class="nav-link">Ngoại Lịch</a>
+                    </nav>
+                  </div>
+                </div><!-- container -->
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+              </nav>
+            </li>
+          </ul>
+        </div><!-- az-header-menu -->
+      </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+      <div class="container">
+        <div class="az-content-left az-content-left-components">
+          <div class="component-item">
+            <label><i class="fas fa-newspaper"></i> Thông Tin Chung</label>
+            <nav class="nav flex-column">
+              <a href="Infomation-Admin.html" class="nav-link"><i class="fas fa-arrow-right"></i> Cá Nhân</a>
+              <a type="button" id="btn_LeverRole" class="nav-link"><i class="fas fa-arrow-right"></i> Xem Cấp Độ Nâng Cấp</a>
+            </nav>
+
+            <label><i class="fas fa-database"></i> Quản Trị Dữ Liệu</label>
+            <nav class="nav flex-column">
+              <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý File</a>
+              <a href="form-elements.html" class="nav-link active"><i class="fas fa-arrow-right"></i> Quản Lý Mùa Quanh Năm</a>
+              <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Ngày Lễ</a>
+            </nav>
+
+            <label><i class="fas fa-user"></i> Quản Trị Nhân Viên</label>
+            <nav class="nav flex-column">
+              <a href="chart-chartjs.html" class="nav-link"><i class="fas fa-arrow-right"></i> Nhân Viên Của Tôi</a>
+            </nav>
+
+            <label><i class="fas fa-users"></i> Quản Trị Người Dùng</label>
+            <nav class="nav flex-column">
+              <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Người Dùng Của Tôi</a>
+            </nav>
+
+            <label><i class="fas fa-chart-bar"></i> Thống Kê Báo Cáo</label>
+            <nav class="nav flex-column">
+              <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Báo Cáo Chung</a>
+            </nav>
+
+          </div><!-- component-item -->
+
+        </div><!-- az-content-left -->
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+          <div class="az-content-breadcrumb">
+            <span>Trang Chủ</span>
+            <span>Thông Tin Admin</span>
+            <span>Quản Lý Mùa Quanh Năm</span>
+          </div>
+
+          <h2 class="az-content-title">Quản Lý Mùa Quanh Năm</h2>
+          <div class="row">
+            <div class="col-md-12"> 
+              <p style="text-align:right;"> 
+
+                <a id="btn-Reaload" style="border: none;" class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Làm Mới"><i class="fas fa-sync"></i></a>
+
+                <a id="btn-showModalActiverFile" style="border: none;" class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Kích hoạt file"><i class="fas fa-cog"></i></a>
+
+                <a>Tổng Số Mùa: 4</a>
+
+              </p>
+              <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          <input type="checkbox" id="selectall"/>
+                        </th>
+                        <th scope="col">STT</th>
+                        <th scope="col">Tên Mùa </th>
+                        <th scope="col">Ngày Tạo</th>
+                        <th scope="col">Trạng Thái</th>
+                        <th scope="col">Lựa Chọn</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="1"/>
+                        </th>
+                        <td>1</td>
+                        <td>tt</td>
+                        <td>@mdo</td>
+                        <td>
+                          <p style="font-family: inherit; color: green;">
+                            <i class="fas fa-plus-circle"></i>
+                            Hoạt Động
+                          </p>
+                        </td>
+                        <td>
+                          <a style="border: none;" id="btn-CancelActiverSeason" class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Huy Kích Hoạt"><i class="fas fa-folder-minus"></i></a>
+
+                          <a style="border: none;" id="btn-ActiverSeason" class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Kích Hoạt"><i class="fas fa-folder-plus"></i></i></i></a>
+
+                          <a style="border: none;" id="btn-ShowModalListMusic" class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Xem Danh Sách"><i class="fas fa-folder-open"></i></i></i></a>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="2"/>
+                        </th>
+                        <td>2</td>
+                        <td>tt</td>
+                        <td>@mdo</td>
+                        <td>
+                          <p style="font-family: inherit; color: red;">
+                           <i class="fas fa-minus-circle"></i>
+                            Tạm Dừng
+                          </p>
+                        </td>
+                        <td>
+                          <a style="border: none;" id="btn-ShowChooseOption" class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Lựa Chọn Chức Năng"><i class="fas fa-ellipsis-v"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="3"/>
+                        </th>
+                        <td colspan="2">3</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+          </div>
+
+          <div class="az-footer mg-t-auto">
+            <div class="container">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+            </div><!-- container -->
+          </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+      </div><!-- container -->
+    </div><!-- az-content -->
+
+    <!-- choose option activer funtion file -->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowChooseActiverFile">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fas fa-toolbox"></i> Cài đặt trạng thái cho mùa</h5>
+            <button type="button" class="btn-close" id="btn-closeactiver">X</button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p style="text-align:center;">
+                  <button type="button" class="btn btn-outline-secondary">Kích Hoạt</button>
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p style="text-align:center;">
+                  <button type="button" class="btn btn-outline-secondary" id="btn-Anactiver">Hủy Kích Hoạt</button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal show list music buy season-->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowListMusicBuySeason">
+    <div class="modal-dialog" style="max-width: 90%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Danh Sách Bài Hát Thuộc Mùa Này</h5>
+          <button type="button" class="btn-close" id="btn-closemodalSeason">X</button>
+        </div>
+        <div class="modal-body" style="overflow: scroll;">
+          <table class="table table-striped table-hover">
+             <thead>
+                <tr>
+                  <th scope="col">STT</th>
+                  <th scope="col">Tên Bài Hát</th>
+                  <th scope="col">Tên Tác Giả</th>
+                  <th scope="col">Ngày Tạo</th>
+                  <th scope="col">Lượt Thích</th>
+                  <th scope="col">Lượt Tải</th>
+                  <th scope="col">Lựa Chọn</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>
+                    <a style="border: none;" id="btn-ShowChooseOption" class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Xem Chi Tiết Bài Hát"><i class="fas fa-folder-open"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery/jquery.min.js"></script>
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/ionicons.js"></script>
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/azia.js"></script>
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/Manager_Season.js"></script>
+    <script>
+      $(function(){
+        'use strict'
+
+      });
+    </script>
+  </body>
+</html>

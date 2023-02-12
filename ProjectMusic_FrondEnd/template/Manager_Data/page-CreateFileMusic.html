@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>Thêm Mới Bài Hát</title>
+    <link rel="shortcut icon" type="image/png" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/logo.png">
+    <!-- vendor css -->
+    <link href="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/typicons.font/typicons.css" rel="stylesheet">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/css/azia.css">
+
+  </head>
+  <body>
+
+    <div class="az-header">
+      <div class="container">
+        <div class="az-header-left">
+          <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+          <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+          <div class="az-header-menu-header">
+            <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+            <a href="" class="close">&times;</a>
+          </div><!-- az-header-menu-header -->
+          <ul class="nav">
+            <li class="nav-item active show">
+              <a href="index.html" class="nav-link">Trang Chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Hệ Thống</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+              </nav>
+            </li>
+            <li class="nav-item">
+              <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Theo mùa</a>
+              <div class="az-menu-sub">
+                <div class="container">
+                  <div>
+                    <nav class="nav">
+                      <a href="elem-buttons.html" class="nav-link">Mùa Thường Niên</a>
+                      <a href="elem-dropdown.html" class="nav-link">Mùa Chay</a>
+                      <a href="table-basic.html" class="nav-link">Mùa Vọng</a>
+                      <a href="elem-icons.html" class="nav-link">Mùa Giáng Sinh</a>
+                      <a href="table-basic.html" class="nav-link">Mùa Phục Sinh</a>
+                      <a href="table-basic.html" class="nav-link">Ngoại Lịch</a>
+                    </nav>
+                  </div>
+                </div><!-- container -->
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+              </nav>
+            </li>
+          </ul>
+        </div><!-- az-header-menu -->
+      </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+      <div class="container">
+        <div class="az-content-left az-content-left-components">
+          <div class="component-item">
+            <label><i class="fas fa-newspaper"></i> Thông Tin Chung</label>
+            <nav class="nav flex-column">
+              <a href="Infomation-Admin.html" class="nav-link"><i class="fas fa-arrow-right"></i> Cá Nhân</a>
+              <a type="button" id="btn_LeverRole" class="nav-link"><i class="fas fa-arrow-right"></i> Xem Cấp Độ Nâng Cấp</a>
+            </nav>
+
+            <label><i class="fas fa-database"></i> Quản Trị Dữ Liệu</label>
+            <nav class="nav flex-column">
+              <a href="form-elements.html" class="nav-link active"><i class="fas fa-arrow-right"></i> Quản Lý File</a>
+              <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Mùa Quanh Năm</a>
+              <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Ngày Lễ</a>
+            </nav>
+
+            <label><i class="fas fa-user"></i> Quản Trị Nhân Viên</label>
+            <nav class="nav flex-column">
+              <a href="chart-chartjs.html" class="nav-link"><i class="fas fa-arrow-right"></i> Nhân Viên Của Tôi</a>
+            </nav>
+
+            <label><i class="fas fa-users"></i> Quản Trị Người Dùng</label>
+            <nav class="nav flex-column">
+              <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Người Dùng Của Tôi</a>
+            </nav>
+
+            <label><i class="fas fa-chart-bar"></i> Thống Kê Báo Cáo</label>
+            <nav class="nav flex-column">
+              <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Báo Cáo Chung</a>
+            </nav>
+
+          </div><!-- component-item -->
+
+        </div><!-- az-content-left -->
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+          <div class="az-content-breadcrumb">
+            <span>Trang Chủ</span>
+            <span>Thông Tin Admin</span>
+            <span>Quản Lý File</span>
+            <span>Thêm Mới Bài Hát</span>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <!--menu file-->
+              <div>
+                        <ul class="nav">
+                          <li class="nav-item">
+                            <a href="index.html" class="nav-link" style="color: #006fb5; font-weight: 800;"><i class="fas fa-qrcode"></i> Tạo QR</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="" class="nav-link with-sub" style="color: #006fb5; font-weight: 800;"><i class="fas fa-trash"></i> Bài Đã Xóa</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="form-elements.html" class="nav-link" style="color: #006fb5; font-weight: 800;"><i class="fas fa-list"></i> 10 File Mới Tạo</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="" class="nav-link with-sub" style="color: #006fb5; font-weight: 800;"><i class="fas fa-music"></i> Danh Sách Bài gợi ý</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="" class="nav-link with-sub" style="color: #006fb5; font-weight: 800;"><i class="fas fa-file-excel"></i> Xuất File</a>
+                          </li>
+                        </ul>
+                      </div><!-- az-header-menu -->
+            </div>
+          </div>
+
+          <h2 class="az-content-title">Thêm Mới Bài Hát</h2>
+          <div class="row">
+            <div class="col-md-12"> 
+              <div class="row">
+                <div class="col-md-4">
+
+                    <div class="mb-3">
+                      <p style="text-align: center; font-family: inherit; font-weight: 600;"><i class="fas fa-file-word"></i> Phần File</p>
+                      <label class="form-label">Thêm File Bài Hát</label>
+                      <input type="file" class="form-control" style="border-radius: 10px;" id="FileExport">
+                      <span style="color:red; font-family: initial;" id="ValidaFileNameMusic"></span>
+                      <div class="form-text">
+                        Lưu ý: bạn nên đặt tên file theo đúng định dạng<br/> 
+                        + tên bài hát_ngày tháng năm hiện tại <br/>
+                        + ví dụ: XinVang_18-5-2022 <br/>
+                        + file đưa vào phải là dạng file word .doc
+                      </div>
+                      <hr />
+                      <p style="text-align: right;">
+                        <a id="btn-readcontentfile" style="color: #2f2fb1; border: solid 1px; font-weight: 600; border-radius: 5px;" type="button">Đọc File</a>
+                      </p>
+                      
+                    </div> 
+
+                </div>
+                <div class="col-md-8">
+                  
+                    <div class="mb-3">
+                      <p style="text-align: center; font-family: inherit; font-weight: 600;"><i class="fas fa-file"></i> Phần Thông Tin Chung</p>
+                      <label class="form-label">Tên Bài Hát <span style="color:green;" id="checkOkNameMusic"></span></label>
+                      <input id="Txt_EnterNameMusic" onkeyup="CheckValueNameMusic()" style="border-radius: 5px;" type="text" class="form-control" placeholder="Vui lòng nhập tên bài hát...">
+                      <span style="color:red; font-family: initial;" id="ValidaNameMusic"></span>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Tên Tác Giả <span style="color:green;" id="checkOkNameAuthor"></span></label>
+                      <input id="Txt_EnterNameAuthor" onkeyup="CheckValueNameAuthor()" style="border-radius: 5px;" type="text" class="form-control" placeholder="Vui lòng nhập tên tác giả...">
+                      <span style="color:red; font-family: initial;" id="ValidaNameAuthor"></span>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Chọn Mùa</label>
+                      <select style="border-radius: 5px;" class="form-control" id="SelectSeason">
+                        <option selected value="0">Chọn mùa cho bài hát</option>
+                        <option value="1">Mùa Thường Niên</option>
+                        <option value="2">Mùa Chay</option>
+                        <option value="3">Mùa Vọng</option>
+                        <option value="4">Mùa Giáng Sinh</option>
+                        <option value="5">Mùa Phục Sinh</option>
+                        <option value="6">Ngoại Lịch</option>
+                      </select>
+                      <span style="color:red; font-family: initial;" id="ValidaSelectSeason"></span>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Chọn Lễ Ngoại Lịch</label>
+                      <select style="border-radius: 5px;" class="form-control" id="SelectSainst">
+                        <option selected value="0">Chọn mùa cho bài hát</option>
+                        <option value="1">Lễ Về Đức Mẹ</option>
+                        <option value="2">Lễ Về Thánh Cả Giuse</option>
+                        <option value="3">Lễ Về Các Thánh Tử Đạo</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Trạng Thái</label>
+                        <select style="border-radius: 5px;" class="form-control" id="SelectStatus">
+                          <option selected value="0">Chọn trạng thái bài hát</option>
+                          <option value="1">Hoạt Động</option>
+                          <option value="2">Tạm Dừng</option>
+                        </select>
+                        <span style="color:red; font-family: initial;" id="ValidaSelectStatus"></span>
+                    </div>
+                    <p style="text-align: right;">
+                      <button id="btn_confimCreate" style="border-radius: 5px;" type="submit" class="btn btn-outline-secondary"><i class="fas fa-check"></i> Xác Nhận Thông Tin</button>
+                    </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="az-footer mg-t-auto">
+            <div class="container">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+            </div><!-- container -->
+          </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+      </div><!-- container -->
+    </div><!-- az-content -->
+
+
+    <!--form confim create music file-->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-showconfimcreatemusic">
+      <div class="modal-dialog" style="max-width: 90%;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fas fa-plus"></i> Xác nhận tạo mới bài hát</h5>
+            <button type="button" class="btn-close" id="btn-closemodalcreatemusic">X</button>
+          </div>
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Tên Bài Hát</label>
+                    <input type="text" class="form-control" disabled id="TxtNameMusic">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Tên Tác Giả</label>
+                    <input type="text" class="form-control" disabled id="TxtNemAuthor">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Bài Hát Thuộc Mùa</label>
+                    <input type="text" class="form-control" disabled id="TxtSeason">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Lễ Ngoại Lịch</label>
+                    <input type="text" class="form-control" disabled id="TxtSainst">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Trạng Thái Bài Hát</label>
+                    <input type="text" class="form-control" disabled id="TxtStatus">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Id Admin</label>
+                    <input type="text" class="form-control" disabled id="TxtIdAdmin">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Tên Admin</label>
+                    <input type="text" class="form-control" disabled id="TxtNameAdmin">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Ngày Tạo Bài Hát</label>
+                    <input type="text" class="form-control" disabled id="TxtCreateCurrenDay">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Giờ Tạo Bài Hát</label>
+                    <input type="text" class="form-control" disabled id="TxtCreateTime">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Tên File Bài Hát</label>
+                    <input type="text" class="form-control" disabled id="TxtCreateNameFile">
+                  </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="btn-createFileMusic"><i class="fas fa-folder-plus"></i> Tạo Mới</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Modal loading create Music -->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background:none; border:none;">
+        <div class="modal-body">
+          <div class="row" style="margin-top:200px;">
+              <div class="col-md-4"></div>     
+                <div class="col-md-4">
+                    <div class="spinner-grow text-primary" role="status">
+                      <span class="visually-hidden"></span>
+                    </div>
+                    <div class="spinner-grow text-secondary" role="status">
+                      <span class="visually-hidden"></span>
+                    </div>
+                    <div class="spinner-grow text-success" role="status">
+                      <span class="visually-hidden"></span>
+                    </div>
+                </div>
+              <div class="col-md-4"></div>  
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--modal read content in file .doc-->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowContentFileDox">
+  <div class="modal-dialog" style="max-width: 90%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Nội Dung Của File <i class="fas fa-file-image"></i></h5>
+        <button type="button" class="btn-close" id="btn-closecontentfile">X</button>
+      </div>
+      <div class="modal-body" style="height: 600px; overflow: scroll;">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   
+
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery/jquery.min.js"></script>
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/ionicons.js"></script>
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/azia.js"></script>
+    <script src="file:///D:/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/Manager_CreateFile.js"></script>
+
+  </body>
+</html>

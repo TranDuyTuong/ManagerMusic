@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>Danh Sách Bài Hát</title>
+        <link rel="shortcut icon" type="image/png" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/logo.png">
+
+    <!-- vendor css -->
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/css/azia.css">
+
+  </head>
+  <body>
+
+    <div class="az-header">
+      <div class="container">
+        <div class="az-header-left">
+          <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+          <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+          <div class="az-header-menu-header">
+            <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+            <a href="" class="close">&times;</a>
+          </div><!-- az-header-menu-header -->
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Trang Chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Hệ Thống</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+              </nav>
+            </li>
+            <li class="nav-item active show">
+              <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+              </nav>
+            </li>
+            <li class="nav-item">
+              <a href="page-signin.html" class="nav-link">Xin Chào: Trần Duy Tường</a>
+            </li>
+          </ul>
+        </div><!-- az-header-menu -->
+        <div class="az-header-right">
+          <div class="dropdown az-header-notification">
+            <a href="" class="new"><i class="typcn typcn-bell"></i></a>
+
+            <div class="dropdown-menu">
+              <div class="az-dropdown-header mg-b-20 d-sm-none">
+                <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+              </div>
+              <div class="az-notification-list">
+                <div class="media new">
+                  <div class="az-img-user"><img src="../img/faces/face2.jpg" alt=""></div>
+                  <div class="media-body">
+                    <p>Congratulate <strong>Socrates Itumay</strong> for work anniversaries</p>
+                    <span>Mar 15 12:32pm</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media new">
+                  <div class="az-img-user online"><img src="../img/faces/face3.jpg" alt=""></div>
+                  <div class="media-body">
+                    <p><strong>Joyce Chua</strong> just created a new blog post</p>
+                    <span>Mar 13 04:16am</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media">
+                  <div class="az-img-user"><img src="../img/faces/face4.jpg" alt=""></div> 
+                  <div class="media-body">
+                    <p><strong>Althea Cabardo</strong> just created a new blog post</p>
+                    <span>Mar 13 02:56am</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media">
+                  <div class="az-img-user"><img src="../img/faces/face5.jpg" alt=""></div>
+                  <div class="media-body">
+                    <p><strong>Adrian Monino</strong> added new comment on your photo</p>
+                    <span>Mar 12 10:40pm</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+              </div><!-- az-notification-list -->
+              <div class="dropdown-footer"><a href="">View All Notifications</a></div>
+            </div><!-- dropdown-menu -->
+
+          </div><!-- az-header-notification -->
+          <div class="dropdown az-profile-menu">
+            <a href="" class="az-img-user"><img src="../img/faces/face1.jpg" alt=""></a>
+            <div class="dropdown-menu">
+              <div class="az-dropdown-header d-sm-none">
+                <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+              </div>
+
+              <!-- info admin -->
+              <div class="az-header-profile">
+                <div class="az-img-user">
+                  <img src="../img/faces/face1.jpg" alt="">
+                </div><!-- az-img-user -->
+                <h6>Duy Tường</h6>
+                <span>Quản Lý Viên</span>
+              </div><!-- az-header-profile -->
+
+              <button type="button" id="btn_ShowInfoAdmin" class="dropdown-item"><i class="typcn typcn-user-outline"></i> Thông Tin Của Tôi</button>
+              <a class="dropdown-item"><i class="typcn typcn-edit"></i> Chỉnh Sửa Thông Tin</a>
+              <a class="dropdown-item"><i class="fas fa-cog"></i> Quản Lý Hệ Thống</a>
+              <button type="button" id="btn_SignOut" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Thoát</button>
+
+            </div><!-- dropdown-menu -->
+          </div>
+        </div><!-- az-header-right -->
+      </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content az-content-dashboard">
+      <div class="container">
+        <div class="az-content-body">
+          <div class="az-dashboard-one-title">
+            <div>
+              <h2 class="az-dashboard-title"><i class="fas fa-list"></i> Danh Sách Bài Hát</h2>
+            </div>
+            <div class="az-content-header-right">
+
+              <div class="media">
+                <div class="media-body">
+                    <input type="text" class="form-control" placeholder=" Nhập thông tin tìm kiếm ..." style="border-radius: 10px;"/>
+                </div><!-- media-body -->
+              </div><!-- media -->
+
+               <div class="media">
+                <div class="media-body">
+                    <select class="form-control" style="border-radius: 10px;">
+                      <option selected value="0">Vui lòng chọn mùa ...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                </div><!-- media-body -->
+              </div><!-- media -->
+
+                <div class="media">
+                <div class="media-body">
+                    <select class="form-control" style="border-radius: 10px;">
+                      <option selected value="0">Vui lòng chọn ngày lễ ...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                </div><!-- media-body -->
+              </div><!-- media -->
+
+              <div class="media">
+                <div class="media-body">
+                  <label>Bài Hát Hôm Qua</label>
+                  <h6 style="text-align:center;"><i class="fas fa-microphone"></i> 23</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <div class="media">
+
+                <div class="media-body">
+                  <label>Bài Hát Hôm Nay</label>
+                  <h6 style="text-align:center;"><i class="fas fa-microphone"></i> 30</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+            </div>
+          </div><!-- az-dashboard-one-title -->
+          </div><!-- row -->
+          </div><!-- row -->
+
+          <div class="container">
+            <div class="row" style="width: 100%;">
+              <div class="col-md-12">
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <p style="margin: 5px 5px; color: black; font-weight: 600;"><i class="fas fa-search"></i> Tổng Số Bài Hát: <b style="color: red;">100</b></p>
+                  </div>
+
+                  <div class="col-md-6">
+                    <p style="text-align: right;">
+                      <select class="form-control" style="margin: 5px 5px; border-radius: 5px;">
+                        <option selected value="0">Chọn chế độ xem ...</option>
+                        <option value="1">Xem từ A - Z</option>
+                        <option value="2">Xem từ Z - A</option>
+                      </select>
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>   
+
+          <div class="container">
+            <div class="row">
+
+              <div class="col-sm-4">
+                <div class="card hoverCard">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                    Mã: 1 - Tên: Xin Vâng
+                    </h5>
+                    <p class="card-text">Sáng tác: Nguyễn Sang</p>
+                    <p class="card-text">Bài hát cho mùa: <b>Thường Niên</b></p>
+                    <p class="card-text">Hát cho các ngày lễ: <b>Đức Mẹ</b></p>
+                    <p class="card-text" style="text-align: right;">Ngày Cập Nhật: <b>10/07/2022</b></p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <a class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Thích bài hát này" style="border: none;"><i class="fas fa-thumbs-up"></i></a>
+                          <a class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Đã tạo mã QR code" style="border: none;"><i class="fas fa-qrcode"></i></a>
+                          <a id="btn_ShowmodalRating" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Xem đánh giá sao" style="border: none;"><i class="fas fa-star"></i></a>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="btn btn-primary" style="border-radius: 10px;">Xem Chi Tiết</a>
+                      </div>
+                    </div>
+                    <hr />
+                    <p class="card-text">Lượt thích: <b style="color: blue;"><i class="fas fa-thumbs-up"></i> 200</b> - Lượt tải: <b style="color: black;"><i class="fas fa-download"></i> 200</b></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="card hoverCard">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                    Mã: 1 - Tên: Xin Vâng
+                    </h5>
+                    <p class="card-text">Sáng tác: Nguyễn Sang</p>
+                    <p class="card-text">Bài hát cho mùa: <b>Thường Niên</b></p>
+                    <p class="card-text">Hát cho các ngày lễ: <b>Đức Mẹ</b></p>
+                    <p class="card-text" style="text-align: right;">Ngày Cập Nhật: <b>10/07/2022</b></p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <a class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Thích bài hát này" style="border: none;"><i class="fas fa-thumbs-up"></i></a>
+                          <a class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Đã tạo mã QR code" style="border: none;"><i class="fas fa-qrcode"></i></a>
+                          <a class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Xem đánh giá sao" style="border: none;"><i class="fas fa-star"></i></a>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="btn btn-primary" style="border-radius: 10px;">Xem Chi Tiết</a>
+                      </div>
+                    </div>
+                    <hr />
+                    <p class="card-text">Lượt thích: <b style="color: blue;"><i class="fas fa-thumbs-up"></i> 200</b> - Lượt tải: <b style="color: black;"><i class="fas fa-download"></i> 200</b></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="card hoverCard">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                    Mã: 1 - Tên: Xin Vâng
+                    </h5>
+                    <p class="card-text">Sáng tác: Nguyễn Sang</p>
+                    <p class="card-text">Bài hát cho mùa: <b>Thường Niên</b></p>
+                    <p class="card-text">Hát cho các ngày lễ: <b>Đức Mẹ</b></p>
+                    <p class="card-text" style="text-align: right;">Ngày Cập Nhật: <b>10/07/2022</b></p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <a class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Thích bài hát này" style="border: none;"><i class="fas fa-thumbs-up"></i></a>
+                          <a class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Đã tạo mã QR code" style="border: none;"><i class="fas fa-qrcode"></i></a>
+                          <a class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Xem đánh giá sao" style="border: none;"><i class="fas fa-star"></i></a>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="btn btn-primary" style="border-radius: 10px;">Xem Chi Tiết</a>
+                      </div>
+                    </div>
+                    <hr />
+                    <p class="card-text">Lượt thích: <b style="color: blue;"><i class="fas fa-thumbs-up"></i> 200</b> - Lượt tải: <b style="color: black;"><i class="fas fa-download"></i> 200</b></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="card hoverCard">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                    Mã: 1 - Tên: Xin Vâng
+                    </h5>
+                    <p class="card-text">Sáng tác: Nguyễn Sang</p>
+                    <p class="card-text">Bài hát cho mùa: <b>Thường Niên</b></p>
+                    <p class="card-text">Hát cho các ngày lễ: <b>Đức Mẹ</b></p>
+                    <p class="card-text" style="text-align: right;">Ngày Cập Nhật: <b>10/07/2022</b></p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <a class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Thích bài hát này" style="border: none;"><i class="fas fa-thumbs-up"></i></a>
+                          <a class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Đã tạo mã QR code" style="border: none;"><i class="fas fa-qrcode"></i></a>
+                          <a class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Xem đánh giá sao" style="border: none;"><i class="fas fa-star"></i></a>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="btn btn-primary" style="border-radius: 10px;">Xem Chi Tiết</a>
+                      </div>
+                    </div>
+                    <hr />
+                    <p class="card-text">Lượt thích: <b style="color: blue;"><i class="fas fa-thumbs-up"></i> 200</b> - Lượt tải: <b style="color: black;"><i class="fas fa-download"></i> 200</b></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="card hoverCard">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                    Mã: 1 - Tên: Xin Vâng
+                    </h5>
+                    <p class="card-text">Sáng tác: Nguyễn Sang</p>
+                    <p class="card-text">Bài hát cho mùa: <b>Thường Niên</b></p>
+                    <p class="card-text">Hát cho các ngày lễ: <b>Đức Mẹ</b></p>
+                    <p class="card-text" style="text-align: right;">Ngày Cập Nhật: <b>10/07/2022</b></p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <a class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Thích bài hát này" style="border: none;"><i class="fas fa-thumbs-up"></i></a>
+                          <a class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Đã tạo mã QR code" style="border: none;"><i class="fas fa-qrcode"></i></a>
+                          <a class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Xem đánh giá sao" style="border: none;"><i class="fas fa-star"></i></a>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="btn btn-primary" style="border-radius: 10px;">Xem Chi Tiết</a>
+                      </div>
+                    </div>
+                    <hr />
+                    <p class="card-text">Lượt thích: <b style="color: blue;"><i class="fas fa-thumbs-up"></i> 200</b> - Lượt tải: <b style="color: black;"><i class="fas fa-download"></i> 200</b></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="card hoverCard">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                    Mã: 1 - Tên: Xin Vâng
+                    </h5>
+                    <p class="card-text">Sáng tác: Nguyễn Sang</p>
+                    <p class="card-text">Bài hát cho mùa: <b>Thường Niên</b></p>
+                    <p class="card-text">Hát cho các ngày lễ: <b>Đức Mẹ</b></p>
+                    <p class="card-text" style="text-align: right;">Ngày Cập Nhật: <b>10/07/2022</b></p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <a class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Thích bài hát này" style="border: none;"><i class="fas fa-thumbs-up"></i></a>
+                          <a class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Đã tạo mã QR code" style="border: none;"><i class="fas fa-qrcode"></i></a>
+                          <a class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Xem đánh giá sao" style="border: none;"><i class="fas fa-star"></i></a>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="btn btn-primary" style="border-radius: 10px;">Xem Chi Tiết</a>
+                      </div>
+                    </div>
+                    <hr />
+                    <p class="card-text">Lượt thích: <b style="color: blue;"><i class="fas fa-thumbs-up"></i> 200</b> - Lượt tải: <b style="color: black;"><i class="fas fa-download"></i> 200</b></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="card hoverCard">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                    Mã: 1 - Tên: Xin Vâng
+                    </h5>
+                    <p class="card-text">Sáng tác: Nguyễn Sang</p>
+                    <p class="card-text">Bài hát cho mùa: <b>Thường Niên</b></p>
+                    <p class="card-text">Hát cho các ngày lễ: <b>Đức Mẹ</b></p>
+                    <p class="card-text" style="text-align: right;">Ngày Cập Nhật: <b>10/07/2022</b></p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <a class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Thích bài hát này" style="border: none;"><i class="fas fa-thumbs-up"></i></a>
+                          <a class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Đã tạo mã QR code" style="border: none;"><i class="fas fa-qrcode"></i></a>
+                          <a class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Xem đánh giá sao" style="border: none;"><i class="fas fa-star"></i></a>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="btn btn-primary" style="border-radius: 10px;">Xem Chi Tiết</a>
+                      </div>
+                    </div>
+                    <hr />
+                    <p class="card-text">Lượt thích: <b style="color: blue;"><i class="fas fa-thumbs-up"></i> 200</b> - Lượt tải: <b style="color: black;"><i class="fas fa-download"></i> 200</b></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div><!-- az-content-body -->
+      </div>
+    </div><!-- az-content -->
+
+    <div class="az-footer ht-40">
+      <div class="container ht-100p pd-t-0-f">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+      </div><!-- container -->
+    </div><!-- az-footer -->
+
+
+    <!--modal rating-->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_Rating">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fas fa-list"></i> Danh Sách Sao Đánh Giá</h5>
+            <button type="button" class="btn-close" id="colse_Rating">X</button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group">
+              <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                <p style="color: orange;">
+                  Đánh giá: <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  ---- ( 20 đánh giá )
+                </p>
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: orange;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: orange;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+              </li>
+
+              <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                <p style="color: green;">
+                  Đánh giá: <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  ---- ( 20 đánh giá )
+                </p>
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: green;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: green;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+              </li>
+
+              <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                <p style="color: #00a6ff;">
+                  Đánh giá: <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  ---- ( 20 đánh giá )
+                </p>
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: #00a6ff;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: #00a6ff;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+              </li>
+
+              <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                <p style="color: red;">
+                  Đánh giá: <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  ---- ( 20 đánh giá )
+                </p>
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: red;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: red;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+              </li>
+
+              <li class="list-group-item" style="overflow: scroll; height: 120px;">
+                <p style="color: black;">
+                  Đánh giá: <i class="fas fa-star"></i>
+                  ---- ( 20 đánh giá )
+                </p>
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: black;">
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+
+                <p><i style="font-weight: 600;">Duy Tường</i> - 
+                  <b style="color: black;">
+                    <i class="fas fa-star"></i>
+                  </b>
+                  <i style="margin-left: 40px; color: #7b7575;">
+                    Ngày đánh giá: 12/07/2022
+                  </i>
+                </p>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery/jquery.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/ionicons.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery.flot/jquery.flot.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery.flot/jquery.flot.resize.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/peity/jquery.peity.min.js"></script>
+
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/azia.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/ListMusic.js"></script>
+    
+  </body>
+</html>

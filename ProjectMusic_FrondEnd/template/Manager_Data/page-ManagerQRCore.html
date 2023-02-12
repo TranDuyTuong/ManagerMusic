@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>Quản Lý Mã QR Core</title>
+    <link rel="shortcut icon" type="image/png" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/logo.png">
+    <!-- vendor css -->
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/typicons.font/typicons.css" rel="stylesheet">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/css/azia.css">
+
+  </head>
+  <body>
+
+    <div class="az-header">
+      <div class="container">
+        <div class="az-header-left">
+          <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+          <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+          <div class="az-header-menu-header">
+            <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+            <a href="" class="close">&times;</a>
+          </div><!-- az-header-menu-header -->
+          <ul class="nav">
+            <li class="nav-item active show">
+              <a href="index.html" class="nav-link">Trang Chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Hệ Thống</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+              </nav>
+            </li>
+            <li class="nav-item">
+              <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Theo mùa</a>
+              <div class="az-menu-sub">
+                <div class="container">
+                  <div>
+                    <nav class="nav">
+                      <a href="elem-buttons.html" class="nav-link">Mùa Thường Niên</a>
+                      <a href="elem-dropdown.html" class="nav-link">Mùa Chay</a>
+                      <a href="table-basic.html" class="nav-link">Mùa Vọng</a>
+                      <a href="elem-icons.html" class="nav-link">Mùa Giáng Sinh</a>
+                      <a href="table-basic.html" class="nav-link">Mùa Phục Sinh</a>
+                      <a href="table-basic.html" class="nav-link">Ngoại Lịch</a>
+                    </nav>
+                  </div>
+                </div><!-- container -->
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+              </nav>
+            </li>
+          </ul>
+        </div><!-- az-header-menu -->
+      </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+      <div class="container">
+        <div class="az-content-left az-content-left-components">
+          <div class="component-item">
+            <label><i class="fas fa-newspaper"></i> Thông Tin Chung</label>
+            <nav class="nav flex-column">
+              <a href="Infomation-Admin.html" class="nav-link"><i class="fas fa-arrow-right"></i> Cá Nhân</a>
+              <a type="button" id="btn_LeverRole" class="nav-link"><i class="fas fa-arrow-right"></i> Xem Cấp Độ Nâng Cấp</a>
+            </nav>
+
+            <label><i class="fas fa-database"></i> Quản Trị Dữ Liệu</label>
+            <nav class="nav flex-column">
+              <a href="form-elements.html" class="nav-link active"><i class="fas fa-arrow-right"></i> Quản Lý File</a>
+              <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Mùa Quanh Năm</a>
+              <a href="form-elements.html" class="nav-link"><i class="fas fa-arrow-right"></i> Quản Lý Ngày Lễ</a>
+            </nav>
+
+            <label><i class="fas fa-user"></i> Quản Trị Nhân Viên</label>
+            <nav class="nav flex-column">
+              <a href="chart-chartjs.html" class="nav-link"><i class="fas fa-arrow-right"></i> Nhân Viên Của Tôi</a>
+            </nav>
+
+            <label><i class="fas fa-users"></i> Quản Trị Người Dùng</label>
+            <nav class="nav flex-column">
+              <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Người Dùng Của Tôi</a>
+            </nav>
+
+            <label><i class="fas fa-chart-bar"></i> Thống Kê Báo Cáo</label>
+            <nav class="nav flex-column">
+              <a href="table-basic.html" class="nav-link"><i class="fas fa-arrow-right"></i> Báo Cáo Chung</a>
+            </nav>
+
+          </div><!-- component-item -->
+
+        </div><!-- az-content-left -->
+        <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+          <div class="az-content-breadcrumb">
+            <span>Trang Chủ</span>
+            <span>Thông Tin Admin</span>
+            <span>Quản Lý File</span>
+            <span>Tạo QR </span>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+              <!--menu file-->
+              <div>
+                        <ul class="nav">
+                          <li class="nav-item">
+                            <a href="index.html" class="nav-link" style="color: #006fb5; font-weight: 800;"><i class="fas fa-qrcode"></i> Tạo QR</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="" class="nav-link with-sub" style="color: #006fb5; font-weight: 800;"><i class="fas fa-trash"></i> Bài Đã Xóa</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="form-elements.html" class="nav-link" style="color: #006fb5; font-weight: 800;"><i class="fas fa-list"></i> 10 File Mới Tạo</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="" class="nav-link with-sub" style="color: #006fb5; font-weight: 800;"><i class="fas fa-music"></i> Danh Sách Bài gợi ý</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="" class="nav-link with-sub" style="color: #006fb5; font-weight: 800;"><i class="fas fa-file-excel"></i> Xuất File</a>
+                          </li>
+                        </ul>
+                      </div><!-- az-header-menu -->
+            </div>
+          </div>
+
+          <h2 class="az-content-title">Tạo Mã QR Core</h2>
+          <div class="row">
+            <div class="col-md-12"> 
+              <div id="show-htmlSeachMusicQR" style="background-color: #0000000f; border-radius: 5px;">
+                <a id="btn-closehtmlMusicQR" type="button" style="float: right; margin: 5px 10px; color: red;">X</a>
+                <p style="text-align: center; font-family: initial; font-size: 15px;"><i class="fas fa-list"></i> Tìm Kiếm Nâng Cao</p>
+                <div class="row">
+                                  <div class="col-md-6">
+                  <div class="mb-3" style="margin: 10px 10px;">
+                  <label class="form-label">Chọn Theo Mùa</label>
+                  <select class="form-control" style="width: auto; border-radius: 10px;">
+                    <option selected value="0">Lựa Chọn Theo Mùa</option>
+                    <option value="1">Mùa Thường Niên</option>
+                    <option value="2">Mùa Chay</option>
+                    <option value="3">Mùa Vọng</option>
+                    <option value="4">Mùa Giáng Sinh</option>
+                    <option value="5">Mùa Phục Sinh</option>
+                    <option value="6">Ngoại Lịch</option>
+                  </select>
+                </div>
+                <div class="mb-3" style="margin: 10px 10px;">
+                  <label class="form-label">Chọn Tháng</label>
+                  <select class="form-control" style="width: auto; border-radius: 10px;">
+                    <option selected value="0">Lựa Chọn Tháng</option>
+                    <option value="1">Tháng 1</option>
+                    <option value="2">Tháng 2</option>
+                    <option value="3">Tháng 3</option>
+                    <option value="4">Tháng 4</option>
+                    <option value="5">Tháng 5</option>
+                    <option value="6">Tháng 6</option>
+                    <option value="7">Tháng 7</option>
+                    <option value="8">Tháng 8</option>
+                    <option value="9">Tháng 9</option>
+                    <option value="10">Tháng 10</option>
+                    <option value="11">Tháng 11</option>
+                    <option value="12">Tháng 12</option>
+                  </select>
+                </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3" style="margin: 10px 10px;">
+                    <label class="form-label">Chọn Năm</label>
+                    <select class="form-control" style="width: auto; border-radius: 10px;">
+                      <option selected value="0">Lựa Chọn Năm</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2029">2029</option>
+                      <option value="2030">2030</option>
+                      <option value="2031">2031</option>
+                    </select>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <p style="text-align:right;">      
+                <a id="btn-showModalSeachMusicQR" style="border: none;" class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Tìm Kiếm Nâng Cao"><i class="fas fa-search"></i></a>
+                <a id="btn-showModalCreateQR" style="border: none;" class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Tạo Mã QR"><i class="fas fa-cog"></i></a>
+              </p>
+              <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          <input type="checkbox" id="selectall"/>
+                        </th>
+                        <th scope="col">STT</th>
+                        <th scope="col">Tên Bài Hát</th>
+                        <th scope="col">Ngày Tạo</th>
+                        <th scope="col">Theo Mùa</th>
+                        <th scope="col">Đã Tạo Mã</th>
+                        <th scope="col">Lựa Chọn</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="1"/>
+                        </th>
+                        <td>1</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>
+                          <a style="border: none;" class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Tạo Mã QR"><i class="fas fa-qrcode"></i></a>
+                          <a style="border: none;" id="btn-ShowChooseOption" class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Lựa Chọn Chức Năng"><i class="fas fa-ellipsis-v"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="2"/>
+                        </th>
+                        <td>2</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <input type="checkbox" class="case" name="case" value="3"/>
+                        </th>
+                        <td colspan="2">3</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+          </div>
+
+          <div class="az-footer mg-t-auto">
+            <div class="container">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+            </div><!-- container -->
+          </div><!-- az-footer -->
+        </div><!-- az-content-body -->
+      </div><!-- container -->
+    </div><!-- az-content -->
+
+    <!--choose option-->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowChooseOption">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Lựa Chọn Hình Thức Muốn Lấy Mã QR</h5>
+            <button type="button" class="btn-close" id="btn-closeChooseOption">X</button>
+          </div>
+          <div class="modal-body">
+            <p style="text-align:center">
+              <a class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Lấy Dưới Dạng Link Website"><i class="fas fa-link"></i></a>
+              <a class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Lấy Dưới Dạng Hình Tải Về"><i class="fas fa-image"></i></a>
+              <a class="btn btn-outline-secondary" type="button" ata-bs-toggle="tooltip" data-bs-placement="top" title="Xem Mã QR"><i class="fas fa-eye"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- choose option activer funtion file -->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowChooseCreateQR">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fas fa-toolbox"></i> Tạo Mã QR Cho Các Bài Đã Chọn</h5>
+            <button type="button" class="btn-close" id="btn-closeCreateQRCore">X</button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p style="text-align:center;">
+                  <button type="button" class="btn btn-outline-secondary">Tạo Mã QR</button>
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p style="text-align:center;">
+                  <button type="button" class="btn btn-outline-secondary" id="btn-Anactiver">Hủy Tạo Mã QR</button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery/jquery.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/ionicons.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/azia.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/Manager_FileQRCore.js"></script>
+  </body>
+</html>

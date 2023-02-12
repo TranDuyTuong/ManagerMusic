@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90680653-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90680653-2');
+    </script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>Manager Music</title>
+    <link rel="shortcut icon" type="image/png" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/img/logo.png">
+
+    <!-- vendor css -->
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/typicons.font/typicons.css" rel="stylesheet">
+    <link href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/css/azia.css">
+
+  </head>
+  <body>
+
+    <div class="az-header">
+      <div class="container">
+        <div class="az-header-left">
+          <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+          <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+          <div class="az-header-menu-header">
+            <a href="index.html" class="az-logo"><span></span> Manager Music</a>
+            <a href="" class="close">&times;</a>
+          </div><!-- az-header-menu-header -->
+          <ul class="nav">
+            <li class="nav-item active show">
+              <a href="index.html" class="nav-link">Trang Chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Hệ Thống</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Đăng Nhập</a>
+                <a href="page-signup.html" class="nav-link">Đăng Ký</a>
+              </nav>
+            </li>
+            <li class="nav-item">
+              <a href="form-elements.html" class="nav-link">Danh Sách Bài Hát</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Theo mùa</a>
+              <div class="az-menu-sub">
+                <div class="container">
+                  <div>
+                    <nav class="nav">
+                      <a href="elem-buttons.html" class="nav-link">Mùa Thường Niên</a>
+                      <a href="elem-dropdown.html" class="nav-link">Mùa Chay</a>
+                      <a href="table-basic.html" class="nav-link">Mùa Vọng</a>
+                      <a href="elem-icons.html" class="nav-link">Mùa Giáng Sinh</a>
+                      <a href="table-basic.html" class="nav-link">Mùa Phục Sinh</a>
+                      <a href="table-basic.html" class="nav-link">Ngoại Lịch</a>
+                    </nav>
+                  </div>
+                </div><!-- container -->
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link with-sub">Ngôn Ngữ</a>
+              <nav class="az-menu-sub">
+                <a href="page-signin.html" class="nav-link">Tiếng Anh</a>
+                <a href="page-signup.html" class="nav-link">Tiếng Việt</a>
+              </nav>
+            </li>
+          </ul>
+        </div><!-- az-header-menu -->
+        <div class="az-header-right">
+          <button class="az-header-search-link css-SeachData" id="btn-seach-nameMusic"><i class="fas fa-search"></i></button>
+          <div class="dropdown az-header-notification">
+
+            <a class="position-relative">
+              <i class="typcn typcn-bell"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                99+
+              </span>
+            </a>
+
+            <div class="dropdown-menu" >
+              <div class="az-dropdown-header mg-b-20 d-sm-none">
+                <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+              </div>
+              <h6 class="az-notification-title">Notifications</h6>
+              <p class="az-notification-text">You have 2 unread notification</p>
+              <div class="az-notification-list">
+                <div class="media new">
+                  <div class="az-img-user"><i class="fas fa-envelope" style="font-size: 30px; color: #1270d2;"></i></div>
+                  <div class="media-body">
+                    <p>Congratulate <strong>Socrates Itumay</strong> for work anniversaries</p>
+                    <p style="text-align:right;">12/03/2021 -- Mar 15 12:32pm</p>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media new">
+                  <div class="az-img-user online"><i class="fas fa-envelope-open" style="color: #f7007b; font-size: 30px"></i></div>
+                  <div class="media-body">
+                    <p><strong>Joyce Chua</strong> just created a new blog post</p>
+                    <span>Mar 13 04:16am</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                                <div class="media">
+                  <div class="az-img-user"><img src="../img/faces/face4.jpg" alt=""></div> 
+                  <div class="media-body">
+                    <p><strong>Althea Cabardo</strong> just created a new blog post</p>
+                    <span>Mar 13 02:56am</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                                <div class="media">
+                  <div class="az-img-user"><img src="../img/faces/face4.jpg" alt=""></div> 
+                  <div class="media-body">
+                    <p><strong>Althea Cabardo</strong> just created a new blog post</p>
+                    <span>Mar 13 02:56am</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                                <div class="media">
+                  <div class="az-img-user"><img src="../img/faces/face4.jpg" alt=""></div> 
+                  <div class="media-body">
+                    <p><strong>Althea Cabardo</strong> just created a new blog post</p>
+                    <span>Mar 13 02:56am</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media">
+                  <div class="az-img-user"><img src="../img/faces/face4.jpg" alt=""></div> 
+                  <div class="media-body">
+                    <p><strong>Althea Cabardo</strong> just created a new blog post</p>
+                    <span>Mar 13 02:56am</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media">
+                  <div class="az-img-user"><img src="../img/faces/face5.jpg" alt=""></div>
+                  <div class="media-body">
+                    <p><strong>Adrian Monino</strong> added new comment on your photo</p>
+                    <span>Mar 12 10:40pm</span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+              </div><!-- az-notification-list -->
+              <div class="dropdown-footer"><a href="">View All Notifications</a></div>
+            </div><!-- dropdown-menu -->
+          </div><!-- az-header-notification -->
+          <div class="dropdown az-profile-menu">
+            <a href="" class="az-img-user"><img src="../img/faces/face1.jpg" alt=""></a>
+            <div class="dropdown-menu">
+              <div class="az-dropdown-header d-sm-none">
+                <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+              </div>
+
+              <!-- info admin -->
+              <div class="az-header-profile">
+                <div class="az-img-user">
+                  <img src="../img/faces/face1.jpg" alt="">
+                </div><!-- az-img-user -->
+                <h6>Duy Tường</h6>
+                <span>Quản Lý Viên</span>
+              </div><!-- az-header-profile -->
+
+              <button type="button" id="btn_ShowInfoAdmin" class="dropdown-item"><i class="typcn typcn-user-outline"></i> Thông Tin Của Tôi</button>
+              <a class="dropdown-item"><i class="typcn typcn-edit"></i> Chỉnh Sửa Thông Tin</a>
+              <a class="dropdown-item"><i class="fas fa-cog"></i> Quản Lý Hệ Thống</a>
+              <button type="button" id="btn_SignOut" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Thoát</button>
+
+            </div><!-- dropdown-menu -->
+          </div>
+        </div><!-- az-header-right -->
+      </div><!-- container -->
+    </div><!-- az-header -->
+
+    <div class="az-content az-content-dashboard">
+      <div class="container">
+        <div class="az-content-body">
+          <div class="az-dashboard-one-title">
+            <div>
+              <h2 class="az-dashboard-title">Hát, là cầu nguyện hai lần</h2>
+              <p class="az-dashboard-text">Một lời ca bằng ba lời kinh.</p>
+            </div>
+            <div class="az-content-header-right">
+              <div class="media">
+                <div class="media-body">
+                  <label>Hôm Qua</label>
+                  <h6>Oct 10, 2018</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <div class="media">
+                <div class="media-body">
+                  <label>Hôm Nay</label>
+                  <h6>Oct 23, 2018</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <div class="media">
+                <div class="media-body">
+                  <label>Ngày Mai</label>
+                  <h6>All Categories</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+            </div>
+          </div><!-- az-dashboard-one-title -->
+
+          <div class="az-dashboard-nav"> 
+            <nav class="nav">
+              <a class="nav-link active" data-toggle="tab" href="#">Thống Kê Chung</a>
+            </nav>
+
+          </div>
+
+          <div class="row row-sm mg-b-20">
+            <div class="col-lg-7 ht-lg-100p">
+              <div class="card card-dashboard-one">
+                <div class="card-header">
+                  <div>
+                    <h6 class="card-title">Biểu đồ thống kê bài hát mới nhất theo tháng</h6>
+                    <p class="card-text"></p>
+                  </div>
+                  <div class="btn-group">
+                    <select class="form-select select_OptionMoth">
+                      <option selected>Chọn Tháng</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                    <select class="form-select select_OptionYear">
+                      <option selected>Chọn Năm</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2029">2029</option>
+                      <option value="2030">2030</option>
+                      <option value="2031">2031</option>
+                      <option value="2032">2032</option>
+                    </select>
+                  </div>
+                </div><!-- card-header -->
+
+                <div class="card-body">
+                    <div id="columnchart_material" style="width: auto; height: 310px;"></div>
+                </div><!-- card-body -->
+              </div><!-- card -->
+            </div><!-- col -->
+
+            <div class="col-lg-5 mg-t-20 mg-lg-t-0">
+              <div class="row row-sm">
+                <div class="col-sm-6">
+                  <div class="card card-dashboard-two">
+                    <div class="card-header">
+                      <h6>33.50% <i class="icon ion-md-trending-up tx-success"></i><p class="Text-Up">Tăng</p></h6>
+                      <p>Tổng Số Bài Hát Mới Của Tháng Này</p>
+                    </div><!-- card-header -->
+                    <div class="card-body">
+                      <div class="chart-wrapper">
+                        <div id="flotChart1" class="flot-chart"></div>
+                      </div><!-- chart-wrapper -->
+                    </div><!-- card-body -->
+                  </div><!-- card -->
+                </div><!-- col -->
+                <div class="col-sm-6 mg-t-20 mg-sm-t-0">
+                  <div class="card card-dashboard-two">
+                    <div class="card-header">
+                      <h6>86k</h6>
+                      <p>Tổng Số Bài Hát Của Tháng Trước</p>
+                    </div><!-- card-header -->
+                    <div class="card-body">
+                      <div class="chart-wrapper">
+                        <div id="flotChart2" class="flot-chart"></div>
+                      </div><!-- chart-wrapper -->
+                    </div><!-- card-body -->
+                  </div><!-- card -->
+                </div><!-- col -->
+                <div class="col-sm-12 mg-t-20">
+                  <div class="card card-dashboard-three">
+                    <div class="card-header">
+                      <p>Tổng Số Lượt Đã Tải Về</p>
+                        <p type="button" id="showListMusic_Dowload">16,869 <small class="tx-success">Lượt</small> 
+                        </p>
+                      <hr/>
+                      <p>Tổng Số Lượt Đã Tải Lên</p>
+                        <p type="button">16,869 <small class="tx-success">Lượt</small> 
+                        </p>
+                    </div><!-- card-header -->
+                    <div class="card-body">
+                      <div class="chart"><canvas id="chartBar5"></canvas></div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- row -->
+            </div><!--col -->
+          </div><!-- row -->
+
+          <div class="row row-sm mg-b-20">
+            <div class="col-lg-4">
+              <div class="card card-dashboard-pageviews">
+                <div class="card-header">
+                  <h6 class="card-title">Bài Hát Được Tải Về Nhiều Nhất Trong Tháng</h6>
+                </div><!-- card-header -->
+                <div class="card-body">
+                  <div class="az-list-item">
+                    <div>
+                      <h6>Tháng Ca</h6>
+                      <span>Lm. Nguyễn Sang</span>
+                    </div>
+                    <div>
+                      <h6 class="tx-primary">23 Lượt</h6>
+                      <span>Mùa Chay</span>
+                    </div>
+                  </div><!-- list-group-item -->
+                  <div class="az-list-item">
+                    <div>
+                      <h6>Form Elements</h6>
+                      <span>/demo/admin/forms.html</span>
+                    </div>
+                    <div>
+                      <h6 class="tx-primary">5,215</h6>
+                      <span>28.53% (-100.00%)</span>
+                    </div>
+                  </div><!-- list-group-item -->
+                  <div class="az-list-item">
+                    <div>
+                      <h6>Utilities</h6>
+                      <span>/demo/admin/util.html</span>
+                    </div>
+                    <div>
+                      <h6 class="tx-primary">4,848</h6>
+                      <span>25.35% (-100.00%)</span>
+                    </div>
+                  </div><!-- list-group-item -->
+                  <div class="az-list-item">
+                    <div>
+                      <h6>Form Validation</h6>
+                      <span>/demo/admin/validation.html</span>
+                    </div>
+                    <div>
+                      <h6 class="tx-primary">3,275</h6>
+                      <span>23.17% (-100.00%)</span>
+                    </div>
+                  </div><!-- list-group-item -->
+                  <div class="az-list-item">
+                    <div>
+                      <h6>Modals</h6>
+                      <span>/demo/admin/modals.html</span>
+                    </div>
+                    <div>
+                      <h6 class="tx-primary">3,003</h6>
+                      <span>22.21% (-100.00%)</span>
+                    </div>
+                  </div><!-- list-group-item -->
+                </div><!-- card-body -->
+              </div><!-- card -->
+
+            </div><!-- col -->
+            <div class="col-lg-8 mg-t-20 mg-lg-t-0">
+              <div class="card card-dashboard-four">
+                <div class="card-header">
+                  <h6 class="card-title">Tổng Số Bài Hát Của Ứng Dụng</h6>
+                </div><!-- card-header -->
+                <div class="card-body row">
+                  <div class="col-md-12 col-lg-12 mg-lg-l-auto mg-t-20 mg-md-t-0">
+                    <div class="az-traffic-detail-item">
+                      <div>
+                        <span>Mùa Thường Niên</span>
+                        <span>1,320 <span>(25%)</span></span>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar bg-purple wd-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div><!-- progress -->
+                    </div>
+                    <div class="az-traffic-detail-item">
+                      <div>
+                        <span>Mùa Chay</span>
+                        <span>987 <span>(20%)</span></span>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar bg-primary wd-20p" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div><!-- progress -->
+                    </div>
+                    <div class="az-traffic-detail-item">
+                      <div>
+                        <span>Mùa Giáng Sinh</span>
+                        <span>2,010 <span>(30%)</span></span>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar bg-info wd-30p" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div><!-- progress -->
+                    </div>
+                    <div class="az-traffic-detail-item">
+                      <div>
+                        <span>Mùa Phục Sinh</span>
+                        <span>654 <span>(15%)</span></span>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar bg-teal wd-15p" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div><!-- progress -->
+                    </div>
+                    <div class="az-traffic-detail-item">
+                      <div>
+                        <span>Ngoại Lịch</span>
+                        <span>400 <span>(10%)</span></span>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar bg-gray-500 wd-10p" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div><!-- progress -->
+                    </div>
+                  </div><!-- col -->
+                </div><!-- card-body -->
+              </div><!-- card-dashboard-four -->
+            </div><!-- col -->
+          </div><!-- row -->
+
+          <div class="row row-sm mg-b-20 mg-lg-b-0">
+            <div class="col-lg-5 col-xl-4">
+              <div class="row row-sm">
+                <div class="col-md-6 col-lg-12 mg-b-20 mg-md-b-0 mg-lg-b-20">
+                  <div class="card card-dashboard-five">
+                    <div class="card-header">
+                      <h6 class="card-title">Đánh Giá Ứng Dụng</h6>
+                    </div><!-- card-header -->
+                    <div class="card-body row row-sm">
+                      <div class="col-6 d-sm-flex align-items-center">
+                        <div class="card-chart bg-primary">
+                          <span style="color: white;" class="peity-bar" data-peity='{"fill": ["#fff"], "width": 20, "height": 20 }'>120</span>
+                        </div>
+                        <div>
+                          <label>Đánh Giá 5 Sao</label>
+                          <h6><i class="fas fa-star"></i></h6>
+                        </div>
+                      </div><!-- col -->
+                      <div class="col-6 d-sm-flex align-items-center">
+                        <div class="card-chart bg-purple">
+                          <span style="color: white;" class="peity-bar" data-peity='{"fill": ["#fff"], "width": 21, "height": 20 }'>500</span>
+                        </div>
+                        <div>
+                          <label>Lượt Bình Luận</label>
+                          <h6><i class="fas fa-comment"></i></h6>
+                        </div>
+                      </div><!-- col -->
+                    </div><!-- card-body -->
+                  </div><!-- card-dashboard-five -->
+                </div><!-- col -->
+                <div class="col-md-6 col-lg-12">
+                  <div class="card card-dashboard-five">
+                    <div class="card-header">
+                      <h6 class="card-title">Số Lượng Người Dùng Đã Ghé Thăm Website</h6>
+                    </div><!-- card-header -->
+                    <div class="card-body row row-sm">
+                      <div class="col-6 d-sm-flex align-items-center">
+                        <div>
+                          <label>Thân Thiết</label>
+                          <h4>25</h4>
+                        </div>
+                      </div><!-- col -->
+                      <div class="col-6 d-sm-flex align-items-center">
+                        <div>
+                          <label>Giới Thiệu Hệ Thống</label>
+                          <a type="button" id="btn-InfomationWebsite" style="font-weight: 600; font-family: inherit;"><i class="fas fa-street-view"></i> Xem giới thiệu</a>
+                        </div>
+                      </div><!-- col -->
+                    </div><!-- card-body -->
+                  </div><!-- card-dashboard-five -->
+                </div><!-- col -->
+              </div><!-- row -->
+            </div><!-- col-lg-3 -->
+            <div class="col-lg-7 col-xl-8 mg-t-20 mg-lg-t-0">
+              <div class="card card-table-one">
+                <h6 class="card-title"><i class="fas fa-language"></i> Ngôn Ngữ Được Hỗ Trợ</h6>
+                <br>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="wd-45p">Cờ Quốc Gia</th>
+                        <th>Tên Quốc Gia</th>
+                        <th>Tên Ngôn Ngữ</th>
+                        <th>Phần Trăm Hỗ Trợ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><i class="flag-icon flag-icon-us flag-icon-squared"></i></td>
+                        <td><strong>Nước Mỹ</strong></td>
+                        <td><strong>134</strong> (1.51%)</td>
+                        <td>33.58%</td>
+                        <td>15.47%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="flag-icon flag-icon-gb flag-icon-squared"></i></td>
+                        <td><strong>Nước Anh</strong></td>
+                        <td><strong>290</strong> (3.30%)</td>
+                        <td>9.22%</td>
+                        <td>7.99%</td>
+                      </tr>
+                      <tr>
+                        <td><i class="flag-icon flag-icon-vn flag-icon-squared"></i></td>
+                        <td><strong>Nước Việt Nam</strong></td>
+                        <td><strong>290</strong> (3.30%)</td>
+                        <td>9.22%</td>
+                        <td>7.99%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div><!-- table-responsive -->
+              </div><!-- card -->
+            </div><!-- col-lg -->
+
+          </div><!-- row -->
+        </div><!-- az-content-body -->
+      </div>
+    </div><!-- az-content -->
+
+    <div class="az-footer ht-40">
+      <div class="container ht-100p pd-t-0-f">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Thiết Kế Vào Năm 2022</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">Petros Trần Duy Tường</a> từ duytuong0503@gmail.com</span>
+      </div><!-- container -->
+    </div><!-- az-footer -->
+
+    <!--Modal seach name music-->
+    <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-SeachName-music">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tìm kiếm bài hát</h5>
+        <button type="button" class="btn-close">X</button>
+      </div>
+      <div class="modal-body">
+          <input type="text" class="form-control form-seachname-music" placeholder="Nhập tên bài hát, theo mùa,...">
+          <span class="form-text">Vui lòng nhập tên bài hát</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-findName-music"><i class="fas fa-search"></i> Tìm kiếm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal show list music were dowload -->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowMusic-Dowload">
+  <div class="modal-dialog modal-WithDowload">
+    <div class="modal-content modal-HeigthDowload">
+      <div class="modal-header">
+        <h5 class="modal-title">Danh Sách Bài Hát Đã Tải Về</h5>
+        <button type="button" class="btn-close" id="btn-closeModalDowload">X</button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-5">
+            <select class="form-select select_OptionMoth-DowLoadMusic">
+              <option selected>Chọn Tháng</option>
+              <option value="1">Tháng 1</option>
+              <option value="2">Tháng 2</option>
+              <option value="3">Tháng 3</option>
+              <option value="4">Tháng 4</option>
+              <option value="5">Tháng 5</option>
+              <option value="6">Tháng 6</option>
+              <option value="7">Tháng 7</option>
+              <option value="8">Tháng 8</option>
+              <option value="9">Tháng 9</option>
+              <option value="10">Tháng 10</option>
+              <option value="11">Tháng 11</option>
+              <option value="12">Tháng 12</option>
+            </select>
+           <select class="form-select select_OptionYear-DowLoadMusic">
+              <option selected>Chọn Năm</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+             <option value="2024">2024</option>
+             <option value="2025">2025</option>
+             <option value="2026">2026</option>
+             <option value="2027">2027</option>
+             <option value="2028">2028</option>
+             <option value="2029">2029</option>
+             <option value="2030">2030</option>
+             <option value="2031">2031</option>
+             <option value="2032">2032</option>
+          </select>
+          </div>
+          <div class="col-md-7">
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <input type="text" class="form-control seachNameMusic-Dowload" placeholder="Nhập tên bài hát cần tìm...">
+                </div>
+                <div class="col-auto">
+                  <a type="button" class="btnseachNameMusic-Dowload"><i class="fas fa-search"></i></a>
+                  <button type="button" class="btn-SeachEnhance" id="btn-SeachNameMusicOption-Dowload">Tìm Kiếm Nâng Cao</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="body-centerFormSeachMusic-Dowload">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">STT</th>
+                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">Tên Bài Hát</th>
+                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">Thuộc Mùa</th>
+                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">Số Lượng Đã Tải</th>
+                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">Ngày Tải</th>
+                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">Giờ Tải</th>
+                <th scope="col" style="color: black; font-size: 14px; font-family: initial;">Lựa Chọn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>
+                  <button class="btn-detail" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Xem Chi Tiết"><i class="fas fa-folder-open"></i></button>
+                  <button class="btn-dowload" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Tải Về"><i class="fas fa-file-download"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+               <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <span>Manager Music</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal show option choose type seach Name Music Dowload -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowOption-SeachMusicDowload">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Lựa Chọn Điều Kiện Mà Bạn Muốn Tìm Kiếm</h5>
+        <button type="button" class="btn-close" id="btn-CloseModalOption-SeachMusicDowload">X</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- tim theo mua -->
+         <div class="mb-3">
+            <label class="form-label select-label">Chọn Mùa</label>
+            <select class="form-select select-Option-Sumer">
+              <option selected value="0">--Chọn Mùa Bạn Muốn Tìm--</option>
+              <option value="1">Mùa Thường Niên</option>
+              <option value="2">Mùa Chay</option>
+              <option value="4">Mùa Giáng Sinh</option>
+              <option value="5">Mùa Phục Sinh</option>
+              <option value="6">Ngoại Lịch</option>
+            </select>
+          </div>
+
+          <!-- tim theo số lượng -->
+          <div class="mb-3">
+            <label class="form-label select-label">Số Lượng Bài Đã Tải</label>
+            <input style="border-radius: 5px;" type="number" class="form-control" placeholder="Nhập số lượng bài đã tải về...">
+          </div>
+
+          <!-- tim theo ngày tháng -->
+          <div class="mb-3">
+            <label class="form-label select-label">Ngày Tải</label>
+            <input style="border-radius: 5px;" type="date" class="form-control" placeholder="Nhập số lượng bài đã tải về...">
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-styleOption"><i class="fas fa-search"></i> Tìm Kiếm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal show rule of system website -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-InfomationWabsite-Music">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Giới Thiệu Chung Về Manager Music</h5>
+        <button type="button" class="btn-close" id="btn-closeInfomation">X</button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <span>Design By Duy Tường</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Show Infomation Admin -->
+  <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ShowInfomationAdmin">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Thông Tin Người Đăng Nhập</h5>
+        <button type="button" class="btn-close" id="btn_CloseModalInfoAdmin">X</button>
+      </div>
+      <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Họ & Tên</label>
+            <input type="text" class="form-control" value="Trần Duy Tường" disabled>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" value="duytuong0503@gmail.com" disabled>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Ngày Sinh</label>
+            <input type="text" class="form-control" value="05/03/2000" disabled>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Quyền Ứng Dụng</label>
+            <input type="text" class="form-control" value="05/03/2000" disabled>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Ngày Đăng Ký</label>
+            <input type="text" class="form-control" value="05/03/2000" disabled>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i> Chỉnh Sửa Thông Tin</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal show signOut -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-ShowSignOut">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Bạn Có Chắc Chắn Muốn Thoát Không</h5>
+        <button type="button" class="btn-close" id="btn-closeSignOut">X</button>
+      </div>
+      <div class="modal-body">
+        <p style="text-align: center;">
+          <button type="button" class="btn btn-outline-primary">Hủy Bỏ</button>
+          <button type="button" class="btn btn-outline-danger">Đồng Ý</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery/jquery.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/ionicons/ionicons.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery.flot/jquery.flot.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/jquery.flot/jquery.flot.resize.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/chart.js/Chart.bundle.min.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/lib/peity/jquery.peity.min.js"></script>
+
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/azia.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/dashboard.sampledata.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/SeachNameMusic.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="file:///D:/Development_Project/Dev_ManagerMusic/ProjectMusic_FrondEnd/js/chart_Center.js"></script>
+  </body>
+</html>
