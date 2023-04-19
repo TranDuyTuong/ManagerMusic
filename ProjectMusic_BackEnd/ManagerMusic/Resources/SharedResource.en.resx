@@ -1998,6 +1998,9 @@ successfully</value>
   <data name="Title_Notification" xml:space="preserve">
     <value>Titile Notification</value>
   </data>
+  <data name="Title_PageCity" xml:space="preserve">
+    <value>Page List Citys</value>
+  </data>
   <data name="title_request" xml:space="preserve">
     <value>Please enter the title of the request !</value>
   </data>

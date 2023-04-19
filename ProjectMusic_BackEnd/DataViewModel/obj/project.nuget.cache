@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "CvjXRCHgXktGHNXrgB3A/mXzGf2x28A/db82aBEwLthh2e5cQcSI2ETNyd9Ft7UIU3pfy+4iDDPiJpNnl4C0DQ==",
+  "dgSpecHash": "9Rp1hZa5sS7e1AWljLw/vB+n9/wxtcexWW2Qlmsbw08TIDwR7IRkDOEMOg37o/gZBeW0UJDxDoHJlye1Bxs6Kg==",
   "success": true,
-  "projectFilePath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataViewModel\\DataViewModel.csproj",
+  "projectFilePath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataViewModel\\DataViewModel.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\duytu\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
-    "C:\\Users\\duytu\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\duytu\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

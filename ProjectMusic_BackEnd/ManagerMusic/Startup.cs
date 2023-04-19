@@ -1,3 +1,4 @@
+using DataApplication.ApplicationAdmin.ApplicationAddress.Address_App;
 using DataApplication.ApplicationAdmin.ApplicationMusic.Music_App;
 using DataApplication.ApplicationAdmin.ApplicationPlans.Plan_app;
 using DataApplication.ApplicationAdmin.ApplicationReports.Reports_app;
@@ -16,6 +17,7 @@ using DataApplication.ApplicationUser.ApplicationHome.SeasonClient;
 using DataApplication.ApplicationUser.ApplicationNotification;
 using DataApplication.ApplicationUser.ApplicationSignin.SignInUser;
 using DataMigration.DataEF;
+using DataService.ServiceAdmin.Address;
 using DataService.ServiceAdmin.Comment_Answer;
 using DataService.ServiceAdmin.Music;
 using DataService.ServiceAdmin.Plans;
@@ -106,6 +108,7 @@ namespace ManagerMusic
             services.AddTransient<Iusers_app, User_app>();
             services.AddTransient<Ireport_App, Report_App>();
             services.AddTransient<IrequestUser_App, RequestUser_App>();
+            services.AddTransient<IaddressApplication, AddressApplication>();
             //Application Client
             services.AddTransient<IhomeClient_App, HomeClient_App>();
             services.AddTransient<ImusicClient_App, MusicClient_App>();
@@ -128,6 +131,7 @@ namespace ManagerMusic
             services.AddTransient<Iservice_Plans, Service_Plans>();
             services.AddTransient<Iservice_Reports, Service_Reports>();
             services.AddTransient<Isevice_RequestUser, Sevice_RequestUser>();
+            services.AddTransient<Iservice_Citys, Service_Citys>();
             //Service Client
             services.AddTransient<IhomeClient, HomeClient>();
             services.AddTransient<ImusicClient, MusicClient>();

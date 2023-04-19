@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataMigration\\DataMigration.csproj": {}
+    "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataMigration\\DataMigration.csproj": {}
   },
   "projects": {
-    "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataMigration\\DataMigration.csproj": {
+    "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataMigration\\DataMigration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataMigration\\DataMigration.csproj",
+        "projectUniqueName": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataMigration\\DataMigration.csproj",
         "projectName": "DataMigration",
-        "projectPath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataMigration\\DataMigration.csproj",
-        "packagesPath": "C:\\Users\\duytu\\.nuget\\packages\\",
-        "outputPath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataMigration\\obj\\",
+        "projectPath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataMigration\\DataMigration.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataMigration\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\duytu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataTable\\DataTable.csproj": {
-                "projectPath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataTable\\DataTable.csproj"
+              "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataTable\\DataTable.csproj": {
+                "projectPath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataTable\\DataTable.csproj"
               }
             }
           }
@@ -79,7 +79,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -88,21 +89,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataTable\\DataTable.csproj": {
+    "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataTable\\DataTable.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataTable\\DataTable.csproj",
+        "projectUniqueName": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataTable\\DataTable.csproj",
         "projectName": "DataTable",
-        "projectPath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataTable\\DataTable.csproj",
-        "packagesPath": "C:\\Users\\duytu\\.nuget\\packages\\",
-        "outputPath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataTable\\obj\\",
+        "projectPath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataTable\\DataTable.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataTable\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\duytu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -139,7 +140,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -148,7 +150,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\duytu\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataUtilities\\DataUtilities.csproj",
+      "projectUniqueName": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataUtilities\\DataUtilities.csproj",
       "projectName": "DataUtilities",
-      "projectPath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataUtilities\\DataUtilities.csproj",
-      "packagesPath": "C:\\Users\\duytu\\.nuget\\packages\\",
-      "outputPath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataUtilities\\obj\\",
+      "projectPath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataUtilities\\DataUtilities.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataUtilities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\duytu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

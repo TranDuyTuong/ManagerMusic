@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eLfyAazG0bJoDYAaqiTOVmnjBg2m6UwZtd0tkEx0C9tfKr9ohk28HIqQq01ASMuqdS4gySWI478XS96vD5Zl1w==",
+  "dgSpecHash": "u4aVeSYAA5wDvy4QQfdajPFnUW24n76glObI010VbvBj7AScSm8kgbXBohLvtK8BLqpARcBm+a7vQAyqD+efWw==",
   "success": true,
-  "projectFilePath": "D:\\Development_Project\\Dev_ManagerMusic\\ProjectMusic_BackEnd\\ProjectManagerMusic\\DataUtilities\\DataUtilities.csproj",
+  "projectFilePath": "D:\\Project\\v_3\\ManagerMusic\\ProjectMusic_BackEnd\\DataUtilities\\DataUtilities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
