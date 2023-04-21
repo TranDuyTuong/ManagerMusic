@@ -5,5 +5,83 @@
     Layout = "~/Views/Shared/Manager_Address/Page_City.cshtml";
 }
 
-<h1>PageCitys</h1>
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span>@languade.Getkey("Admin_Information")</span>
+        <span>Quản Lý Tỉnh/Tp</span>
+    </div>
+    <h2 class="az-content-title"> Quản Lý Tỉnh/Tp</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align: right;">Tổng Số Tỉnh/Tp: <b style="color: red" id="TotalCitys"></b></p>
+            <div class="row">
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="TxtSeachValue" placeholder="Nhập vào tên Tỉnh/Tp ..." style="border-radius: 5px;">
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-primary" style="border-radius: 5px;" id="btn_Seach"><i class="fas fa-search"></i> Lọc Dữ Liệu</button>
+                </div>
+            </div>
+            <p style="color: red;" id="SeachCitys"></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <input type="checkbox" id="selectall" />
+                        </th>
+                        <th scope="col">@languade.Getkey("No") <i class="fas fa-sort" id="Sort_No"></i></th>
+                        <th scope="col">Tên Tỉnh/Tp</th>
+                        <th scope="col">Ngày Tạo</th>
+                        <th scope="col">Thời Gian Tạo</th>
+                        <th scope="col">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="body_Citys">
+                </tbody>
+            </table>
+            <p style="text-align:right;">@languade.Getkey("page") : <b id="TotalItem" style="color:red;"></b>/<b id="ItemInPage" style="color:black;"></b></p>
+            <!-- Pagination -->
+            <div class="row" style="clear: both;">
+                <div id="pagination" class="pagination"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- Modal loading create Music -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
 

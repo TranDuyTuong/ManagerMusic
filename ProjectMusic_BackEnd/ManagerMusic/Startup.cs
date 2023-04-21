@@ -150,6 +150,9 @@ namespace ManagerMusic
                     options.SlidingExpiration = true;
                 });
 
+            //RazorRunTime
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+
             //chat
             services.AddSignalR();
             services.AddControllersWithViews();
