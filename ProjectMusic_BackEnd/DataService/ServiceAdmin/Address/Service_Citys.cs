@@ -30,6 +30,8 @@ namespace DataService.ServiceAdmin.Address
                     CityId = city.IdCity,
                     CityName = city.NameCity,
                     CreateDate = city.DateCreate.Date,
+                    Symbol = city.Symbol,
+                    AreaCode = city.AreaCode,
                     TimeCreate = city.DateCreate.ToShortTimeString()
                 });
             }

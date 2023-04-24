@@ -477,6 +477,9 @@
   <data name="CreateNew_Saint" xml:space="preserve">
     <value>Add New Saint</value>
   </data>
+  <data name="Create_Citys" xml:space="preserve">
+    <value>Create Citys</value>
+  </data>
   <data name="Create_QR" xml:space="preserve">
     <value>Create QR</value>
   </data>

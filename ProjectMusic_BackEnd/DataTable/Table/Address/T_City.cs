@@ -9,6 +9,8 @@ namespace DataTable.Table.Address
         public int IdCity { get; set; } //key
         public string NameCity { get; set; }
         public DateTime DateCreate { get; set; }
+        public string Symbol { get; set; }
+        public int AreaCode { get; set; }
         public List<T_District> T_Districts { get; set; }
         public List<T_User> T_Users { get; set; }
     }

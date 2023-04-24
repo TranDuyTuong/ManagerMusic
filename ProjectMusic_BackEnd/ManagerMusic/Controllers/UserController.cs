@@ -27,7 +27,7 @@ using ManagerMusic.Models.DowloadMuisc;
 
 namespace ManagerMusic.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class UserController : BaseController
     {
         private readonly Irole_App context;
@@ -42,14 +42,14 @@ namespace ManagerMusic.Controllers
             context_User = _context_User;
         }
         //get all staff
-        //[Authorize(Roles = RoleSetting.symbolRole_Admin)]
+        [Authorize(Roles = RoleSetting.symbolRole_Admin)]
         [HttpGet]
         public IActionResult Page_Staff()
         {
             return View();
         }
 
-        //[Authorize(Roles = RoleSetting.symbolRole_Admin)]
+        [Authorize(Roles = RoleSetting.symbolRole_Admin)]
         [HttpGet]
         public IActionResult JsonGetAllSatff(int PageIndex, int PageSize)
         {

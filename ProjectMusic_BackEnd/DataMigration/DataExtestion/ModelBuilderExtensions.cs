@@ -19,23 +19,11 @@ namespace DataMigration.DataExtestion
         public static void Seed(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<T_City>().HasData(
-                new T_City() { IdCity = 1, NameCity = "Thành Phố Hồ Chí Mình", DateCreate = DateTime.UtcNow.AddHours(7)},
-                new T_City() { IdCity = 2, NameCity = "Thủ Đô Hà Nội", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_City() { IdCity = 3, NameCity = "Thành Phố Huế", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_City() { IdCity = 4, NameCity = "Thành Phố Đã Nẵng", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_City() { IdCity = 5, NameCity = "Thành Phố Đà Lạt", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_City() { IdCity = 6, NameCity = "Thành Phố Vũng Tàu", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_City() { IdCity = 7, NameCity = "Thành Phố Nha Trang", DateCreate = DateTime.UtcNow.AddHours(7) }
+                new T_City() { IdCity = 1, NameCity = "Thành Phố Hồ Chí Mình", DateCreate = DateTime.UtcNow.AddHours(7), Symbol="SG", AreaCode=28},
+                new T_City() { IdCity = 2, NameCity = "Thủ Đô Hà Nội", DateCreate = DateTime.UtcNow.AddHours(7), Symbol="HN", AreaCode=24}
                 );
-
             modelBuilder.Entity<T_District>().HasData(
-                new T_District() { IdDistrict = 1, IdCity = 1, NameDistrict = "Quận 1", DateCreate = DateTime.UtcNow.AddHours(7)},
-                new T_District() { IdDistrict = 2, IdCity = 2, NameDistrict = "Quận Hoàn Kiếm", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_District() { IdDistrict = 3, IdCity = 3, NameDistrict = "Phường An Cựu", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_District() { IdDistrict = 4, IdCity = 4, NameDistrict = "Quận Hải Châu", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_District() { IdDistrict = 5, IdCity = 5, NameDistrict = "Xã Xuân Thọ", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_District() { IdDistrict = 6, IdCity = 6, NameDistrict = "Phường Thắng Tam", DateCreate = DateTime.UtcNow.AddHours(7) },
-                new T_District() { IdDistrict = 7, IdCity = 7, NameDistrict = "Phường Vĩnh Phước", DateCreate = DateTime.UtcNow.AddHours(7) }
+                new T_District() {IdDistrict = 1, NameDistrict= "Quận 1", DateCreate = DateTime.UtcNow.AddHours(7), IdCity = 1 }
                 );
 
             modelBuilder.Entity<T_Gender>().HasData(

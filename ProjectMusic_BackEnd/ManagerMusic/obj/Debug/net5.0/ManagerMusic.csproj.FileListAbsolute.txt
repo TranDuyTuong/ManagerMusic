@@ -853,3 +853,4 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\M
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\Razor\Views\ManagerAddress\PageCreateCitys.cshtml.g.cs

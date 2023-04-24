@@ -480,6 +480,9 @@
   <data name="CreateNew_Saint" xml:space="preserve">
     <value>Thêm Mới Ngày Lễ</value>
   </data>
+  <data name="Create_Citys" xml:space="preserve">
+    <value>Thêm Mới Tỉnh/Tp</value>
+  </data>
   <data name="Create_QR" xml:space="preserve">
     <value>Tạo QR</value>
   </data>

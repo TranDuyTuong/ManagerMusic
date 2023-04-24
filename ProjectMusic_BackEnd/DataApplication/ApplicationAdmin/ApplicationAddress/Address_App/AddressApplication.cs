@@ -52,7 +52,9 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
                         CityId = findCitySeach.CityId,
                         CityName = findCitySeach.CityName,
                         CreateDate = findCitySeach.CreateDate.Date,
-                        TimeCreate = findCitySeach.TimeCreate
+                        TimeCreate = findCitySeach.TimeCreate,
+                        Symbol = findCitySeach.Symbol,
+                        AreaCode = findCitySeach.AreaCode
                     });
                 }
                 

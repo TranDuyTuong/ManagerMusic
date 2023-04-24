@@ -47,6 +47,6 @@
     <script src="~/js/jquery.twbsPagination.min.js"></script>
     <script src="~/js/js_Partial/HeaderMenu.js" asp-append-version="true"></script>
     <script src="~/js/azia.js"></script>
-    <script src="~/js/js_Address/Manager_GetAllCitys.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

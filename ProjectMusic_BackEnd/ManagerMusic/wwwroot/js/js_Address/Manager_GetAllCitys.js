@@ -45,6 +45,8 @@ function LoadCitys() {
                 html += '<td>' + item.cityName + '</td>';
                 html += '<td>' + item.createDate + '</td>';
                 html += '<td>' + item.timeCreate + '</td>';
+                html += '<td>' + item.symbol + '</td>';
+                html += '<td>' + item.areaCode + '</td>';
                 html += '<td>';
                 html += '<button type="button" style="border: none;" name="ChangeStatus" class="btn btn-outline-secondary" ata-bs-toggle="tooltip" data-bs-placement="top"><i class="fas fa-sync"></i></button>';
                 html += '<button type="button" style="border: none;" name="ViewListMusic" class="btn btn-outline-secondary" ata-bs-toggle="tooltip" data-bs-placement="top"><i class="fas fa-folder-open"></i></button>';

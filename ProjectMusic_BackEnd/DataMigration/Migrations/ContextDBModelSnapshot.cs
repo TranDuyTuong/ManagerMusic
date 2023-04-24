@@ -41,13 +41,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdAccountActiver = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(9742),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(8237),
                             NameAccountActiver = "Hoạt Động"
                         },
                         new
                         {
                             IdAccountActiver = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(9979),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(8390),
                             NameAccountActiver = "Đang Bị Khóa"
                         });
                 });
@@ -82,12 +82,19 @@ namespace DataMigration.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("AreaCode")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NameCity")
                         .IsRequired()
                         .HasColumnType("Nvarchar(300)");
+
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdCity");
 
@@ -97,44 +104,18 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdCity = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 988, DateTimeKind.Utc).AddTicks(9915),
-                            NameCity = "Thành Phố Hồ Chí Mình"
+                            AreaCode = 28,
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 755, DateTimeKind.Utc).AddTicks(4734),
+                            NameCity = "Thành Phố Hồ Chí Mình",
+                            Symbol = "SG"
                         },
                         new
                         {
                             IdCity = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 989, DateTimeKind.Utc).AddTicks(484),
-                            NameCity = "Thủ Đô Hà Nội"
-                        },
-                        new
-                        {
-                            IdCity = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 989, DateTimeKind.Utc).AddTicks(493),
-                            NameCity = "Thành Phố Huế"
-                        },
-                        new
-                        {
-                            IdCity = 4,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 989, DateTimeKind.Utc).AddTicks(495),
-                            NameCity = "Thành Phố Đã Nẵng"
-                        },
-                        new
-                        {
-                            IdCity = 5,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 989, DateTimeKind.Utc).AddTicks(502),
-                            NameCity = "Thành Phố Đà Lạt"
-                        },
-                        new
-                        {
-                            IdCity = 6,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 989, DateTimeKind.Utc).AddTicks(504),
-                            NameCity = "Thành Phố Vũng Tàu"
-                        },
-                        new
-                        {
-                            IdCity = 7,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 989, DateTimeKind.Utc).AddTicks(506),
-                            NameCity = "Thành Phố Nha Trang"
+                            AreaCode = 24,
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 755, DateTimeKind.Utc).AddTicks(5322),
+                            NameCity = "Thủ Đô Hà Nội",
+                            Symbol = "HN"
                         });
                 });
 
@@ -165,51 +146,9 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdDistrict = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(2655),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(2935),
                             IdCity = 1,
                             NameDistrict = "Quận 1"
-                        },
-                        new
-                        {
-                            IdDistrict = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(2877),
-                            IdCity = 2,
-                            NameDistrict = "Quận Hoàn Kiếm"
-                        },
-                        new
-                        {
-                            IdDistrict = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(2879),
-                            IdCity = 3,
-                            NameDistrict = "Phường An Cựu"
-                        },
-                        new
-                        {
-                            IdDistrict = 4,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(2880),
-                            IdCity = 4,
-                            NameDistrict = "Quận Hải Châu"
-                        },
-                        new
-                        {
-                            IdDistrict = 5,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(2882),
-                            IdCity = 5,
-                            NameDistrict = "Xã Xuân Thọ"
-                        },
-                        new
-                        {
-                            IdDistrict = 6,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(2883),
-                            IdCity = 6,
-                            NameDistrict = "Phường Thắng Tam"
-                        },
-                        new
-                        {
-                            IdDistrict = 7,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(2885),
-                            IdCity = 7,
-                            NameDistrict = "Phường Vĩnh Phước"
                         });
                 });
 
@@ -324,19 +263,19 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdGender = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(3634),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(3879),
                             NameGender = "Nam"
                         },
                         new
                         {
                             IdGender = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(3806),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(4036),
                             NameGender = "Nữ"
                         },
                         new
                         {
                             IdGender = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(3809),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(4037),
                             NameGender = "Giới Tính Khác"
                         });
                 });
@@ -392,19 +331,19 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdMarriage = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(4417),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(4566),
                             NameMarriage = "Độc Thân"
                         },
                         new
                         {
                             IdMarriage = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(4579),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(4719),
                             NameMarriage = "Đã Kết Hôn"
                         },
                         new
                         {
                             IdMarriage = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(4581),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(4720),
                             NameMarriage = "Đã Ly Hôn"
                         });
                 });
@@ -540,19 +479,19 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdStatusMusic = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(5167),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(5239),
                             NameStatusMusic = "Đang Hoạt Động"
                         },
                         new
                         {
                             IdStatusMusic = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(5330),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(5388),
                             NameStatusMusic = "Ngưng Hoạt Động"
                         },
                         new
                         {
                             IdStatusMusic = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(5333),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(5389),
                             NameStatusMusic = "Đã Xóa"
                         });
                 });
@@ -780,13 +719,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdRead = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(5887),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(5898),
                             ReadContent = "Đã Đọc"
                         },
                         new
                         {
                             IdRead = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(6044),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(6051),
                             ReadContent = "Chưa Đọc"
                         });
                 });
@@ -814,19 +753,19 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdReceiveRequest = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(6583),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(6553),
                             Description = "Chưa Giải Quyết"
                         },
                         new
                         {
                             IdReceiveRequest = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(6740),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(6700),
                             Description = "Đang Giải Quyết"
                         },
                         new
                         {
                             IdReceiveRequest = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(6741),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(6702),
                             Description = "Đã Giải Quyết"
                         });
                 });
@@ -957,14 +896,14 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdTypeSent = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(7322),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(7208),
                             NameType = "Gửi Qua Gmail",
                             Status = true
                         },
                         new
                         {
                             IdTypeSent = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(7622),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(7483),
                             NameType = "Gửi Qua Tin Nhắn Website",
                             Status = true
                         });
@@ -1040,8 +979,8 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdRole = new Guid("99ef88a8-d94b-469e-bac0-39694b407976"),
-                            ConcurrencyStamp = "54145ef5-9f24-4b64-a85b-71a714536186",
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(329),
+                            ConcurrencyStamp = "5f2e1d54-26d2-4c15-a61e-2cb4aac1daa2",
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(12),
                             Description = "Nhân Viên",
                             Id = new Guid("99ef88a8-d94b-469e-bac0-39694b407976"),
                             IdStatusRole = 1,
@@ -1051,8 +990,8 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdRole = new Guid("353f756f-ae8d-49b5-b922-9d54ca0b9c2d"),
-                            ConcurrencyStamp = "a6804280-f984-48ce-9733-6b61b1acf2ac",
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(509),
+                            ConcurrencyStamp = "cf884757-da33-4c8d-9dd8-e0e37857c1e5",
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(202),
                             Description = "Người Dùng",
                             Id = new Guid("353f756f-ae8d-49b5-b922-9d54ca0b9c2d"),
                             IdStatusRole = 1,
@@ -1062,8 +1001,8 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdRole = new Guid("4fd681b6-5dd2-4a5a-aa9e-b2806c61d4ca"),
-                            ConcurrencyStamp = "e70e8f09-7984-4a24-9352-94b9ceabc87d",
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(518),
+                            ConcurrencyStamp = "ff32ec79-bf00-4e74-bda5-838829fbf6af",
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(210),
                             Description = "Quản Lý",
                             Id = new Guid("4fd681b6-5dd2-4a5a-aa9e-b2806c61d4ca"),
                             IdStatusRole = 1,
@@ -1095,13 +1034,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdStatusRole = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(8155),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(7989),
                             NameStatus = "Hoạt Động"
                         },
                         new
                         {
                             IdStatusRole = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 990, DateTimeKind.Utc).AddTicks(8317),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 756, DateTimeKind.Utc).AddTicks(8141),
                             NameStatus = "Ngưng Hoạt Động"
                         });
                 });
@@ -1168,7 +1107,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSaints = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2214),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1693),
                             IdStatusSaints = 1,
                             IdUser = new Guid("00000000-0000-0000-0000-000000000000"),
                             NameSaints = "Lễ Đức Mẹ"
@@ -1176,7 +1115,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSaints = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2372),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1842),
                             IdStatusSaints = 1,
                             IdUser = new Guid("00000000-0000-0000-0000-000000000000"),
                             NameSaints = "Lễ Thánh GiuSe"
@@ -1184,7 +1123,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSaints = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2374),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1844),
                             IdStatusSaints = 1,
                             IdUser = new Guid("00000000-0000-0000-0000-000000000000"),
                             NameSaints = "Lễ Các Thánh Tử Đạo "
@@ -1192,7 +1131,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSaints = 4,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2375),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1845),
                             IdStatusSaints = 1,
                             IdUser = new Guid("00000000-0000-0000-0000-000000000000"),
                             NameSaints = "Lễ Thánh Nữ"
@@ -1200,7 +1139,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSaints = 5,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2376),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1846),
                             IdStatusSaints = 1,
                             IdUser = new Guid("00000000-0000-0000-0000-000000000000"),
                             NameSaints = "Lễ Thánh Nam"
@@ -1208,7 +1147,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSaints = 6,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2378),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1847),
                             IdStatusSaints = 1,
                             IdUser = new Guid("00000000-0000-0000-0000-000000000000"),
                             NameSaints = "Lễ Chúa Thánh Thần"
@@ -1216,7 +1155,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSaints = 7,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2379),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1848),
                             IdStatusSaints = 1,
                             IdUser = new Guid("00000000-0000-0000-0000-000000000000"),
                             NameSaints = "Lễ Về Ơn Gọi"
@@ -1224,7 +1163,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSaints = 8,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2380),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1849),
                             IdStatusSaints = 1,
                             IdUser = new Guid("00000000-0000-0000-0000-000000000000"),
                             NameSaints = "Không thuộc lễ ngoại lịch"
@@ -1254,13 +1193,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdIdStatusSaints = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(1174),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(812),
                             NameStatusSaints = "Hoạt Động"
                         },
                         new
                         {
                             IdIdStatusSaints = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(1337),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(1002),
                             NameStatusSaints = "Ngưng Hoạt Động"
                         });
                 });
@@ -1293,42 +1232,42 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdSeason = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(3748),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(3191),
                             IdStatusSeason = 1,
                             NameSeason = "Mùa Thường Niên"
                         },
                         new
                         {
                             IdSeason = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(3902),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(3338),
                             IdStatusSeason = 1,
                             NameSeason = "Mùa Vọng"
                         },
                         new
                         {
                             IdSeason = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(3904),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(3339),
                             IdStatusSeason = 1,
                             NameSeason = "Mùa Giáng Sinh"
                         },
                         new
                         {
                             IdSeason = 4,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(3905),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(3340),
                             IdStatusSeason = 1,
                             NameSeason = "Mùa Phục Sinh"
                         },
                         new
                         {
                             IdSeason = 5,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(3906),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(3341),
                             IdStatusSeason = 1,
                             NameSeason = "Mùa Chay"
                         },
                         new
                         {
                             IdSeason = 6,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(3907),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(3342),
                             IdStatusSeason = 1,
                             NameSeason = "Ngoại Lịch"
                         });
@@ -1357,13 +1296,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdStatusSeason = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(2934),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(2395),
                             NameStatus = "Hoạt Động"
                         },
                         new
                         {
                             IdStatusSeason = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(3090),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(2548),
                             NameStatus = "Ngưng Hoạt Động"
                         });
                 });
@@ -1530,13 +1469,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             IsStatusSent = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(4439),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(3864),
                             Description = "Gửi Thành Công"
                         },
                         new
                         {
                             IsStatusSent = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(4592),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(4018),
                             Description = "Gửi Thất Bại"
                         });
                 });
@@ -1607,13 +1546,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             StatusStaffOff = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(5107),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(4530),
                             Description = "Còn Làm"
                         },
                         new
                         {
                             StatusStaffOff = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(5266),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(4681),
                             Description = "Nghĩ Làm"
                         });
                 });
@@ -1741,13 +1680,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdDeleteNotification = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(5841),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(5186),
                             Description = "Chưa Xóa Thông Báo"
                         },
                         new
                         {
                             IdDeleteNotification = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(5999),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(5336),
                             Description = "Đã Xóa Thông Báo"
                         });
                 });
@@ -1779,21 +1718,21 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdLever = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(6838),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(5963),
                             DescriptionName = "- Đây là cấp độ thấp nhất các tài khoản ở cấp độ này chỉ được phép dùng từ 1 đến 2 chức năng của hệ thống, đa số ở cấp độ này sẻ là người dùng là chủ yếu họ chỉ được thao tác các chức năng mà được cấp phép.",
                             Name = "Cấp Độ Đồng"
                         },
                         new
                         {
                             IdLever = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(7051),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(6112),
                             DescriptionName = "- Đây là cấp độ ở mức trung bình không nhỏ cũng không lớn, đa số các tài khoản ở cấp độ này sẻ là các cộng tác viên được cấp độ vàng phân quyền cho, vì vậy với cấp độ bạc bạn sẻ bị hạn chế một vài chức năng của hệ thống mà bạn không được phép dùng.",
                             Name = "Cấp Độ Bạc"
                         },
                         new
                         {
                             IdLever = 3,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(7055),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(6119),
                             DescriptionName = "- Đây là cấp độ lớn nhất của hệ thống, với cấp độ này thì được phép dùng tất cả chức năng có trong hệ thống, quản lý toàn bộ các cấp độ khác nhỏ hơn, quản trị toàn bộ dữ liệu thông tin của hệ thống.",
                             Name = "Cấp Độ Vàng"
                         });
@@ -1871,7 +1810,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdStaffOrUser = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(7961),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(6763),
                             Description = "Người Dùng",
                             Status = true,
                             symbol = "ND"
@@ -1879,7 +1818,7 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdStaffOrUser = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(8261),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(7043),
                             Description = "Nhân Viên",
                             Status = true,
                             symbol = "NV"
@@ -2072,13 +2011,13 @@ namespace DataMigration.Migrations
                         new
                         {
                             IdViewNotification = 1,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(8852),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(7573),
                             Description = "Đã Xem"
                         },
                         new
                         {
                             IdViewNotification = 2,
-                            DateCreate = new DateTime(2023, 4, 18, 10, 19, 56, 991, DateTimeKind.Utc).AddTicks(9014),
+                            DateCreate = new DateTime(2023, 4, 24, 13, 51, 25, 757, DateTimeKind.Utc).AddTicks(7731),
                             Description = "Chưa Xem"
                         });
                 });
