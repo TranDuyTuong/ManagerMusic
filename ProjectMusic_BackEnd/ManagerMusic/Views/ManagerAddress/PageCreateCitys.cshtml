@@ -22,20 +22,20 @@
                     <button class="btn btn-primary" style="border-radius: 10px" id="BtnReadExcelFile"><i class="fas fa-file-excel"></i> Đọc File</button>
                 </div>
             </div>
-            
+
             <p style="text-align: right;">Tổng Số Tỉnh/Tp: <b style="color: red" id="TotalCitys"></b></p>
-@*            <div class="row">
-                <div class="col-md-9">
-                    <input type="text" class="form-control" id="TxtSeachValue" placeholder="Nhập vào tên Tỉnh/Tp ..." style="border-radius: 5px;">
-                </div>
-                <div class="col-md-3">
-                    <button type="button" class="btn btn-primary" style="border-radius: 5px;" id="btn_Seach"><i class="fas fa-search"></i> Lọc Dữ Liệu</button>
-                </div>
+            @*            <div class="row">
+            <div class="col-md-9">
+            <input type="text" class="form-control" id="TxtSeachValue" placeholder="Nhập vào tên Tỉnh/Tp ..." style="border-radius: 5px;">
+            </div>
+            <div class="col-md-3">
+            <button type="button" class="btn btn-primary" style="border-radius: 5px;" id="btn_Seach"><i class="fas fa-search"></i> Lọc Dữ Liệu</button>
+            </div>
             </div>*@
             <p style="font-weight:600;"><i class="fas fa-list"></i> Danh Sách Thông Tin Tỉnh/Tp Đã Được Đọc</p>
             <p style="color: red;" id="SeachCitys"></p>
             <p>
-                <button type="button" class="btn btn-primary"><i class="fas fa-database"></i> Kiểm Tra CSDL</button>
+                <button type="button" class="btn btn-primary" style="border-radius: 10px" id="BtnCheckDataImport"><i class="fas fa-database"></i> Kiểm Tra CSDL</button>
             </p>
             <table class="table table-hover">
                 <thead>
@@ -94,6 +94,37 @@
         </div>
     </div>
 </div>
+
+<!-- Modal check data in DB-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_CheckData">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-server"></i> Dữ Liệu Bị Trùng Lặp Trong CSDL</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p style="text-align: right">Đã Tìm Thấy: <b style="color: red" id="TotalCheck"></b></p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tên Tỉnh/Tp</th>
+                            <th scope="col">Ngày Tạo</th>
+                            <th scope="col">Ký Hiệu</th>
+                            <th scope="col">Mã Vùng</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Check_Citys">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="BtnConfim"><i class="fas fa-cloud-download-alt"></i> Cập Nhật CSDL</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <input type="hidden" value="@languade.Getkey("head")" id="head" />
 <input type="hidden" value="@languade.Getkey("next")" id="next" />
 <input type="hidden" value="@languade.Getkey("last")" id="last" />

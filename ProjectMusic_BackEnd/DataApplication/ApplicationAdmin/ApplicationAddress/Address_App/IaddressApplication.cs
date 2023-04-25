@@ -13,5 +13,10 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// GetAllCitys
         /// </summary>
         PadingCity_Vm GetAllCitys(int pageIndex, int pageSize, int orderBy, string seach);
+
+        /// <summary>
+        /// Check Data Citys in DB
+        /// </summary>
+        List<GetAllCity_Vm> CheckDataCityDB(List<GetAllCity_Vm> request);
     }
 }

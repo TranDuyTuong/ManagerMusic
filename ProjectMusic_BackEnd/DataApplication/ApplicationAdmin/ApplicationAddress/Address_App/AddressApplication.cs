@@ -17,6 +17,15 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         }
 
         /// <summary>
+        /// CheckDataCityDB
+        /// </summary>
+        public List<GetAllCity_Vm> CheckDataCityDB(List<GetAllCity_Vm> request)
+        {
+            var result = _context.CheckDataCityDB(request);
+            return result;
+        }
+
+        /// <summary>
         /// GetAllCitys and pading
         /// </summary>
         public PadingCity_Vm GetAllCitys(int pageIndex, int pageSize, int orderBy, string seach)

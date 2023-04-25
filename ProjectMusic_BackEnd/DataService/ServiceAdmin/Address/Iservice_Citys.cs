@@ -13,5 +13,16 @@ namespace DataService.ServiceAdmin.Address
         /// GetAllCitys
         /// </summary>
         List<GetAllCity_Vm> GetAllCitys();
+
+        /// <summary>
+        /// GetAllCitys
+        /// </summary>
+        List<GetAllCity_Vm> CheckDataCityDB(List<GetAllCity_Vm> request);
+
+        /// <summary>
+        /// GetAllCitys
+        /// </summary>
+        Task<NotificationAddress_Vm> CreateCitys(List<GetAllCity_Vm> listCityImport, List<GetAllCity_Vm> listCitiDuplicate);
+
     }
 }
