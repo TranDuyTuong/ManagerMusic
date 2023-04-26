@@ -149,7 +149,52 @@ namespace ManagerMusic.Controllers
         /// </summary>
         [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
         [HttpGet]
-        public IActionResult JsonCreateCitys()
+        public async Task<IActionResult> JsonCreateCitys()
+        {
+            var result = new NotificationAddress_Vm();
+            if(L_City.Count() == 0)
+            {
+                result.status = 2; // List citys Import Null
+            }
+            else
+            {
+                result = await _context.CreateCitys(L_City, L_CityDuplicate);
+            }
+            L_City = new List<GetAllCity_Vm>();
+            L_CityDuplicate = new List<GetAllCity_Vm>();
+            return new JsonResult(result);
+        }
+
+        /// <summary>
+        /// Detail City
+        /// </summary>
+        /// 
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult PageDetailCity(int IdCitys)
+        {
+            ViewBag.IdCity = IdCitys;
+            return View();
+        }
+
+        /// <summary>
+        /// Json get data Detail City
+        /// </summary>
+        /// 
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult JsonDetailCitys(int IdCitys)
+        {
+            var result = _context.DetailCity(IdCitys);
+            return new JsonResult(result);
+        }
+
+        /// <summary>
+        /// Json edit city
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpPost]
+        public IActionResult JsonEditCitys(int IdCitys, string nameCity, string symbol, int areaCode)
         {
             return new JsonResult(0);
         }

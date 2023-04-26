@@ -858,3 +858,4 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\E
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\EPPlus.Interfaces.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\EPPlus.System.Drawing.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\Razor\Views\ManagerAddress\PageDetailCity.cshtml.g.cs

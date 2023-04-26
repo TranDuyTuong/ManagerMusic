@@ -48,8 +48,7 @@ function LoadCitys() {
                 html += '<td>' + item.symbol + '</td>';
                 html += '<td>' + item.areaCode + '</td>';
                 html += '<td>';
-                html += '<button type="button" style="border: none;" name="ChangeStatus" class="btn btn-outline-secondary" ata-bs-toggle="tooltip" data-bs-placement="top"><i class="fas fa-sync"></i></button>';
-                html += '<button type="button" style="border: none;" name="ViewListMusic" class="btn btn-outline-secondary" ata-bs-toggle="tooltip" data-bs-placement="top"><i class="fas fa-folder-open"></i></button>';
+                html += '<a href="/ManagerAddress/PageDetailCity/?IdCitys=' + item.cityId + '" style="border: none;" lass="btn btn-outline-secondary" ata-bs-toggle="tooltip" data-bs-placement="top"><i class="fas fa-folder-open"></i></a>';
                 html += '</td>';
                 html += '</tr>';
                 $("#body_Citys").append(html);

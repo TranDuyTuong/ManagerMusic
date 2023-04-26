@@ -19,6 +19,9 @@
                 <a asp-action="PageCreateCitys" asp-controller="ManagerAddress" class="btn btn-primary" style="border-radius: 10%" data-bs-toggle="tooltip" data-bs-placement="top" title="Thêm Mới Tỉnh/Tp">
                     <i class="fas fa-folder-plus"></i>
                 </a>
+                <a asp-action="PageCitys" asp-controller="ManagerAddress" class="btn btn-primary" style="border-radius: 10%" data-bs-toggle="tooltip" data-bs-placement="top" title="Làm Mới">
+                    <i class="fas fa-sync"></i>
+                </a>
             </p>
             <div class="row">
                 <div class="col-md-9">
@@ -92,7 +95,6 @@
 <input type="hidden" value="@languade.Getkey("last")" id="last" />
 <input type="hidden" value="@languade.Getkey("Before")" id="Before" />
 @section Scripts{
-    <script src="~/assets/js/jquery.twbsPagination.min.js" asp-append-version="true"></script>
     <script src="~/js/js_Address/Manager_GetAllCitys.js" asp-append-version="true"></script>
 }
 

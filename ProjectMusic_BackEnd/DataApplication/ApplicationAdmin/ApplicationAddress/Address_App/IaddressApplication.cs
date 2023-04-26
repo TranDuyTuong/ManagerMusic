@@ -18,5 +18,15 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// Check Data Citys in DB
         /// </summary>
         List<GetAllCity_Vm> CheckDataCityDB(List<GetAllCity_Vm> request);
+
+        /// <summary>
+        /// Create Citys
+        /// </summary>
+        Task<NotificationAddress_Vm> CreateCitys(List<GetAllCity_Vm> listCityImport, List<GetAllCity_Vm> listCitiDuplicate);
+
+        /// <summary>
+        /// Detail City
+        /// </summary>
+        DetailCity_Vm DetailCity(int IdCity);
     }
 }

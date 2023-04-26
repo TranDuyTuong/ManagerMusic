@@ -49,6 +49,7 @@ namespace DataService.ServiceAdmin.Address
         public async Task<NotificationAddress_Vm> CreateCitys(List<GetAllCity_Vm> listCityImport, List<GetAllCity_Vm> listCitiDuplicate)
         {
             var result = new NotificationAddress_Vm();
+            int count = 0;
             foreach (var city in listCityImport)
             {
                 var checkCity = listCitiDuplicate.FirstOrDefault(x => x.AreaCode == city.AreaCode);
@@ -61,11 +62,51 @@ namespace DataService.ServiceAdmin.Address
                         DateCreate = DateTime.UtcNow.AddHours(7)
                     };
                     await _context.T_Cities.AddAsync(cretaeCity);
+                    count++;
                 }
             }
             await _context.SaveChangesAsync();
-            result.status = true;
+            result.status = 1; // create citys success
+            result.TotalCreateSuccess = count;
             return result;
+        }
+
+        /// <summary>
+        /// DetailCity
+        /// </summary>
+        public DetailCity_Vm DetailCity(int IdCity)
+        {
+           var result = new DetailCity_Vm();
+            var queryCity = _context.T_Cities.FirstOrDefault( x => x.IdCity == IdCity);
+            if (queryCity != null) {
+                var queryDistrict = _context.T_Districts.Where( x => x.IdCity == queryCity.IdCity ).ToList();
+                result.Id = queryCity.IdCity;
+                result.NameCity = queryCity.NameCity;
+                result.Symbol = queryCity.Symbol;
+                result.AreaCode = queryCity.AreaCode;
+                result.CreateDate = queryCity.DateCreate.Date;
+                result.TimeCraete = queryCity.DateCreate.ToShortTimeString();
+                foreach(var district in queryDistrict)
+                {
+                    var AddDistrict = new GetAllDistrict_Vm()
+                    {
+                        CityId = district.IdCity,
+                        DistrictId = district.IdDistrict,
+                        NameDistrict = district.NameDistrict,
+                        DateCreate = district.DateCreate.Date,
+                    };
+                    result.L_District.Add(AddDistrict);
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Update City
+        /// </summary>
+        public Task<NotificationAddress_Vm> EditCitys(EditCity_Vm request)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

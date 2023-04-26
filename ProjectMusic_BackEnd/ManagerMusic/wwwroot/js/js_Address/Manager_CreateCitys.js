@@ -97,6 +97,7 @@ function paging(totalRoll, callback) {
 $("#BtnCheckDataImport").click(function () {
     $("#Check_Citys").empty();
     $("#TotalCheck").empty();
+    $("#NotDuplicate").empty();
     var count = 0;
     $("#modal_LoadingCreateMusic").show();
     $.ajax({
@@ -110,19 +111,22 @@ $("#BtnCheckDataImport").click(function () {
                     break;
                 default:
                     $("#modal_CheckData").show();
-                    $.each(result.l_Citys, function (key, item) {
-                        count++;
-                        var html = "";
-                        count++;
-                        html += '<tr id="' + item.areaCode + '">';
-                        html += '<td>' + count + '</td>';
-                        html += '<td>' + item.cityName + '</td>';
-                        html += '<td>' + item.createDate + '</td>';
-                        html += '<td>' + item.symbol + '</td>';
-                        html += '<td>' + item.areaCode + '</td>';
-                        html += '</tr>';
-                        $("#Check_Citys").append(html);
-                    })
+                    if (result.totalCitys == 0) {
+                        $("#NotDuplicate").append("Không Có Dữ Liệu Trùng Lặp")
+                    } else {
+                        $.each(result.l_Citys, function (key, item) {
+                            count++;
+                            var html = "";
+                            html += '<tr id="' + item.areaCode + '">';
+                            html += '<td>' + count + '</td>';
+                            html += '<td>' + item.cityName + '</td>';
+                            html += '<td>' + item.createDate + '</td>';
+                            html += '<td>' + item.symbol + '</td>';
+                            html += '<td>' + item.areaCode + '</td>';
+                            html += '</tr>';
+                            $("#Check_Citys").append(html);
+                        })
+                    }
                     $("#TotalCheck").append(result.totalCitys);
                     break;
             }
@@ -133,5 +137,26 @@ $("#BtnCheckDataImport").click(function () {
 
 //Create Citys In Data
 $("#BtnConfim").click(function () {
-
+    $("#TotalCreateSuccess").empty();
+    $.ajax({
+        url: "/ManagerAddress/JsonCreateCitys",
+        type: "get",
+        success: function (result) {
+            switch (result.status) {
+                case 1:
+                    toastr.success("Thông Báo Thành Công", "Tạo Mới Thành Công!");
+                    $("#TotalCreateSuccess").append("Đã Tạo Mới Thành Công: " + result.totalCreateSuccess + " Tỉnh/Tp");
+                    break;
+                default:
+                    toastr.error("Thông Báo Lỗi", "Danh Sách Import Tỉnh/Tp Bị Trống!");
+                    break;
+            }
+            return;
+        }
+    })
+});
+//Close Create modal data
+$("#BtnClose").click(function () {
+    $("#modal_CheckData").hide();
+    window.location.reload();
 });

@@ -1,0 +1,132 @@
+﻿@using ManagerMusic.Models
+@inject LanguageService languade
+@{
+    ViewData["Title"] = languade.Getkey("Title_PageCity");
+    Layout = "~/Views/Shared/Manager_Address/Page_City.cshtml";
+}
+
+<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+    <div class="az-content-breadcrumb">
+        <span><a asp-action="Index" asp-controller="Home" style="color: #97a3b9;">@languade.Getkey("Home_page")</a></span>
+        <span>@languade.Getkey("Admin_Information")</span>
+        <span><a asp-action="PageCitys" asp-controller="ManagerAddress" style="color: #97a3b9;">Quản Lý Tỉnh/Tp</a></span>
+    </div>
+    <h2 class="az-content-title"> Chi Tiết Tỉnh/Tp</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Mã Tỉnh/Tp</label>
+                        <input type="number" class="form-control" disabled id="Txt_Id"/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tên Tỉnh/Tp</label>
+                        <input type="text" class="form-control" disabled id="Txt_Name" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ngày Tạo</label>
+                        <input type="text" class="form-control" disabled id="Txt_Date" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Ký Hiệu</label>
+                        <input type="text" class="form-control" disabled id="Txt_Symbol" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mã Vùng</label>
+                        <input type="text" class="form-control" disabled id="Txt_Area" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Giờ Tạo</label>
+                        <input type="text" class="form-control" disabled id="Txt_Time" />
+                    </div>
+                    <p>
+                        <button type="submit" class="btn btn-success" style="border-radius: 10px;" id="btn_Confirm"><i class="fas fa-check-square"></i> Xác Nhận</button>
+                        <button type="submit" class="btn btn-danger" style="border-radius: 10px;"  id="btn_Cancel"><i class="fas fa-broom"></i> Xóa Bỏ</button>
+                        <button type="submit" class="btn btn-primary" style="border-radius: 10px;" id="btn_Edit"><i class="fas fa-edit"></i> Cập Nhật Thông Tin</button>
+                    </p>
+
+                </div>
+            </div>
+            <br />
+
+            <p style="font-weight:600;"><i class="fas fa-list"></i> Danh Sách Quận/Huyện </p>
+            <p style="text-align: right">Tổng Quận/Huyện: <b style="color: red;" id="TotalDistrict"></b></p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("No") <i class="fas fa-sort"></i></th>
+                        <th scope="col">Tên Quận/Huyện</th>
+                        <th scope="col">Ngày Tạo</th>
+                        <th scope="col">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="body_District" style="height: 200px; overflow: auto">
+                </tbody>
+            </table>
+
+
+
+            <p style="font-weight:600;"><i class="fas fa-list"></i> Danh Sách Người Dùng </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">@languade.Getkey("No") <i class="fas fa-sort"></i></th>
+                        <th scope="col">Tên Người Dùng</th>
+                        <th scope="col">Ngày Tạo</th>
+                        <th scope="col">Giờ Tạo</th>
+                        <th scope="col">Địa Chỉ</th>
+                        <th scope="col">@languade.Getkey("Options")</th>
+                    </tr>
+                </thead>
+                <tbody id="body_User" style="height: 200px; overflow: auto">
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+    <div class="az-footer mg-t-auto">
+        <div class="container">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@languade.Getkey("Design_In_2022")</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Do <a href="#" target="_blank">@languade.Getkey("Petros_Tuong")</a> from duytuong0503@gmail.com</span>
+        </div><!-- container -->
+    </div><!-- az-footer -->
+</div><!-- az-content-body -->
+<!-- Modal loading create Music -->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_LoadingCreateMusic">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background:none; border:none;">
+            <div class="modal-body">
+                <div class="row" style="margin-top:200px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="@ViewBag.IdCity" id="IdCity" />
+<input type="hidden" value="@languade.Getkey("head")" id="head" />
+<input type="hidden" value="@languade.Getkey("next")" id="next" />
+<input type="hidden" value="@languade.Getkey("last")" id="last" />
+<input type="hidden" value="@languade.Getkey("Before")" id="Before" />
+@section Scripts{
+    <script src="~/js/js_Address/Manager_DetailCity.js" asp-append-version="true"></script>
+}
+

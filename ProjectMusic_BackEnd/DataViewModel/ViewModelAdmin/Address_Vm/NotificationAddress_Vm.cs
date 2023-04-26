@@ -8,6 +8,7 @@ namespace DataViewModel.ViewModelAdmin.Address_Vm
 {
     public class NotificationAddress_Vm
     {
-        public bool status { get; set; }
+        public int status { get; set; }
+        public int TotalCreateSuccess { get; set; }
     }
 }

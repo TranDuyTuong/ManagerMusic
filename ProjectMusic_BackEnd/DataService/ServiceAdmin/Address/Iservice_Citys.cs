@@ -24,5 +24,15 @@ namespace DataService.ServiceAdmin.Address
         /// </summary>
         Task<NotificationAddress_Vm> CreateCitys(List<GetAllCity_Vm> listCityImport, List<GetAllCity_Vm> listCitiDuplicate);
 
+        /// <summary>
+        /// GetAllCitys
+        /// </summary>
+        DetailCity_Vm DetailCity(int IdCity);
+
+        /// <summary>
+        /// GetAllCitys
+        /// </summary>
+        Task<NotificationAddress_Vm> EditCitys(EditCity_Vm request);
+
     }
 }

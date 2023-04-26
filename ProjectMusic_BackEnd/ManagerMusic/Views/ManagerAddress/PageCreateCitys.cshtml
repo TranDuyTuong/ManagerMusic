@@ -97,14 +97,16 @@
 
 <!-- Modal check data in DB-->
 <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_CheckData">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="max-width: 50%;">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"><i class="fas fa-server"></i> Dữ Liệu Bị Trùng Lặp Trong CSDL</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="BtnClose">X</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="height: 500px; overflow: auto">
                 <p style="text-align: right">Đã Tìm Thấy: <b style="color: red" id="TotalCheck"></b></p>
+                <p id="NotDuplicate" style="margin: 20px 0px; font-weight:600;"></p>
+                <p style="color: green; font-weight: 600" id="TotalCreateSuccess"></p>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -119,7 +121,7 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="BtnConfim"><i class="fas fa-cloud-download-alt"></i> Cập Nhật CSDL</button>
+                <button type="button" class="btn btn-primary" id="BtnConfim" style="border-radius: 10px;"><i class="fas fa-cloud-download-alt"></i> Cập Nhật CSDL</button>
             </div>
         </div>
     </div>

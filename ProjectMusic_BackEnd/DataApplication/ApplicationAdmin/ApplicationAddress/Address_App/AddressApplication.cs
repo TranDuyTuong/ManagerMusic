@@ -26,6 +26,24 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         }
 
         /// <summary>
+        /// Create Citys
+        /// </summary>
+        public async Task<NotificationAddress_Vm> CreateCitys(List<GetAllCity_Vm> listCityImport, List<GetAllCity_Vm> listCitiDuplicate)
+        {
+            var result = await _context.CreateCitys(listCityImport, listCitiDuplicate);
+            return result;
+        }
+
+        /// <summary>
+        /// Detail City
+        /// </summary>
+        public DetailCity_Vm DetailCity(int IdCity)
+        {
+            var result = _context.DetailCity(IdCity);
+            return result;
+        }
+
+        /// <summary>
         /// GetAllCitys and pading
         /// </summary>
         public PadingCity_Vm GetAllCitys(int pageIndex, int pageSize, int orderBy, string seach)
