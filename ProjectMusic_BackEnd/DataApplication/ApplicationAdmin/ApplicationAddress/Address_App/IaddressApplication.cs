@@ -28,5 +28,10 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// Detail City
         /// </summary>
         DetailCity_Vm DetailCity(int IdCity);
+
+        /// <summary>
+        /// Update city
+        /// </summary>
+        Task<NotificationAddress_Vm> EditCitys(EditCity_Vm request);
     }
 }

@@ -11,6 +11,7 @@ namespace DataTable.Table.Address
         public DateTime DateCreate { get; set; }
         public string Symbol { get; set; }
         public int AreaCode { get; set; }
+        public bool Status { get; set; }
         public List<T_District> T_Districts { get; set; }
         public List<T_User> T_Users { get; set; }
     }

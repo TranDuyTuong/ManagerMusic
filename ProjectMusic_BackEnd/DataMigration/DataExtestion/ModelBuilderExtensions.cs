@@ -19,11 +19,11 @@ namespace DataMigration.DataExtestion
         public static void Seed(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<T_City>().HasData(
-                new T_City() { IdCity = 1, NameCity = "Thành Phố Hồ Chí Mình", DateCreate = DateTime.UtcNow.AddHours(7), Symbol="SG", AreaCode=28},
-                new T_City() { IdCity = 2, NameCity = "Thủ Đô Hà Nội", DateCreate = DateTime.UtcNow.AddHours(7), Symbol="HN", AreaCode=24}
+                new T_City() { IdCity = 1, NameCity = "Thành Phố Hồ Chí Mình", DateCreate = DateTime.UtcNow.AddHours(7), Symbol="SG", AreaCode=28, Status = true},
+                new T_City() { IdCity = 2, NameCity = "Thủ Đô Hà Nội", DateCreate = DateTime.UtcNow.AddHours(7), Symbol="HN", AreaCode=24, Status = true }
                 );
             modelBuilder.Entity<T_District>().HasData(
-                new T_District() {IdDistrict = 1, NameDistrict= "Quận 1", DateCreate = DateTime.UtcNow.AddHours(7), IdCity = 1 }
+                new T_District() {IdDistrict = 1, NameDistrict= "Quận 1", DateCreate = DateTime.UtcNow.AddHours(7), IdCity = 1, Status = true }
                 );
 
             modelBuilder.Entity<T_Gender>().HasData(

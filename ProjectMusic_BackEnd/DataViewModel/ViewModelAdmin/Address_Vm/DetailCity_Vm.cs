@@ -14,6 +14,7 @@ namespace DataViewModel.ViewModelAdmin.Address_Vm
         public string TimeCraete { get; set; }
         public string Symbol { get; set; }
         public int AreaCode { get; set; }
+        public bool Status { get; set; }
         public List<GetAllDistrict_Vm> L_District { get; set; } = new List<GetAllDistrict_Vm>();
     }
 }

@@ -12,6 +12,7 @@ namespace DataViewModel.ViewModelAdmin.Address_Vm
         public string CityName { get; set; }
         public string Symbol { get; set; }
         public int AreaCode { get; set; }
+        public bool Status { get; set; }
         public DateTime CreateDate { get; set; }
         public string TimeCreate { get; set; }
     }

@@ -10,6 +10,7 @@ namespace DataTable.Table.Address
         public int IdCity { get; set; } //key
         public string NameDistrict { get; set; }
         public DateTime DateCreate { get; set; }
+        public bool Status { get; set; }
         public T_City T_Cities { get; set; }
         public List<T_User> T_Users { get; set; }
 

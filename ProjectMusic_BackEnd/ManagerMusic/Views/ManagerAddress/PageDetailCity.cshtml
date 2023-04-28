@@ -44,7 +44,7 @@
                     </div>
                     <p>
                         <button type="submit" class="btn btn-success" style="border-radius: 10px;" id="btn_Confirm"><i class="fas fa-check-square"></i> Xác Nhận</button>
-                        <button type="submit" class="btn btn-danger" style="border-radius: 10px;"  id="btn_Cancel"><i class="fas fa-broom"></i> Xóa Bỏ</button>
+                        <button type="submit" class="btn btn-danger" style="border-radius: 10px;"  id="btn_Cancel"><i class="fas fa-broom"></i> Hủy Bỏ</button>
                         <button type="submit" class="btn btn-primary" style="border-radius: 10px;" id="btn_Edit"><i class="fas fa-edit"></i> Cập Nhật Thông Tin</button>
                     </p>
 
@@ -84,7 +84,17 @@
                 <tbody id="body_User" style="height: 200px; overflow: auto">
                 </tbody>
             </table>
-
+            <hr />
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <p>
+                        <button type="button" class="btn btn-success" style="border-radius: 10px;" id="Btn_ActiverCity">Kích Hoạt</button>
+                        <button type="button" class="btn btn-danger" style="border-radius: 10px;" id="Btn_RemoveCity"><i class="fas fa-trash"></i> Ngưng Hoạt Động</button>
+                    </p>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -116,6 +126,32 @@
                     </div>
                     <div class="col-md-4"></div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- remove city modal-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-RemoveCity">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ngưng Hoạt Động Tỉnh/Tp</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <select class="form-control" id="TxtSelection">
+                            <option selected>Lựa Chọn ...</option>
+                            <option value="1">Quận/huyện trực thuộc</option>
+                            <option value="2">Nhân viên trực thuộc</option>
+                        </select>
+                    </div>
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" style="border-radius: 10px;">Đồng Ý Ngưng Hoạt Động</button>
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 ﻿using DataMigration.DataEF;
 using DataTable.Table.Address;
 using DataViewModel.ViewModelAdmin.Address_Vm;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,7 @@ namespace DataService.ServiceAdmin.Address
                         Symbol = checkCity.Symbol,
                         AreaCode = checkCity.AreaCode,
                         CreateDate = checkCity.DateCreate.Date,
+                        Status = checkCity.Status,
                         TimeCreate = checkCity.DateCreate.ToShortTimeString()
                     });
                 }
@@ -59,7 +61,8 @@ namespace DataService.ServiceAdmin.Address
                         NameCity = city.CityName,
                         Symbol = city.Symbol,
                         AreaCode = city.AreaCode,
-                        DateCreate = DateTime.UtcNow.AddHours(7)
+                        DateCreate = DateTime.UtcNow.AddHours(7),
+                        Status = true
                     };
                     await _context.T_Cities.AddAsync(cretaeCity);
                     count++;
@@ -86,6 +89,7 @@ namespace DataService.ServiceAdmin.Address
                 result.AreaCode = queryCity.AreaCode;
                 result.CreateDate = queryCity.DateCreate.Date;
                 result.TimeCraete = queryCity.DateCreate.ToShortTimeString();
+                result.Status = queryCity.Status;
                 foreach(var district in queryDistrict)
                 {
                     var AddDistrict = new GetAllDistrict_Vm()
@@ -104,9 +108,41 @@ namespace DataService.ServiceAdmin.Address
         /// <summary>
         /// Update City
         /// </summary>
-        public Task<NotificationAddress_Vm> EditCitys(EditCity_Vm request)
+        public async Task<NotificationAddress_Vm> EditCitys(EditCity_Vm request)
         {
-            throw new NotImplementedException();
+            var result = new NotificationAddress_Vm();
+            // check id city in DB
+            var query = await _context.T_Cities.ToListAsync();
+            if(query.Count() == 0)
+            {
+                result.status = 1; //Don't have list city in DB
+            }
+            else
+            {
+                var checkCityRequest = query.FirstOrDefault( x => x.IdCity == request.IdCity);
+                if(checkCityRequest == null) {
+                    result.status = 2; // Don't have city request in DB
+                }
+                else
+                {
+                    //check AreaCode
+                    if(checkCityRequest.AreaCode == request.AreaCode == true) {
+                        result.status = 3; // Have exist a AreaCode in DB
+                    }
+                    else
+                    {
+                        //Update Citys in DB
+                        checkCityRequest.NameCity = request.Name;
+                        checkCityRequest.Symbol = request.Symbol;
+                        checkCityRequest.AreaCode = request.AreaCode;
+                        _context.T_Cities.Update(checkCityRequest);
+                        result.status = 4; // Update citys success
+                    }
+                }
+                await _context.SaveChangesAsync();
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -114,7 +150,7 @@ namespace DataService.ServiceAdmin.Address
         /// </summary>
         public List<GetAllCity_Vm> GetAllCitys()
         {
-            var query = _context.T_Cities.ToList();
+            var query = _context.T_Cities.Where( x => x.Status == true).ToList();
             var result = new List<GetAllCity_Vm>();
             foreach (var city in query)
             {
@@ -132,7 +168,23 @@ namespace DataService.ServiceAdmin.Address
 
         }
 
-
-
+        /// <summary>
+        /// GetAll District or staff by city
+        /// </summary>
+        public RemoveCity_Vm GetAllDistrictOrStaffByCity(int IdCity, int Selecion)
+        {
+            var result = new RemoveCity_Vm();
+            var queryCity = _context.T_Cities.FirstOrDefault( x => x.IdCity == IdCity);
+            if(queryCity != null)
+            {
+                var queryDistrict = _context.T_Districts.Where(x => x.IdCity == IdCity).ToList();
+                var queryUserStaff = _context.T_Users.Where(x=>x.IdCity == IdCity && x.IdStaff != null).ToList();
+            }
+            else
+            {
+                result.Status = 1; // Not find city
+            }
+            return result;
+        }
     }
 }

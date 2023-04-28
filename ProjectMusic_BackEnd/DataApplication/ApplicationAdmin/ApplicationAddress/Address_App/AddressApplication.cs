@@ -44,6 +44,15 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         }
 
         /// <summary>
+        /// Update City
+        /// </summary>
+        public async Task<NotificationAddress_Vm> EditCitys(EditCity_Vm request)
+        {
+            var result = await _context.EditCitys(request);
+            return result;
+        }
+
+        /// <summary>
         /// GetAllCitys and pading
         /// </summary>
         public PadingCity_Vm GetAllCitys(int pageIndex, int pageSize, int orderBy, string seach)

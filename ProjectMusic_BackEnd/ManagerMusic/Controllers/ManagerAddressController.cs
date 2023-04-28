@@ -194,9 +194,22 @@ namespace ManagerMusic.Controllers
         /// </summary>
         [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
         [HttpPost]
-        public IActionResult JsonEditCitys(int IdCitys, string nameCity, string symbol, int areaCode)
+        public async Task<IActionResult> JsonEditCitys(int IdCitys, string nameCity, string symbol, int areaCode)
         {
-            return new JsonResult(0);
+            var request = new EditCity_Vm();
+            var result = new NotificationAddress_Vm();
+            if(nameCity == null || nameCity == "" || symbol == null || symbol == "" || areaCode == 0) {
+                result.status = 5; //Update citys Error;
+            }
+            else
+            {
+                request.IdCity = IdCitys;
+                request.Name = nameCity;
+                request.Symbol = symbol;
+                request.AreaCode = areaCode;
+                result = await _context.EditCitys(request);
+            }
+            return new JsonResult(result);
         }
 
     }

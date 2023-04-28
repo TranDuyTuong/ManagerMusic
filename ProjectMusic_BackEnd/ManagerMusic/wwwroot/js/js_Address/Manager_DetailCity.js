@@ -43,6 +43,14 @@ function LoadingDetailCity() {
                 $("#body_District").append(html);
             })
             $("#TotalDistrict").append(count);
+            // Show button Remove or Activer city
+            if (result.status == true) {
+                document.querySelector("#Btn_RemoveCity").disabled = false;
+                document.querySelector("#Btn_ActiverCity").disabled = true;
+            } else {
+                document.querySelector("#Btn_RemoveCity").disabled = true;
+                document.querySelector("#Btn_ActiverCity").disabled = false;
+            }
         }
     })
 }
@@ -111,13 +119,37 @@ $("#btn_Confirm").click(function () {
             areaCode: area
         },
         success: function (result) {
-            document.querySelector("#btn_Edit").disabled = false;
-            document.querySelector("#btn_Confirm").disabled = true;
-            document.querySelector("#btn_Cancel").disabled = true;
+            $("#modal_LoadingCreateMusic").hide();
+            switch (result.status) {
+                case 1:
+                    toastr.error("Thông Báo Lỗi", "Không Tìm Thấy Danh Sách Tỉnh/Tp Trong CSDL!");
+                    break;
+                case 2:
+                    toastr.error("Thông Báo Lỗi", "Không Tìm Thấy Tỉnh/Tp Yêu Cầu Trong CSDL!");
+                    break;
+                case 3:
+                    toastr.error("Thông Báo Lỗi", "Mã Vùng Đã Tồn Tại Vui Lòng Nhập Mã Vùng Khác!");
+                    break;
+                case 4:
+                    toastr.success("Thông Báo Thành Công", "Cập Nhật Tỉnh/Tp Thành Công");
+                    LoadingDetailCity();
+                    document.querySelector("#btn_Edit").disabled = false;
+                    document.querySelector("#btn_Confirm").disabled = true;
+                    document.querySelector("#btn_Cancel").disabled = true;
 
-            document.querySelector("#Txt_Symbol").disabled = true;
-            document.querySelector("#Txt_Name").disabled = true;
-            document.querySelector("#Txt_Area").disabled = true;
+                    document.querySelector("#Txt_Symbol").disabled = true;
+                    document.querySelector("#Txt_Name").disabled = true;
+                    document.querySelector("#Txt_Area").disabled = true;
+                    break;
+                default:
+                    toastr.error("Thông Báo Lỗi", "Cập Nhật Tỉnh/Tp Thất Bại Vui Lòng Thử Lại!")
+                    break;
+            }
+            return;
         }
     })
+});
+// Remove city
+$("#Btn_RemoveCity").click(function () {
+    $("#modal-RemoveCity").show();
 });
