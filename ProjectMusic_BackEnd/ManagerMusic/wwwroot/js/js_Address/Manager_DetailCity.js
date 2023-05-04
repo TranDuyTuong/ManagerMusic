@@ -153,3 +153,91 @@ $("#btn_Confirm").click(function () {
 $("#Btn_RemoveCity").click(function () {
     $("#modal-RemoveCity").show();
 });
+
+function ChangeSelection() {
+    var idSelection = $("#TxtSelection").val();
+    $("#TitleData").empty();
+    $("#BodyRemove").empty();
+    $("#TotalCount").empty();
+    var count = 0;
+    $.ajax({
+        url: "/ManagerAddress/GetAllDistrictOrStaffByCity",
+        type: "get",
+        data: {
+            IdCity: $("#IdCity").val(),
+            Selection: idSelection
+        },
+        success: function (result) {
+            var htmlTitle = "";
+            switch (result.status) {
+                case 1:
+                    toastr.error("Thông Báo Lỗi", "Không tìm thấy thông tin của Tỉnh/Tp này!");
+                    break;
+                case 2:
+                    $("#TitleData").append("Danh Sách Các Quận/Huyện Liên Quan")
+                    htmlTitle += '<table class="table">'
+                    htmlTitle +='<thead>'    
+                    htmlTitle +='<tr>'      
+                    htmlTitle +='<th scope="col">Mã Quận/Huyện</th>'          
+                    htmlTitle +='<th scope="col">Tên Quận/Huyện</th>'        
+                    htmlTitle +='<th scope="col">Tên Tỉnh/Tp</th>'             
+                    htmlTitle +='</tr>'      
+                    htmlTitle +='</thead>'   
+                    htmlTitle +='<tbody id="BodyDistrict">'  
+                    htmlTitle +='</tbody>'    
+                    htmlTitle += '</table>'
+                    $("#BodyRemove").append(htmlTitle);
+                    $("#BodyDistrict").empty();
+                    $.each(result.selectedDistricts, function (key, item) {
+                        count++;
+                        var html = "";
+                        html += '<tr>';
+                        html += '<th scope="row">' + item.idDistrict + '</th>';
+                        html += '<td>' + item.nameDistrict + '</td>';
+                        html += '<td>' + item.nameCity + '</td>';   
+                        html += '</tr>';
+                        $("#BodyDistrict").append(html);
+                    })
+                    $("#TotalCount").append("Tổng Số Quận/Huyện Trực Thuộc: " + count);
+                    break;
+                case 3:
+                    $("#TitleData").append("Danh Sách Các Nhân Viên Liên Quan")
+                    htmlTitle += '<table class="table">'
+                    htmlTitle += '<thead>'
+                    htmlTitle += '<tr>'
+                    htmlTitle += '<th scope="col">Mã</th>'
+                    htmlTitle += '<th scope="col">Tên Nhân Viên</th>'
+                    htmlTitle += '<th scope="col">Tên Tỉnh/Tp</th>'
+                    htmlTitle += '</tr>'
+                    htmlTitle += '</thead>'
+                    htmlTitle += '<tbody id="BodyStaff">'
+                    htmlTitle += '</tbody>'
+                    htmlTitle += '</table>'
+                    $("#BodyRemove").append(htmlTitle);
+                    $("#BodyStaff").empty();
+                    $.each(result.selectedStaffs, function (key, item) {
+                        count++;
+                        var html = "";
+                        html += '<tr>';
+                        html += '<th scope="row">' + item.idUser + '</th>';
+                        html += '<td>' + item.nameStaff + '</td>';
+                        html += '<td>' + item.nameCity + '</td>';
+                        html += '</tr>';
+                        $("#BodyStaff").append(html);
+                    })
+                    $("#TotalCount").append("Tổng Số Nhân Viên Trực Thuộc: " + count);
+                    break;
+                default:
+                    toastr.error("Thông Báo Lỗi!", "Dữ liệu bạn cần tìm kiếm không tồn tại vui lòng kiểm tra lại");
+                    break;
+            }
+            return;
+        }
+    })
+}
+$("#Btn_CloseRemove").click(function () {
+    window.location.reload();
+})
+$("#Btn_SubmitRemove").click(function () {
+
+});

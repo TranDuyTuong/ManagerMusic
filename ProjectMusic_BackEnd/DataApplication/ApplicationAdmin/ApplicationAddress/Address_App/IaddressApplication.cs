@@ -33,5 +33,10 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// Update city
         /// </summary>
         Task<NotificationAddress_Vm> EditCitys(EditCity_Vm request);
+
+        /// <summary>
+        /// Update city
+        /// </summary>
+        RemoveCity_Vm GetAllDistrictOrStaffByCity(int IdCity, int Selecion);
     }
 }

@@ -105,6 +105,15 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
             return padingResult;
         }
 
+        /// <summary>
+        /// GetAll District or staff by city
+        /// </summary>
+        public RemoveCity_Vm GetAllDistrictOrStaffByCity(int IdCity, int Selecion)
+        {
+
+            var result = _context.GetAllDistrictOrStaffByCity(IdCity, Selecion);
+            return result;
+        }
 
     }
 }

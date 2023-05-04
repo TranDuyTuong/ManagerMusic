@@ -21,6 +21,7 @@ namespace DataViewModel.ViewModelAdmin.Address_Vm
     }
     public class Staff_Selection
     {
+        public Guid IdUser { get; set; }    
         public string NameStaff { get;set; }
         public string NameCity { get; set; }
     }

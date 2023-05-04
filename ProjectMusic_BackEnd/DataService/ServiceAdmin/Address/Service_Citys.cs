@@ -177,8 +177,38 @@ namespace DataService.ServiceAdmin.Address
             var queryCity = _context.T_Cities.FirstOrDefault( x => x.IdCity == IdCity);
             if(queryCity != null)
             {
-                var queryDistrict = _context.T_Districts.Where(x => x.IdCity == IdCity).ToList();
-                var queryUserStaff = _context.T_Users.Where(x=>x.IdCity == IdCity && x.IdStaff != null).ToList();
+                switch(Selecion)
+                {
+                    case 1: // Query District
+                        var queryDistrict = _context.T_Districts.Where(x => x.IdCity == IdCity && x.Status == true).ToList();
+                        foreach (var itemDistrict in queryDistrict)
+                        {
+                            result.SelectedDistricts.Add(new District_Selection()
+                            {
+                                IdDistrict = itemDistrict.IdDistrict,
+                                NameDistrict = itemDistrict.NameDistrict,
+                                NameCity = itemDistrict.T_Cities.NameCity
+                            });
+                        }
+                        result.Status = 2; 
+                        break;
+                    case 2: // Query Staff
+                        var queryUserStaff = _context.T_Users.Where(x => x.IdCity == IdCity && x.IdStaff != null).ToList();
+                        foreach (var itemUserStaff in queryUserStaff)
+                        {
+                            result.SelectedStaffs.Add(new Staff_Selection()
+                            {
+                                IdUser = itemUserStaff.IdUser,
+                                NameCity = itemUserStaff.T_Citys.NameCity,
+                                NameStaff = itemUserStaff.FullName
+                            });
+                        }
+                        result.Status = 3;
+                        break;
+                    default: // Not Query Selection = 0
+                        result.Status = 4;
+                        break;
+                }
             }
             else
             {

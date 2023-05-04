@@ -212,5 +212,26 @@ namespace ManagerMusic.Controllers
             return new JsonResult(result);
         }
 
+        /// <summary>
+        /// Json Show district and staff was remove with city
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult GetAllDistrictOrStaffByCity(int IdCity, int Selection)
+        {
+            var result = _context.GetAllDistrictOrStaffByCity(IdCity, Selection);
+            return new JsonResult(result);  
+        }
+
+        /// <summary>
+        /// Confirm remove city
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpPost]
+        public IActionResult GetAllDistrictOrStaffByCity(int IdCity)
+        {
+            return new JsonResult(0);
+        }
+
     }
 }

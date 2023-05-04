@@ -133,25 +133,35 @@
 
 <!-- remove city modal-->
 <div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal-RemoveCity">
-    <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-dialog" style="max-width: 900px">
+        <div class="modal-content" style="height: 600px; overflow: auto;">
             <div class="modal-header">
                 <h5 class="modal-title">Ngưng Hoạt Động Tỉnh/Tp</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="Btn_CloseRemove">X</button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <select class="form-control" id="TxtSelection">
-                            <option selected>Lựa Chọn ...</option>
+                        <select class="form-control" id="TxtSelection" onchange="ChangeSelection()">
+                            <option selected value="0">Lựa Chọn ...</option>
                             <option value="1">Quận/huyện trực thuộc</option>
                             <option value="2">Nhân viên trực thuộc</option>
                         </select>
+                        <hr />
+                        <p style="font-weight: 600; text-align: center; color: red" id="TitleData"></p>
+                        <div id="BodyRemove">
+
+                        </div>
+                        <p style="text-align: left; font-weight: 600; color: red;" id="TotalCount"></p>
                     </div>
                 </div>                
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" style="border-radius: 10px;">Đồng Ý Ngưng Hoạt Động</button>
+                <span>
+                    <ins>Lưu ý:</ins> Nếu như bạn xóa Tỉnh /Tp này, các Quận /Huyện cũng sẻ bị xóa theo, bạn sẻ không dùng được
+                    Quận/Huyện đó cho các chức năng đăng ký khác. <b style="color: red; font-weight: 600">Nên Cân Nhắc Kỹ</b>
+                </span>
+                <button type="button" class="btn btn-danger" style="border-radius: 10px;" id="Btn_SubmitRemove">Đồng Ý Ngưng Hoạt Động</button>
             </div>
         </div>
     </div>

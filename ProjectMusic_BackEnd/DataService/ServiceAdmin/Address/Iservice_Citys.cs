@@ -37,7 +37,7 @@ namespace DataService.ServiceAdmin.Address
         /// <summary>
         /// Check selection District and staff
         /// </summary>
-        RemoveCity_Vm GetAllDistrictOrStaffByCity(int IdCity);
+        RemoveCity_Vm GetAllDistrictOrStaffByCity(int IdCity, int Selecion);
 
     }
 }
