@@ -271,3 +271,7 @@ function closemodelsuccess() {
     $("#modal-RemoveCitySuccess").hide();
     window.location.reload();
 }
+//Activer city
+$("#Btn_ActiverCity").click(function () {
+
+})
