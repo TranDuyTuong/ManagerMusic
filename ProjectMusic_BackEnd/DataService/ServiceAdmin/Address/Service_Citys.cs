@@ -121,7 +121,7 @@ namespace DataService.ServiceAdmin.Address
             var result = new NotificationAddress_Vm();
             // check id city in DB
             var query = await _context.T_Cities.ToListAsync();
-            if(query.Count() == 0)
+            if(query.Any() == true)
             {
                 result.status = 1; //Don't have list city in DB
             }
@@ -237,7 +237,7 @@ namespace DataService.ServiceAdmin.Address
                 //Remove District
                 var queryDistrict = await _context.T_Districts.Where(x => x.IdCity == queryCity.IdCity).ToListAsync();
                 var queryUser = await _context.T_Users.FirstOrDefaultAsync(x => x.IdUser == IdUser);
-                if(queryDistrict.Count() != 0)
+                if(queryDistrict.Any() == true)
                 {
                     foreach(var itemDistrict in queryDistrict)
                     {
@@ -251,7 +251,7 @@ namespace DataService.ServiceAdmin.Address
 
                 //add notification
                 var L_AllUser = _user.GetAllUser();
-                if (L_AllUser.Count() != 0)
+                if (L_AllUser.Any() == true)
                 {
                     foreach (var item in L_AllUser)
                     {
