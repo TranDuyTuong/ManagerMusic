@@ -115,5 +115,13 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
             return result;
         }
 
+        /// <summary>
+        /// GetAll District or staff by city
+        /// </summary>
+        public async Task<NotificationAddress_Vm> RemoveCity(int IdCity, Guid IdUser)
+        {
+            var result = await _context.RemoveCity(IdCity, IdUser);
+            return result;
+        }
     }
 }

@@ -1,21 +1,29 @@
 ﻿using DataMigration.DataEF;
+using DataService.ServiceAdmin.User;
+using DataService.ServiceUser.NotificatonUser;
 using DataTable.Table.Address;
 using DataViewModel.ViewModelAdmin.Address_Vm;
+using DataViewModel.ViewModelUser.Notification_Vm;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace DataService.ServiceAdmin.Address
 {
     public class Service_Citys: Iservice_Citys
     {
         private readonly ContextDB _context;
-        public Service_Citys(ContextDB context)
+        private readonly INotificationUser _notificationUser;
+        private readonly IUser _user;
+        public Service_Citys(ContextDB context, INotificationUser notificationUser, IUser user)
         {
             _context = context;
+            _notificationUser = notificationUser;
+            _user = user;
         }
 
         /// <summary>
@@ -216,5 +224,62 @@ namespace DataService.ServiceAdmin.Address
             }
             return result;
         }
+
+        /// <summary>
+        /// Remove city by id
+        /// </summary>
+        public async Task<NotificationAddress_Vm> RemoveCity(int IdCity, Guid IdUser)
+        {
+            var result = new NotificationAddress_Vm();
+            var queryCity = await _context.T_Cities.FirstOrDefaultAsync( x => x.IdCity == IdCity);
+            if (queryCity != null)
+            {
+                //Remove District
+                var queryDistrict = await _context.T_Districts.Where(x => x.IdCity == queryCity.IdCity).ToListAsync();
+                var queryUser = await _context.T_Users.FirstOrDefaultAsync(x => x.IdUser == IdUser);
+                if(queryDistrict.Count() != 0)
+                {
+                    foreach(var itemDistrict in queryDistrict)
+                    {
+                        itemDistrict.Status = false;
+                        _context.T_Districts.Update(itemDistrict);
+                    }
+                }
+                //Remove City
+                queryCity.Status = false;
+                _context.T_Cities.Update(queryCity);
+
+                //add notification
+                var L_AllUser = _user.GetAllUser();
+                if (L_AllUser.Count() != 0)
+                {
+                    foreach (var item in L_AllUser)
+                    {
+                        var notification = new CreateNotification_v()
+                        {
+                            IdUser = item.IdUser,
+                            IdViewNotification = 2, // Not view notification
+                            IdDeleteNotification = 1, // Not delete notification
+                            TitleNotification = "Tỉnh/Tp " + queryCity.NameCity +
+                                                " đã bị ngưng hoạt động vì vậy sẻ có " + queryDistrict.Count() + " Quận/huyện không dùng được" +
+                                                " ,do nhân viên " + queryUser.FullName + " cập nhật.",
+                            DateCreate = DateTime.UtcNow.AddHours(7),
+                            TimeCreate = DateTime.UtcNow.AddHours(7),
+                            AuthorNotification = queryUser.FullName,
+                        };
+                        _notificationUser.CreateNotification(notification);
+                    }
+                }
+                result.status = 2; // remove city success
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                result.status = 1; // Not find id city
+            }
+            return result;
+        }
+
+
     }
 }

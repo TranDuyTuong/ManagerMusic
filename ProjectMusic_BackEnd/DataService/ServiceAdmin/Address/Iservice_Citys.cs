@@ -39,5 +39,10 @@ namespace DataService.ServiceAdmin.Address
         /// </summary>
         RemoveCity_Vm GetAllDistrictOrStaffByCity(int IdCity, int Selecion);
 
+        /// <summary>
+        /// Remove City by id 
+        /// </summary>
+        Task<NotificationAddress_Vm> RemoveCity(int IdCity, Guid IdUser);
+
     }
 }

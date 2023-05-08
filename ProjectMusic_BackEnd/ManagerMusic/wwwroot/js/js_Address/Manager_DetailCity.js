@@ -239,5 +239,35 @@ $("#Btn_CloseRemove").click(function () {
     window.location.reload();
 })
 $("#Btn_SubmitRemove").click(function () {
-
+    $("#modal-RemoveCity").hide();
+    $("#modal_LoadingCreateMusic").show();
+    $.ajax({
+        url: "/ManagerAddress/RemoveCityById",
+        type: "post",
+        data: {
+            IdCity: $("#IdCity").val()
+        },
+        success: function (result) {
+            $("#modal_LoadingCreateMusic").hide();
+            switch (result.status) {
+                case 1:
+                    toastr.error("Thông báo lỗi!", "Không tìm thấy Tỉnh/Tp bạn muốn xóa");
+                    $("#modal-RemoveCity").show();
+                    break;
+                case 2:
+                    toastr.success("Thông báo thành công!", "Xóa Tỉnh/Tp thành công");
+                    $("#modal-RemoveCitySuccess").show();
+                    break;
+                default:
+                    toastr.error("Thông báo lỗi!", "Đã xảy ra lỗi vui lòng kiểm tra lại");
+                    $("#modal-RemoveCity").show();
+                    break;
+            }
+            return;
+        }
+    })
 });
+function closemodelsuccess() {
+    $("#modal-RemoveCitySuccess").hide();
+    window.location.reload();
+}

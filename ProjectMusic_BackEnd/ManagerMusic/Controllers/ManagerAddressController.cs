@@ -8,6 +8,7 @@ using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -228,9 +229,16 @@ namespace ManagerMusic.Controllers
         /// </summary>
         [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
         [HttpPost]
-        public IActionResult GetAllDistrictOrStaffByCity(int IdCity)
+        public async Task<IActionResult> RemoveCityById(int IdCity)
         {
-            return new JsonResult(0);
+            var Stream = HttpContext.Request.Cookies["Token"];
+            var hander = new JwtSecurityTokenHandler();
+            var jsontoken = hander.ReadToken(Stream);
+            var token = jsontoken as JwtSecurityToken;
+            Guid IdUser = Guid.Parse(token.Claims.FirstOrDefault(x => x.Type == "C_IdUser").Value);
+            //connection to application remove city
+            var result = await _context.RemoveCity(IdCity, IdUser);
+            return new JsonResult(result);
         }
 
     }
