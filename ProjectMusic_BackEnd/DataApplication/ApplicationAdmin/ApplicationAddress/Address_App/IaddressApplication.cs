@@ -43,5 +43,10 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// Remove city
         /// </summary>
         Task<NotificationAddress_Vm> RemoveCity(int IdCity, Guid IdUser);
+
+        /// <summary>
+        /// Activer city
+        /// </summary>
+        Task<NotificationAddress_Vm> ActiverCity(int IdCity, Guid IdUser);
     }
 }

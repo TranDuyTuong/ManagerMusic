@@ -27,6 +27,65 @@ namespace DataService.ServiceAdmin.Address
         }
 
         /// <summary>
+        /// Activer City was remove
+        /// </summary>
+        public async Task<NotificationAddress_Vm> ActiverCityRemove(int IdCity, Guid IdUser)
+        {
+            var result = new NotificationAddress_Vm();
+            var queryCity = await _context.T_Cities.FirstOrDefaultAsync(x => x.IdCity == IdCity && x.Status == false);
+            if(queryCity != null)
+            {
+                var queryUser = _context.T_Users.FirstOrDefault(x => x.Id == IdUser);
+                var queryDistrict = _context.T_Districts.Where(x => x.IdCity == queryCity.IdCity && x.Status == false).ToList();
+                // if district have data
+                if(queryDistrict.Any())
+                {
+                    List<T_District> L_DistrictUpdate = new List<T_District>();
+                    foreach(var district in queryDistrict)
+                    {
+                        L_DistrictUpdate.Add(new T_District
+                        {
+                            IdDistrict = district.IdDistrict,
+                            Status = true
+                        });
+                    }
+                    _context.T_Districts.UpdateRange(L_DistrictUpdate);
+                }
+                //Update City 
+                queryCity.Status = true;
+                _context.T_Cities.Update(queryCity);
+                //add notification
+                var L_AllUser = _user.GetAllUser();
+                if (L_AllUser.Any() == true)
+                {
+                    foreach (var item in L_AllUser)
+                    {
+                        var notification = new CreateNotification_v()
+                        {
+                            IdUser = item.IdUser,
+                            IdViewNotification = 2, // Not view notification
+                            IdDeleteNotification = 1, // Not delete notification
+                            TitleNotification = "Tỉnh/Tp " + queryCity.NameCity +
+                                                " đã được kích hoạt lại, sẻ có " + queryDistrict.Count() + " Quận/huyện được hoạt động trở lại" +
+                                                " ,do nhân viên " + queryUser.FullName + " cập nhật.",
+                            DateCreate = DateTime.UtcNow.AddHours(7),
+                            TimeCreate = DateTime.UtcNow.AddHours(7),
+                            AuthorNotification = queryUser.FullName,
+                        };
+                        _notificationUser.CreateNotification(notification);
+                    }
+                }
+                await _context.SaveChangesAsync();
+                result.status = 2; //Activer city success
+            }
+            else
+            {
+                result.status = 1; // Not found City request
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Check data citys in Database
         /// </summary>
         public List<GetAllCity_Vm> CheckDataCityDB(List<GetAllCity_Vm> request)

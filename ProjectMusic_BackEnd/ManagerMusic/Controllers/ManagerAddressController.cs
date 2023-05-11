@@ -241,5 +241,22 @@ namespace ManagerMusic.Controllers
             return new JsonResult(result);
         }
 
+        /// <summary>
+        /// Activer City
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public async Task<IActionResult> ActiverCity(int IdCity)
+        {
+            var Stream = HttpContext.Request.Cookies["Token"];
+            var hander = new JwtSecurityTokenHandler();
+            var jsontoken = hander.ReadToken(Stream);
+            var token = jsontoken as JwtSecurityToken;
+            Guid IdUser = Guid.Parse(token.Claims.FirstOrDefault(x => x.Type == "C_IdUser").Value);
+            //connection to application remove city
+            var result = await _context.ActiverCity(IdCity, IdUser);
+            return new JsonResult(result);
+        }
+
     }
 }

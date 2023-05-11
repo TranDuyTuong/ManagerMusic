@@ -17,6 +17,15 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         }
 
         /// <summary>
+        /// Activer City
+        /// </summary>
+        public async Task<NotificationAddress_Vm> ActiverCity(int IdCity, Guid IdUser)
+        {
+            var result = await _context.ActiverCityRemove(IdCity, IdUser);
+            return result;
+        }
+
+        /// <summary>
         /// CheckDataCityDB
         /// </summary>
         public List<GetAllCity_Vm> CheckDataCityDB(List<GetAllCity_Vm> request)
