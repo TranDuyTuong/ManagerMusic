@@ -238,6 +238,31 @@ namespace DataService.ServiceAdmin.Address
         /// <summary>
         /// GetAll District or staff by city
         /// </summary>
+        public List<GetAllCity_Vm> GetAllCitysRemove()
+        {
+            List<GetAllCity_Vm> l_GetAllCitys = new List<GetAllCity_Vm>();
+            var queryCity = _context.T_Cities.Where(x => x.Status == false).ToList();
+            if(queryCity.Any() == true)
+            {
+                foreach (var city in queryCity)
+                {
+                    l_GetAllCitys.Add(new GetAllCity_Vm()
+                    {
+                        CityId = city.IdCity,
+                        CityName = city.NameCity,
+                        CreateDate = city.DateCreate.Date,
+                        Symbol = city.Symbol,
+                        AreaCode = city.AreaCode,
+                        TimeCreate = city.DateCreate.ToShortTimeString()
+                    });
+                }
+            }
+            return l_GetAllCitys;
+        }
+
+        /// <summary>
+        /// GetAll District or staff by city
+        /// </summary>
         public RemoveCity_Vm GetAllDistrictOrStaffByCity(int IdCity, int Selecion)
         {
             var result = new RemoveCity_Vm();

@@ -273,5 +273,30 @@ function closemodelsuccess() {
 }
 //Activer city
 $("#Btn_ActiverCity").click(function () {
-
+    $("#modal_LoadingCreateMusic").show();
+    $.ajax({
+        url: "/ManagerAddress/ActiverCity",
+        type: "get",
+        data: {
+            IdCity: $("#IdCity").val()
+        },
+        success: function (result) {
+            $("#modal_LoadingCreateMusic").hide();
+            switch (result.status) {
+                case 1:
+                    toastr.error("Thông Báo Lỗi", "Không Tìm Thấy Tỉnh/Tp Yêu Cầu");
+                    break;
+                case 2:
+                    $("#modal-ActiverCitySuccess").show();
+                    break;
+                default:
+                    toastr.error("Thông Báo Lỗi", "Đã Xảy Ra Lỗi Vui Lòng Kiểm Tra Lại");
+                    break;
+            }
+            return;
+        }
+    })
+})
+$("#closemodelActiversuccess").click(function () {
+    window.location.reload();
 })

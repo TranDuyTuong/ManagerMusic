@@ -45,9 +45,14 @@ namespace DataService.ServiceAdmin.Address
         Task<NotificationAddress_Vm> RemoveCity(int IdCity, Guid IdUser);
 
         /// <summary>
-        /// Remove City by id 
+        /// Activer City by id 
         /// </summary>
         Task<NotificationAddress_Vm> ActiverCityRemove(int IdCity, Guid IdUser);
+
+        /// <summary>
+        /// Get All City was Remove 
+        /// </summary>
+        List<GetAllCity_Vm> GetAllCitysRemove();
 
     }
 }

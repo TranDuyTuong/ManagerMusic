@@ -48,5 +48,10 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// Activer city
         /// </summary>
         Task<NotificationAddress_Vm> ActiverCity(int IdCity, Guid IdUser);
+
+        /// <summary>
+        /// Get All City Remove
+        /// </summary>
+        PadingCity_Vm GetAllCitysRemove(int PageIndex, int PageSize, string seach);
     }
 }

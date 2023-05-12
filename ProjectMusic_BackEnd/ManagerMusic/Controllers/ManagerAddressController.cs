@@ -253,8 +253,29 @@ namespace ManagerMusic.Controllers
             var jsontoken = hander.ReadToken(Stream);
             var token = jsontoken as JwtSecurityToken;
             Guid IdUser = Guid.Parse(token.Claims.FirstOrDefault(x => x.Type == "C_IdUser").Value);
-            //connection to application remove city
+            //connection to application activer city
             var result = await _context.ActiverCity(IdCity, IdUser);
+            return new JsonResult(result);
+        }
+
+        /// <summary>
+        /// Page Get All Citys Remove
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult PageGetAllCitysRemove()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Json Get All Citys Remove
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult JsonGetAllCitysRemove(int pageIndex, int pageSize, string seach)
+        {
+            var result = _context.GetAllCitysRemove(pageIndex, pageSize, seach);    
             return new JsonResult(result);
         }
 
