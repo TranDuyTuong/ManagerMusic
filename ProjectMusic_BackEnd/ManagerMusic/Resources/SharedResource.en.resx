@@ -2004,6 +2004,9 @@ successfully</value>
   <data name="Title_PageCity" xml:space="preserve">
     <value>Page List Citys</value>
   </data>
+  <data name="Title_PageRemoveCity" xml:space="preserve">
+    <value>Page Remove Citys</value>
+  </data>
   <data name="title_request" xml:space="preserve">
     <value>Please enter the title of the request !</value>
   </data>

@@ -2001,6 +2001,9 @@ thành công</value>
   <data name="Title_PageCity" xml:space="preserve">
     <value>Trang Danh Sách Tỉnh/Tp</value>
   </data>
+  <data name="Title_PageRemoveCity" xml:space="preserve">
+    <value>Tỉnh/Tp Đã Xóa</value>
+  </data>
   <data name="title_request" xml:space="preserve">
     <value>Vui lòng nhập tiêu đề của yêu cầu !</value>
   </data>
