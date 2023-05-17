@@ -117,11 +117,11 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// <summary>
         /// GetAll City was remove
         /// </summary>
-        public PadingCity_Vm GetAllCitysRemove(int PageIndex, int PageSize, string seach)
+        public PadingCity_Vm GetAllCitysRemove(int PageIndex, int PageSize, int seach)
         {
             var padingCity = new PadingCity_Vm();
             var result = _context.GetAllCitysRemove();
-            if(seach == null ||  seach.Length == 0)
+            if(seach == 0)
             {
                 // pading not seach city
                 padingCity.l_Citys = result.Skip((PageIndex - 1)*PageSize).Take(PageSize).ToList();
@@ -129,18 +129,9 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
             else
             {
                 // pading have seach city
-                var l_CityToUpper = new List<GetAllCity_Vm>();
-                foreach(var city in result)
-                {
-                    l_CityToUpper.Add(new GetAllCity_Vm()
-                    {
-                        CityId = city.CityId,
-                        CityName = city.CityName.ToUpper(),
-                    });
-                }
-                var seachCitys = l_CityToUpper.Where(x => x.CityName.Contains(seach.ToUpper())).ToList();
+                var seachCitys = result.Where(x => x.AreaCode == seach).ToList();
                 padingCity.l_Citys = seachCitys.Skip((PageIndex-1) * PageSize).Take(PageSize).ToList();
-                padingCity.seachCity = seach;
+                padingCity.seachCity = seach.ToString();
                 padingCity.totalSeach = seachCitys.Count();
             }
             padingCity.totalCitys = result.Count();

@@ -17,13 +17,16 @@
         <div class="col-md-12">
             <p style="text-align: right;">Tổng Số Tỉnh/Tp: <b style="color: red" id="TotalCitys"></b></p>
             <p>
-                <a asp-action="PageCitys" asp-controller="ManagerAddress" class="btn btn-primary" style="border-radius: 10%" data-bs-toggle="tooltip" data-bs-placement="top" title="Làm Mới">
+                <a asp-action="PageGetAllCitysRemove" asp-controller="ManagerAddress" class="btn btn-primary" style="border-radius: 10%" data-bs-toggle="tooltip" data-bs-placement="top" title="Làm Mới">
                     <i class="fas fa-sync"></i>
                 </a>
+                <button type="button" id="btn_activerCityRemove" class="btn btn-success" style="border-radius: 10%" data-bs-toggle="tooltip" data-bs-placement="top" title="Kích Hoạt" disabled>
+                    <i class="fas fa-cogs"></i>
+                </button>
             </p>
             <div class="row">
                 <div class="col-md-9">
-                    <input type="text" class="form-control" id="TxtSeachValue" placeholder="Nhập vào tên Tỉnh/Tp ..." style="border-radius: 5px;">
+                    <input type="number" class="form-control" id="TxtSeachValue" placeholder="Nhập vào mã Tỉnh/Tp ..." style="border-radius: 5px;">
                 </div>
                 <div class="col-md-3">
                     <button type="button" class="btn btn-primary" style="border-radius: 5px;" id="btn_Seach"><i class="fas fa-search"></i> Lọc Dữ Liệu</button>
@@ -42,7 +45,6 @@
                         <th scope="col">Thời Gian Tạo</th>
                         <th scope="col">Ký Hiệu</th>
                         <th scope="col">Mã Vùng</th>
-                        <th scope="col">@languade.Getkey("Options")</th>
                     </tr>
                 </thead>
                 <tbody id="body_Citys">

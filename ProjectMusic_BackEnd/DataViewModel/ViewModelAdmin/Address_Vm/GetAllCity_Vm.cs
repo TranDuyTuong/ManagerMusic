@@ -10,6 +10,7 @@ namespace DataViewModel.ViewModelAdmin.Address_Vm
     {
         public int CityId { get; set; }
         public string CityName { get; set; }
+        public string CityNameUpper { get; set; }
         public string Symbol { get; set; }
         public int AreaCode { get; set; }
         public bool Status { get; set; }

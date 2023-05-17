@@ -273,7 +273,7 @@ namespace ManagerMusic.Controllers
         /// </summary>
         [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
         [HttpGet]
-        public IActionResult JsonGetAllCitysRemove(int pageIndex, int pageSize, string seach)
+        public IActionResult JsonGetAllCitysRemove(int pageIndex, int pageSize, int seach)
         {
             var result = _context.GetAllCitysRemove(pageIndex, pageSize, seach);    
             return new JsonResult(result);

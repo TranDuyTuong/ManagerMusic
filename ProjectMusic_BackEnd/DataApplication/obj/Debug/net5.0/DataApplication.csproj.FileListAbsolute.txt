@@ -39,6 +39,6 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataApplication\obj\Debug\net5.
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataApplication\obj\Debug\net5.0\DataApplication.csproj.CoreCompileInputs.cache
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataApplication\obj\Debug\net5.0\DataApplication.csproj.CopyComplete
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataApplication\obj\Debug\net5.0\DataApplication.dll
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataApplication\obj\Debug\net5.0\refint\DataApplication.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataApplication\obj\Debug\net5.0\DataApplication.pdb
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataApplication\obj\Debug\net5.0\ref\DataApplication.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataApplication\bin\Debug\net5.0\ref\DataApplication.dll

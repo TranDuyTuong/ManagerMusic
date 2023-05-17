@@ -52,6 +52,6 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// <summary>
         /// Get All City Remove
         /// </summary>
-        PadingCity_Vm GetAllCitysRemove(int PageIndex, int PageSize, string seach);
+        PadingCity_Vm GetAllCitysRemove(int PageIndex, int PageSize, int seach);
     }
 }

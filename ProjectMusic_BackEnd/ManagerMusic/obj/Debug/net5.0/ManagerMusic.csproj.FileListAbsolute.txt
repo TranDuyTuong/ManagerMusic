@@ -286,7 +286,6 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\a
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\appsettings.json
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\appsettings.Production.json
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\libman.json
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\ManagerMusic.StaticWebAssets.xml
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\ManagerMusic.exe
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\ManagerMusic.deps.json
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\ManagerMusic.runtimeconfig.json
@@ -737,11 +736,6 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\e
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\vi\ManagerMusic.resources.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\scopedcss\bundle\ManagerMusic.styles.css
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\ManagerMusic.StaticWebAssets.Manifest.cache
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\ManagerMusic.StaticWebAssets.Pack.cache
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.ManagerMusic.Microsoft.AspNetCore.StaticWebAssets.props
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.build.ManagerMusic.props
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ManagerMusic.props
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ManagerMusic.props
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.TagHelpers.input.cache
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.TagHelpers.output.cache
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.RazorCoreGenerate.cache
@@ -855,8 +849,9 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\M
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.Views.pdb
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.csproj.CopyComplete
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.dll
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\refint\ManagerMusic.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.pdb
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.genruntimeconfig.cache
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ref\ManagerMusic.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\Razor\Views\ManagerAddress\PageGetAllCitysRemove.cshtml.g.cs
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\ref\ManagerMusic.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\ManagerMusic.StaticWebAssets.xml

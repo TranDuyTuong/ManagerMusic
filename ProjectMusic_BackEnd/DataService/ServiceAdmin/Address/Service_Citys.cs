@@ -253,11 +253,12 @@ namespace DataService.ServiceAdmin.Address
                         CreateDate = city.DateCreate.Date,
                         Symbol = city.Symbol,
                         AreaCode = city.AreaCode,
-                        TimeCreate = city.DateCreate.ToShortTimeString()
+                        TimeCreate = city.DateCreate.ToShortTimeString(),
+                        CityNameUpper = city.NameCity.ToUpper()
                     });
                 }
             }
-            return l_GetAllCitys;
+            return l_GetAllCitys.OrderBy( x => x.CityNameUpper).ToList();
         }
 
         /// <summary>

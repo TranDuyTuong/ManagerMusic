@@ -20,6 +20,6 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataTable\obj\Debug\net5.0\Data
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataTable\obj\Debug\net5.0\DataTable.AssemblyInfo.cs
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataTable\obj\Debug\net5.0\DataTable.csproj.CoreCompileInputs.cache
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataTable\obj\Debug\net5.0\DataTable.dll
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataTable\obj\Debug\net5.0\refint\DataTable.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataTable\obj\Debug\net5.0\DataTable.pdb
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataTable\obj\Debug\net5.0\ref\DataTable.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataTable\bin\Debug\net5.0\ref\DataTable.dll
