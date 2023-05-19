@@ -7,15 +7,18 @@ var Before = $("#Before").val();
 $(document).ready(function () {
     LoadCitysRemove();
     checkData = 0;
+    CitysListId = new Array;
 })
 
 var PageIndex = 0;
 var PageSize = 20;
 var checkData = 0;
+var CitysListId = new Array;
 //Load Citys delete
 function LoadCitysRemove() {
     checkData = 0;
     var count = 0;
+    CitysListId = new Array;
     $("#SeachCitys").empty();
     $("#body_Citys").empty();
     $("#TotalCitys").empty();
@@ -102,8 +105,8 @@ document.getElementById('selectall').onclick = function (e) {
 };
 
 
-document.getElementsByName('case').onclick = function (e) {
-    console.log("tui")
+function funcCheckCity() {
+    validatecheckbox();
 }
 
 function validatecheckbox() {
@@ -120,3 +123,37 @@ function validatecheckbox() {
         document.querySelector("#btn_activerCityRemove").disabled = true;
     }
 }
+
+// Activer Citys reomve
+$("#btn_activerCityRemove").click(function () {
+    var checkbox = document.getElementsByName('case');
+    for (var i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked === true) {
+            CitysListId.push(checkbox[i].value);
+        }
+    }
+    $("#modal_ConfirmActiverCity").show();
+})
+
+$("#btn_Cancel").click(function () {
+    window.location.reload();
+})
+
+$("#btn_Confirm").click(function () {
+    if (CitysListId.length == 0) {
+        toastr.error("Thông Báo Lỗi", "Vui Lòng Chọn Tỉnh/Tp Muốn Xóa!");
+    } else {
+        $("#modal_LoadingCreateMusic").show();
+        $.ajax({
+            url: "/ManagerAddress/JsonActiverCitysRemove",
+            type: "post",
+            data: {
+                lIdCitysActiver: CitysListId
+            },
+            success: function (result) {
+
+            }
+        })
+    }
+    return;
+})

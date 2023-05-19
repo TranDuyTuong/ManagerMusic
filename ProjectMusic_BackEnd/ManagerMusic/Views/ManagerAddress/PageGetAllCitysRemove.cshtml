@@ -39,7 +39,7 @@
                         <th scope="col">
                             <input type="checkbox" id="selectall" />
                         </th>
-                        <th scope="col">@languade.Getkey("No") <i class="fas fa-sort" id="Sort_No"></i></th>
+                        <th scope="col">@languade.Getkey("No")</th>
                         <th scope="col">Tên Tỉnh/Tp</th>
                         <th scope="col">Ngày Tạo</th>
                         <th scope="col">Thời Gian Tạo</th>
@@ -86,6 +86,31 @@
                     </div>
                     <div class="col-md-4"></div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal confirm activer citys delete-->
+<div class="modal showmodal-seachNamemusic" tabindex="-1" id="modal_ConfirmActiverCity">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="text-align: center; font-family: initial; font-size: 20px;">Có Chắc Chắn Muốn Lấy Lại Các Tỉnh/Tp</p>
+            </div>
+            <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p style="text-align: center">
+                            <button class="btn btn-danger" id="btn_Cancel" style="border-radius: 10px;">Hủy Bỏ</button>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                        <p style="text-align: center">
+                            <button class="btn btn-success" id="btn_Confirm" style="width: max-content; border-radius:10px;">Xác Nhận</button>
+                            </p>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

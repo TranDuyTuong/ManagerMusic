@@ -26,6 +26,24 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         }
 
         /// <summary>
+        /// Activer Citys Remove
+        /// </summary>
+        public NotificationAddress_Vm ActiverCitysRemove(string[] ListIdCity, Guid IdUser)
+        {
+            List<GetAllCity_Vm> listIdCitysActiver = new List<GetAllCity_Vm>();
+            // Conver Arry Id City to list Id City
+            for(int i = 0; i <= ListIdCity.Length; i++)
+            {
+                listIdCitysActiver.Add(new GetAllCity_Vm()
+                {
+                    CityId = Convert.ToInt32(ListIdCity[i])
+                });
+            }
+            var result = _context.ActiverCitysRemove(listIdCitysActiver, IdUser);
+            return result;
+        }
+
+        /// <summary>
         /// CheckDataCityDB
         /// </summary>
         public List<GetAllCity_Vm> CheckDataCityDB(List<GetAllCity_Vm> request)

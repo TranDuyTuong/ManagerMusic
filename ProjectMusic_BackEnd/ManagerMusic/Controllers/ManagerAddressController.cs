@@ -279,5 +279,22 @@ namespace ManagerMusic.Controllers
             return new JsonResult(result);
         }
 
+        /// <summary>
+        /// Json Activer Citys Reomve
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpPost]
+        public IActionResult JsonActiverCitysRemove(string[] lIdCitysActiver)
+        {
+            // Get User Login Current
+            var Stream = HttpContext.Request.Cookies["Token"];
+            var hander = new JwtSecurityTokenHandler();
+            var jsontoken = hander.ReadToken(Stream);
+            var token = jsontoken as JwtSecurityToken;
+            Guid IdUser = Guid.Parse(token.Claims.FirstOrDefault(x => x.Type == "C_IdUser").Value);
+
+            return new JsonResult(0);
+        }
+
     }
 }

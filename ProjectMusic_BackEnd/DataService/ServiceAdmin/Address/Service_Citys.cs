@@ -85,6 +85,15 @@ namespace DataService.ServiceAdmin.Address
             return result;
         }
 
+
+        /// <summary>
+        /// Activer Citys Remove
+        /// </summary>
+        public NotificationAddress_Vm ActiverCitysRemove(List<GetAllCity_Vm> request, Guid IdUser)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Check data citys in Database
         /// </summary>

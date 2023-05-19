@@ -28,7 +28,9 @@ using ManagerMusic.Models;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e8e56f25a0816cb7f5e04b8471189a28ad7f1fd4", @"/Views/ManagerData/IndexFile.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51664b79307bd63df294b5f5a17da78d6e89f010", @"/Views/_ViewImports.cshtml")]
+    #nullable restore
     public class Views_ManagerData_IndexFile : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "~/Views/SidebarMenu/Index.cshtml", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -91,7 +93,7 @@ using ManagerMusic.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n<div class=\"az-content pd-y-20 pd-lg-y-30 pd-xl-y-40\">\r\n    <div class=\"container\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd411755", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd411801", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -106,7 +108,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        <div class=\"az-content-body pd-lg-l-40 d-flex flex-column\">\r\n            <div class=\"az-content-breadcrumb\">\r\n                <span>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd413020", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd413066", async() => {
 #nullable restore
 #line 14 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\ManagerData\IndexFile.cshtml"
                                                                                      Write(languade.Getkey("Home_page"));
@@ -147,7 +149,7 @@ using ManagerMusic.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</span>\r\n            </div>\r\n\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd415378", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd415424", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -215,7 +217,7 @@ WriteAttributeValue("", 2210, languade.Getkey("Close_Seach"), 2210, 31, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">X</a>\r\n                        </p>\r\n                        <select class=\"form-control\" style=\"border-radius: 5px;\" id=\"selectSeason\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd419495", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd419541", async() => {
                 WriteLiteral(" ");
 #nullable restore
 #line 39 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\ManagerData\IndexFile.cshtml"
@@ -241,7 +243,7 @@ WriteAttributeValue("", 2210, languade.Getkey("Close_Seach"), 2210, 31, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd421273", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd421319", async() => {
                 WriteLiteral(" ");
 #nullable restore
 #line 40 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\ManagerData\IndexFile.cshtml"
@@ -264,7 +266,7 @@ WriteAttributeValue("", 2210, languade.Getkey("Close_Seach"), 2210, 31, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd422723", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd422769", async() => {
                 WriteLiteral(" ");
 #nullable restore
 #line 41 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\ManagerData\IndexFile.cshtml"
@@ -287,7 +289,7 @@ WriteAttributeValue("", 2210, languade.Getkey("Close_Seach"), 2210, 31, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd424161", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd424207", async() => {
                 WriteLiteral(" ");
 #nullable restore
 #line 42 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\ManagerData\IndexFile.cshtml"
@@ -310,7 +312,7 @@ WriteAttributeValue("", 2210, languade.Getkey("Close_Seach"), 2210, 31, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd425609", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd425655", async() => {
                 WriteLiteral(" ");
 #nullable restore
 #line 43 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\ManagerData\IndexFile.cshtml"
@@ -333,7 +335,7 @@ WriteAttributeValue("", 2210, languade.Getkey("Close_Seach"), 2210, 31, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd427054", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd427100", async() => {
                 WriteLiteral(" ");
 #nullable restore
 #line 44 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\ManagerData\IndexFile.cshtml"
@@ -356,7 +358,7 @@ WriteAttributeValue("", 2210, languade.Getkey("Close_Seach"), 2210, 31, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd428492", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd428538", async() => {
                 WriteLiteral(" ");
 #nullable restore
 #line 45 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\ManagerData\IndexFile.cshtml"
@@ -379,7 +381,7 @@ WriteAttributeValue("", 2210, languade.Getkey("Close_Seach"), 2210, 31, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </select>\r\n                    </div>\r\n\r\n                    <p style=\"text-align:right;\">\r\n\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd430075", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd430121", async() => {
                 WriteLiteral("<i class=\"fas fa-plus-circle\"></i>");
             }
             );
@@ -451,7 +453,7 @@ WriteAttributeValue("", 4349, languade.Getkey("File_Activation"), 4349, 35, fals
 #nullable disable
             EndWriteAttribute();
             WriteLiteral("><i class=\"fas fa-cog\"></i></a>\r\n\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd434886", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd434932", async() => {
                 WriteLiteral("<i class=\"fas fa-comments\"></i>");
             }
             );
@@ -482,7 +484,7 @@ AddHtmlAttributeValue("", 4618, languade.Getkey("Song_Comments"), 4618, 33, fals
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd437142", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd437188", async() => {
                 WriteLiteral("<i class=\"fas fa-star\"></i>");
             }
             );
@@ -513,7 +515,7 @@ AddHtmlAttributeValue("", 4889, languade.Getkey("Star_rating"), 4889, 31, false)
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd439392", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd439438", async() => {
                 WriteLiteral("<i class=\"fas fa-file-download\"></i>");
             }
             );
@@ -554,7 +556,7 @@ WriteAttributeValue("", 5402, languade.Getkey("Filter_status"), 5402, 33, false)
 #nullable disable
             EndWriteAttribute();
             WriteLiteral("><i class=\"fas fa-filter\"></i></a>\r\n\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd442270", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8e56f25a0816cb7f5e04b8471189a28ad7f1fd442316", async() => {
                 WriteLiteral("<i class=\"fas fa-spinner\"></i>");
             }
             );
@@ -1010,18 +1012,30 @@ WriteAttributeValue("", 13378, languade.Getkey("select_status"), 13378, 33, fals
             WriteLiteral(" id=\"select_status\" />\r\n\r\n");
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public LanguageService languade { get; private set; }
+        public LanguageService languade { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; } = default!;
+        #nullable disable
     }
 }
 #pragma warning restore 1591

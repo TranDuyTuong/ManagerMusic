@@ -54,5 +54,11 @@ namespace DataService.ServiceAdmin.Address
         /// </summary>
         List<GetAllCity_Vm> GetAllCitysRemove();
 
+
+        /// <summary>
+        /// Get All City was Remove 
+        /// </summary>
+        NotificationAddress_Vm ActiverCitysRemove(List<GetAllCity_Vm> request, Guid IdUser);
+
     }
 }
