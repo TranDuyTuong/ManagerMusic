@@ -292,8 +292,8 @@ namespace ManagerMusic.Controllers
             var jsontoken = hander.ReadToken(Stream);
             var token = jsontoken as JwtSecurityToken;
             Guid IdUser = Guid.Parse(token.Claims.FirstOrDefault(x => x.Type == "C_IdUser").Value);
-
-            return new JsonResult(0);
+            var result = _context.ActiverCitysRemove(lIdCitysActiver, IdUser);
+            return new JsonResult(result);
         }
 
     }

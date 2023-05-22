@@ -91,7 +91,75 @@ namespace DataService.ServiceAdmin.Address
         /// </summary>
         public NotificationAddress_Vm ActiverCitysRemove(List<GetAllCity_Vm> request, Guid IdUser)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            int countDitrict = 0;
+            var result = new NotificationAddress_Vm();
+            var query = _context.T_Cities.Where(x => x.Status == false).ToList();
+            if(query.Any() == true)
+            {
+                // Find user activer 
+                var userQuery = _context.T_Users.FirstOrDefault(x => x.Id == IdUser);
+                // Find district activer
+                var districtQuery = _context.T_Districts.Where(x => x.Status == false).ToList();
+
+                foreach(var item in request)
+                {
+                    // Check value city 
+                    var activerCity = query.FirstOrDefault(x => x.IdCity == item.CityId);
+                    if(activerCity != null)
+                    {
+                        count++;
+                        activerCity.Status = true;
+                        // Update City
+                        _context.T_Cities.Update(activerCity);
+                        
+                        // Activer District
+                        if(districtQuery.Any() == true)
+                        {
+                            var findDistrictByIdCity = districtQuery.Where(x => x.IdCity == item.CityId).ToList();
+                            if(findDistrictByIdCity.Any() == true)
+                            {
+                                foreach(var itemDistric in findDistrictByIdCity)
+                                {
+                                    countDitrict++;
+                                    itemDistric.Status = true;
+                                    // Update District 
+                                    _context.T_Districts.Update(itemDistric);
+                                }
+                            }
+                        }
+                    }
+                }
+                // Add notification
+                var L_AllUser = _user.GetAllUser();
+                if (L_AllUser.Any() == true)
+                {
+                    foreach (var item in L_AllUser)
+                    {
+                        var notification = new CreateNotification_v()
+                        {
+                            IdUser = item.IdUser,
+                            IdViewNotification = 2, // Not view notification
+                            IdDeleteNotification = 1, // Not delete notification
+                            TitleNotification = "Đã có " + count + " Tỉnh/Tp" +
+                                                " đã được kích hoạt lại, sẻ có " + countDitrict + " Quận/huyện được hoạt động trở lại" +
+                                                " ,do nhân viên " + userQuery.FullName + " cập nhật.",
+                            DateCreate = DateTime.UtcNow.AddHours(7),
+                            TimeCreate = DateTime.UtcNow.AddHours(7),
+                            AuthorNotification = userQuery.FullName,
+                        };
+                        _notificationUser.CreateNotification(notification);
+                    }
+                }
+                _context.SaveChangesAsync();
+                result.status = 2; // Activer Citys Success
+                result.TotalCreateSuccess = count;
+            }
+            else
+            {
+                result.status = 1; // Not find citys delete
+            }
+            return result;
         }
 
         /// <summary>
