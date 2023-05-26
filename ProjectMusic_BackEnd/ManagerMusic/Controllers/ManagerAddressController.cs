@@ -35,6 +35,16 @@ namespace ManagerMusic.Controllers
         /// </summary>
         private static List<GetAllCity_Vm> L_CityDuplicate = new List<GetAllCity_Vm>();
 
+        /// <summary>
+        /// L_District
+        /// </summary>
+        private static List<GetAllDistrict_Vm> L_District = new List<GetAllDistrict_Vm>();
+
+        /// <summary>
+        /// Duplicate
+        /// </summary>
+        private static List<GetAllDistrict_Vm> L_DistrictDuplicate = new List<GetAllDistrict_Vm>();
+
 
         /// <summary>
         /// PageCitys
@@ -295,6 +305,99 @@ namespace ManagerMusic.Controllers
             var result = _context.ActiverCitysRemove(lIdCitysActiver, IdUser);
             return new JsonResult(result);
         }
+
+        /// <summary>
+        /// PageDistrict
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult PageDistricts()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// JsonGetAllDistricts
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult JsonGetAllDistricts(int pageSize, int pageIndex, string seach, int orderBy)
+        {
+            var result = _context.GetAllDistricts(pageIndex, pageSize, orderBy, seach);
+            return new JsonResult(result);
+        }
+
+        /// <summary>
+        /// Page Create Districts With Excel Import
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult PageCreateDistricts()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Read Content In Excel File Districts
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpPost]
+        public async Task<IActionResult> JsonReadFileExcelDistricts(ImportExcel_Districts request)
+        {
+            //var result = new ReadDataDistrictExcel_Vm();
+            ////Pading data
+            //if (L_District.Count() != 0)
+            //{
+            //    result.Status = 0; //Have Data
+            //    result.L_Districts = L_District.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
+            //}
+            //else
+            //{
+            //    IFormFile ExcelFile = request.FileExcel;
+            //    string[] SplitFile = ExcelFile.FileName.Split('.');
+            //    switch (SplitFile[1])
+            //    {
+            //        case "xlsx":
+            //            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            //            using (var stream = new MemoryStream())
+            //            {
+            //                await ExcelFile.CopyToAsync(stream);
+            //                using (var package = new ExcelPackage(stream))
+            //                {
+            //                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+            //                    var rowcount = worksheet.Dimension.Rows;
+            //                    for (int row = 3; row <= rowcount; row++)
+            //                    {
+            //                        L_District.Add(new GetAllDistrict_Vm
+            //                        {
+            //                            CityId 
+            //                            NameDistrict 
+            //                            DateCreate 
+            //                            NameCity 
+            //                            TimeCreate
+
+            //                            CityName = worksheet.Cells[row, 2].Value.ToString().Trim(),
+            //                            Symbol = worksheet.Cells[row, 3].Value.ToString().Trim(),
+            //                            AreaCode = Convert.ToInt32(worksheet.Cells[row, 4].Value.ToString().Trim()),
+            //                            CreateDate = DateTime.UtcNow.AddHours(7),
+            //                        });
+            //                    }
+            //                }
+
+            //            }
+            //            // Add list citys in model result
+            //            result.L_Citys = L_City.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
+            //            result.Status = 0; //Have Data
+            //            break;
+            //        default:
+            //            result.Status = 2; //No Data
+            //            break;
+            //    }
+            //}
+            //result.TotalCitys = L_City.Count;
+            return new JsonResult(0);
+        }
+
 
     }
 }

@@ -140,6 +140,7 @@ $("#btn_Cancel").click(function () {
 })
 
 $("#btn_Confirm").click(function () {
+    $("#modal_ConfirmActiverCity").hide();
     if (CitysListId.length == 0) {
         toastr.error("Thông Báo Lỗi", "Vui Lòng Chọn Tỉnh/Tp Muốn Xóa!");
     } else {
@@ -151,9 +152,23 @@ $("#btn_Confirm").click(function () {
                 lIdCitysActiver: CitysListId
             },
             success: function (result) {
-
+                $("#modal_LoadingCreateMusic").hide();
+                switch (result.status) {
+                    case 2:
+                        $("#modal-ActiverCitySuccess").show();
+                        break;
+                    case 1:
+                        toastr.error("Thông Báo Lỗi", "Không tìm thấy Tỉnh/Tp bạn muốn kích hoạt");
+                        break;
+                    default:
+                        break
+                }
             }
         })
     }
     return;
 })
+// Function click button Activer Citys Success
+function closemodelActiversuccess() {
+    window.location.reload();
+}

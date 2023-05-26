@@ -14,6 +14,9 @@ CÁC HÀM NÊN DÙNG ĐỂ CẢI THIỆN TỐC ĐỘ XỬ LÝ CỦA ỨNG DỤNG
 - Count() thì lặp qua từng phần tử rồi trả về tổng số
 - Nên trong trường hợp chỉ cần kiểm tra list có null hay không ta nên dùng Any() sẻ trả về kết quả với thời gian nhanh hơn.
 
+-----------------------------------------------------------------------------------------------
+- Trùng dữ liệu 2 mã Id City 8 và 30 (Lâm Đồng) -> dùng mã  30 là cho lâm đồng
+
 
 --------------------------------------------------------------------------------------------------
 TÌNH HÌNH TIẾN ĐỘ CÔNG VIỆC CHỨC NĂNG

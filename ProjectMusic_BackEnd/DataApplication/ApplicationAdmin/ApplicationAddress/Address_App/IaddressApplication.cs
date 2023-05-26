@@ -59,5 +59,10 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// Get All City Remove
         /// </summary>
         NotificationAddress_Vm ActiverCitysRemove(string[] ListIdCity, Guid IdUser);
+
+        /// <summary>
+        /// GetAllDistricts
+        /// </summary>
+        PadingDistrict_Vm GetAllDistricts(int pageIndex, int pageSize, int orderBy, string seach);
     }
 }

@@ -132,6 +132,7 @@ namespace ManagerMusic
             services.AddTransient<Iservice_Reports, Service_Reports>();
             services.AddTransient<Isevice_RequestUser, Sevice_RequestUser>();
             services.AddTransient<Iservice_Citys, Service_Citys>();
+            services.AddTransient<Iservice_Districts, Service_Districts>();
             //Service Client
             services.AddTransient<IhomeClient, HomeClient>();
             services.AddTransient<ImusicClient, MusicClient>();

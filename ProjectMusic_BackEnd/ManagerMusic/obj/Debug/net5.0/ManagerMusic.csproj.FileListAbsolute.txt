@@ -859,3 +859,5 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\s
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ManagerMusic.props
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ManagerMusic.props
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\refint\ManagerMusic.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\Razor\Views\ManagerAddress\PageDistricts.cshtml.g.cs
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\Razor\Views\ManagerAddress\PageCreateDistricts.cshtml.g.cs

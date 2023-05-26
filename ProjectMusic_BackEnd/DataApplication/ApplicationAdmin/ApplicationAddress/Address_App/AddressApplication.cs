@@ -1,4 +1,5 @@
 ﻿using DataService.ServiceAdmin.Address;
+using DataTable.Table.Address;
 using DataViewModel.ViewModelAdmin.Address_Vm;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,11 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
     public class AddressApplication: IaddressApplication
     {
         private readonly Iservice_Citys _context;
-        public AddressApplication(Iservice_Citys context)
+        private readonly Iservice_Districts _contextDistricts;
+        public AddressApplication(Iservice_Citys context, Iservice_Districts contextDistricts)
         {
             _context = context;
+            _contextDistricts = contextDistricts;
         }
 
         /// <summary>
@@ -32,7 +35,7 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         {
             List<GetAllCity_Vm> listIdCitysActiver = new List<GetAllCity_Vm>();
             // Conver Arry Id City to list Id City
-            for(int i = 0; i <= ListIdCity.Length; i++)
+            for(int i = 0; i < ListIdCity.Length; i++)
             {
                 listIdCitysActiver.Add(new GetAllCity_Vm()
                 {
@@ -174,5 +177,74 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
             var result = await _context.RemoveCity(IdCity, IdUser);
             return result;
         }
+
+
+        /// <summary>
+        /// GetAllDistricts
+        /// </summary>
+        public PadingDistrict_Vm GetAllDistricts(int pageIndex, int pageSize, int orderBy, string seach)
+        {
+            var result = _contextDistricts.GetAllDistricts();
+            var padingResult = new PadingDistrict_Vm();
+            if (seach == null)
+            {
+                // Pading district
+                padingResult.l_Districts = result.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            }
+            else
+            {
+                // ToUpper name disitrict
+                var l_DistrictsToUpper = new List<GetAllDistrict_Vm>();
+                foreach (var district in result)
+                {
+                    l_DistrictsToUpper.Add(new GetAllDistrict_Vm()
+                    {
+                        DistrictId = district.CityId,
+                        NameDistrict = district.NameDistrict.ToUpper(),
+                    });
+                }
+
+                // Find seach data
+                var resultSeach = l_DistrictsToUpper.Where(x => x.NameDistrict.Contains(seach.ToUpper())).ToList();
+                var l_DistrictsResultSeach = new List<GetAllDistrict_Vm>();
+                foreach (var item in resultSeach)
+                {
+                    var findCitySeach = result.FirstOrDefault(x => x.DistrictId == item.DistrictId);
+                    l_DistrictsResultSeach.Add(new GetAllDistrict_Vm()
+                    {
+                        DistrictId = findCitySeach.DistrictId,
+                        CityId = findCitySeach.CityId,
+                        NameDistrict = findCitySeach.NameDistrict,
+                        NameCity = findCitySeach.NameCity,
+                        Status = findCitySeach.Status,
+                        DateCreate = findCitySeach.DateCreate.Date,
+                        TimeCreate = findCitySeach.DateCreate.ToShortTimeString()
+                    });
+                }
+
+                // Pading city was seach
+                padingResult.l_Districts = l_DistrictsResultSeach.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+                padingResult.seachDistrict = seach;
+                padingResult.totalSeach = resultSeach.Count();
+
+            }
+            padingResult.totalDistricts = result.Count();
+
+            return padingResult;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
