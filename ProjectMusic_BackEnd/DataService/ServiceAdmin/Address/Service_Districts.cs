@@ -52,6 +52,37 @@ namespace DataService.ServiceAdmin.Address
             return result;
         }
 
+        /// <summary>
+        /// CheckDistricDB
+        /// </summary>
+        public List<GetAllDistrict_Vm> CheckDistricDB(List<GetAllDistrict_Vm> request)
+        {
+           // Get all district in DB
+           var query = from city in _context.T_Cities
+                       join district in _context.T_Districts on city.IdCity equals district.IdDistrict
+                       select new {city, district};
+            List<GetAllDistrict_Vm> l_districtDB = new List<GetAllDistrict_Vm>();
+            foreach (var item in query)
+            {
+                var checkData = request.FirstOrDefault(x => x.Identifier == item.district.Identifier);
+                if(checkData != null)
+                {
+                    l_districtDB.Add(new GetAllDistrict_Vm
+                    {
+                        DistrictId = item.district.IdDistrict,
+                        CityId = item.city.IdCity,
+                        NameDistrict = item.district.NameDistrict,
+                        DateCreate = item.district.DateCreate,
+                        NameCity = item.city.NameCity,
+                        TimeCreate = item.district.DateCreate.ToShortTimeString(),
+                        Status = item.district.Status,
+                        Identifier = item.district.Identifier
+                    });
+                }
+            }
+            return l_districtDB;
+        }
+
 
     }
 }

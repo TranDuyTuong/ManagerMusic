@@ -10,14 +10,14 @@ $("#BtnReadExcelFile").click(function () {
     if (CheckImportFile.length == 0 || CheckImportFile == null || CheckImportFile == undefined) {
         toastr.error("Thông Báo Lỗi!", "Vui lòng chọn file Excel Cần Import");
     } else {
-        LoadCitys();
+        LoadDistricts();
     }
 });
 
 //Load data in file excel import
-function LoadCitys() {
-    $("#TotalCitys").empty();
-    $("#body_Citys").empty();
+function LoadDistricts() {
+    $("#TotalDistricts").empty();
+    $("#body_Districts").empty();
     $("#TotalItem").empty()
     $("#ItemInPage").empty()
 
@@ -30,7 +30,7 @@ function LoadCitys() {
     formData.append("PageIndex", pageIndex);
     formData.append("PageSize", pageSize);
     $.ajax({
-        url: "/ManagerAddress/JsonReadFileExcelCitys",
+        url: "/ManagerAddress/JsonReadFileExcelDistricts",
         type: "post",
         data: formData,
         contentType: false,
@@ -41,36 +41,29 @@ function LoadCitys() {
             var count = 0;
             switch (result.status) {
                 case 0:
-                    $.each(result.l_Citys, function (key, item) {
+                    $.each(result.l_Districts, function (key, item) {
                         var html = "";
                         count++;
-                        html += '<tr id="' + item.areaCode + '">';
-                        html += '<th scope="row">';
-                        html += '<input type="checkbox" class="case" name="case" value="' + item.areaCode + '"/>';
-                        html += '</th>';
-                        html += '<td>' + count + '</td>';
-                        html += '<td>' + item.cityName + '</td>';
-                        html += '<td>' + item.createDate + '</td>';
-                        html += '<td>' + item.symbol + '</td>';
-                        html += '<td>' + item.areaCode + '</td>';
-                        html += '<td>';
-                        html += '<button type="button" style="border: none;" name="ChangeStatus" class="btn btn-outline-secondary" ata-bs-toggle="tooltip" data-bs-placement="top"><i class="fas fa-sync"></i></button>';
-                        html += '<button type="button" style="border: none;" name="ViewListMusic" class="btn btn-outline-secondary" ata-bs-toggle="tooltip" data-bs-placement="top"><i class="fas fa-folder-open"></i></button>';
-                        html += '</td>';
+                        html += '<tr>';
+                        html += '<td>' + item.identifier + '</td>';
+                        html += '<td>' + item.nameDistrict + '</td>';
+                        html += '<td>' + item.nameCity + '</td>';
+                        html += '<td>' + item.dateCreate + '</td>';
+                        html += '<td>' + item.timeCreate + '</td>';
                         html += '</tr>';
-                        $("#body_Citys").append(html);
+                        $("#body_Districts").append(html);
                     })
                     break;
                 default:
-                    $("#TotalCitys").val(0);
+                    $("#TotalDistricts").val(0);
                     break;
             }
             $("#TotalItem").append(pageIndex)
             $("#ItemInPage").append(count)
-            $("#TotalCitys").append(result.totalCitys)
+            $("#TotalDistricts").append(result.totalDistricts)
             //paing
-            paging(result.totalCitys, function () {
-                LoadCitys();
+            paging(result.totalDistricts, function () {
+                LoadDistricts();
             })
         }
     })
@@ -95,39 +88,40 @@ function paging(totalRoll, callback) {
 
 //Check data Import citys
 $("#BtnCheckDataImport").click(function () {
-    $("#Check_Citys").empty();
+    $("#Check_Districts").empty();
     $("#TotalCheck").empty();
     $("#NotDuplicate").empty();
     var count = 0;
     $("#modal_LoadingCreateMusic").show();
     $.ajax({
-        url: "/ManagerAddress/JsonCheckDataBase",
+        url: "/ManagerAddress/JsonCheckDataBaseDistrict",
         type: "get",
         success: function (result) {
             $("#modal_LoadingCreateMusic").hide();
             switch (result.status) {
                 case 1:
-                    toastr.error("Thông Báo Lỗi!", "Không Có Danh Sách Tỉnh/Tp So Sánh");
+                    toastr.error("Thông Báo Lỗi!", "Không Có Danh Sách Quận/Huyện So Sánh");
                     break;
                 default:
                     $("#modal_CheckData").show();
-                    if (result.totalCitys == 0) {
+                    if (result.totalDistricts == 0) {
                         $("#NotDuplicate").append("Không Có Dữ Liệu Trùng Lặp")
                     } else {
-                        $.each(result.l_Citys, function (key, item) {
+                        $.each(result.l_Districts, function (key, item) {
                             count++;
                             var html = "";
-                            html += '<tr id="' + item.areaCode + '">';
-                            html += '<td>' + count + '</td>';
-                            html += '<td>' + item.cityName + '</td>';
-                            html += '<td>' + item.createDate + '</td>';
-                            html += '<td>' + item.symbol + '</td>';
-                            html += '<td>' + item.areaCode + '</td>';
+                            html += '<tr id="' + count + '">';
+                            html += '<td>' + item.nameDistrict + '</td>';
+                            html += '<td>' + item.nameCity + '</td>';
+                            html += '<td>' + item.dateCreate + '</td>';
+                            html += '<td>' + item.timeCreate + '</td>';
+                            html += '<td>' + item.status + '</td>';
+                            html += '<td>' + item.identifier + '</td>';
                             html += '</tr>';
-                            $("#Check_Citys").append(html);
+                            $("#Check_Districts").append(html);
                         })
                     }
-                    $("#TotalCheck").append(result.totalCitys);
+                    $("#TotalCheck").append(result.totalDistricts);
                     break;
             }
             return;
@@ -139,7 +133,7 @@ $("#BtnCheckDataImport").click(function () {
 $("#BtnConfim").click(function () {
     $("#TotalCreateSuccess").empty();
     $.ajax({
-        url: "/ManagerAddress/JsonCreateCitys",
+        url: "/ManagerAddress/JsonCreateDistricts",
         type: "get",
         success: function (result) {
             switch (result.status) {

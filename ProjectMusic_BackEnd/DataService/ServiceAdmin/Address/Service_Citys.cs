@@ -313,6 +313,21 @@ namespace DataService.ServiceAdmin.Address
         }
 
         /// <summary>
+        /// Get Al lCitys By District
+        /// </summary>
+        public List<GetAllCity_Vm> GetAllCitysByDistrict()
+        {
+            var query = from city in _context.T_Cities
+                        select new { city };
+            var result = query.OrderByDescending(x => x.city.IdCity).Select(x => new GetAllCity_Vm()
+            {
+             CityId = x.city.IdCity,
+             CityName = x.city.NameCity
+            }).ToList();
+            return result;
+        }
+
+        /// <summary>
         /// GetAll District or staff by city
         /// </summary>
         public List<GetAllCity_Vm> GetAllCitysRemove()

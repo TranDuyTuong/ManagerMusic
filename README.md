@@ -15,7 +15,7 @@ CÁC HÀM NÊN DÙNG ĐỂ CẢI THIỆN TỐC ĐỘ XỬ LÝ CỦA ỨNG DỤNG
 - Nên trong trường hợp chỉ cần kiểm tra list có null hay không ta nên dùng Any() sẻ trả về kết quả với thời gian nhanh hơn.
 
 -----------------------------------------------------------------------------------------------
-- Trùng dữ liệu 2 mã Id City 8 và 30 (Lâm Đồng) -> dùng mã  30 là cho lâm đồng
+- Thêm mới 1 fuild: Identifier vào trong table T_District (mục đích là xác định mã định danh cho từng district không trùng lặp lấy Mã vị trí của CITY + chữ cái đầu tiên trong tên của mỗi quận huyện)
 
 
 --------------------------------------------------------------------------------------------------

@@ -64,5 +64,15 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// GetAllDistricts
         /// </summary>
         PadingDistrict_Vm GetAllDistricts(int pageIndex, int pageSize, int orderBy, string seach);
+
+        /// <summary>
+        /// Get All Citys By District
+        /// </summary>
+        List<GetAllCity_Vm> GetAllCitysByDistrict();
+
+        /// <summary>
+        /// Check Distric DB
+        /// </summary>
+        List<GetAllDistrict_Vm> CheckDistricDB(List<GetAllDistrict_Vm> request);
     }
 }

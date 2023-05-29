@@ -93,6 +93,8 @@ namespace ManagerMusic.Controllers
             }
             else
             {
+                L_City = new List<GetAllCity_Vm>();
+                L_CityDuplicate = new List<GetAllCity_Vm>();
                 IFormFile ExcelFile = request.FileExcel;
                 string[] SplitFile = ExcelFile.FileName.Split('.');
                 switch (SplitFile[1])
@@ -344,57 +346,105 @@ namespace ManagerMusic.Controllers
         [HttpPost]
         public async Task<IActionResult> JsonReadFileExcelDistricts(ImportExcel_Districts request)
         {
-            //var result = new ReadDataDistrictExcel_Vm();
-            ////Pading data
-            //if (L_District.Count() != 0)
+            var result = new ReadDataDistrictExcel_Vm();
+            //Pading data
+            if (L_District.Count() != 0)
+            {
+                result.Status = 0; //Have Data
+                result.L_Districts = L_District.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
+            }
+            else
+            {
+                L_District = new List<GetAllDistrict_Vm>();
+                L_DistrictDuplicate = new List<GetAllDistrict_Vm>();
+                // Get All Citys
+                var citysList = _context.GetAllCitysByDistrict();
+                IFormFile ExcelFile = request.FileExcel;
+                string[] SplitFile = ExcelFile.FileName.Split('.');
+                switch (SplitFile[1])
+                {
+                    case "xlsx":
+                        ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+                        using (var stream = new MemoryStream())
+                        {
+                            await ExcelFile.CopyToAsync(stream);
+                            using (var package = new ExcelPackage(stream))
+                            {
+                                ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                                var rowcount = worksheet.Dimension.Rows;
+                                for (int row = 3; row <= rowcount; row++)
+                                {
+                                    var findCity = citysList.FirstOrDefault(x => x.CityId == Convert.ToInt32(worksheet.Cells[row, 2].Value.ToString().Trim()));
+                                    if (findCity != null)
+                                    {
+                                        L_District.Add(new GetAllDistrict_Vm
+                                        {
+                                            CityId = findCity.CityId,
+                                            NameDistrict = worksheet.Cells[row, 3].Value.ToString().Trim(),
+                                            DateCreate = DateTime.UtcNow.AddHours(7),
+                                            NameCity = findCity.CityName,
+                                            Identifier = worksheet.Cells[row, 4].Value.ToString().Trim(),
+                                            TimeCreate = DateTime.Now.ToShortTimeString()
+                                        });
+                                    }
+                                }
+                            }
+
+                        }
+                        // Add list citys in model result
+                        result.L_Districts = L_District.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
+                        result.Status = 0; //Have Data
+                        break;
+                    default:
+                        result.Status = 2; //No Data
+                        break;
+                }
+            }
+            result.TotalDistricts = L_District.Count;
+            return new JsonResult(result);
+        }
+
+        /// <summary>
+        /// Check data districts in database
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public IActionResult JsonCheckDataBaseDistrict()
+        {
+            var result = new ReadDataDistrictExcel_Vm();
+            if (L_District.Count() == 0)
+            {
+                result.Status = 1; // Not have data in List Citys File
+            }
+            else
+            {
+                result.L_Districts = _context.CheckDistricDB(L_District);
+                result.Status = 2; // Find Data duplicate in DB
+                result.TotalDistricts = result.L_Districts.Count;
+
+                L_DistrictDuplicate = result.L_Districts;
+            }
+            return new JsonResult(result);
+        }
+
+        /// <summary>
+        /// Create data in database
+        /// </summary>
+        [Authorize(Roles = RoleSetting.symbolRole_Satff + "," + RoleSetting.symbolRole_Admin)]
+        [HttpGet]
+        public async Task<IActionResult> JsonCreateDistricts()
+        {
+            var result = new NotificationAddress_Vm();
+            //if (L_City.Count() == 0)
             //{
-            //    result.Status = 0; //Have Data
-            //    result.L_Districts = L_District.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
+            //    result.status = 2; // List citys Import Null
             //}
             //else
             //{
-            //    IFormFile ExcelFile = request.FileExcel;
-            //    string[] SplitFile = ExcelFile.FileName.Split('.');
-            //    switch (SplitFile[1])
-            //    {
-            //        case "xlsx":
-            //            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-            //            using (var stream = new MemoryStream())
-            //            {
-            //                await ExcelFile.CopyToAsync(stream);
-            //                using (var package = new ExcelPackage(stream))
-            //                {
-            //                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
-            //                    var rowcount = worksheet.Dimension.Rows;
-            //                    for (int row = 3; row <= rowcount; row++)
-            //                    {
-            //                        L_District.Add(new GetAllDistrict_Vm
-            //                        {
-            //                            CityId 
-            //                            NameDistrict 
-            //                            DateCreate 
-            //                            NameCity 
-            //                            TimeCreate
-
-            //                            CityName = worksheet.Cells[row, 2].Value.ToString().Trim(),
-            //                            Symbol = worksheet.Cells[row, 3].Value.ToString().Trim(),
-            //                            AreaCode = Convert.ToInt32(worksheet.Cells[row, 4].Value.ToString().Trim()),
-            //                            CreateDate = DateTime.UtcNow.AddHours(7),
-            //                        });
-            //                    }
-            //                }
-
-            //            }
-            //            // Add list citys in model result
-            //            result.L_Citys = L_City.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
-            //            result.Status = 0; //Have Data
-            //            break;
-            //        default:
-            //            result.Status = 2; //No Data
-            //            break;
-            //    }
+            //    result = await _context.CreateCitys(L_City, L_CityDuplicate);
             //}
-            //result.TotalCitys = L_City.Count;
+            //L_City = new List<GetAllCity_Vm>();
+            //L_CityDuplicate = new List<GetAllCity_Vm>();
             return new JsonResult(0);
         }
 

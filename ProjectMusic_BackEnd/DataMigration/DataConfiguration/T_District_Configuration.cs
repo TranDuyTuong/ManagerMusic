@@ -13,6 +13,7 @@ namespace DataMigration.DataConfiguration
             builder.Property(x => x.IdDistrict).UseIdentityColumn();
             builder.Property(x => x.NameDistrict).IsRequired(true).HasColumnType("Nvarchar(300)");
             builder.Property(x => x.DateCreate).IsRequired(true);
+            builder.Property(x => x.Identifier).IsRequired(true);
             builder.HasOne(x => x.T_Cities).WithMany(x => x.T_Districts).HasForeignKey(x => x.IdCity);
         }
     }

@@ -23,7 +23,7 @@ namespace DataMigration.DataExtestion
                 new T_City() { IdCity = 2, NameCity = "Thủ Đô Hà Nội", DateCreate = DateTime.UtcNow.AddHours(7), Symbol="HN", AreaCode=24, Status = true }
                 );
             modelBuilder.Entity<T_District>().HasData(
-                new T_District() {IdDistrict = 1, NameDistrict= "Quận 1", DateCreate = DateTime.UtcNow.AddHours(7), IdCity = 1, Status = true }
+                new T_District() {IdDistrict = 1, NameDistrict= "Quận 1", DateCreate = DateTime.UtcNow.AddHours(7), IdCity = 1, Status = true, Identifier="28_Q1" }
                 );
 
             modelBuilder.Entity<T_Gender>().HasData(

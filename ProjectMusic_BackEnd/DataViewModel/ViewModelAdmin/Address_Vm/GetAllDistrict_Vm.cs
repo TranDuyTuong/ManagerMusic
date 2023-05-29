@@ -15,5 +15,6 @@ namespace DataViewModel.ViewModelAdmin.Address_Vm
         public string NameCity { get; set; }
         public string TimeCreate { get; set; }
         public bool Status { get; set; }
+        public string Identifier { get; set; }
     }
 }

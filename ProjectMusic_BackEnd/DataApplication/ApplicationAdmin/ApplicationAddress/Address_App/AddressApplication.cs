@@ -233,18 +233,23 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
             return padingResult;
         }
 
+        /// <summary>
+        /// Get All Citys By District
+        /// </summary>
+        public List<GetAllCity_Vm> GetAllCitysByDistrict()
+        {
+            var result = _context.GetAllCitysByDistrict();
+            return result;
+        }
 
-
-
-
-
-
-
-
-
-
-
-
+        /// <summary>
+        /// Check Distric DB
+        /// </summary>
+        public List<GetAllDistrict_Vm> CheckDistricDB(List<GetAllDistrict_Vm> request)
+        {
+            var result = _contextDistricts.CheckDistricDB(request);
+            return result;
+        }
 
     }
 }

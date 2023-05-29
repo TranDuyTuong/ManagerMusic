@@ -13,5 +13,10 @@ namespace DataService.ServiceAdmin.Address
         /// GetAllDistricts
         /// </summary>
         List<GetAllDistrict_Vm> GetAllDistricts();
+
+        /// <summary>
+        /// Get All City was Remove 
+        /// </summary>
+        List<GetAllDistrict_Vm> CheckDistricDB(List<GetAllDistrict_Vm> request);
     }
 }
