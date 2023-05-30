@@ -74,5 +74,10 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// Check Distric DB
         /// </summary>
         List<GetAllDistrict_Vm> CheckDistricDB(List<GetAllDistrict_Vm> request);
+
+        /// <summary>
+        /// CreateDistricts
+        /// </summary>
+        Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> listDistrict, List<GetAllDistrict_Vm> listDistrictDuplicate);
     }
 }

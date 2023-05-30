@@ -18,5 +18,10 @@ namespace DataService.ServiceAdmin.Address
         /// Get All City was Remove 
         /// </summary>
         List<GetAllDistrict_Vm> CheckDistricDB(List<GetAllDistrict_Vm> request);
+
+        /// <summary>
+        /// Get All City was Remove 
+        /// </summary>
+       Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> l_District);
     }
 }

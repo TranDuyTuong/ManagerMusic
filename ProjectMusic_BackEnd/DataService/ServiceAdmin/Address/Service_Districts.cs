@@ -9,6 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Reflection;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace DataService.ServiceAdmin.Address
 {
@@ -17,11 +22,13 @@ namespace DataService.ServiceAdmin.Address
         private readonly ContextDB _context;
         private readonly INotificationUser _notificationUser;
         private readonly IUser _user;
-        public Service_Districts(ContextDB context, INotificationUser notificationUser, IUser user)
+        private readonly IConfiguration _config;
+        public Service_Districts(ContextDB context, INotificationUser notificationUser, IUser user, IConfiguration config)
         {
             _context = context;
             _notificationUser = notificationUser;
             _user = user;
+            _config = config;
         }
 
 
@@ -82,6 +89,56 @@ namespace DataService.ServiceAdmin.Address
             }
             return l_districtDB;
         }
+
+        /// <summary>
+        /// CreateDistricts
+        /// </summary>
+        public async Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> l_District)
+        {
+            var result = new NotificationAddress_Vm();
+            if(l_District.Any() == true)
+            {
+                var districtsModal = new List<T_District>();
+                foreach(var item in l_District)
+                {
+                    districtsModal.Add(new T_District()
+                    {
+
+                    });
+                }
+                await _context.T_Districts.AddRangeAsync(districtsModal);
+                _context.SaveChanges();
+                //var cmdText = @"
+                //    insert into dbo.Districts(IdCity, NameDistrict, DateCreate, Status, Identifier)
+                //    select IdCity, NameDistrict, DateCreate, Status, Identifier
+                //    from @l_Districts
+                //";
+                //using (var copy = new SqlBulkCopy(connectionString))
+                //{
+                //    copy.DestinationTableName = "dbo.Customers";
+                //    // Add mappings so that the column order doesn't matter
+                //    copy.ColumnMappings.Add(nameof(Customer.Id), "Id");
+                //    copy.ColumnMappings.Add(nameof(Customer.FirstName), "FirstName");
+                //    copy.ColumnMappings.Add(nameof(Customer.LastName), "LastName");
+                //    copy.ColumnMappings.Add(nameof(Customer.Street), "Street");
+                //    copy.ColumnMappings.Add(nameof(Customer.City), "City");
+                //    copy.ColumnMappings.Add(nameof(Customer.State), "State");
+                //    copy.ColumnMappings.Add(nameof(Customer.PhoneNumber), "PhoneNumber");
+                //    copy.ColumnMappings.Add(nameof(Customer.EmailAddress), "EmailAddress");
+
+                //    copy.WriteToServer(ToDataTable(customers));
+                //}
+                //using (var connection = new SqlConnection(_config.GetConnectionString("ManagerMusicDatabase")))
+                //{
+                //        var command = new SqlCommand(cmdText, connection);
+                //    var param = command.Parameters.AddWithValue("@l_Districts", ToDataTable(l_District));
+                //        connection.Open();
+                //        command.ExecuteNonQuery();
+                //}
+            }
+            return result;
+        }
+
 
 
     }

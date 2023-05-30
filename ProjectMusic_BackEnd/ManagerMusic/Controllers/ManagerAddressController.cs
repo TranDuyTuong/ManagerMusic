@@ -89,7 +89,7 @@ namespace ManagerMusic.Controllers
             if (L_City.Count() != 0)
             {
                 result.Status = 0; //Have Data
-                result.L_Citys = L_City.Skip((request.PageIndex - 1)* request.PageSize).Take(request.PageSize).ToList();
+                result.L_Citys = L_City.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).ToList();
             }
             else
             {
@@ -165,7 +165,7 @@ namespace ManagerMusic.Controllers
         public async Task<IActionResult> JsonCreateCitys()
         {
             var result = new NotificationAddress_Vm();
-            if(L_City.Count() == 0)
+            if (L_City.Count() == 0)
             {
                 result.status = 2; // List citys Import Null
             }
@@ -211,7 +211,8 @@ namespace ManagerMusic.Controllers
         {
             var request = new EditCity_Vm();
             var result = new NotificationAddress_Vm();
-            if(nameCity == null || nameCity == "" || symbol == null || symbol == "" || areaCode == 0) {
+            if (nameCity == null || nameCity == "" || symbol == null || symbol == "" || areaCode == 0)
+            {
                 result.status = 5; //Update citys Error;
             }
             else
@@ -233,7 +234,7 @@ namespace ManagerMusic.Controllers
         public IActionResult GetAllDistrictOrStaffByCity(int IdCity, int Selection)
         {
             var result = _context.GetAllDistrictOrStaffByCity(IdCity, Selection);
-            return new JsonResult(result);  
+            return new JsonResult(result);
         }
 
         /// <summary>
@@ -287,7 +288,7 @@ namespace ManagerMusic.Controllers
         [HttpGet]
         public IActionResult JsonGetAllCitysRemove(int pageIndex, int pageSize, int seach)
         {
-            var result = _context.GetAllCitysRemove(pageIndex, pageSize, seach);    
+            var result = _context.GetAllCitysRemove(pageIndex, pageSize, seach);
             return new JsonResult(result);
         }
 
@@ -435,17 +436,29 @@ namespace ManagerMusic.Controllers
         public async Task<IActionResult> JsonCreateDistricts()
         {
             var result = new NotificationAddress_Vm();
-            //if (L_City.Count() == 0)
-            //{
-            //    result.status = 2; // List citys Import Null
-            //}
-            //else
-            //{
-            //    result = await _context.CreateCitys(L_City, L_CityDuplicate);
-            //}
-            //L_City = new List<GetAllCity_Vm>();
-            //L_CityDuplicate = new List<GetAllCity_Vm>();
-            return new JsonResult(0);
+            if (L_District.Count() == 0)
+            {
+                result.status = 2; // List citys Import Null
+            }
+            else
+            {
+                var listIdentifierDistricts = new List<GetAllDistrict_Vm>();
+                if (L_CityDuplicate.Any() == true)
+                {
+                    // Get list Identifier in list district DB
+                    foreach (var district in L_DistrictDuplicate)
+                    {
+                        listIdentifierDistricts.Add(new GetAllDistrict_Vm()
+                        {
+                            Identifier = district.Identifier,
+                        });
+                    }
+                }
+                result = await _context.CreateDistricts(L_District, listIdentifierDistricts);
+            }
+            L_District = new List<GetAllDistrict_Vm>();
+            L_DistrictDuplicate = new List<GetAllDistrict_Vm>();
+            return new JsonResult(result);
         }
 
 

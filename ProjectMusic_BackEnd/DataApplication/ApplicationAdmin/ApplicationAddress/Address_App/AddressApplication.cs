@@ -251,5 +251,36 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
             return result;
         }
 
+        /// <summary>
+        /// CreateDistricts
+        /// </summary>
+        public async Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> listDistrict, List<GetAllDistrict_Vm> listDistrictDuplicate)
+        {
+            List<GetAllDistrict_Vm> ListResult = new List<GetAllDistrict_Vm>();
+            string list_StrDistrict = String.Join(",", listDistrictDuplicate);
+            // Get district create not in DB
+            for(int ditrict = 0; listDistrict.Count() > ditrict; ditrict++)
+            {
+                int checkDistrict = list_StrDistrict.IndexOf(listDistrict[ditrict].Identifier);
+
+                // Not find district request in listDistrict
+                if (checkDistrict == -1)
+                {
+                    ListResult.Add(new GetAllDistrict_Vm()
+                    {
+                        CityId = listDistrict[ditrict].CityId,
+                        NameDistrict = listDistrict[ditrict].NameDistrict,
+                        DateCreate = DateTime.Now.AddHours(7),
+                        Status = true,
+                        Identifier = listDistrict[ditrict].Identifier,
+                    });
+                }
+            }
+            var result = await _contextDistricts.CreateDistricts(ListResult);
+            return result;
+        }
+
+
+
     }
 }
