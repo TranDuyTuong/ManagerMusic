@@ -22,6 +22,6 @@ namespace DataService.ServiceAdmin.Address
         /// <summary>
         /// Get All City was Remove 
         /// </summary>
-       Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> l_District);
+       Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> l_District, Guid IdUser);
     }
 }

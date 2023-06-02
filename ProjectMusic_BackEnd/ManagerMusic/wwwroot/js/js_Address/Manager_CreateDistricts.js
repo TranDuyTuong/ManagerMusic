@@ -137,9 +137,14 @@ $("#BtnConfim").click(function () {
         type: "get",
         success: function (result) {
             switch (result.status) {
+                case 0:
+                    toastr.error("Thông Báo Thất Bại", "Tạo Mới Quận/Huyện Thất Bại!");
+                    document.getElementById('TotalCreateSuccess').style.color = 'red';
+                    $("#TotalCreateSuccess").append("Đã Tạo Mới Thất Bại Có: " + result.totalCreateSuccess + " Quận/Huyện Được Tạo");
+                    break;
                 case 1:
                     toastr.success("Thông Báo Thành Công", "Tạo Mới Thành Công!");
-                    $("#TotalCreateSuccess").append("Đã Tạo Mới Thành Công: " + result.totalCreateSuccess + " Tỉnh/Tp");
+                    $("#TotalCreateSuccess").append("Đã Tạo Mới Thành Công: " + result.totalCreateSuccess + " Quận/Huyện");
                     break;
                 default:
                     toastr.error("Thông Báo Lỗi", "Danh Sách Import Tỉnh/Tp Bị Trống!");
@@ -148,9 +153,4 @@ $("#BtnConfim").click(function () {
             return;
         }
     })
-});
-//Close Create modal data
-$("#BtnClose").click(function () {
-    $("#modal_CheckData").hide();
-    window.location.reload();
 });

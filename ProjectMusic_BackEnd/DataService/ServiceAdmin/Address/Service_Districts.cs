@@ -14,6 +14,8 @@ using System.Data.SqlClient;
 using System.Reflection;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using DataViewModel.ViewModelUser.Notification_Vm;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataService.ServiceAdmin.Address
 {
@@ -93,21 +95,51 @@ namespace DataService.ServiceAdmin.Address
         /// <summary>
         /// CreateDistricts
         /// </summary>
-        public async Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> l_District)
+        public async Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> l_District, Guid IdUser)
         {
             var result = new NotificationAddress_Vm();
+            int count = 0;
             if(l_District.Any() == true)
             {
+                var queryUser = await _context.T_Users.FirstOrDefaultAsync(x => x.IdUser == IdUser);
                 var districtsModal = new List<T_District>();
                 foreach(var item in l_District)
                 {
+                    count++;
                     districtsModal.Add(new T_District()
                     {
-
+                        IdCity = item.CityId,
+                        NameDistrict = item.NameDistrict,
+                        DateCreate = item.DateCreate,
+                        Status = item.Status,
+                        Identifier = item.Identifier
                     });
                 }
                 await _context.T_Districts.AddRangeAsync(districtsModal);
-                _context.SaveChanges();
+                //add notification
+                var L_AllUser = _user.GetAllUser();
+                if (L_AllUser.Any() == true)
+                {
+                    foreach (var item in L_AllUser)
+                    {
+                        var notification = new CreateNotification_v()
+                        {
+                            IdUser = item.IdUser,
+                            IdViewNotification = 2, // Not view notification
+                            IdDeleteNotification = 1, // Not delete notification
+                            TitleNotification = "Đã có " + count + " Quận/huyện" +
+                                                " đã được tạo mới" +
+                                                " ,do nhân viên " + queryUser.FullName + " cập nhật.",
+                            DateCreate = DateTime.UtcNow.AddHours(7),
+                            TimeCreate = DateTime.UtcNow.AddHours(7),
+                            AuthorNotification = queryUser.FullName,
+                        };
+                        _notificationUser.CreateNotification(notification);
+                    }
+                }
+                await _context.SaveChangesAsync();
+                result.status = 1; // create district success
+                result.TotalCreateSuccess = count;
                 //var cmdText = @"
                 //    insert into dbo.Districts(IdCity, NameDistrict, DateCreate, Status, Identifier)
                 //    select IdCity, NameDistrict, DateCreate, Status, Identifier
@@ -135,6 +167,11 @@ namespace DataService.ServiceAdmin.Address
                 //        connection.Open();
                 //        command.ExecuteNonQuery();
                 //}
+            }
+            else
+            {
+                result.status = 0; // don't have district for create
+                result.TotalCreateSuccess = count;
             }
             return result;
         }

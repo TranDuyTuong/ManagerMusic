@@ -78,6 +78,6 @@ namespace DataApplication.ApplicationAdmin.ApplicationAddress.Address_App
         /// <summary>
         /// CreateDistricts
         /// </summary>
-        Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> listDistrict, List<GetAllDistrict_Vm> listDistrictDuplicate);
+        Task<NotificationAddress_Vm> CreateDistricts(List<GetAllDistrict_Vm> listDistrict, List<GetAllDistrict_Vm> listDistrictDuplicate, Guid IdUser);
     }
 }

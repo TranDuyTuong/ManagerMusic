@@ -439,11 +439,19 @@ namespace ManagerMusic.Controllers
             if (L_District.Count() == 0)
             {
                 result.status = 2; // List citys Import Null
+                result.TotalCreateSuccess = 0;
             }
             else
             {
+                // get current user login
+                var Stream = HttpContext.Request.Cookies["Token"];
+                var hander = new JwtSecurityTokenHandler();
+                var jsontoken = hander.ReadToken(Stream);
+                var token = jsontoken as JwtSecurityToken;
+                Guid IdUser = Guid.Parse(token.Claims.FirstOrDefault(x => x.Type == "C_IdUser").Value);
+
                 var listIdentifierDistricts = new List<GetAllDistrict_Vm>();
-                if (L_CityDuplicate.Any() == true)
+                if (L_DistrictDuplicate.Any() == true)
                 {
                     // Get list Identifier in list district DB
                     foreach (var district in L_DistrictDuplicate)
@@ -454,7 +462,7 @@ namespace ManagerMusic.Controllers
                         });
                     }
                 }
-                result = await _context.CreateDistricts(L_District, listIdentifierDistricts);
+                result = await _context.CreateDistricts(L_District, listIdentifierDistricts, IdUser);
             }
             L_District = new List<GetAllDistrict_Vm>();
             L_DistrictDuplicate = new List<GetAllDistrict_Vm>();
