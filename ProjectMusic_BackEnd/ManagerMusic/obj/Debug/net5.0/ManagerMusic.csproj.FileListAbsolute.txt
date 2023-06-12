@@ -853,11 +853,7 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\M
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ManagerMusic.genruntimeconfig.cache
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\ref\ManagerMusic.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\Razor\Views\ManagerAddress\PageGetAllCitysRemove.cshtml.g.cs
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\ManagerMusic.StaticWebAssets.Pack.cache
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.ManagerMusic.Microsoft.AspNetCore.StaticWebAssets.props
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.build.ManagerMusic.props
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ManagerMusic.props
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ManagerMusic.props
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\refint\ManagerMusic.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\Razor\Views\ManagerAddress\PageDistricts.cshtml.g.cs
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\Razor\Views\ManagerAddress\PageCreateDistricts.cshtml.g.cs
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\bin\Debug\net5.0\ref\ManagerMusic.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\obj\Debug\net5.0\staticwebassets\ManagerMusic.StaticWebAssets.xml

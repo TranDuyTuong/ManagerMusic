@@ -35,4 +35,4 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataMigration\obj\Debug\net5.0\
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataMigration\obj\Debug\net5.0\DataMigration.pdb
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataMigration\obj\Debug\net5.0\DataMigration.genruntimeconfig.cache
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataMigration\obj\Debug\net5.0\ref\DataMigration.dll
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataMigration\obj\Debug\net5.0\refint\DataMigration.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataMigration\bin\Debug\net5.0\ref\DataMigration.dll

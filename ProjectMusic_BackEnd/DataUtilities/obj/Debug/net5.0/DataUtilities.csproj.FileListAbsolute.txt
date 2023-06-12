@@ -21,4 +21,4 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataUtilities\obj\Debug\net5.0\
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataUtilities\obj\Debug\net5.0\DataUtilities.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataUtilities\obj\Debug\net5.0\DataUtilities.pdb
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataUtilities\obj\Debug\net5.0\ref\DataUtilities.dll
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataUtilities\obj\Debug\net5.0\refint\DataUtilities.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataUtilities\bin\Debug\net5.0\ref\DataUtilities.dll

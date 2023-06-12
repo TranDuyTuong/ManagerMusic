@@ -21,4 +21,4 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataViewModel\obj\Debug\net5.0\
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataViewModel\obj\Debug\net5.0\DataViewModel.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataViewModel\obj\Debug\net5.0\DataViewModel.pdb
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataViewModel\obj\Debug\net5.0\ref\DataViewModel.dll
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataViewModel\obj\Debug\net5.0\refint\DataViewModel.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataViewModel\bin\Debug\net5.0\ref\DataViewModel.dll

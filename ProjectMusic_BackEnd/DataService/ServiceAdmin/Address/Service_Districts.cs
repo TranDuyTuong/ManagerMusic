@@ -67,13 +67,13 @@ namespace DataService.ServiceAdmin.Address
         public List<GetAllDistrict_Vm> CheckDistricDB(List<GetAllDistrict_Vm> request)
         {
            // Get all district in DB
-           var query = from city in _context.T_Cities
-                       join district in _context.T_Districts on city.IdCity equals district.IdDistrict
+           var query = from district in _context.T_Districts
+                       join city in _context.T_Cities on district.IdCity equals city.IdCity
                        select new {city, district};
             List<GetAllDistrict_Vm> l_districtDB = new List<GetAllDistrict_Vm>();
             foreach (var item in query)
             {
-                var checkData = request.FirstOrDefault(x => x.Identifier == item.district.Identifier);
+                var checkData = request.FirstOrDefault(x => Convert.ToInt32(x.Identifier) == Convert.ToInt32(item.district.Identifier));
                 if(checkData != null)
                 {
                     l_districtDB.Add(new GetAllDistrict_Vm

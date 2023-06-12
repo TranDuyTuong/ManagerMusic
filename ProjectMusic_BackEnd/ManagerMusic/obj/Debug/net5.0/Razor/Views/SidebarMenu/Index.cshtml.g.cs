@@ -28,9 +28,7 @@ using ManagerMusic.Models;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"acbace8038150b0e6e6e8997154f40898a481057", @"/Views/SidebarMenu/Index.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51664b79307bd63df294b5f5a17da78d6e89f010", @"/Views/_ViewImports.cshtml")]
-    #nullable restore
     public class Views_SidebarMenu_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
-    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("IndexFile"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "IndexFile", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -120,7 +118,7 @@ using ManagerMusic.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</label>\r\n        <nav class=\"nav flex-column\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105714920", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105714874", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> ");
 #nullable restore
 #line 14 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\SidebarMenu\Index.cshtml"
@@ -147,7 +145,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105716838", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105716792", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> ");
 #nullable restore
 #line 15 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\SidebarMenu\Index.cshtml"
@@ -174,7 +172,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105718775", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105718729", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> ");
 #nullable restore
 #line 16 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\SidebarMenu\Index.cshtml"
@@ -209,7 +207,7 @@ using ManagerMusic.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</label>\r\n        <nav class=\"nav flex-column\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105721112", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105721066", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> ");
 #nullable restore
 #line 21 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\SidebarMenu\Index.cshtml"
@@ -236,7 +234,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105723023", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105722977", async() => {
                 WriteLiteral("\r\n                <i class=\"fas fa-arrow-right\"></i>\r\n                ");
 #nullable restore
 #line 24 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\SidebarMenu\Index.cshtml"
@@ -264,7 +262,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105725024", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105724978", async() => {
                 WriteLiteral("\r\n                <i class=\"fas fa-arrow-right\"></i>\r\n                ");
 #nullable restore
 #line 29 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\SidebarMenu\Index.cshtml"
@@ -300,7 +298,7 @@ using ManagerMusic.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</label>\r\n        <nav class=\"nav flex-column\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105727440", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105727394", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> ");
 #nullable restore
 #line 36 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\SidebarMenu\Index.cshtml"
@@ -335,7 +333,7 @@ using ManagerMusic.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</label>\r\n        <nav class=\"nav flex-column\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105729770", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105729724", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> ");
 #nullable restore
 #line 41 "D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\ManagerMusic\Views\SidebarMenu\Index.cshtml"
@@ -362,7 +360,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        </nav>\r\n\r\n        <label><i class=\"fas fa-map-marked-alt\"></i> Address</label>\r\n        <nav class=\"nav flex-column\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105731831", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105731785", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> Tỉnh/Tp");
             }
             );
@@ -382,7 +380,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105733414", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105733368", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> Quận/Huyện");
             }
             );
@@ -402,7 +400,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105735000", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105734954", async() => {
                 WriteLiteral("<i class=\"fas fa-arrow-right\"></i> Xã/Phường");
             }
             );
@@ -422,7 +420,7 @@ using ManagerMusic.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        </nav>\r\n\r\n    </div><!-- component-item -->\r\n\r\n</div><!-- az-content-left -->\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105736670", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbace8038150b0e6e6e8997154f40898a48105736624", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1113,30 +1111,18 @@ using ManagerMusic.Models;
 ");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public LanguageService languade { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public LanguageService languade { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; } = default!;
-        #nullable disable
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; }
     }
 }
 #pragma warning restore 1591

@@ -37,4 +37,4 @@ D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataService\obj\Debug\net5.0\Da
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataService\obj\Debug\net5.0\DataService.dll
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataService\obj\Debug\net5.0\DataService.pdb
 D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataService\obj\Debug\net5.0\ref\DataService.dll
-D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataService\obj\Debug\net5.0\refint\DataService.dll
+D:\Project\v_3\ManagerMusic\ProjectMusic_BackEnd\DataService\bin\Debug\net5.0\ref\DataService.dll
